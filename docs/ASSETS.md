@@ -1,6 +1,7 @@
 # Asset provenance
 
 - `public/art/unreal-valley.webp`: original UnrealMMO concept artwork generated with the built-in image-generation tool on 19 October 2026, then encoded as WebP for delivery. It is explicitly labeled concept artwork, not a server screenshot. Original PNG retained in the author's local generation library.
+- `public/art/server-placard-v2.webp`: original transparent gold-and-emerald frame generated with the built-in image-generation tool; [full prompt and production notes](SERVER-SIGN-ART.md). The server address remains live HTML text.
 - `public/brand/emblem.svg`: original geometric UnrealMMO mark created for this site.
 - Isometric structure diagrams: generated from public gameplay block-coordinate definitions, using original SVG geometry.
 - 3D blocks: original flat material colors and outlines. No Minecraft texture pack or Dragonwilds assets are distributed.

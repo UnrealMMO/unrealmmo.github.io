@@ -38,9 +38,14 @@ export default function Home() {
             and belong.
           </p>
           <div className="server-sign" aria-label="Minecraft server address">
-            <div className="server-sign-face">
-              <span>mc.unrealmmo.com</span>
-            </div>
+            <img
+              src="/art/server-placard-v2.webp"
+              alt=""
+              width="1400"
+              height="467"
+              draggable="false"
+            />
+            <span>mc.unrealmmo.com</span>
           </div>
         </div>
         <div className="hero-bottom wrap">
