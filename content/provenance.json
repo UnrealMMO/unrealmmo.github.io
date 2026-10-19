@@ -1,0 +1,8 @@
+{
+  "reviewed": "2026-10-19",
+  "sourceCommit": "9e15479bc684d7d742a705f8851a18e4bb314bb5",
+  "core": "0.9.0",
+  "farming": "0.9.1",
+  "balance": "Shipped defaults; server settings may change before launch.",
+  "scope": "Gameplay handbook snapshot. This does not certify multiplayer acceptance or server scalability."
+}

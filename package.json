@@ -1,0 +1,42 @@
+{
+  "name": "unrealmmo-web",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "verify": "npm run test && npm run build && node scripts/check-export.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "dependencies": {
+    "@fontsource/cinzel": "^5.2.0",
+    "@fontsource/figtree": "^5.2.0",
+    "@radix-ui/react-dialog": "^1.1.18",
+    "@radix-ui/react-tabs": "^1.1.16",
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "@tailwindcss/postcss": "^4.1.0",
+    "framer-motion": "^12.42.2",
+    "lucide-react": "^1.23.0",
+    "next": "15.5.28",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.0",
+    "three": "^0.183.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@types/three": "^0.183.0",
+    "prettier": "^3.9.10",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  },
+  "overrides": {
+    "postcss": "8.5.31"
+  }
+}

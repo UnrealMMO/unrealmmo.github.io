@@ -1,0 +1,331 @@
+[
+  {
+    "id": "sneak",
+    "name": "Sneak",
+    "tagline": "Become the unseen.",
+    "description": "The quieter path can be the most powerful. Move faster through the shadows, conceal your presence and learn to read the threats around you.",
+    "color": "#a9a1da",
+    "icon": "eye",
+    "training": [
+      "Earn 1 base XP per horizontal block of grounded sneaking. Flying, swimming, riding and teleport jumps do not train movement.",
+      "Sneaking within 20 blocks of an enemy mob grants 2 base XP per second. Multiple enemies do not multiply this rate.",
+      "Sneaking melee attacks against enemy mobs grant 5 base XP per final damage point, capped against overkill. PvP does not grant this XP."
+    ],
+    "rules": [
+      "Concealment is distance-based, not potion invisibility. Sounds, particles, the player list and mob awareness remain.",
+      "Taking damage prevents concealment for 15 seconds. Ambush also reveals you.",
+      "Threat Sense can reveal a concealed player to the sensing viewer inside 20 blocks.",
+      "The sneak-speed bonus reaches +200% at level 98. Walking and sprinting are unchanged; vanilla attribute caps still apply."
+    ],
+    "commands": ["/skills"],
+    "traits": [
+      {
+        "level": 10,
+        "name": "Concealment I",
+        "description": "While sneaking, your body, equipment and name disappear for players farther than 25 blocks. Damage reveals you for 15 seconds. Players at the threshold can still see you."
+      },
+      {
+        "level": 15,
+        "name": "Soft Landing",
+        "description": "Take 25% less fall damage when sneaking on landing from a fall of up to 20 blocks."
+      },
+      {
+        "level": 25,
+        "name": "Concealment II",
+        "description": "The visibility boundary moves inward to 20 blocks. Players farther away cannot see your rendered entity while you sneak."
+      },
+      {
+        "level": 35,
+        "name": "Pickpocket",
+        "description": "Sneak behind an unaware humanoid enemy within 3 blocks. Right-click with an empty main hand and stay still for two seconds. Default reward: one gold nugget, once per mob. Players cannot be pickpocketed."
+      },
+      {
+        "level": 45,
+        "name": "Ambush",
+        "description": "Deal 25% extra base melee damage from behind eligible unaware enemies or players. Requires no recent combat between the pair; a 15-second cooldown and reveal follow. Protection rules still apply."
+      },
+      {
+        "level": 50,
+        "name": "Concealment III",
+        "description": "Your concealment boundary improves to 15 blocks."
+      },
+      {
+        "level": 60,
+        "name": "Night Vision",
+        "description": "Sneak continuously for more than three seconds to gain night vision. Standing ends the effect."
+      },
+      {
+        "level": 75,
+        "name": "Concealment IV",
+        "description": "Your concealment boundary improves to 12.5 blocks."
+      },
+      {
+        "level": 80,
+        "name": "Threat Sense",
+        "description": "After more than three seconds sneaking, see private outlines of enemies and players within 20 blocks, including through walls. Standing ends sensing."
+      },
+      {
+        "level": 99,
+        "name": "Master Concealment",
+        "description": "Your concealment boundary reaches 10 blocks. Your accumulated sneak-speed bonus remains +200%."
+      }
+    ]
+  },
+  {
+    "id": "farming",
+    "name": "Farming",
+    "tagline": "Cultivate the extraordinary.",
+    "description": "Begin with a handful of seeds. Grow into a master of richer harvests, thriving fields and remarkable trees that bear resources.",
+    "color": "#a8c983",
+    "icon": "sprout",
+    "training": [
+      "Mature wheat, carrots, potatoes and beetroot: 3 base XP per harvest.",
+      "Mature nether wart and cocoa: 4 XP. Naturally grown pumpkins and melons: 6 XP. Mature sweet berries: 2 XP.",
+      "Planting, tilling, immature crops, placed fruit and automatic farms do not award Farming XP."
+    ],
+    "rules": [
+      "Growth bonuses apply to your planted crops while you are online and within 32 blocks. Vanilla light, hydration and soil rules still apply.",
+      "Ordinary levels alternate growth first, then double-produce chance. Both reach 25% at level 98.",
+      "Growth means extra random-tick opportunities, not a guaranteed harvest time. Seeds and XP are not doubled.",
+      "Ore trees grant resources, not passive Farming XP. Their additional unlocks do not interrupt ordinary level bonuses."
+    ],
+    "commands": [
+      "/farming",
+      "/farming replant on",
+      "/farming pouch on",
+      "/farming master on",
+      "/farming trees"
+    ],
+    "traits": [
+      {
+        "level": 1,
+        "name": "Cultivation",
+        "description": "Ordinary levels alternate growth and double-produce chance, each reaching 25%. Growth affects your planted crops within 32 blocks while online."
+      },
+      {
+        "level": 10,
+        "name": "Seed Saver",
+        "description": "10% chance to preserve a planting item after successful planting."
+      },
+      {
+        "level": 20,
+        "name": "Replant",
+        "description": "Optional mature-crop replanting using one planting item from your inventory."
+      },
+      {
+        "level": 35,
+        "name": "Harvest Pouch",
+        "description": "Optional crop and seed collection. Overflow stays in the world."
+      },
+      {
+        "level": 50,
+        "name": "Green Thumb",
+        "description": "15% chance to preserve bone meal when it advances a supported crop."
+      },
+      {
+        "level": 60,
+        "name": "Light Footed",
+        "description": "Your footsteps cannot trample farmland."
+      },
+      {
+        "level": 75,
+        "name": "Seed Saver II",
+        "description": "Planting-item preservation increases to 25%."
+      },
+      {
+        "level": 99,
+        "name": "Master Farmer",
+        "description": "Optional sneak-harvest with a hoe: up to nine mature crops in a 3 by 3 area."
+      }
+    ]
+  },
+  {
+    "id": "mining",
+    "name": "Mining",
+    "tagline": "Find more beneath the surface.",
+    "description": "Read the stone, follow the sound of hidden ore and turn every expedition underground into a more rewarding journey.",
+    "color": "#8bbccb",
+    "icon": "pickaxe",
+    "training": [
+      "Natural coal, copper and quartz ore: 8 base XP; iron: 12 XP.",
+      "Gold, redstone and lapis ore: 18 XP; diamond and emerald: 40 XP; ancient debris: 80 XP.",
+      "Eligible natural stone grants 1 XP. Use a pickaxe; player-placed blocks do not train the skill."
+    ],
+    "rules": [
+      "Speed and double-ore chance each reach 50% by level 98.",
+      "Silk Touch is excluded from ore doubling. Fortune keeps its normal result before a qualifying double roll.",
+      "Prospector is a directional chime for your selected ore within 12 blocks.",
+      "Master Miner is bounded to 12 matching connected natural ores and respects ordinary protection."
+    ],
+    "commands": [
+      "/mining",
+      "/mining pockets on",
+      "/mining prospector diamond",
+      "/mining master on"
+    ],
+    "traits": [
+      {
+        "level": 10,
+        "name": "Careful Hands",
+        "description": "10% chance to preserve mining durability; 20% at level 75."
+      },
+      {
+        "level": 20,
+        "name": "Deep Pockets",
+        "description": "Toggle automatic collection. Overflow drops normally."
+      },
+      {
+        "level": 35,
+        "name": "Steady Footing",
+        "description": "Removes the airborne mining penalty; underwater penalties remain."
+      },
+      {
+        "level": 50,
+        "name": "Prospector",
+        "description": "Select an ore in the journal for a quiet directional chime within 12 blocks."
+      },
+      {
+        "level": 60,
+        "name": "Demolition Training",
+        "description": "25% less damage from TNT and TNT minecarts, regardless of owner."
+      },
+      {
+        "level": 75,
+        "name": "Careful Hands II",
+        "description": "20% chance to preserve mining durability."
+      },
+      {
+        "level": 99,
+        "name": "Master Miner",
+        "description": "Enable Master Miner, then sneak-mine up to 12 connected matching natural ores per activation. Normal drops, durability and protection apply."
+      }
+    ]
+  },
+  {
+    "id": "woodcutting",
+    "name": "Woodcutting",
+    "tagline": "Leave a thriving forest.",
+    "description": "Gather timber with purpose. Preserve your tools, replant what you harvest and eventually bring down a whole tree with a practiced swing.",
+    "color": "#cdb18a",
+    "icon": "axe",
+    "training": [
+      "Eligible natural logs and stems harvested with an axe: 8 base XP each.",
+      "Player-grown trees qualify. Placed logs, leaves, stripped logs, decorative wood, bamboo and mushrooms do not award training XP."
+    ],
+    "rules": [
+      "Chopping speed reaches +50%; double-wood chance reaches 25%. Both cap at level 98.",
+      "Replanting uses saplings already in your inventory and requires a recognized, completely harvested tree.",
+      "Canopy Care raises sapling and apple drop chances by 50% relative to their normal chance, not by 50 percentage points.",
+      "Unusual or oversized trees can be ineligible for automatic felling; manual harvesting still works. Nether-fungus replanting is not automated."
+    ],
+    "commands": [
+      "/woodcutting",
+      "/woodcutting replant on",
+      "/woodcutting pouch on",
+      "/woodcutting master on"
+    ],
+    "traits": [
+      {
+        "level": 1,
+        "name": "Chopping Speed",
+        "description": "Up to +50% speed across ordinary levels."
+      },
+      {
+        "level": 10,
+        "name": "Steady Axe",
+        "description": "10% chance to preserve axe durability on eligible logs."
+      },
+      {
+        "level": 20,
+        "name": "Replant",
+        "description": "Toggle automatic replanting from your inventory after a complete tree harvest."
+      },
+      {
+        "level": 35,
+        "name": "Lumber Pouch",
+        "description": "Toggle automatic collection; overflow stays on the ground."
+      },
+      {
+        "level": 50,
+        "name": "Canopy Care",
+        "description": "Harvested trees have 50% higher sapling and apple drop chances. No shears or Silk Touch."
+      },
+      {
+        "level": 60,
+        "name": "Seed Keeper",
+        "description": "Replant has a 25% chance to preserve each required sapling."
+      },
+      {
+        "level": 75,
+        "name": "Steady Axe II",
+        "description": "Durability preservation increases to 20%."
+      },
+      {
+        "level": 99,
+        "name": "Master Lumberjack",
+        "description": "Enable Master Lumberjack, then sneak-chop up to 32 logs of one confirmed tree per activation. Normal durability and protection apply."
+      }
+    ]
+  },
+  {
+    "id": "fishing",
+    "name": "Fishing",
+    "tagline": "Every cast holds a story.",
+    "description": "Find your quiet corner of the world. Spend less time waiting, recover missed opportunities and land a trophy worth remembering.",
+    "color": "#84c6bd",
+    "icon": "fish",
+    "training": [
+      "A successful catch grants 20 base XP, before shared XP boosts.",
+      "Extra fish do not create extra XP. Treasure and trophy upgrades replace an ordinary fish rather than generating an extra catch."
+    ],
+    "rules": [
+      "Ordinary levels reduce base waiting time, reaching 25% at level 98. Lure and vanilla fishing conditions still matter.",
+      "Rare trophies, legendary trophies and treasure upgrades require open water.",
+      "Trophies take priority over treasure and double-fish rolls. Displayed percentages are the shipped configurable defaults.",
+      "Tackle Pouch collects catches directly; full-inventory overflow remains in the world."
+    ],
+    "commands": ["/fishing", "/fishing pouch on"],
+    "traits": [
+      {
+        "level": 1,
+        "name": "Patient Angler",
+        "description": "Up to 25% shorter base waiting time across ordinary levels."
+      },
+      {
+        "level": 10,
+        "name": "Careful Cast",
+        "description": "10% chance to preserve rod durability when landing a catch."
+      },
+      {
+        "level": 20,
+        "name": "Tackle Pouch",
+        "description": "Toggle direct catch collection; inventory overflow stays in the world."
+      },
+      {
+        "level": 35,
+        "name": "Fresh Catch",
+        "description": "10% chance to double an ordinary fish. Treasure and trophies are never doubled."
+      },
+      {
+        "level": 50,
+        "name": "Trophy Angler",
+        "description": "An ordinary open-water fish can become a rare trophy (2% default chance), recording its species, size and catcher."
+      },
+      {
+        "level": 60,
+        "name": "Second Chance",
+        "description": "A missed bite has a 25% chance to return once per cast, marked by a chime."
+      },
+      {
+        "level": 75,
+        "name": "Treasure Hunter",
+        "description": "An ordinary open-water fish has a 2% upgrade roll for vanilla treasure after no trophy was selected."
+      },
+      {
+        "level": 99,
+        "name": "Master Angler",
+        "description": "Open-water ordinary catches gain a 0.5% legendary-trophy chance and a 4% rare-trophy chance. These outcomes replace the fish."
+      }
+    ]
+  }
+]

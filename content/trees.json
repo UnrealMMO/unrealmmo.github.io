@@ -1,0 +1,82 @@
+[
+  {
+    "id": "coal-tree",
+    "name": "Coal Tree",
+    "level": 25,
+    "core": "IRON_BLOCK",
+    "canopy": "COAL_BLOCK",
+    "output": "COAL",
+    "seconds": 60,
+    "color": "#555555"
+  },
+  {
+    "id": "copper-tree",
+    "name": "Copper Tree",
+    "level": 30,
+    "core": "IRON_BLOCK",
+    "canopy": "COPPER_BLOCK",
+    "output": "COPPER_INGOT",
+    "seconds": 90,
+    "color": "#e28b56"
+  },
+  {
+    "id": "iron-tree",
+    "name": "Iron Tree",
+    "level": 40,
+    "core": "DIAMOND_BLOCK",
+    "canopy": "IRON_BLOCK",
+    "output": "IRON_INGOT",
+    "seconds": 180,
+    "color": "#e0d9cc"
+  },
+  {
+    "id": "redstone-tree",
+    "name": "Redstone Tree",
+    "level": 50,
+    "core": "DIAMOND_BLOCK",
+    "canopy": "REDSTONE_BLOCK",
+    "output": "REDSTONE",
+    "seconds": 60,
+    "color": "#e63232"
+  },
+  {
+    "id": "lapis-tree",
+    "name": "Lapis Tree",
+    "level": 60,
+    "core": "DIAMOND_BLOCK",
+    "canopy": "LAPIS_BLOCK",
+    "output": "LAPIS_LAZULI",
+    "seconds": 120,
+    "color": "#335dce"
+  },
+  {
+    "id": "gold-tree",
+    "name": "Gold Tree",
+    "level": 75,
+    "core": "NETHERITE_BLOCK",
+    "canopy": "GOLD_BLOCK",
+    "output": "GOLD_INGOT",
+    "seconds": 300,
+    "color": "#ffd53c"
+  },
+  {
+    "id": "emerald-tree",
+    "name": "Emerald Tree",
+    "level": 90,
+    "core": "BEACON",
+    "canopy": "EMERALD_BLOCK",
+    "output": "EMERALD",
+    "seconds": 600,
+    "color": "#32dc83"
+  },
+  {
+    "id": "diamond-tree",
+    "name": "Diamond Tree",
+    "level": 99,
+    "core": "BEACON",
+    "canopy": "DIAMOND_BLOCK",
+    "output": "DIAMOND",
+    "seconds": 900,
+    "color": "#00bfff"
+  }
+]
