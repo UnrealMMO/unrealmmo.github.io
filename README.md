@@ -19,11 +19,13 @@ npm run verify
 
 This runs numerical/content/geometry checks, a production static export, and a check of internal links, local assets, metadata, image alt attributes and all pre-rendered level rows. Static output is in `out/`. TypeScript is checked during the Next.js production build.
 
-## Publishing is disabled
+## Publishing
 
-GitHub Pages is not enabled. `.github/workflows/verify.yml` only verifies the build with read-only repository permission. It contains no deployment step. No Fly.io or Sites hosting configuration is included.
+The site is published at https://unrealmmo.github.io/. The user authorized publication on 19 October 2026. The repository uses GitHub Actions as its Pages source; the legacy branch/Jekyll publisher is disabled.
 
-When publication is explicitly requested, enable GitHub Pages using GitHub Actions and add the official upload/deploy Pages actions with the appropriate environment approval. Deploy the contents of `out/`. This organization repository uses the root path, so no `basePath` is needed. `trailingSlash: true` produces directory-index routes that survive direct navigation and refresh. Update `config/site.ts` before adding a custom domain.
+`.github/workflows/verify.yml` verifies pull requests and main pushes. Only a successful main push uploads the `out/` export and publishes it through the `github-pages` environment. Deployment permissions are scoped to the deployment job. No custom domain is configured yet.
+
+This organization repository uses the root path, so no `basePath` is needed. `trailingSlash: true` produces directory-index routes that survive direct navigation and refresh. When the user supplies a domain, update `config/site.ts` and the Pages domain settings after configuring DNS.
 
 ## Stack
 

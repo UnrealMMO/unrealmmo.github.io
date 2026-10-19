@@ -103,11 +103,17 @@ test("every structure trait resolves to a guide and identifiers are unique", () 
       if (t.structure) assert.ok(structures.some((s) => s.id === t.structure));
     }
 });
-test("Pages stays disabled: CI verifies only, with no deployment permissions or job", () => {
+test("Pages publishes only verified main pushes, never pull requests", () => {
   const workflow = readFileSync(".github/workflows/verify.yml", "utf8");
-  assert.ok(!workflow.includes("deploy-pages"));
-  assert.ok(!workflow.includes("pages: write"));
-  assert.ok(!workflow.includes("id-token: write"));
+  const deployment = workflow.split("  deploy:\n")[1];
+  assert.ok(
+    deployment.includes(
+      "if: github.event_name == 'push' && github.ref == 'refs/heads/main'",
+    ),
+  );
+  assert.ok(deployment.includes("needs: verify"));
+  assert.ok(workflow.includes("- run: npm run verify"));
+  assert.ok(workflow.includes("path: out"));
 });
 
 test("every displayed XP and passive bonus matches the executed Java plugin rules", () => {

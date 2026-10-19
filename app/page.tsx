@@ -22,6 +22,7 @@ export default function Home() {
         />
         <div className="hero-shade" />
         <div className="hero-content wrap">
+          <div className="hero-fog" aria-hidden="true" />
           <p className="hero-kicker">
             <span /> A new world is taking root
           </p>

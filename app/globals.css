@@ -2050,6 +2050,14 @@ tbody tr:nth-child(even) {
     height: 230px;
   }
 }
+@media (max-width: 380px) {
+  .skill-grid {
+    grid-template-columns: 1fr;
+  }
+  .skill-card {
+    min-height: 220px;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -2067,7 +2075,7 @@ tbody tr:nth-child(even) {
 .hero-content::before {
   content: "";
   position: absolute;
-  z-index: -1;
+  z-index: -2;
   inset: 7% -8% -9%;
   pointer-events: none;
   background: radial-gradient(
@@ -2078,6 +2086,52 @@ tbody tr:nth-child(even) {
     rgba(11, 33, 24, 0) 76%
   );
   filter: blur(16px);
+  opacity: 0.5;
+}
+.hero-fog {
+  position: absolute;
+  z-index: -1;
+  inset: 8% -18% -16%;
+  pointer-events: none;
+  overflow: hidden;
+  mask-image: radial-gradient(ellipse at 50% 58%, #000 24%, transparent 73%);
+}
+.hero-fog::before,
+.hero-fog::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(ellipse at 25% 57%, #c1d2bb26 0%, transparent 37%),
+    radial-gradient(ellipse at 73% 66%, #a7c1b329 0%, transparent 34%),
+    radial-gradient(ellipse at 48% 40%, #d1dbc619 0%, transparent 29%);
+  filter: blur(22px);
+  animation: hero-fog-drift 32s ease-in-out infinite alternate;
+}
+.hero-fog::after {
+  background:
+    radial-gradient(ellipse at 32% 72%, #d1dbc621 0%, transparent 32%),
+    radial-gradient(ellipse at 68% 42%, #a7c1b329 0%, transparent 36%);
+  animation-duration: 43s;
+  animation-delay: -17s;
+  animation-direction: alternate-reverse;
+}
+@keyframes hero-fog-drift {
+  from {
+    transform: translate3d(-8%, 3%, 0) scale(1);
+    opacity: 0.55;
+  }
+  to {
+    transform: translate3d(8%, -3%, 0) scale(1.08);
+    opacity: 0.9;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-fog::before,
+  .hero-fog::after {
+    animation: none;
+    opacity: 0.55;
+  }
 }
 .hero h2 {
   color: #fff9e7;
