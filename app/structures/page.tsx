@@ -12,7 +12,6 @@ export default function Structures() {
   return (
     <div className="parchment page-body">
       <PageIntro
-        label="The builder’s field guide"
         title="Extraordinary things. Built block by block."
         description="Every great creation starts with a few well-placed blocks. Explore the recipes, turn them around in 3D and bring them to life in your world."
       />
@@ -51,7 +50,6 @@ export default function Structures() {
         <Link href="/structures/hearthstone/" className="hearth-card">
           <StructurePreview structure={structures[8]} />
           <div>
-            <p className="eyebrow">Home begins here</p>
             <h2>The Hearthstone</h2>
             <p>
               Five blocks. One protected home. See how to build the pedestal,

@@ -129,21 +129,6 @@ p + p {
     radial-gradient(ellipse at 90% 0%, #29463866, transparent 65%),
     var(--forest);
 }
-.eyebrow {
-  display: flex;
-  align-items: center;
-  color: #7b6d47;
-  text-transform: uppercase;
-  font-size: 0.69rem;
-  font-weight: 600;
-  letter-spacing: 0.21em;
-  margin-bottom: 23px;
-}
-.forest .eyebrow,
-.orchard .eyebrow,
-.closing .eyebrow {
-  color: var(--gold);
-}
 .button {
   display: inline-flex;
   justify-content: center;
@@ -363,15 +348,6 @@ p + p {
   margin-top: 18px;
   text-shadow: 0 2px 30px #07170ed9;
 }
-.hero-kicker {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.67rem;
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-  color: #fff3cf;
-}
 .hero-logo {
   display: flex;
   align-items: baseline;
@@ -405,7 +381,7 @@ p + p {
 .hero h2 em {
   color: #e1d4ae;
 }
-.hero-content > p:not(.hero-kicker) {
+.hero-content > p {
   margin: 22px auto 30px;
   font-size: 1rem;
   line-height: 1.8;
@@ -557,7 +533,7 @@ p + p {
   gap: 90px;
   align-items: center;
 }
-.spotlight-copy > p:not(.eyebrow) {
+.spotlight-copy > p {
   color: #56685b;
   font-size: 0.94rem;
   margin-top: 25px;
@@ -627,7 +603,7 @@ p + p {
 .orchard {
   background: radial-gradient(ellipse at 70% 50%, #315442, #142e24 55%);
 }
-.orchard .spotlight-copy > p:not(.eyebrow) {
+.orchard .spotlight-copy > p {
   color: #bfcbb5;
 }
 .tree-showcase {
@@ -689,7 +665,7 @@ p + p {
   height: 280px;
   width: 100%;
 }
-.home-callout p:not(.eyebrow) {
+.home-callout p {
   max-width: 470px;
   margin-top: 22px;
   color: #58695c;
@@ -702,16 +678,13 @@ p + p {
     linear-gradient(#0e251fdd, #0c211bf0),
     url("/art/unreal-valley.webp") center 70% / cover;
 }
-.closing .eyebrow {
-  justify-content: center;
-}
 .closing h2 {
   font-size: clamp(2rem, 3.7vw, 3.5rem);
 }
 .closing h2 em {
   color: #c1d1a3;
 }
-.closing p:not(.eyebrow) {
+.closing p {
   margin: 25px 0 30px;
   color: #bdc8b4;
   font-size: 0.9rem;
@@ -801,9 +774,6 @@ p + p {
   font-size: 0.6rem;
   color: #c4ceb58c;
 }
-.skill-index-card .eyebrow {
-  margin-bottom: 12px;
-}
 .skill-index-card h2 {
   font-size: 2rem;
   margin-bottom: 14px;
@@ -857,7 +827,7 @@ code {
   margin-top: 17px;
   color: #647751;
 }
-.skill-hero p:not(.eyebrow) {
+.skill-hero p {
   max-width: 640px;
   margin-top: 23px;
   color: var(--muted);
@@ -925,9 +895,6 @@ code {
 .command-panel h3 {
   margin: 0 0 15px;
   font-size: 1.6rem;
-}
-.command-panel .eyebrow {
-  margin-bottom: 16px;
 }
 .command-panel code {
   display: table;
@@ -1283,7 +1250,7 @@ tbody tr:nth-child(even) {
 .hearth-card h2 {
   font-size: 2rem;
 }
-.hearth-card p:not(.eyebrow) {
+.hearth-card p {
   font-size: 0.87rem;
   color: #596d55;
   margin-top: 17px;
@@ -1291,7 +1258,7 @@ tbody tr:nth-child(even) {
 .structure-intro h1 {
   margin: 5px 0 22px;
 }
-.structure-intro > p:not(.eyebrow) {
+.structure-intro > p {
   color: var(--muted);
   max-width: 650px;
 }
@@ -1674,14 +1641,10 @@ tbody tr:nth-child(even) {
     margin-top: 38px;
     gap: 7px;
   }
-  .hero-kicker {
-    font-size: 0.55rem;
-    letter-spacing: 0.18em;
-  }
   .hero h2 {
     font-size: 1.8rem;
   }
-  .hero-content > p:not(.hero-kicker) {
+  .hero-content > p {
     font-size: 0.88rem;
     max-width: 320px;
   }
@@ -1845,12 +1808,8 @@ tbody tr:nth-child(even) {
   .skill-hero h2 {
     font-size: 1.05rem;
   }
-  .skill-hero p:not(.eyebrow) {
+  .skill-hero p {
     font-size: 0.87rem;
-  }
-  .skill-hero .eyebrow {
-    font-size: 0.57rem;
-    letter-spacing: 0.1em;
   }
   .anchor-nav {
     gap: 22px;
@@ -1961,7 +1920,7 @@ tbody tr:nth-child(even) {
   .structure-intro h1 {
     font-size: 2.65rem;
   }
-  .structure-intro > p:not(.eyebrow) {
+  .structure-intro > p {
     font-size: 0.9rem;
   }
   .structure-facts {
@@ -2118,7 +2077,7 @@ tbody tr:nth-child(even) {
 .hero h2 em {
   color: #f4e5bb;
 }
-.hero-content > p:not(.hero-kicker) {
+.hero-content > p {
   color: #fffaf0;
   font-weight: 500;
   text-shadow:

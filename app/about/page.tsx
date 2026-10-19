@@ -4,7 +4,6 @@ export default function About() {
   return (
     <div className="parchment page-body">
       <PageIntro
-        label="An adventure in the making"
         title="Built with purpose."
         description="UnrealMMO is an upcoming Minecraft MMORPG, expanding survival multiplayer through meaningful skills and structures."
       />

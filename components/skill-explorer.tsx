@@ -27,7 +27,6 @@ export function SkillExplorer({ skill }: { skill: Skill }) {
     <section className="progression" id="progression">
       <div className="progression-title">
         <div>
-          <p className="eyebrow">Every step matters</p>
           <h2>Your path to 99</h2>
         </div>
         <span className="small-note">

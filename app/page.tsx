@@ -6,7 +6,7 @@ import {
   Layers,
   Sparkles,
 } from "lucide-react";
-import { ButtonLink, Eyebrow, Icon } from "@/components/ui";
+import { ButtonLink, Icon } from "@/components/ui";
 import { Reveal } from "@/components/reveal";
 import { StructurePreview } from "@/components/structure-preview";
 import { skills, structures } from "@/content/game";
@@ -23,7 +23,6 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="hero-content wrap">
           <div className="hero-fog" aria-hidden="true" />
-          <p className="hero-kicker">A new world is taking root</p>
           <h1 className="hero-logo">
             UNREAL<span>MMO</span>
           </h1>
@@ -69,7 +68,6 @@ export default function Home() {
       <section className="section parchment" id="discover">
         <Reveal className="wrap intro-split">
           <div>
-            <Eyebrow>Beyond ordinary survival</Eyebrow>
             <h2>
               Your next chapter
               <br />
@@ -97,7 +95,6 @@ export default function Home() {
         <div className="wrap">
           <Reveal className="section-heading">
             <div>
-              <Eyebrow>Find your calling</Eyebrow>
               <h2>
                 Small beginnings.
                 <br />
@@ -148,7 +145,6 @@ export default function Home() {
             <span className="scene-note">Concealment improves as you grow</span>
           </Reveal>
           <Reveal className="spotlight-copy">
-            <Eyebrow>More than a quiet footstep</Eyebrow>
             <h2>
               Some legends
               <br />
@@ -170,7 +166,6 @@ export default function Home() {
       <section className="section orchard">
         <div className="wrap spotlight reverse">
           <Reveal className="spotlight-copy">
-            <Eyebrow>Farming, reimagined</Eyebrow>
             <h2>
               What if your garden
               <br />
@@ -206,7 +201,6 @@ export default function Home() {
             <StructurePreview structure={structures[8]} />
           </div>
           <div>
-            <Eyebrow>Put down roots</Eyebrow>
             <h2>
               Adventure out.
               <br />
@@ -225,7 +219,6 @@ export default function Home() {
       </section>
       <section className="closing">
         <div className="wrap">
-          <Eyebrow>An adventure in the making</Eyebrow>
           <h2>
             The world is familiar.
             <br />

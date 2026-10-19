@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { skills, traitsFor } from "@/content/game";
-import { Icon, Eyebrow } from "@/components/ui";
+import { Icon } from "@/components/ui";
 import { SkillExplorer } from "@/components/skill-explorer";
 export function generateStaticParams() {
   return skills.map((s) => ({ slug: s.id }));
@@ -34,7 +34,6 @@ export default async function SkillPage({
         </Link>
         <div>
           <div>
-            <Eyebrow>The {s.name.toLowerCase()} path · Levels 1–99</Eyebrow>
             <h1>{s.name}</h1>
             <h2>{s.tagline}</h2>
             <p>{s.description}</p>
@@ -53,7 +52,6 @@ export default async function SkillPage({
       <div className="wrap">
         <section className="guide-split" id="training">
           <div>
-            <Eyebrow>Learning by doing</Eyebrow>
             <h2>How to train</h2>
             <ul className="guide-list">
               {s.training.map((t) => (
@@ -62,7 +60,6 @@ export default async function SkillPage({
             </ul>
           </div>
           <aside className="command-panel">
-            <p className="eyebrow">Your in-game toolkit</p>
             <h3>Make it yours</h3>
             <p>
               {s.id === "sneak"
@@ -75,7 +72,6 @@ export default async function SkillPage({
           </aside>
         </section>
         <section className="trait-section" id="traits">
-          <Eyebrow>Milestones worth reaching</Eyebrow>
           <h2>New ways to play</h2>
           <div className="trait-grid">
             {traitsFor(s)
@@ -96,7 +92,6 @@ export default async function SkillPage({
         </section>
         <SkillExplorer key={s.id} skill={s} />
         <section id="rules" className="rules-panel">
-          <Eyebrow>The finer details</Eyebrow>
           <h2>Know before you go</h2>
           <ul className="guide-list">
             {s.rules.map((r) => (

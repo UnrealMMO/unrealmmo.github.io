@@ -11,7 +11,6 @@ export default function Skills() {
   return (
     <div className="parchment page-body">
       <PageIntro
-        label="The adventurer’s handbook"
         title="Choose your path. Grow your possibilities."
         description="Five skills, trained through the way you play. Discover their defining abilities, then follow every step from level 1 to mastery."
       />
@@ -28,7 +27,6 @@ export default function Skills() {
               <span>0{i + 1}</span>
             </div>
             <div>
-              <span className="eyebrow">LEVELS 1–99</span>
               <h2>{s.name}</h2>
               <p>{s.description}</p>
               <span className="skill-teasers">

@@ -38,21 +38,15 @@ export function ButtonLink({
     </Link>
   );
 }
-export function Eyebrow({ children }: { children: React.ReactNode }) {
-  return <p className="eyebrow">{children}</p>;
-}
 export function PageIntro({
-  label,
   title,
   description,
 }: {
-  label: string;
   title: string;
   description: string;
 }) {
   return (
     <header className="page-intro wrap">
-      <Eyebrow>{label}</Eyebrow>
       <h1>{title}</h1>
       <p>{description}</p>
     </header>

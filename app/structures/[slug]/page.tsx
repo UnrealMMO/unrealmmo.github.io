@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { structures, title } from "@/content/game";
-import { Eyebrow } from "@/components/ui";
 import { StructureViewer } from "@/components/structure-viewer";
 export function generateStaticParams() {
   return structures.map((s) => ({ slug: s.id }));
@@ -29,11 +28,6 @@ export default async function StructurePage({
         <Link className="breadcrumb" href="/structures/">
           ← All structures
         </Link>
-        <Eyebrow>
-          {s.kind === "tree"
-            ? `The ore orchard · Farming level ${s.level}`
-            : "Your first territory"}
-        </Eyebrow>
         <h1>{s.name}</h1>
         <p>{s.description}</p>
         <div className="structure-facts">
@@ -58,7 +52,6 @@ export default async function StructurePage({
           <>
             <section className="guide-split rules-panel">
               <div>
-                <Eyebrow>Bring it to life</Eyebrow>
                 <h2>Build. Tend. Collect.</h2>
                 <ol className="guide-list">
                   <li>
@@ -138,7 +131,6 @@ export default async function StructurePage({
           <>
             <section className="guide-split rules-panel">
               <div>
-                <Eyebrow>Make it home</Eyebrow>
                 <h2>Preview, then claim.</h2>
                 <ol className="guide-list">
                   <li>
