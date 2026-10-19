@@ -37,11 +37,10 @@ export default function Home() {
             <br className="desktop-break" /> Discover a new way to grow, build
             and belong.
           </p>
-          <div className="actions">
-            <ButtonLink href="/skills/">Discover your path</ButtonLink>
-            <ButtonLink href="/structures/" secondary>
-              Explore structures
-            </ButtonLink>
+          <div className="server-sign" aria-label="Minecraft server address">
+            <div className="server-sign-face">
+              <span>mc.unrealmmo.com</span>
+            </div>
           </div>
         </div>
         <div className="hero-bottom wrap">
