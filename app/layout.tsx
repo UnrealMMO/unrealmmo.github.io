@@ -3,6 +3,7 @@ import { site } from "@/config/site";
 import Link from "next/link";
 import "@fontsource/cinzel/600.css";
 import "@fontsource/cinzel/700.css";
+import "@fontsource/almendra/latin-700.css";
 import "@fontsource/figtree/400.css";
 import "@fontsource/figtree/500.css";
 import "@fontsource/figtree/600.css";

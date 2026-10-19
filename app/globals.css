@@ -2105,14 +2105,16 @@ tbody tr:nth-child(even) {
   top: 50%;
   width: 72%;
   transform: translateY(-50%);
-  font-family: var(--font-display);
-  font-size: clamp(0.85rem, 4.3vw, 1.7rem);
-  font-weight: 600;
-  letter-spacing: 0.055em;
+  font-family: "Almendra", Georgia, serif;
+  font-size: clamp(1.15rem, 5.8vw, 2.45rem);
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  line-height: 1.2;
   color: #eed79e;
   text-shadow:
-    0 2px 2px #010b06,
-    0 -1px 0 #fff0bf40;
+    0 2px 1px #010b06,
+    0 -1px 0 #fff0bf55,
+    0 0 14px #d6b46a25;
   white-space: nowrap;
   user-select: all;
 }

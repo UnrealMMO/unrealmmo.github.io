@@ -5,7 +5,7 @@
 - `public/brand/emblem.svg`: original geometric UnrealMMO mark created for this site.
 - Isometric structure diagrams: generated from public gameplay block-coordinate definitions, using original SVG geometry.
 - 3D blocks: original flat material colors and outlines. No Minecraft texture pack or Dragonwilds assets are distributed.
-- Cinzel and Figtree: self-hosted via Fontsource, SIL Open Font License. License text is included in `public/licenses/`.
+- Cinzel, Figtree and Almendra: self-hosted via Fontsource, SIL Open Font License. License text is included in `public/licenses/`.
 - Lucide icons: ISC license, included in `public/licenses/`. Application dependency licenses remain with their packages and lockfile references.
 
 Dead Reckoning supplied the technology and UI reference. The Dragonwilds website informed the forest/fantasy visual direction. Their logos, artwork, fonts, tracking identifiers, server details and page copy were not copied.

@@ -1,6 +1,6 @@
 # Server placard artwork
 
-Generated with the built-in image-generation tool on 19 October 2026. The transparent original is retained in the local generation library. The production asset is `public/art/server-placard-v2.webp`, encoded at 1400 pixels wide with its alpha channel preserved. Lettering is rendered as selectable HTML text, not baked into the art.
+Generated with the built-in image-generation tool on 19 October 2026. The transparent original is retained in the local generation library. The production asset is `public/art/server-placard-v2.webp`, encoded at 1400 pixels wide with its alpha channel preserved. Lettering is rendered as selectable lowercase HTML text in the self-hosted Almendra bold typeface, with a gold-inlay finish, not baked into the art. Almendra uses the SIL Open Font License; a copy is included in `public/licenses/Almendra-OFL.txt`.
 
 ## Final generation prompt
 
