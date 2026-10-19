@@ -23,17 +23,11 @@ export default function Home() {
         <div className="hero-shade" />
         <div className="hero-content wrap">
           <div className="hero-fog" aria-hidden="true" />
-          <p className="hero-kicker">
-            <span /> A new world is taking root
-          </p>
+          <p className="hero-kicker">A new world is taking root</p>
           <h1 className="hero-logo">
             UNREAL<span>MMO</span>
           </h1>
-          <div className="hero-rule">
-            <i />
-            <span>◆</span>
-            <i />
-          </div>
+          <div className="hero-rule" aria-hidden="true" />
           <h2>
             A familiar world.
             <br />

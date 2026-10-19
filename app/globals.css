@@ -132,17 +132,12 @@ p + p {
 .eyebrow {
   display: flex;
   align-items: center;
-  gap: 11px;
   color: #7b6d47;
   text-transform: uppercase;
   font-size: 0.69rem;
   font-weight: 600;
   letter-spacing: 0.21em;
   margin-bottom: 23px;
-}
-.eyebrow > span {
-  font-size: 0.6rem;
-  color: #b59758;
 }
 .forest .eyebrow,
 .orchard .eyebrow,
@@ -372,18 +367,10 @@ p + p {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 11px;
   font-size: 0.67rem;
   text-transform: uppercase;
   letter-spacing: 0.25em;
   color: #fff3cf;
-}
-.hero-kicker span {
-  height: 6px;
-  width: 6px;
-  border-radius: 50%;
-  background: #d5e8a7;
-  box-shadow: 0 0 15px #b8eab3;
 }
 .hero-logo {
   display: flex;
@@ -405,21 +392,10 @@ p + p {
   color: #e7cd90;
 }
 .hero-rule {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 17px;
-  color: #e5ce94;
+  height: 16px;
   margin: 15px 0 28px;
-  font-size: 0.6rem;
-}
-.hero-rule i {
-  width: 90px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #e5ce94);
-}
-.hero-rule i:last-child {
-  transform: rotate(180deg);
+  background: linear-gradient(90deg, transparent, #e5ce94, transparent) center /
+    216px 1px no-repeat;
 }
 .hero h2 {
   font-size: clamp(1.8rem, 3vw, 2.7rem);
