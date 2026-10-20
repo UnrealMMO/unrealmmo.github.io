@@ -39,7 +39,7 @@ export default async function SkillPage({
             <p>{s.description}</p>
           </div>
           <div className="skill-seal">
-            <Icon name={s.icon} size={90} strokeWidth={0.8} />
+            <Icon name={s.icon} size={128} />
           </div>
         </div>
         <nav className="anchor-nav" aria-label="On this skill page">

@@ -23,7 +23,7 @@ export default function Skills() {
             style={{ "--accent": s.color } as React.CSSProperties}
           >
             <div className="skill-index-icon">
-              <Icon name={s.icon} size={62} strokeWidth={1} />
+              <Icon name={s.icon} size={112} />
               <span>0{i + 1}</span>
             </div>
             <div>

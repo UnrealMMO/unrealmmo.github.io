@@ -1764,7 +1764,8 @@ tbody tr:nth-child(even) {
     height: 100px;
   }
   .skill-index-icon > svg {
-    width: 44px;
+    width: 62px;
+    height: 62px;
   }
   .skill-index-card h2 {
     font-size: 1.5rem;
@@ -1787,7 +1788,8 @@ tbody tr:nth-child(even) {
     height: 100px;
   }
   .skill-seal svg {
-    width: 48px;
+    width: 64px;
+    height: 64px;
   }
   .skill-hero h1 {
     font-size: 3rem;

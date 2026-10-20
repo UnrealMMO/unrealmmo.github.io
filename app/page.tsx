@@ -102,7 +102,7 @@ export default function Home() {
                 style={{ "--accent": s.color } as React.CSSProperties}
               >
                 <span className="card-number">0{i + 1}</span>
-                <Icon name={s.icon} size={40} strokeWidth={1} />
+                <Icon name={s.icon} size={76} />
                 <h3>{s.name}</h3>
                 <p>{s.tagline}</p>
                 <span className="card-bottom">

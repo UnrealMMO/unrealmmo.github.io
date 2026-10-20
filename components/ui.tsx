@@ -1,27 +1,6 @@
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  Eye,
-  Sprout,
-  Pickaxe,
-  Axe,
-  Fish,
-  Compass,
-  type LucideProps,
-} from "lucide-react";
-export function Icon({ name, ...props }: LucideProps & { name: string }) {
-  const I =
-    (
-      {
-        eye: Eye,
-        sprout: Sprout,
-        pickaxe: Pickaxe,
-        axe: Axe,
-        fish: Fish,
-      } as const
-    )[name as "eye"] || Compass;
-  return <I {...props} />;
-}
+import { ArrowUpRight } from "lucide-react";
+export { SkillIcon as Icon } from "./skill-icon";
 export function ButtonLink({
   href,
   children,
