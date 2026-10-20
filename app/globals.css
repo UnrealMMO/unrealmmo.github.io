@@ -610,16 +610,13 @@ p + p {
   position: absolute;
   inset: 0;
   overflow: hidden;
-  mask-image:
-    linear-gradient(to right, transparent, black 16%, black 84%, transparent),
-    linear-gradient(to bottom, transparent, black 17%, black 78%, transparent);
-  mask-composite: intersect;
 }
 .diamond-tree-picture img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: 54% center;
+  object-fit: contain;
+  padding: 12px 22px 0;
+  mask-image: linear-gradient(to bottom, black 88%, transparent 100%);
 }
 .diamond-tree-magic {
   position: absolute;
@@ -651,7 +648,8 @@ p + p {
   filter: drop-shadow(0 0 5px #7cebdc66);
   animation: diamond-fall var(--duration) linear var(--delay) infinite;
 }
-.tree-diamond svg {
+.tree-diamond img {
+  image-rendering: pixelated;
   width: 100%;
   height: 100%;
 }
