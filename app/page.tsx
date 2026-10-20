@@ -1,6 +1,5 @@
 import Link from "next/link";
 import {
-  ArrowDown,
   ArrowUpRight,
   Shield,
   Layers,
@@ -42,10 +41,6 @@ export default function Home() {
         </div>
         <div className="hero-bottom wrap">
           <span>MINECRAFT JAVA · IN DEVELOPMENT</span>
-          <a href="#discover">
-            Venture further <ArrowDown size={15} />
-          </a>
-          <span className="concept-label">Original concept artwork</span>
         </div>
       </section>
       <div className="feature-ribbon">
