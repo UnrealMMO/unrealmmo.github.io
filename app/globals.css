@@ -2090,7 +2090,25 @@ tbody tr:nth-child(even) {
   position: relative;
   width: min(560px, 100%);
   margin: 16px auto 0;
+}
+.server-sign-button {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
   filter: drop-shadow(0 7px 8px #04130cb3);
+  transition: filter 180ms ease;
+}
+.server-sign-button:hover,
+.server-sign-button[data-copied="true"] {
+  filter: drop-shadow(0 7px 8px #04130cb3) drop-shadow(0 0 7px #d1ae5745);
+}
+.server-sign-button:focus-visible {
+  outline: 2px solid #eed79e;
+  outline-offset: -10px;
+  border-radius: 12px;
 }
 .server-sign img {
   display: block;
@@ -2099,7 +2117,7 @@ tbody tr:nth-child(even) {
   pointer-events: none;
   user-select: none;
 }
-.server-sign > span {
+.server-sign-button > span {
   position: absolute;
   left: 14%;
   top: 50%;
@@ -2116,7 +2134,25 @@ tbody tr:nth-child(even) {
     0 -1px 0 #fff0bf55,
     0 0 14px #d6b46a25;
   white-space: nowrap;
+  user-select: none;
+}
+.server-sign-button[data-copy-failed="true"] > span {
   user-select: all;
+}
+.server-version {
+  margin-top: -12px;
+  color: #e7dfc9;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-shadow: 0 1px 4px #071a13;
+}
+.server-copy-feedback {
+  min-height: 1.6em;
+  margin: 5px 0 0;
+  color: #eed79e;
+  font-family: "Almendra", Georgia, serif;
+  font-size: 1rem;
+  text-shadow: 0 1px 4px #071a13;
 }
 @media (max-width: 760px) {
   .hero-content::before {

@@ -9,6 +9,7 @@ import {
 import { ButtonLink, Icon } from "@/components/ui";
 import { Reveal } from "@/components/reveal";
 import { StructurePreview } from "@/components/structure-preview";
+import { ServerSign } from "@/components/server-sign";
 import { skills, structures } from "@/content/game";
 export default function Home() {
   return (
@@ -37,16 +38,7 @@ export default function Home() {
             <br className="desktop-break" /> Discover a new way to grow, build
             and belong.
           </p>
-          <div className="server-sign" aria-label="Minecraft server address">
-            <img
-              src="/art/server-placard-v2.webp"
-              alt=""
-              width="1400"
-              height="467"
-              draggable="false"
-            />
-            <span>mc.unrealmmo.com</span>
-          </div>
+          <ServerSign />
         </div>
         <div className="hero-bottom wrap">
           <span>MINECRAFT JAVA · IN DEVELOPMENT</span>
