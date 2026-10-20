@@ -643,8 +643,10 @@ p + p {
 }
 .tree-diamond {
   position: absolute;
-  width: clamp(16px, 3.7vw, 25px);
-  height: 28px;
+  --gem-size: clamp(24px, 5.55vw, 37.5px);
+  width: var(--gem-size);
+  height: var(--gem-size);
+  top: var(--start);
   filter: drop-shadow(0 0 5px #7cebdc66);
   animation: diamond-fall var(--duration) linear var(--delay) infinite;
 }
@@ -668,25 +670,36 @@ p + p {
     transform: scale(0.6) rotate(45deg);
   }
 }
+/* Accelerate from the canopy, land at a responsive ground line, then fade in place. */
 @keyframes diamond-fall {
   0% {
     opacity: 0;
-    transform: translate(0, 0) rotate(-12deg);
+    top: var(--start);
+    transform: translateX(-50%) rotate(-8deg);
+    animation-timing-function: ease-out;
   }
-  12% {
+  8% {
     opacity: 1;
+    top: var(--start);
+    transform: translateX(-50%) rotate(-8deg);
+    animation-timing-function: cubic-bezier(0.45, 0, 1, 1);
   }
-  72% {
-    opacity: 0.9;
+  66% {
+    opacity: 1;
+    top: calc(var(--ground) - var(--gem-size));
+    transform: translateX(calc(-50% + var(--drift))) rotate(12deg);
   }
+  76% {
+    opacity: 0.85;
+    top: calc(var(--ground) - var(--gem-size));
+    transform: translateX(calc(-50% + var(--drift))) rotate(12deg);
+  }
+  92%,
   100% {
     opacity: 0;
-    transform: translate(var(--drift), 200px) rotate(40deg);
+    top: calc(var(--ground) - var(--gem-size));
+    transform: translateX(calc(-50% + var(--drift))) rotate(12deg);
   }
-}
-.diamond-tree-scene[data-paused="true"] .tree-sparkle,
-.diamond-tree-scene[data-paused="true"] .tree-diamond {
-  animation-play-state: paused;
 }
 @media (prefers-reduced-motion: reduce) {
   .diamond-tree-magic {
