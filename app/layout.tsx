@@ -20,7 +20,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: "UnrealMMO — A new chapter in Minecraft",
     description: "A familiar world. An extraordinary journey.",
-    images: [{ url: "/art/unreal-valley.webp", width: 1672, height: 941 }],
+    images: [
+      { url: "/art/unreal-valley-v2-1920.webp", width: 1920, height: 1081 },
+    ],
   },
   twitter: { card: "summary_large_image" },
 };

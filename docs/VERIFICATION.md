@@ -30,3 +30,9 @@ No Minecraft plugin, game data, server configuration or game-server deployment w
 The repository contains website source, public gameplay facts, original artwork and numeric test fixtures. No private plugin source, player data, game worlds, credentials, raw server logs or reference-site tracking configuration is included.
 
 The user subsequently authorized GitHub Pages publication. The workflow verifies before publishing the static export on main pushes; pull requests cannot deploy. Legacy branch publishing was disabled, and the custom domain remains unset.
+
+## Full-screen hero — 20 October 2026
+
+The hero now has a full-viewport minimum height without the former 95svh height or 1100px maximum, and reserves vertical space for its navigation and bottom status line. Mobile uses the same full-viewport floor with smaller padding. The half-strength shade and animated fog remain in place.
+
+Browser measurements at 1440 × 900, 1920 × 1080, 2560 × 1440 and 390 × 844 confirmed the feature ribbon starts at or below the viewport bottom, with no document horizontal overflow. The large desktop selected the 3840px asset. The new artwork is an enhanced, upscaled source; see ASSETS.md for its native-resolution limitation.

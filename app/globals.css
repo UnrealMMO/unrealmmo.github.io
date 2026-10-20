@@ -311,9 +311,8 @@ p + p {
 }
 .hero {
   position: relative;
-  min-height: 820px;
-  height: 95svh;
-  max-height: 1100px;
+  min-height: max(900px, 100svh);
+  padding-block: 124px 100px;
   display: flex;
   align-items: center;
   isolation: isolate;
@@ -1632,7 +1631,7 @@ tbody tr:nth-child(even) {
 }
 @media (min-width: 1600px) {
   .hero {
-    min-height: 900px;
+    min-height: max(960px, 100svh);
   }
 }
 @media (max-width: 1050px) {
@@ -1704,9 +1703,8 @@ tbody tr:nth-child(even) {
     display: flex;
   }
   .hero {
-    min-height: 750px;
-    height: 94svh;
-    max-height: 950px;
+    min-height: max(800px, 100svh);
+    padding-block: 104px 90px;
   }
   .hero-art {
     object-position: 55% center;
