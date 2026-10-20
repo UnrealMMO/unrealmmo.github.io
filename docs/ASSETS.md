@@ -1,6 +1,7 @@
 # Asset provenance
 
-- `public/art/unreal-valley.webp`: original UnrealMMO concept artwork generated with the built-in image-generation tool on 19 October 2026, then encoded as WebP for delivery. It is explicitly labeled concept artwork, not a server screenshot. Original PNG retained in the author's local generation library.
+- `public/art/unreal-valley.webp`: original UnrealMMO concept artwork generated with the built-in image-generation tool on 19 October 2026, then encoded as WebP for delivery. Original PNG retained in the author's local generation library.
+- `public/art/sneak-vanish.gif`: original illustrated sneak/invisibility concept loop, generated with the built-in image-generation tool and assembled with FFmpeg. The character is crouched with an iron sword in a wooded Minecraft-style setting. It holds for one second, fades away over 0.75 seconds, holds the empty woods until 3.4 seconds, then reappears to repeat at four seconds. `sneak-visible.webp` supplies the reduced-motion/paused still; `sneak-woods.webp` is the matching empty background plate. These are illustrative art, not captured gameplay. No game textures or skins are distributed.
 - `public/art/server-placard-v2.webp`: original transparent gold-and-emerald frame generated with the built-in image-generation tool; [full prompt and production notes](SERVER-SIGN-ART.md). The server address remains live HTML text.
 - `public/brand/emblem.svg`: original geometric UnrealMMO mark created for this site.
 - Isometric structure diagrams: generated from public gameplay block-coordinate definitions, using original SVG geometry.

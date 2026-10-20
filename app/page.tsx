@@ -1,14 +1,10 @@
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  Shield,
-  Layers,
-  Sparkles,
-} from "lucide-react";
+import { ArrowUpRight, Shield, Layers, Sparkles } from "lucide-react";
 import { ButtonLink, Icon } from "@/components/ui";
 import { Reveal } from "@/components/reveal";
 import { StructurePreview } from "@/components/structure-preview";
 import { ServerSign } from "@/components/server-sign";
+import { SneakScene } from "@/components/sneak-scene";
 import { skills, structures } from "@/content/game";
 export default function Home() {
   return (
@@ -125,15 +121,8 @@ export default function Home() {
       </section>
       <section className="section parchment">
         <div className="wrap spotlight">
-          <Reveal className="stealth-scene">
-            <img src="/art/unreal-valley.webp" alt="" loading="lazy" />
-            <div className="stealth-ring ring-one" />
-            <div className="stealth-ring ring-two" />
-            <div className="stealth-figure">
-              <Icon name="eye" size={62} strokeWidth={1} />
-            </div>
-            <span className="scene-label">SNEAK · THE UNSEEN PATH</span>
-            <span className="scene-note">Concealment improves as you grow</span>
+          <Reveal>
+            <SneakScene />
           </Reveal>
           <Reveal className="spotlight-copy">
             <h2>
