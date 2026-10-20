@@ -598,25 +598,102 @@ p + p {
   text-align: center;
   isolation: isolate;
 }
-.tree-showcase .structure-preview {
+/* The homepage uses the player's screenshot; structure guides retain their models. */
+.diamond-tree-scene {
+  position: relative;
   width: 100%;
-  height: 360px;
-  filter: drop-shadow(0 15px 30px #07140b60);
+  aspect-ratio: 1.05;
+  margin: 0 0 22px;
+  isolation: isolate;
 }
-.orbital {
+.diamond-tree-picture {
   position: absolute;
-  inset: 5% 10% 25%;
-  z-index: -1;
-  border: 1px solid #bbc59233;
-  border-radius: 50%;
-  background: radial-gradient(#dce3aa12, transparent 70%);
+  inset: 0;
+  overflow: hidden;
+  mask-image:
+    linear-gradient(to right, transparent, black 16%, black 84%, transparent),
+    linear-gradient(to bottom, transparent, black 17%, black 78%, transparent);
+  mask-composite: intersect;
 }
-.orbital:after {
-  content: "";
+.diamond-tree-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 54% center;
+}
+.diamond-tree-magic {
   position: absolute;
-  inset: 15px;
-  border: 1px dashed #bbc59222;
-  border-radius: 50%;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.tree-sparkle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #e3fff5;
+  clip-path: polygon(
+    50% 0,
+    61% 39%,
+    100% 50%,
+    61% 61%,
+    50% 100%,
+    39% 61%,
+    0 50%,
+    39% 39%
+  );
+  animation: tree-twinkle var(--duration) ease-in-out var(--delay) infinite;
+}
+.tree-diamond {
+  position: absolute;
+  width: clamp(16px, 3.7vw, 25px);
+  height: 28px;
+  filter: drop-shadow(0 0 5px #7cebdc66);
+  animation: diamond-fall var(--duration) linear var(--delay) infinite;
+}
+.tree-diamond svg {
+  width: 100%;
+  height: 100%;
+}
+@keyframes tree-twinkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scale(0.3) rotate(0deg);
+  }
+  45% {
+    opacity: 0.95;
+    transform: scale(1) rotate(25deg);
+  }
+  70% {
+    opacity: 0.2;
+    transform: scale(0.6) rotate(45deg);
+  }
+}
+@keyframes diamond-fall {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(-12deg);
+  }
+  12% {
+    opacity: 1;
+  }
+  72% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--drift), 200px) rotate(40deg);
+  }
+}
+.diamond-tree-scene[data-paused="true"] .tree-sparkle,
+.diamond-tree-scene[data-paused="true"] .tree-diamond {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .diamond-tree-magic {
+    display: none;
+  }
 }
 .specimen-tag {
   display: flex;
@@ -1715,9 +1792,6 @@ tbody tr:nth-child(even) {
   }
   .spotlight-copy h2 {
     font-size: 2.2rem;
-  }
-  .tree-showcase .structure-preview {
-    height: 320px;
   }
   .home-callout {
     gap: 8px;

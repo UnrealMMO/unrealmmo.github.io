@@ -5,6 +5,7 @@ import { Reveal } from "@/components/reveal";
 import { StructurePreview } from "@/components/structure-preview";
 import { ServerSign } from "@/components/server-sign";
 import { SneakScene } from "@/components/sneak-scene";
+import { DiamondTreeScene } from "@/components/diamond-tree-scene";
 import { skills, structures } from "@/content/game";
 export default function Home() {
   return (
@@ -164,8 +165,7 @@ export default function Home() {
             <ButtonLink href="/structures/">Discover ore trees</ButtonLink>
           </Reveal>
           <Reveal className="tree-showcase">
-            <div className="orbital" />
-            <StructurePreview structure={structures[7]} />
+            <DiamondTreeScene />
             <span className="specimen-tag">
               <span>VIII</span> DIAMOND TREE <small>FARMING 99</small>
             </span>

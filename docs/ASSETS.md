@@ -1,5 +1,7 @@
 # Asset provenance
 
+- `public/art/diamond-tree-ingame.webp`: user-supplied Minecraft gameplay screenshot, resized and encoded as WebP. Homepage framing and feathered edges are CSS masks; original tree geometry and textures are preserved. Decorative sparkles and original pixel-style falling diamond SVGs are animated in CSS, with pause and reduced-motion support. Structure guide models are unchanged.
+
 - `public/art/unreal-valley.webp`: original UnrealMMO concept artwork generated with the built-in image-generation tool on 19 October 2026, then encoded as WebP for delivery. Original PNG retained in the author's local generation library.
 - `public/art/sneak-vanish.gif`: original seven-second sneak/invisibility loop using detailed imagegen character poses over the original wooded background. `sneak-poses.webp` preserves the original detailed character design across matching standing and crouching poses; `sneak-visible.webp` supplies the standing reduced-motion/paused still; `sneak-woods.webp` is the unchanged background plate. See [animation production notes](SNEAK-ANIMATION.md) for timing, provenance, and reproduction. This is illustrative art, not captured gameplay. No game textures or skins are distributed.
 - `public/art/server-placard-v2.webp`: original transparent gold-and-emerald frame generated with the built-in image-generation tool; [full prompt and production notes](SERVER-SIGN-ART.md). The server address remains live HTML text.
