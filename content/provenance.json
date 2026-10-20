@@ -1,8 +1,14 @@
 {
-  "reviewed": "2026-10-19",
+  "reviewed": "2026-10-20",
   "sourceCommit": "9e15479bc684d7d742a705f8851a18e4bb314bb5",
   "core": "0.9.0",
   "farming": "0.9.1",
-  "balance": "Shipped defaults; server settings may change before launch.",
-  "scope": "Gameplay handbook snapshot. This does not certify multiplayer acceptance or server scalability."
+  "balance": "Historical handbook snapshot, not a verified live-server configuration; server remains in development.",
+  "scope": "Handbook text remains pinned to the top-level sourceCommit. Ore Tree proximity and active-slot summaries still describe that older snapshot, not current Farming rules. No live deployment, multiplayer acceptance or scalability is certified.",
+  "currentSourceReview": {
+    "sourceCommit": "1f43d1ab6294384598c595cad8aaf10dccc9216a",
+    "core": "0.9.1",
+    "farming": "0.10.0",
+    "scope": "Current source versions only, not deployed versions. All 495 XP/passive-bonus rows re-executed and unchanged. Full handbook text is not yet reconciled to this revision."
+  }
 }

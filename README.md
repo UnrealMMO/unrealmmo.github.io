@@ -47,7 +47,7 @@ python3 scripts/check-plugin-source.py /path/to/UnrealSkills /path/to/JDK25/Home
 npm test
 ```
 
-Review every public content change against the game and update the provenance date/revision. Balance changes are not automatically inferred from a live server. The website uses shipped defaults and states that balance may change before launch.
+Review every public content change against the game and update the provenance date/revision. Balance changes are not automatically inferred from a live server. The handbook is a source snapshot, not a live-server inventory. `content/provenance.json` distinguishes the historical handbook revision from the current source review: XP/passive bonuses have been rechecked, but older Ore Tree proximity/active-slot text still needs reconciliation. Do not advance the whole-handbook revision from numerical checks alone.
 
 To add a structure, add a definition in `content/game.ts` (or a tree variant in `content/trees.json`) with coordinates, materials and steps. It is picked up by static route generation, the catalogue, the viewer and the materials checklist. Extend tests for new geometry and unique operating rules.
 
