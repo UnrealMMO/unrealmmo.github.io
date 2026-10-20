@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Sneak animation studio</title>
+    <style>
+      body {
+        margin: 0;
+        background: #11271f;
+        color: #edd8ac;
+        font: 16px system-ui;
+      }
+      canvas {
+        display: block;
+      }
+      button {
+        padding: 12px;
+        margin: 10px;
+      }
+      #status {
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="scene"></canvas><button id="stand">Standing pose</button
+    ><button id="crouch">Crouching pose</button
+    ><button id="replay">Replay</button
+    ><button id="export">Export animation frames</button
+    ><button id="still">Export standing still</button>
+    <div id="status">Loading woodland…</div>
+    <script type="module">
+      import * as THREE from "/node_modules/three/build/three.module.js";
+      const W = 560,
+        FPS = 16,
+        DURATION = 7,
+        COUNT = FPS * DURATION;
+      const renderer = new THREE.WebGLRenderer({
+        canvas: document.querySelector("#scene"),
+        antialias: true,
+        preserveDrawingBuffer: true,
+      });
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+      renderer.setSize(W, W);
+      renderer.setPixelRatio(1);
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.22;
+      const scene = new THREE.Scene();
+      scene.background = await new THREE.TextureLoader().loadAsync(
+        "/public/art/sneak-woods.webp",
+      );
+      scene.background.colorSpace = THREE.SRGBColorSpace;
+      const camera = new THREE.PerspectiveCamera(33, 1, 0.1, 250);
+      camera.position.set(36, 27, 78);
+      camera.lookAt(0, 16, 0);
+      scene.add(new THREE.HemisphereLight(0xd9eed7, 0x3b2817, 2.3));
+      const sun = new THREE.DirectionalLight(0xffd28b, 4);
+      sun.position.set(-18, 40, -22);
+      sun.castShadow = true;
+      sun.shadow.mapSize.set(1024, 1024);
+      sun.shadow.camera.left = -25;
+      sun.shadow.camera.right = 25;
+      sun.shadow.camera.top = 45;
+      sun.shadow.camera.bottom = -20;
+      sun.shadow.bias = -0.001;
+      scene.add(sun);
+      const fill = new THREE.DirectionalLight(0xe4edff, 1.1);
+      fill.position.set(20, 18, 40);
+      scene.add(fill);
+      const fade = { value: 1 };
+      function texture(base, kind) {
+        const c = document.createElement("canvas");
+        c.width = c.height = 16;
+        const ctx = c.getContext("2d");
+        const color = new THREE.Color(base);
+        for (let y = 0; y < 16; y++)
+          for (let x = 0; x < 16; x++) {
+            const n = 1 + (((x * 17 + y * 31 + x * y * 7) % 19) - 9) * 0.02;
+            ctx.fillStyle =
+              "#" + color.clone().multiplyScalar(n).getHexString();
+            ctx.fillRect(x, y, 1, 1);
+          }
+        if (kind === "tunic") {
+          ctx.fillStyle = "#b59a50";
+          ctx.fillRect(0, 14, 16, 2);
+          ctx.fillRect(7, 0, 2, 16);
+        }
+        if (kind === "face") {
+          ctx.fillStyle = "#352315";
+          ctx.fillRect(0, 0, 16, 4);
+          ctx.fillRect(0, 3, 3, 4);
+          ctx.fillRect(12, 3, 4, 3);
+          ctx.fillStyle = "#ede7ce";
+          ctx.fillRect(3, 7, 4, 2);
+          ctx.fillRect(10, 7, 4, 2);
+          ctx.fillStyle = "#245746";
+          ctx.fillRect(5, 7, 2, 2);
+          ctx.fillRect(10, 7, 2, 2);
+          ctx.fillStyle = "#9e6540";
+          ctx.fillRect(7, 10, 2, 2);
+          ctx.fillStyle = "#704329";
+          ctx.fillRect(6, 13, 4, 1);
+        }
+        const tex = new THREE.CanvasTexture(c);
+        tex.magFilter = THREE.NearestFilter;
+        tex.minFilter = THREE.NearestFilter;
+        tex.colorSpace = THREE.SRGBColorSpace;
+        return tex;
+      }
+      function mat(color, kind) {
+        const m = new THREE.MeshStandardMaterial({
+          map: texture(color, kind),
+          roughness: 0.86,
+        });
+        m.onBeforeCompile = (s) => {
+          s.uniforms.visibility = fade;
+          s.fragmentShader = "uniform float visibility;\n" + s.fragmentShader;
+          s.fragmentShader = s.fragmentShader.replace(
+            "#include <clipping_planes_fragment>",
+            "#include <clipping_planes_fragment>\nvec2 cell=floor(gl_FragCoord.xy/2.0); float noise=fract(sin(dot(cell,vec2(12.9898,78.233)))*43758.5453); if(visibility <= 0.0 || noise > visibility) discard;",
+          );
+        };
+        return m;
+      }
+      const green = mat("#284d37", "tunic"),
+        leather = mat("#59402b"),
+        skin = mat("#c79260"),
+        hair = mat("#382719"),
+        face = mat("#c79260", "face"),
+        gold = mat("#c4a15a"),
+        pants = mat("#3d4530"),
+        iron = mat("#c7d2cb"),
+        edge = mat("#657a77");
+      const root = new THREE.Group();
+      root.rotation.y = -0.15;
+      root.position.x = -1;
+      scene.add(root);
+      function box(parent, w, h, d, x, y, z, material) {
+        const mesh = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), material);
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
+        mesh.position.set(x, y, z);
+        parent.add(mesh);
+        return mesh;
+      }
+      function joint(parent, x, y, z) {
+        const j = new THREE.Group();
+        j.position.set(x, y, z);
+        parent.add(j);
+        return j;
+      }
+      const hip = joint(root, 0, 12, 0),
+        torso = joint(hip, 0, 0, 0);
+      box(torso, 8, 12, 4, 0, 6, 0, green);
+      box(torso, 8.15, 1.5, 4.15, 0, 1, 0, leather);
+      box(torso, 1.6, 1.5, 0.3, 0, 1, 2.2, gold);
+      for (let i = 0; i < 8; i++)
+        box(torso, 1.5, 1.6, 0.3, 3 - i * 0.82, 11 - i * 1.25, 2.15, leather);
+      const head = joint(torso, 0, 12, 0);
+      box(head, 8, 8, 8, 0, 4, 0, [hair, hair, hair, skin, face, hair]);
+      box(head, 8.2, 2, 8.2, 0, 7.1, 0, hair);
+      const legs = [];
+      for (const side of [-1, 1]) {
+        const thigh = joint(hip, side * 2, -0.2, 0);
+        box(thigh, 3.8, 6, 4, 0, -3, 0, pants);
+        const knee = joint(thigh, 0, -6, 0);
+        box(knee, 3.8, 6, 4, 0, -3, 0, leather);
+        box(knee, 4, 2.5, 5, 0, -4.8, 0.45, leather);
+        legs.push({ thigh, knee });
+      }
+      const arms = [];
+      for (const side of [-1, 1]) {
+        const shoulder = joint(torso, side * 6, 10, 0);
+        box(shoulder, 4, 6, 4, 0, -2, 0, green);
+        const elbow = joint(shoulder, 0, -5, 0);
+        box(elbow, 3.8, 4, 3.8, 0, -2, 0, leather);
+        box(elbow, 3.8, 2.5, 3.8, 0, -5, 0, skin);
+        arms.push({ shoulder, elbow });
+      }
+      const sword = joint(arms[0].elbow, 0, -5.5, 2);
+      sword.rotation.x = 0.72;
+      sword.rotation.z = -0.12;
+      box(sword, 1.2, 3, 1, 0, -1, 0, leather);
+      box(sword, 5, 1.2, 1.2, 0, 1, 0, gold);
+      for (let y = 2; y < 12; y++) {
+        box(sword, y === 11 ? 1 : 2.1, 1, 0.6, 0, y, 0, iron);
+        if (y < 10) box(sword, 0.7, 1, 0.65, -1.4, y, 0, edge);
+      }
+      box(sword, 1, 1, 0.65, 0.6, 11, 0, iron);
+      const shadowMat = new THREE.ShadowMaterial({
+        opacity: 0.3,
+        depthWrite: false,
+      });
+      const shadow = new THREE.Mesh(new THREE.PlaneGeometry(80, 80), shadowMat);
+      shadow.rotation.x = -Math.PI / 2;
+      shadow.position.set(-1, -0.1, 0);
+      shadow.receiveShadow = true;
+      scene.add(shadow);
+      const motes = [];
+      for (let i = 0; i < 30; i++) {
+        const m = new THREE.Mesh(
+          new THREE.BoxGeometry(0.22, 0.22, 0.22),
+          new THREE.MeshBasicMaterial({
+            color: i % 3 === 0 ? 0xdcc987 : 0x89b9a0,
+            transparent: true,
+          }),
+        );
+        scene.add(m);
+        motes.push(m);
+      }
+      const ease = (x) => {
+        x = Math.max(0, Math.min(1, x));
+        return x * x * (3 - 2 * x);
+      };
+      function pose(t) {
+        const crouch = ease((t - 2) / 0.5) * (1 - ease((t - 5.75) / 0.75));
+        const phase = (t / DURATION) * Math.PI * 2;
+        fade.value =
+          t < 3
+            ? 1
+            : t < 3.75
+              ? 1 - ease((t - 3) / 0.75)
+              : t < 5.75
+                ? 0
+                : ease((t - 5.75) / 0.75);
+        hip.position.y =
+          6 * Math.cos(0.58 * crouch) +
+          6 * Math.cos(0.34 * crouch) +
+          0.1 * Math.sin(phase * 2) * (1 - crouch);
+        hip.position.z =
+          6 * Math.sin(-0.58 * crouch) + 6 * Math.sin(0.34 * crouch);
+        torso.rotation.x = 0.42 * crouch;
+        head.rotation.x = -0.3 * crouch + 0.025 * Math.sin(phase * 2);
+        head.rotation.y = 0.16 * Math.sin(phase);
+        root.rotation.y = -0.15 + 0.025 * Math.sin(phase);
+        legs.forEach(({ thigh, knee }, i) => {
+          thigh.rotation.x = -0.58 * crouch;
+          knee.rotation.x = 0.92 * crouch;
+        });
+        arms.forEach(({ shoulder, elbow }, i) => {
+          shoulder.rotation.x =
+            -0.07 -
+            0.55 * crouch +
+            0.09 * Math.sin(phase * 2 + i) * (1 - crouch);
+          shoulder.rotation.z =
+            (i === 0 ? 1 : -1) * (0.04 + 0.035 * Math.sin(phase));
+          elbow.rotation.x = -0.18 - 0.2 * crouch;
+        });
+        shadowMat.opacity = 0.22 * fade.value;
+        const spell = Math.sin(Math.PI * fade.value);
+        motes.forEach((m, i) => {
+          const a = i * 2.399 + t * 0.75;
+          m.position.set(
+            -1 + Math.cos(a) * (4 + (i % 4)),
+            4 + ((i * 3.17 + t * 5) % 25),
+            Math.sin(a) * (3 + (i % 3)),
+          );
+          m.material.opacity = spell * 0.58;
+          m.visible = spell > 0.01;
+        });
+        renderer.render(scene, camera);
+      }
+      let paused = false;
+      const start = performance.now();
+      function tick() {
+        if (!paused) pose(((performance.now() - start) / 1000) % DURATION);
+        requestAnimationFrame(tick);
+      }
+      tick();
+      document.querySelector("#status").textContent =
+        "7-second loop: idle 0–2s · crouch 2–3s · vanish 3–3.75s · invisible 3.75–5.75s · rise/reappear 5.75–6.5s · settle to 7s";
+      function download(canvas, name) {
+        return new Promise((resolve) =>
+          canvas.toBlob((blob) => {
+            const a = document.createElement("a");
+            a.href = URL.createObjectURL(blob);
+            a.download = name;
+            a.click();
+            setTimeout(() => {
+              URL.revokeObjectURL(a.href);
+              resolve();
+            }, 100);
+          }, "image/png"),
+        );
+      }
+      document.querySelector("#stand").onclick = () => {
+        paused = true;
+        pose(0);
+      };
+      document.querySelector("#crouch").onclick = () => {
+        paused = true;
+        pose(2.8);
+      };
+      document.querySelector("#replay").onclick = () => {
+        paused = false;
+      };
+      document.querySelector("#still").onclick = async () => {
+        paused = true;
+        pose(0);
+        await download(renderer.domElement, "sneak-standing.png");
+        paused = false;
+      };
+      document.querySelector("#export").onclick = async () => {
+        paused = true;
+        const atlas = document.createElement("canvas");
+        atlas.width = W * 8;
+        atlas.height = W * Math.ceil(COUNT / 8);
+        const ctx = atlas.getContext("2d");
+        for (let i = 0; i < COUNT; i++) {
+          pose(i / FPS);
+          ctx.drawImage(
+            renderer.domElement,
+            (i % 8) * W,
+            Math.floor(i / 8) * W,
+          );
+          if (i % 8 === 0) {
+            document.querySelector("#status").textContent =
+              `Rendering ${i + 1}/${COUNT}`;
+            await new Promise(requestAnimationFrame);
+          }
+        }
+        await download(atlas, "sneak-frames.png");
+        document.querySelector("#status").textContent =
+          "Export complete: 112 frames, 560px, 16fps, 7 seconds";
+        paused = false;
+      };
+    </script>
+  </body>
+</html>

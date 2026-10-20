@@ -15,7 +15,7 @@ export function SneakScene() {
         />
         <img
           src={paused ? "/art/sneak-visible.webp" : "/art/sneak-vanish.gif"}
-          alt="A Minecraft adventurer crouches with an iron sword on a wooded path, then fades into invisibility."
+          alt="A sword-bearing Minecraft adventurer stands alert, crouches and dissolves into invisibility, then reappears while standing up on a wooded path."
           width="640"
           height="640"
           loading="lazy"
