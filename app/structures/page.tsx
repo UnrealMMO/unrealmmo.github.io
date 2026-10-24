@@ -46,7 +46,7 @@ export default function Structures() {
         </div>
         <div className="catalogue-heading">
           <h2>A place of your own</h2>
-          <span>Two implemented stages · Two planned stages</span>
+          <span>Four stages · From a home to a settlement</span>
         </div>
         {structures
           .filter((s) => s.kind === "hearthstone")
@@ -62,9 +62,6 @@ export default function Structures() {
                 <p>{s.description}</p>
                 <p>
                   {s.claimSize} × {s.claimSize} × {s.claimSize} protected volume
-                  {s.stage === 2
-                    ? " · Development build, awaiting main rollout"
-                    : ""}
                 </p>
                 <span className="text-link">
                   Open build guide <ArrowUpRight size={17} />

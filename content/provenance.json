@@ -13,8 +13,8 @@
   },
   "hearthstoneReview": {
     "reviewed": "2026-10-23",
-    "sourceCommit": "d22d66c",
-    "territory": "0.2.2",
-    "scope": "Hearthstone Core naming and Stage 1\u20132 geometry checked against Territory source. Stages 3\u20134 are labeled design proposals, not implemented recipes. Stage 2 awaits main-server rollout. Other handbook snapshots remain unchanged."
+    "sourceCommit": "3a72038a3aab900920c746427a2434aa4641346f",
+    "territory": "0.3.0",
+    "scope": "All four cumulative Hearthstone recipes and 17/50/100/200-block cubes verified against exported plugin geometry. Territory 0.3.0 installed on main after isolated Folia tests; existing claim preserved. Other handbook snapshots remain unchanged."
   }
 }

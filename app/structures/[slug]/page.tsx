@@ -134,7 +134,7 @@ export default async function StructurePage({
             <section className="guide-split rules-panel">
               <div>
                 <h2>
-                  {s.stage === 2
+                  {(s.stage ?? 1) > 1
                     ? "Build. Recognize. Upgrade."
                     : "Preview, then claim."}
                 </h2>
@@ -144,12 +144,12 @@ export default async function StructurePage({
                     it with <code>/territory token</code> if needed.
                   </li>
                   <li>
-                    {s.stage === 2
-                      ? "Add the foundation and corner pillars around your existing Stage 1 Hearthstone, keeping its iron core and four stone bricks."
+                    {(s.stage ?? 1) > 1
+                      ? "Follow the layer guide to expand the existing Hearthstone. Retain its original core and every required block from the previous stage."
                       : "Build the five-block pedestal. Right-click its iron block with your Hearthstone Core to preview your home."}
                   </li>
                   <li>
-                    {s.stage === 2
+                    {(s.stage ?? 1) > 1
                       ? "Stand within eight blocks of the original core and right-click your Hearthstone Core. The menu item turns green when the upgrade is ready, or red with a reason when it is unavailable. Click green to preview, then confirm within 60 seconds."
                       : "Inspect the private border preview. Confirm within 60 seconds using the menu."}
                   </li>
@@ -162,8 +162,8 @@ export default async function StructurePage({
               <div>
                 <h3>Understand your borders</h3>
                 <p>
-                  {s.stage === 2
-                    ? "Stage 2 protects exactly 50 blocks on each axis: original core −25 through +24, inclusive. This includes all of your original territory. The viewer’s layer 1 is the foundation below that core."
+                  {(s.stage ?? 1) > 1
+                    ? `Stage ${s.stage} protects exactly ${s.claimSize} blocks on each axis. Horizontally, this extends from core −${s.claimSize! / 2} through +${s.claimSize! / 2 - 1}, inclusive. Near world height limits the cube shifts vertically to fit, preserving your previous protection. The viewer illustrates a centered cube; its layer 1 is the foundation below the core.`
                     : "Protection reaches eight blocks each way from the iron core, including vertically: a 17 × 17 × 17 cube. The diagram overlay illustrates that boundary."}
                 </p>
                 <p>
@@ -180,24 +180,23 @@ export default async function StructurePage({
                 </p>
               </div>
             </section>
-            {s.stage === 2 && (
+            {(s.stage ?? 1) > 1 && (
               <section className="handbook-note">
-                <h3>Adding to Stage 1</h3>
+                <h3>Adding to Stage {(s.stage ?? 2) - 1}</h3>
                 <p>
-                  Add 25 stone bricks, 8 polished andesite and 4 iron blocks.
-                  The checklist above shows the complete structure: 29 stone
-                  bricks, 8 polished andesite and 5 iron blocks, including the
-                  existing pedestal.
+                  {s.stage === 2
+                    ? "Add 25 stone bricks, 8 polished andesite and 4 iron blocks."
+                    : s.stage === 3
+                      ? "Add 48 stone bricks, 24 polished andesite, 4 iron blocks and 4 lanterns."
+                      : "Add 77 stone bricks, 56 polished andesite, 4 iron blocks, 16 chiseled stone bricks and 1 lantern."}{" "}
+                  The checklist shows the full structure, including previous
+                  stages.
                 </p>
                 <p>
                   No Coin charge, rooms, paths or enclosure checks. Extra
                   decoration is welcome. Only the owner can confirm an upgrade;
                   members and invitations stay intact. The menu refreshes while
                   open and checks the structure again when confirming.
-                </p>
-                <p>
-                  Implemented in the development build; awaiting main-server
-                  rollout.
                 </p>
               </section>
             )}

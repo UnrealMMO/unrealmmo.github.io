@@ -11,6 +11,7 @@ function Camera({
   exploded,
   tree,
   claimSize,
+  structureHeight,
 }: {
   view: string;
   reset: number;
@@ -18,13 +19,18 @@ function Camera({
   exploded: boolean;
   tree: boolean;
   claimSize: number;
+  structureHeight: number;
 }) {
   const { camera, invalidate, size } = useThree();
   const controls = useRef<Controls>(null);
   useEffect(() => {
     const d =
-      (claim ? claimSize * 1.8 : exploded ? 13 : 10) /
-      Math.min(1, size.width / size.height);
+      (claim
+        ? claimSize * 1.8
+        : Math.max(
+            exploded ? 13 : 10,
+            structureHeight * (exploded ? 2.8 : 1.8),
+          )) / Math.min(1, size.width / size.height);
     const positions: Record<string, [number, number, number]> = {
       isometric: [d, d * 0.7, d],
       front: [0, d * 0.15, d],
@@ -34,7 +40,13 @@ function Camera({
     camera.position.set(...positions[view]);
     controls.current?.target.set(
       0,
-      claim ? 0 : tree ? (exploded ? 3.2 : 2) : 0,
+      claim
+        ? 0
+        : tree
+          ? exploded
+            ? 3.2
+            : 2
+          : structureHeight * (exploded ? 0.8 : 0.5),
       0,
     );
     controls.current?.update();
@@ -48,6 +60,7 @@ function Camera({
     exploded,
     tree,
     claimSize,
+    structureHeight,
     size.width,
     size.height,
     invalidate,
@@ -109,6 +122,7 @@ export default function StructureScene({
         exploded={exploded}
         tree={structure.kind === "tree"}
         claimSize={structure.claimSize ?? 17}
+        structureHeight={Math.max(...structure.blocks.map((b) => b.y))}
       />
       <group>
         {structure.blocks.map((b, i) => {
@@ -149,7 +163,9 @@ export default function StructureScene({
         />
         {claim && (
           <mesh
-            position={structure.stage === 2 ? [-0.5, 0.5, -0.5] : [0, 0, 0]}
+            position={
+              (structure.stage ?? 1) > 1 ? [-0.5, 0.5, -0.5] : [0, 0, 0]
+            }
           >
             <boxGeometry
               args={[

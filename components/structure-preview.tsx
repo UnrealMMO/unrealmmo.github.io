@@ -9,8 +9,12 @@ export function StructurePreview({
   const blocks = structure.blocks
     .filter((b) => b.role !== "air")
     .sort((a, b) => a.x + a.z - (b.x + b.z) || a.y - b.y);
-  const scale = compact ? 14 : 19,
-    cy = structure.kind === "tree" ? 195 : 127;
+  const ys = blocks.map((b) => (b.x + b.z) * 0.5 - b.y * 1.15);
+  const low = Math.min(...ys) - 0.5,
+    high = Math.max(...ys) + 1.5;
+  const span = Math.max(...blocks.map((b) => Math.abs(b.x - b.z))) + 1;
+  const scale = Math.min(compact ? 14 : 19, 130 / span, 220 / (high - low));
+  const cy = 130 - ((low + high) * scale) / 2;
   return (
     <svg
       viewBox="0 0 300 260"

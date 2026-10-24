@@ -173,14 +173,29 @@ test("Stage 2 preserves the pedestal and matches every required construction blo
   assert.equal(s.steps.length, 4);
 });
 
-test("planned Hearthstone stages cannot appear as buildable recipes", () => {
+test("all four Hearthstone stages have cumulative buildable guides", () => {
   assert.deepEqual(
     hearthstoneStages.map((s) => s.size),
     [17, 50, 100, 200],
   );
-  for (const stage of hearthstoneStages.filter((s) => s.stage > 2)) {
-    assert.equal(stage.guide, null);
-    assert.match(stage.status, /Planned/);
+  const counts = [5, 42, 122, 276];
+  for (const stage of hearthstoneStages) {
+    const s = structures.find((s) => s.id === stage.guide)!;
+    assert.ok(s);
+    assert.equal(s.blocks.length, counts[stage.stage - 1]);
+    assert.equal(s.steps.length, Math.max(...s.blocks.map((b) => b.y)) + 1);
+    if (stage.stage > 2) {
+      const previous = structures.find((s) => s.stage === stage.stage - 1)!;
+      for (const b of previous.blocks)
+        assert.ok(
+          s.blocks.some(
+            (c) =>
+              c.x === b.x &&
+              c.y === b.y &&
+              c.z === b.z &&
+              c.material === b.material,
+          ),
+        );
+    }
   }
-  assert.equal(structures.filter((s) => s.kind === "hearthstone").length, 2);
 });

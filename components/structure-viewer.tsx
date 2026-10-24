@@ -297,7 +297,12 @@ export function StructureViewer({ structure: s }: { structure: Structure }) {
                 aria-label={`Show layer ${y + 1}`}
               >
                 <span>Layer {y + 1}</span>
-                <div className={`diagram-grid ${width === 3 ? "three" : ""}`}>
+                <div
+                  className={`diagram-grid ${width === 3 ? "three" : ""}`}
+                  style={{
+                    gridTemplateColumns: `repeat(${width}, minmax(0, 1fr))`,
+                  }}
+                >
                   {Array.from({ length: width * width }, (_, i) => {
                     const half = Math.floor(width / 2),
                       x = (i % width) - half,

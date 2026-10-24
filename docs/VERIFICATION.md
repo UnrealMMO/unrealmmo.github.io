@@ -50,3 +50,13 @@ Fresh `npm run verify` passed: eight test groups, production build/type validati
 Added the implemented Stage 2 structure from Territory 0.2.2: all 42 required blocks, four normalized build layers, exact 29 stone-brick / 8 polished-andesite / 5 iron-block totals, and separate added-material guidance. The Hearthstone Core item is distinguished from the built Hearthstone. A shared progression comparison labels the 100-cube Sanctuary and 200-cube Wardtower as planned, with no invented recipes or models. Stage 2 and the naming update are explicitly awaiting main-server rollout. Other gameplay provenance remains unchanged.
 
 Browser checks cover the Stage 2 model, layer selection, material list, 50-cube overlay, and mobile diagrams at 390px. No horizontal page overflow or browser console errors were observed. The structure viewer now derives height, footprint labels and diagrams from geometry; the territory overlay and camera scale from the claim size. Text guides and layer diagrams remain available without WebGL. This qualifies website behavior only, not server compatibility or gameplay load.
+
+## All four Hearthstone stages — 23 October 2026
+
+Territory 0.3.0 implements the Sanctuary and Wardtower and was installed on main after 190 automated tests and 14 isolated Folia scenarios passed. The existing main claim was preserved. Player-facing progression now describes all four current recipes without planned/rollout labels; overall server availability remains In development.
+
+Public blueprint JSON is exported from the plugin's tested cumulative recipe data (5/42/122/276 blocks), with coordinates normalized for the layer viewer. No plugin source, worlds, credentials or player data are included. Stage 3 adds 48 stone bricks, 24 polished andesite, 4 iron blocks and 4 lanterns; Stage 4 adds 77 stone bricks, 56 polished andesite, 4 iron blocks, 16 chiseled stone bricks and 1 lantern.
+
+Website verification: 10 tests pass; 23 exported HTML pages, 720 local references, 55 image alt attributes and 495 level rows checked. Browser checks covered both new routes, complete 3D models, Wardtower protection overlay and layer navigation, and a 390×844 mobile viewport with no horizontal document overflow. No browser console errors were observed. Responsive layer grids and camera/diagram fitting handle the taller structures.
+
+Plugin qualification uses offline protocol clients, not authenticated-client acceptance or representative load testing. Website verification does not certify Folia scalability.

@@ -1,3 +1,4 @@
+import hearthstoneBlueprints from "./hearthstone-blueprints.json";
 import definitions from "./skills.json";
 import treeDefinitions from "./trees.json";
 import thresholds from "./xp.json";
@@ -185,23 +186,11 @@ export const structures: Structure[] = [
 ];
 // Viewer layers start at the foundation; the original iron core is on layer 2.
 const starter = structures.find((s) => s.id === "hearthstone")!;
-const stageTwo: Block[] = [];
-for (let x = -2; x <= 2; x++)
-  for (let z = -2; z <= 2; z++)
-    stageTwo.push({ x, y: 0, z, material: "STONE_BRICKS", role: "pedestal" });
-stageTwo.push(...starter.blocks.map((b) => ({ ...b, y: 1 })));
-for (const x of [-2, 2])
-  for (const z of [-2, 2]) {
-    for (const y of [1, 2])
-      stageTwo.push({
-        x,
-        y,
-        z,
-        material: "POLISHED_ANDESITE",
-        role: "pedestal",
-      });
-    stageTwo.push({ x, y: 3, z, material: "IRON_BLOCK", role: "pedestal" });
-  }
+const stageTwo: Block[] = hearthstoneBlueprints[1].map((b) => ({
+  ...b,
+  y: b.y + 1,
+  role: b.x === 0 && b.y === 0 && b.z === 0 ? "core" : "pedestal",
+}));
 structures.push({
   id: "hearthstone-stage-2",
   name: "Fortified Hearthstone · Stage 2",
@@ -220,12 +209,51 @@ structures.push({
     "Cap each pillar with an iron block. Stand within eight blocks of the original core and right-click your Hearthstone Core. A green upgrade item means Stage 2 is ready; click to preview and confirm within 60 seconds.",
   ],
 });
+for (const stage of [3, 4]) {
+  const width = stage * 2 + 1,
+    pillar = stage === 3 ? 6 : 14;
+  const blocks: Block[] = hearthstoneBlueprints[stage - 1].map((b) => ({
+    ...b,
+    y: b.y + 1,
+    role: b.x === 0 && b.y === 0 && b.z === 0 ? "core" : "pedestal",
+  }));
+  const top = Math.max(...blocks.map((b) => b.y));
+  structures.push({
+    id: `hearthstone-stage-${stage}`,
+    name:
+      stage === 3
+        ? "Hearthstone Sanctuary · Stage 3"
+        : "Hearthstone Wardtower · Stage 4",
+    kind: "hearthstone",
+    stage,
+    claimSize: stage === 3 ? 100 : 200,
+    level: 0,
+    color: "#b7c6bc",
+    blocks,
+    description:
+      stage === 3
+        ? "Raise a lantern-lit sanctuary for a village, workshops and farms. Protect a 100 × 100 × 100 volume."
+        : "Build an iconic protection tower for a town center, roads and building plots. Protect a 200 × 200 × 200 volume.",
+    steps: Array.from({ length: top + 1 }, (_, y) =>
+      y === 0
+        ? `Expand the stone-brick foundation to ${width} × ${width}, one block below the original core. Retain every block of the previous stage.`
+        : y <= pillar
+          ? `Retain the inner structure shown on this layer. Add polished andesite at all four outer corners, making each new pillar ${pillar} blocks tall.`
+          : y === pillar + 1
+            ? "Cap each of the four new outer pillars with one iron block."
+            : y === pillar + 2
+              ? `Connect the four caps with a complete stone-brick perimeter ring.${stage === 4 ? " Add a stone-brick cross through the center, joining opposite sides in both directions." : ""}`
+              : stage === 3
+                ? "Place a lantern on each corner of the upper ring. Open your Hearthstone Core menu near the original core to preview and confirm Stage 3."
+                : "Place chiseled stone bricks on every other block of the crown ring, including all four corners. Place a lantern at the center of the crossbeam. Open your Hearthstone Core menu to preview and confirm Stage 4.",
+    ),
+  });
+}
 export const hearthstoneStages = [
   {
     stage: 1,
     name: "Hearthstone Pedestal",
     size: 17,
-    status: "Implemented",
     guide: "hearthstone",
     description: "A five-block pedestal for your first protected home.",
   },
@@ -233,7 +261,6 @@ export const hearthstoneStages = [
     stage: 2,
     name: "Fortified Hearthstone",
     size: 50,
-    status: "Implemented · awaiting main rollout",
     guide: "hearthstone-stage-2",
     description:
       "A 5 × 5 foundation and four iron-capped pillars for a homestead.",
@@ -242,19 +269,17 @@ export const hearthstoneStages = [
     stage: 3,
     name: "Hearthstone Sanctuary",
     size: 100,
-    status: "Planned · not available",
-    guide: null,
+    guide: "hearthstone-stage-3",
     description:
-      "A proposed 7 × 7 fortified shrine, roughly nine blocks tall, with outer columns, an upper stone ring and corner lanterns. Space for a village, workshops and farms.",
+      "A 7 × 7 fortified shrine, nine blocks above its foundation, with outer columns, an upper stone ring and corner lanterns. Space for a village, workshops and farms.",
   },
   {
     stage: 4,
     name: "Hearthstone Wardtower",
     size: 200,
-    status: "Planned · not available",
-    guide: null,
+    guide: "hearthstone-stage-4",
     description:
-      "A proposed 9 × 9 protection tower, roughly 17 blocks tall, with buttresses, a crenellated crown and a raised central light. Space for a town center, roads and building plots.",
+      "A 9 × 9 protection tower, 17 blocks above its foundation, with buttresses, a crenellated crown and a raised central light. Space for a town center, roads and building plots.",
   },
 ] as const;
 export function materials(s: Structure) {
@@ -278,5 +303,7 @@ export const palette: Record<string, string> = {
   EMERALD_BLOCK: "#4eb58b",
   STONE_BRICKS: "#929d91",
   POLISHED_ANDESITE: "#a5a8a1",
+  LANTERN: "#efb851",
+  CHISELED_STONE_BRICKS: "#7d8e85",
   AIR: "#c8e8d0",
 };

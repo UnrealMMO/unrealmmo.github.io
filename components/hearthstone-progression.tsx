@@ -12,14 +12,13 @@ export function HearthstoneProgression() {
       <div className="table-scroll">
         <table>
           <caption>
-            Four Hearthstone stages · later stages are plans, not build recipes
+            Four Hearthstone stages · build around your original core
           </caption>
           <thead>
             <tr>
               <th>Stage</th>
               <th>Protected volume</th>
               <th>Ground area</th>
-              <th>Status</th>
             </tr>
           </thead>
           <tbody>
@@ -32,7 +31,6 @@ export function HearthstoneProgression() {
                   {s.size} × {s.size} × {s.size}
                 </td>
                 <td>{(s.size * s.size).toLocaleString("en-US")} blocks²</td>
-                <td>{s.status}</td>
               </tr>
             ))}
           </tbody>
@@ -43,28 +41,15 @@ export function HearthstoneProgression() {
           <div key={s.stage}>
             <h3>{s.name}</h3>
             <p>{s.description}</p>
-            {s.guide ? (
-              <Link className="text-link" href={`/structures/${s.guide}/`}>
-                Stage {s.stage} build guide ↗
-              </Link>
-            ) : (
-              <p className="small-note">
-                Concept only. Recommended size; exact recipe and materials are
-                not finalized.
-              </p>
-            )}
+            <Link className="text-link" href={`/structures/${s.guide}/`}>
+              Stage {s.stage} build guide ↗
+            </Link>
           </div>
         ))}
       </div>
       <p>
-        Each proposed upgrade after Stage 2 offers four times the ground area.
-        Stage 4 would provide sixteen times Stage 2’s land for a settlement.
-        Stages 3 and 4 cannot currently be recognized or claimed.
-      </p>
-      <p className="small-note">
-        Server status: in development. Stage 2 and the Hearthstone Core naming
-        are implemented in the development build and await rollout to the main
-        server.
+        Each upgrade after Stage 2 offers four times the ground area. Stage 4
+        provides sixteen times Stage 2’s land for a settlement.
       </p>
     </section>
   );
