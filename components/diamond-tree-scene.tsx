@@ -35,7 +35,7 @@ export function DiamondTreeScene() {
               {
                 left: `${32 + i * 9}%`,
                 "--start": `${47 + (i % 3) * 1.5}%`,
-                "--ground": `${91 + (i % 2) * 1.5}%`,
+                "--ground": `${i === 2 ? 98 : 91 + (i % 2) * 1.5}%`,
                 "--delay": `${-i * 0.83}s`,
                 "--duration": `${3.8 + (i % 3) * 0.35}s`,
                 "--drift": `${i % 2 ? 5 : -5}px`,
