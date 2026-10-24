@@ -7,7 +7,7 @@ import { HearthstoneProgression } from "@/components/hearthstone-progression";
 export const metadata = {
   title: "Structures",
   description:
-    "Build eight ore trees and two Hearthstone stages with interactive 3D guides and accurate materials lists.",
+    "Build eight ore trees and four Hearthstone stages with interactive 3D guides and accurate materials lists.",
 };
 export default function Structures() {
   return (
@@ -70,6 +70,16 @@ export default function Structures() {
             </Link>
           ))}
         <HearthstoneProgression />
+        <div className="handbook-note">
+          <h3>Turn your territory into a settlement</h3>
+          <p>
+            Build and register an Inn inside your claim, arrange its beds and
+            supplies, and earn Coins while it operates.
+          </p>
+          <Link className="text-link" href="/settlements/">
+            Read the Settlements &amp; Inns guide <ArrowUpRight size={17} />
+          </Link>
+        </div>
         <p className="handbook-note">
           The catalogue will grow as new custom structures arrive. Each guide
           includes a model, material checklist and practical instructions.

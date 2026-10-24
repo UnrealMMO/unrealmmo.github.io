@@ -8,6 +8,7 @@ const links = [
   ["/", "Home"],
   ["/skills/", "Skills"],
   ["/structures/", "Structures"],
+  ["/settlements/", "Settlements"],
 ];
 export function Navigation() {
   const path = usePathname();

@@ -46,6 +46,7 @@ export default function RootLayout({
             <nav aria-label="Footer navigation">
               <Link href="/skills/">Skills</Link>
               <Link href="/structures/">Structures</Link>
+              <Link href="/settlements/">Settlements</Link>
               <Link href="/about/">About & credits</Link>
               <a href="https://github.com/UnrealMMO/unrealmmo.github.io">
                 GitHub ↗
