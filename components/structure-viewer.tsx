@@ -38,7 +38,11 @@ class ViewerBoundary extends Component<
   }
 }
 export function StructureViewer({ structure: s }: { structure: Structure }) {
-  const max = s.kind === "tree" ? 4 : 0;
+  const max = Math.max(...s.blocks.map((b) => b.y));
+  const width =
+    2 *
+      Math.max(...s.blocks.map((b) => Math.max(Math.abs(b.x), Math.abs(b.z)))) +
+    1;
   const [enabled, setEnabled] = useState(false),
     [layer, setLayer] = useState(max),
     [exploded, setExploded] = useState(false),
@@ -109,7 +113,7 @@ export function StructureViewer({ structure: s }: { structure: Structure }) {
             </div>
           )}
           <span className="viewer-tag">
-            {s.kind === "tree" ? "5 × 5 × 5" : "3 × 1 × 3"} BLOCKS
+            {width} × {max + 1} × {width} BLOCKS
           </span>
         </div>
         <div className="viewer-controls">
@@ -176,7 +180,7 @@ export function StructureViewer({ structure: s }: { structure: Structure }) {
                     setEnabled(true);
                   }}
                 />{" "}
-                Show 17 × 17 × 17 territory
+                Show {s.claimSize} × {s.claimSize} × {s.claimSize} territory
               </label>
             )}
           </div>
@@ -293,45 +297,37 @@ export function StructureViewer({ structure: s }: { structure: Structure }) {
                 aria-label={`Show layer ${y + 1}`}
               >
                 <span>Layer {y + 1}</span>
-                <div
-                  className={`diagram-grid ${s.kind === "hearthstone" ? "three" : ""}`}
-                >
-                  {Array.from(
-                    { length: s.kind === "tree" ? 25 : 9 },
-                    (_, i) => {
-                      const width = s.kind === "tree" ? 5 : 3,
-                        half = Math.floor(width / 2),
-                        x = (i % width) - half,
-                        z = Math.floor(i / width) - half;
-                      const b = s.blocks.find(
-                        (b) => b.x === x && b.z === z && b.y === y,
-                      );
-                      return (
-                        <span
-                          key={i}
-                          title={
-                            b
-                              ? `${title(b.material)}: ${b.role}`
-                              : "Empty space"
-                          }
-                          className={b?.role === "air" ? "required-air" : ""}
-                          style={
-                            b && b.role !== "air"
-                              ? { background: palette[b.material] }
-                              : {}
-                          }
-                        >
-                          {b?.role === "core"
-                            ? "C"
-                            : b?.role === "air"
-                              ? "○"
-                              : b
-                                ? ""
-                                : "·"}
-                        </span>
-                      );
-                    },
-                  )}
+                <div className={`diagram-grid ${width === 3 ? "three" : ""}`}>
+                  {Array.from({ length: width * width }, (_, i) => {
+                    const half = Math.floor(width / 2),
+                      x = (i % width) - half,
+                      z = Math.floor(i / width) - half;
+                    const b = s.blocks.find(
+                      (b) => b.x === x && b.z === z && b.y === y,
+                    );
+                    return (
+                      <span
+                        key={i}
+                        title={
+                          b ? `${title(b.material)}: ${b.role}` : "Empty space"
+                        }
+                        className={b?.role === "air" ? "required-air" : ""}
+                        style={
+                          b && b.role !== "air"
+                            ? { background: palette[b.material] }
+                            : {}
+                        }
+                      >
+                        {b?.role === "core"
+                          ? "C"
+                          : b?.role === "air"
+                            ? "○"
+                            : b
+                              ? ""
+                              : "·"}
+                      </span>
+                    );
+                  })}
                 </div>
               </button>
             ))}

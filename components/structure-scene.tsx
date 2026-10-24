@@ -10,18 +10,21 @@ function Camera({
   claim,
   exploded,
   tree,
+  claimSize,
 }: {
   view: string;
   reset: number;
   claim: boolean;
   exploded: boolean;
   tree: boolean;
+  claimSize: number;
 }) {
   const { camera, invalidate, size } = useThree();
   const controls = useRef<Controls>(null);
   useEffect(() => {
     const d =
-      (claim ? 30 : exploded ? 13 : 10) / Math.min(1, size.width / size.height);
+      (claim ? claimSize * 1.8 : exploded ? 13 : 10) /
+      Math.min(1, size.width / size.height);
     const positions: Record<string, [number, number, number]> = {
       isometric: [d, d * 0.7, d],
       front: [0, d * 0.15, d],
@@ -44,6 +47,7 @@ function Camera({
     claim,
     exploded,
     tree,
+    claimSize,
     size.width,
     size.height,
     invalidate,
@@ -54,7 +58,7 @@ function Camera({
       makeDefault
       enableDamping={false}
       minDistance={4}
-      maxDistance={45}
+      maxDistance={Math.max(45, claimSize * 4)}
       maxPolarAngle={Math.PI * 0.9}
     />
   );
@@ -104,6 +108,7 @@ export default function StructureScene({
         claim={claim}
         exploded={exploded}
         tree={structure.kind === "tree"}
+        claimSize={structure.claimSize ?? 17}
       />
       <group>
         {structure.blocks.map((b, i) => {
@@ -143,8 +148,16 @@ export default function StructureScene({
           position={[0, -0.51, 0]}
         />
         {claim && (
-          <mesh>
-            <boxGeometry args={[17, 17, 17]} />
+          <mesh
+            position={structure.stage === 2 ? [-0.5, 0.5, -0.5] : [0, 0, 0]}
+          >
+            <boxGeometry
+              args={[
+                structure.claimSize!,
+                structure.claimSize!,
+                structure.claimSize!,
+              ]}
+            />
             <meshBasicMaterial
               color="#c8d995"
               transparent

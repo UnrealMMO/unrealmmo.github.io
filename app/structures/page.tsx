@@ -3,10 +3,11 @@ import { ArrowUpRight } from "lucide-react";
 import { PageIntro } from "@/components/ui";
 import { StructurePreview } from "@/components/structure-preview";
 import { structures } from "@/content/game";
+import { HearthstoneProgression } from "@/components/hearthstone-progression";
 export const metadata = {
   title: "Structures",
   description:
-    "Build eight ore trees and a Hearthstone pedestal with interactive 3D guides and accurate materials lists.",
+    "Build eight ore trees and two Hearthstone stages with interactive 3D guides and accurate materials lists.",
 };
 export default function Structures() {
   return (
@@ -45,21 +46,33 @@ export default function Structures() {
         </div>
         <div className="catalogue-heading">
           <h2>A place of your own</h2>
-          <span>Starter territory · No skill requirement</span>
+          <span>Two implemented stages · Two planned stages</span>
         </div>
-        <Link href="/structures/hearthstone/" className="hearth-card">
-          <StructurePreview structure={structures[8]} />
-          <div>
-            <h2>The Hearthstone</h2>
-            <p>
-              Five blocks. One protected home. See how to build the pedestal,
-              preview your borders and invite friends into your territory.
-            </p>
-            <span className="text-link">
-              Explore the Hearthstone <ArrowUpRight size={17} />
-            </span>
-          </div>
-        </Link>
+        {structures
+          .filter((s) => s.kind === "hearthstone")
+          .map((s) => (
+            <Link
+              key={s.id}
+              href={`/structures/${s.id}/`}
+              className="hearth-card"
+            >
+              <StructurePreview structure={s} />
+              <div>
+                <h2>{s.name}</h2>
+                <p>{s.description}</p>
+                <p>
+                  {s.claimSize} × {s.claimSize} × {s.claimSize} protected volume
+                  {s.stage === 2
+                    ? " · Development build, awaiting main rollout"
+                    : ""}
+                </p>
+                <span className="text-link">
+                  Open build guide <ArrowUpRight size={17} />
+                </span>
+              </div>
+            </Link>
+          ))}
+        <HearthstoneProgression />
         <p className="handbook-note">
           The catalogue will grow as new custom structures arrive. Each guide
           includes a model, material checklist and practical instructions.

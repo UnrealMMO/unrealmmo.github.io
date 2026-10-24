@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { structures, title } from "@/content/game";
+import { structures, title, materials } from "@/content/game";
 import { StructureViewer } from "@/components/structure-viewer";
+import { HearthstoneProgression } from "@/components/hearthstone-progression";
 export function generateStaticParams() {
   return structures.map((s) => ({ slug: s.id }));
 }
@@ -32,12 +33,13 @@ export default async function StructurePage({
         <p>{s.description}</p>
         <div className="structure-facts">
           <span>
-            {s.kind === "tree" ? "21 solid blocks" : "5 solid blocks"}
+            {Object.values(materials(s)).reduce((a, b) => a + b, 0)} solid
+            blocks
           </span>
           <span>
             {s.kind === "tree"
               ? `Produces ${title(s.output!).toLowerCase()}`
-              : "17 × 17 × 17 protected area"}
+              : `${s.claimSize} × ${s.claimSize} × ${s.claimSize} protected area`}
           </span>
           <span>
             {s.kind === "tree"
@@ -131,33 +133,38 @@ export default async function StructurePage({
           <>
             <section className="guide-split rules-panel">
               <div>
-                <h2>Preview, then claim.</h2>
+                <h2>
+                  {s.stage === 2
+                    ? "Build. Recognize. Upgrade."
+                    : "Preview, then claim."}
+                </h2>
                 <ol className="guide-list">
                   <li>
-                    You receive a bound Hearthstone on joining. Recover it with{" "}
-                    <code>/territory token</code> if needed.
+                    The item you carry is your bound Hearthstone Core. Recover
+                    it with <code>/territory token</code> if needed.
                   </li>
                   <li>
-                    Build the five-block pedestal. Right-click the iron block
-                    with your Hearthstone, or look at it and use{" "}
-                    <code>/territory preview</code>.
+                    {s.stage === 2
+                      ? "Add the foundation and corner pillars around your existing Stage 1 Hearthstone, keeping its iron core and four stone bricks."
+                      : "Build the five-block pedestal. Right-click its iron block with your Hearthstone Core to preview your home."}
                   </li>
                   <li>
-                    Inspect the private border preview. Confirm within 60
-                    seconds using the menu or <code>/territory confirm</code>.
+                    {s.stage === 2
+                      ? "Stand within eight blocks of the original core and right-click your Hearthstone Core. The menu item turns green when the upgrade is ready, or red with a reason when it is unavailable. Click green to preview, then confirm within 60 seconds."
+                      : "Inspect the private border preview. Confirm within 60 seconds using the menu."}
                   </li>
                   <li>
-                    Open <code>/territory</code> to manage your home and invite
-                    other players.
+                    Right-click your Hearthstone Core to manage your home, show
+                    its boundary and invite other players.
                   </li>
                 </ol>
               </div>
               <div>
                 <h3>Understand your borders</h3>
                 <p>
-                  Protection reaches eight blocks each way from the iron core,
-                  including vertically: a 17 × 17 × 17 cube. The diagram overlay
-                  illustrates that boundary.
+                  {s.stage === 2
+                    ? "Stage 2 protects exactly 50 blocks on each axis: original core −25 through +24, inclusive. This includes all of your original territory. The viewer’s layer 1 is the foundation below that core."
+                    : "Protection reaches eight blocks each way from the iron core, including vertically: a 17 × 17 × 17 cube. The diagram overlay illustrates that boundary."}
                 </p>
                 <p>
                   One starter territory per owner, across all worlds. Protection
@@ -168,10 +175,33 @@ export default async function StructurePage({
                   The default spawn exclusion is 128 horizontal blocks. World
                   boundaries, reserved areas and existing claim columns can
                   prevent placement. Recent PvP damage adds a 30-second founding
-                  delay.
+                  or upgrade delay. The full protected volume must fit within
+                  world limits.
                 </p>
               </div>
             </section>
+            {s.stage === 2 && (
+              <section className="handbook-note">
+                <h3>Adding to Stage 1</h3>
+                <p>
+                  Add 25 stone bricks, 8 polished andesite and 4 iron blocks.
+                  The checklist above shows the complete structure: 29 stone
+                  bricks, 8 polished andesite and 5 iron blocks, including the
+                  existing pedestal.
+                </p>
+                <p>
+                  No Coin charge, rooms, paths or enclosure checks. Extra
+                  decoration is welcome. Only the owner can confirm an upgrade;
+                  members and invitations stay intact. The menu refreshes while
+                  open and checks the structure again when confirming.
+                </p>
+                <p>
+                  Implemented in the development build; awaiting main-server
+                  rollout.
+                </p>
+              </section>
+            )}
+            <HearthstoneProgression />
             <section className="membership">
               <h2>Invite your people</h2>
               <p>
@@ -233,8 +263,9 @@ export default async function StructurePage({
           </>
         )}
         <p className="small-note guide-version">
-          Development handbook · reviewed 19 October 2026 · Shipped defaults,
-          subject to change.
+          Development handbook · reviewed{" "}
+          {s.kind === "hearthstone" ? "23 October 2026" : "19 October 2026"} ·
+          Shipped defaults, subject to change.
         </p>
       </div>
     </div>

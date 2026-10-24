@@ -105,6 +105,8 @@ export type Structure = {
   name: string;
   kind: "tree" | "hearthstone";
   level: number;
+  stage?: number;
+  claimSize?: number;
   description: string;
   color: string;
   blocks: Block[];
@@ -153,7 +155,9 @@ export const structures: Structure[] = [
   })),
   {
     id: "hearthstone",
-    name: "Hearthstone",
+    name: "Hearthstone · Stage 1",
+    stage: 1,
+    claimSize: 17,
     kind: "hearthstone",
     level: 0,
     color: "#b7c6bc",
@@ -175,10 +179,84 @@ export const structures: Structure[] = [
       })),
     ],
     steps: [
-      "Place one iron block, with stone bricks immediately north, south, east and west on the same layer. Right-click the iron core with your bound Hearthstone to preview the claim, then confirm within 60 seconds.",
+      "Place one iron block, with stone bricks immediately north, south, east and west on the same layer. Right-click the iron core with your bound Hearthstone Core to preview the claim, then confirm within 60 seconds.",
     ],
   },
 ];
+// Viewer layers start at the foundation; the original iron core is on layer 2.
+const starter = structures.find((s) => s.id === "hearthstone")!;
+const stageTwo: Block[] = [];
+for (let x = -2; x <= 2; x++)
+  for (let z = -2; z <= 2; z++)
+    stageTwo.push({ x, y: 0, z, material: "STONE_BRICKS", role: "pedestal" });
+stageTwo.push(...starter.blocks.map((b) => ({ ...b, y: 1 })));
+for (const x of [-2, 2])
+  for (const z of [-2, 2]) {
+    for (const y of [1, 2])
+      stageTwo.push({
+        x,
+        y,
+        z,
+        material: "POLISHED_ANDESITE",
+        role: "pedestal",
+      });
+    stageTwo.push({ x, y: 3, z, material: "IRON_BLOCK", role: "pedestal" });
+  }
+structures.push({
+  id: "hearthstone-stage-2",
+  name: "Fortified Hearthstone · Stage 2",
+  kind: "hearthstone",
+  stage: 2,
+  claimSize: 50,
+  level: 0,
+  color: "#b7c6bc",
+  description:
+    "Build around your original Hearthstone to protect a 50 × 50 × 50 home. Your existing land and members stay with you.",
+  blocks: stageTwo,
+  steps: [
+    "Add a complete 5 × 5 stone-brick foundation one block below the original iron core. This diagram's layer 1 is that new foundation.",
+    "Keep the original iron core and its four cardinal stone bricks. Add polished andesite at all four outer corners of the foundation.",
+    "Add a second polished-andesite block to each corner pillar. Extra decoration is allowed; no enclosed rooms or paths are required.",
+    "Cap each pillar with an iron block. Stand within eight blocks of the original core and right-click your Hearthstone Core. A green upgrade item means Stage 2 is ready; click to preview and confirm within 60 seconds.",
+  ],
+});
+export const hearthstoneStages = [
+  {
+    stage: 1,
+    name: "Hearthstone Pedestal",
+    size: 17,
+    status: "Implemented",
+    guide: "hearthstone",
+    description: "A five-block pedestal for your first protected home.",
+  },
+  {
+    stage: 2,
+    name: "Fortified Hearthstone",
+    size: 50,
+    status: "Implemented · awaiting main rollout",
+    guide: "hearthstone-stage-2",
+    description:
+      "A 5 × 5 foundation and four iron-capped pillars for a homestead.",
+  },
+  {
+    stage: 3,
+    name: "Hearthstone Sanctuary",
+    size: 100,
+    status: "Planned · not available",
+    guide: null,
+    description:
+      "A proposed 7 × 7 fortified shrine, roughly nine blocks tall, with outer columns, an upper stone ring and corner lanterns. Space for a village, workshops and farms.",
+  },
+  {
+    stage: 4,
+    name: "Hearthstone Wardtower",
+    size: 200,
+    status: "Planned · not available",
+    guide: null,
+    description:
+      "A proposed 9 × 9 protection tower, roughly 17 blocks tall, with buttresses, a crenellated crown and a raised central light. Space for a town center, roads and building plots.",
+  },
+] as const;
 export function materials(s: Structure) {
   return s.blocks
     .filter((b) => b.role !== "air")
@@ -199,5 +277,6 @@ export const palette: Record<string, string> = {
   LAPIS_BLOCK: "#526eb1",
   EMERALD_BLOCK: "#4eb58b",
   STONE_BRICKS: "#929d91",
+  POLISHED_ANDESITE: "#a5a8a1",
   AIR: "#c8e8d0",
 };

@@ -10,5 +10,11 @@
     "core": "0.9.1",
     "farming": "0.10.0",
     "scope": "Current source versions only, not deployed versions. All 495 XP/passive-bonus rows re-executed and unchanged. Full handbook text is not yet reconciled to this revision."
+  },
+  "hearthstoneReview": {
+    "reviewed": "2026-10-23",
+    "sourceCommit": "d22d66c",
+    "territory": "0.2.2",
+    "scope": "Hearthstone Core naming and Stage 1\u20132 geometry checked against Territory source. Stages 3\u20134 are labeled design proposals, not implemented recipes. Stage 2 awaits main-server rollout. Other handbook snapshots remain unchanged."
   }
 }

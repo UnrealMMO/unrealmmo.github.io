@@ -1,6 +1,6 @@
 # UnrealMMO website
 
-The public home and player handbook for UnrealMMO, an upcoming Minecraft MMORPG built on SMP. Original woodland-fantasy branding, five full skill guides (495 level entries), eight ore-tree guides and the Hearthstone guide, with a reusable interactive 3D build explorer.
+The public home and player handbook for UnrealMMO, an upcoming Minecraft MMORPG built on SMP. Original woodland-fantasy branding, five full skill guides (495 level entries), eight ore-tree guides, two Hearthstone build guides and a clearly labeled future-stage plan, with a reusable interactive 3D build explorer.
 
 ## Run locally
 

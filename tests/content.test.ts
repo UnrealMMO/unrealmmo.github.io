@@ -8,6 +8,7 @@ import {
   structures,
   materials,
   traitsFor,
+  hearthstoneStages,
 } from "../content/game";
 import { readFileSync } from "node:fs";
 const near = (a: number, b: number) =>
@@ -59,7 +60,7 @@ test("Farming additional structure unlocks preserve crop progression and multipl
   assert.equal(traitsFor(farmer).filter((t) => t.structure).length, 8);
 });
 test("all ore trees have exact geometry, quantities and open output ports", () => {
-  assert.equal(structures.length, 9);
+  assert.equal(structures.filter((s) => s.kind === "tree").length, 8);
   for (const s of structures.filter((s) => s.kind === "tree")) {
     const b = s.blocks;
     assert.equal(new Set(b.map((p) => `${p.x},${p.y},${p.z}`)).size, b.length);
@@ -96,7 +97,7 @@ test("Hearthstone is a five-block cardinal pedestal on one layer", () => {
   );
 });
 test("every structure trait resolves to a guide and identifiers are unique", () => {
-  assert.equal(new Set(structures.map((s) => s.id)).size, 9);
+  assert.equal(new Set(structures.map((s) => s.id)).size, structures.length);
   for (const s of skills)
     for (const t of traitsFor(s)) {
       assert.ok(t.level >= 1 && t.level <= 99);
@@ -127,4 +128,59 @@ test("every displayed XP and passive bonus matches the executed Java plugin rule
       assert.equal(actual.length, values.length);
       actual.forEach((value, i) => near(value, values[i]));
     }
+});
+
+test("Stage 2 preserves the pedestal and matches every required construction block", () => {
+  const s = structures.find((s) => s.id === "hearthstone-stage-2")!;
+  assert.equal(s.claimSize, 50);
+  assert.equal(s.blocks.length, 42);
+  assert.equal(new Set(s.blocks.map((b) => `${b.x},${b.y},${b.z}`)).size, 42);
+  assert.deepEqual(materials(s), {
+    STONE_BRICKS: 29,
+    IRON_BLOCK: 5,
+    POLISHED_ANDESITE: 8,
+  });
+  for (let x = -2; x <= 2; x++)
+    for (let z = -2; z <= 2; z++)
+      assert(
+        s.blocks.some(
+          (b) =>
+            b.x === x &&
+            b.z === z &&
+            b.y === 0 &&
+            b.material === "STONE_BRICKS",
+        ),
+      );
+  for (const b of structures.find((s) => s.id === "hearthstone")!.blocks)
+    assert(
+      s.blocks.some(
+        (n) =>
+          n.x === b.x && n.z === b.z && n.y === 1 && n.material === b.material,
+      ),
+    );
+  for (const x of [-2, 2])
+    for (const z of [-2, 2])
+      for (const y of [1, 2, 3])
+        assert(
+          s.blocks.some(
+            (b) =>
+              b.x === x &&
+              b.z === z &&
+              b.y === y &&
+              b.material === (y === 3 ? "IRON_BLOCK" : "POLISHED_ANDESITE"),
+          ),
+        );
+  assert.equal(s.steps.length, 4);
+});
+
+test("planned Hearthstone stages cannot appear as buildable recipes", () => {
+  assert.deepEqual(
+    hearthstoneStages.map((s) => s.size),
+    [17, 50, 100, 200],
+  );
+  for (const stage of hearthstoneStages.filter((s) => s.stage > 2)) {
+    assert.equal(stage.guide, null);
+    assert.match(stage.status, /Planned/);
+  }
+  assert.equal(structures.filter((s) => s.kind === "hearthstone").length, 2);
 });

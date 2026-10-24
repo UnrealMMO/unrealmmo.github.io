@@ -18,7 +18,8 @@ export default function About() {
         <p>
           Five skills are covered here: Sneak, Farming, Mining, Woodcutting and
           Fishing. The structures catalogue covers eight ore trees and the
-          Hearthstone pedestal. Additional features will be documented as they
+          Hearthstone pedestal and Stage 2 upgrade. Planned later stages are
+          labeled separately. Additional features will be documented as they
           become available.
         </p>
         <h2>Artwork & identity</h2>
