@@ -88,7 +88,7 @@ test("all ore trees have exact geometry, quantities and open output ports", () =
 });
 test("Hearthstone is a five-block cardinal pedestal on one layer", () => {
   const s = structures.find((s) => s.id === "hearthstone")!;
-  assert.deepEqual(materials(s), { IRON_BLOCK: 1, STONE_BRICKS: 4 });
+  assert.deepEqual(materials(s), { GOLD_BLOCK: 1, STONE_BRICKS: 4 });
   assert.ok(s.blocks.every((b) => b.y === 0));
   assert.ok(
     s.blocks
@@ -137,7 +137,8 @@ test("Stage 2 preserves the pedestal and matches every required construction blo
   assert.equal(new Set(s.blocks.map((b) => `${b.x},${b.y},${b.z}`)).size, 42);
   assert.deepEqual(materials(s), {
     STONE_BRICKS: 29,
-    IRON_BLOCK: 5,
+    GOLD_BLOCK: 1,
+    IRON_BLOCK: 4,
     POLISHED_ANDESITE: 8,
   });
   for (let x = -2; x <= 2; x++)
@@ -183,6 +184,15 @@ test("all four Hearthstone stages have cumulative buildable guides", () => {
     const s = structures.find((s) => s.id === stage.guide)!;
     assert.ok(s);
     assert.equal(s.blocks.length, counts[stage.stage - 1]);
+    assert.equal(s.blocks.filter((b) => b.material === "GOLD_BLOCK").length, 1);
+    assert.equal(
+      s.blocks.find((b) => b.role === "core")?.material,
+      "GOLD_BLOCK",
+    );
+    assert.equal(
+      s.blocks.filter((b) => b.material === "IRON_BLOCK").length,
+      4 * (stage.stage - 1),
+    );
     assert.equal(s.steps.length, Math.max(...s.blocks.map((b) => b.y)) + 1);
     if (stage.stage > 2) {
       const previous = structures.find((s) => s.stage === stage.stage - 1)!;

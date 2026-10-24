@@ -165,7 +165,7 @@ export const structures: Structure[] = [
     description:
       "A small foundation for a place of your own. Establish a protected home and choose who you share it with.",
     blocks: [
-      { x: 0, y: 0, z: 0, material: "IRON_BLOCK", role: "core" },
+      { x: 0, y: 0, z: 0, material: "GOLD_BLOCK", role: "core" },
       ...[
         [1, 0],
         [-1, 0],
@@ -180,11 +180,11 @@ export const structures: Structure[] = [
       })),
     ],
     steps: [
-      "Place one iron block, with stone bricks immediately north, south, east and west on the same layer. Right-click the iron core with your bound Hearthstone Core to preview the claim, then confirm within 60 seconds.",
+      "Place one gold block, with stone bricks immediately north, south, east and west on the same layer. Right-click the gold heart with your bound Hearthstone Core to preview the claim, then confirm within 60 seconds.",
     ],
   },
 ];
-// Viewer layers start at the foundation; the original iron core is on layer 2.
+// Viewer layers start at the foundation; the original gold heart is on layer 2.
 const starter = structures.find((s) => s.id === "hearthstone")!;
 const stageTwo: Block[] = hearthstoneBlueprints[1].map((b) => ({
   ...b,
@@ -203,8 +203,8 @@ structures.push({
     "Build around your original Hearthstone to protect a 50 × 50 × 50 home. Your existing land and members stay with you.",
   blocks: stageTwo,
   steps: [
-    "Add a complete 5 × 5 stone-brick foundation one block below the original iron core. This diagram's layer 1 is that new foundation.",
-    "Keep the original iron core and its four cardinal stone bricks. Add polished andesite at all four outer corners of the foundation.",
+    "Add a complete 5 × 5 stone-brick foundation one block below the original gold heart. This diagram's layer 1 is that new foundation.",
+    "Keep the original gold heart and its four cardinal stone bricks. Add polished andesite at all four outer corners of the foundation.",
     "Add a second polished-andesite block to each corner pillar. Extra decoration is allowed; no enclosed rooms or paths are required.",
     "Cap each pillar with an iron block. Stand within eight blocks of the original core and right-click your Hearthstone Core. A green upgrade item means Stage 2 is ready; click to preview and confirm within 60 seconds.",
   ],

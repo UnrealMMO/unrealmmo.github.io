@@ -145,7 +145,7 @@ export default async function StructurePage({
                   <li>
                     {(s.stage ?? 1) > 1
                       ? "Follow the layer guide to expand the existing Hearthstone. Retain its original core and every required block from the previous stage."
-                      : "Build the five-block pedestal. Right-click its iron block with your Hearthstone Core to preview your home."}
+                      : "Build the five-block pedestal. Right-click its gold heart with your Hearthstone Core to preview your home."}
                   </li>
                   <li>
                     {(s.stage ?? 1) > 1
@@ -163,7 +163,7 @@ export default async function StructurePage({
                 <p>
                   {(s.stage ?? 1) > 1
                     ? `Stage ${s.stage} protects exactly ${s.claimSize} blocks on each axis. Horizontally, this extends from core −${s.claimSize! / 2} through +${s.claimSize! / 2 - 1}, inclusive. Near world height limits the cube shifts vertically to fit, preserving your previous protection. The viewer illustrates a centered cube; its layer 1 is the foundation below the core.`
-                    : "Protection reaches eight blocks each way from the iron core, including vertically: a 17 × 17 × 17 cube. The diagram overlay illustrates that boundary."}
+                    : "Protection reaches eight blocks each way from the gold heart, including vertically: a 17 × 17 × 17 cube. The diagram overlay illustrates that boundary."}
                 </p>
                 <p>
                   One starter territory per owner, across all worlds. Protection
@@ -254,7 +254,7 @@ export default async function StructurePage({
               <p>
                 Only the owner can abandon a claim, using a fresh confirmation.
                 The Hearthstone’s required blocks are locked until then.
-                Abandoning destroys its iron core; other blocks remain. Stay
+                Abandoning destroys its gold heart; other blocks remain. Stay
                 near the Hearthstone so its core is loaded.
               </p>
             </section>

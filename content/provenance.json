@@ -12,9 +12,9 @@
     "scope": "Current source versions only, not deployed versions. All 495 XP/passive-bonus rows re-executed and unchanged. Full handbook text is not yet reconciled to this revision."
   },
   "hearthstoneReview": {
-    "reviewed": "2026-10-23",
-    "sourceCommit": "3a72038a3aab900920c746427a2434aa4641346f",
-    "territory": "0.3.0",
-    "scope": "All four cumulative Hearthstone recipes and 17/50/100/200-block cubes verified against exported plugin geometry. Territory 0.3.0 installed on main after isolated Folia tests; existing claim preserved. Other handbook snapshots remain unchanged."
+    "reviewed": "2026-10-24",
+    "sourceCommit": "ad67fa77e7fe526623380269d290843251019eae",
+    "territory": "0.3.6",
+    "scope": "All four cumulative recipes, one gold heart and unchanged iron pillar caps match the plugin-exported geometry. Gold-only recognition, claimed iron-heart conversion and protection verified with 238 unit tests and 14 isolated Folia scenarios. Other handbook snapshots remain unchanged."
   }
 }

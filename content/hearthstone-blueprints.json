@@ -1,13 +1,13 @@
 [
   [
-    { "x": 0, "y": 0, "z": 0, "material": "IRON_BLOCK" },
+    { "x": 0, "y": 0, "z": 0, "material": "GOLD_BLOCK" },
     { "x": 1, "y": 0, "z": 0, "material": "STONE_BRICKS" },
     { "x": -1, "y": 0, "z": 0, "material": "STONE_BRICKS" },
     { "x": 0, "y": 0, "z": 1, "material": "STONE_BRICKS" },
     { "x": 0, "y": 0, "z": -1, "material": "STONE_BRICKS" }
   ],
   [
-    { "x": 0, "y": 0, "z": 0, "material": "IRON_BLOCK" },
+    { "x": 0, "y": 0, "z": 0, "material": "GOLD_BLOCK" },
     { "x": 1, "y": 0, "z": 0, "material": "STONE_BRICKS" },
     { "x": -1, "y": 0, "z": 0, "material": "STONE_BRICKS" },
     { "x": 0, "y": 0, "z": 1, "material": "STONE_BRICKS" },
@@ -51,7 +51,7 @@
     { "x": 2, "y": 2, "z": 2, "material": "IRON_BLOCK" }
   ],
   [
-    { "x": 0, "y": 0, "z": 0, "material": "IRON_BLOCK" },
+    { "x": 0, "y": 0, "z": 0, "material": "GOLD_BLOCK" },
     { "x": 1, "y": 0, "z": 0, "material": "STONE_BRICKS" },
     { "x": -1, "y": 0, "z": 0, "material": "STONE_BRICKS" },
     { "x": 0, "y": 0, "z": 1, "material": "STONE_BRICKS" },
@@ -175,7 +175,7 @@
     { "x": 3, "y": 8, "z": 3, "material": "LANTERN" }
   ],
   [
-    { "x": 0, "y": 0, "z": 0, "material": "IRON_BLOCK" },
+    { "x": 0, "y": 0, "z": 0, "material": "GOLD_BLOCK" },
     { "x": 1, "y": 0, "z": 0, "material": "STONE_BRICKS" },
     { "x": -1, "y": 0, "z": 0, "material": "STONE_BRICKS" },
     { "x": 0, "y": 0, "z": 1, "material": "STONE_BRICKS" },
