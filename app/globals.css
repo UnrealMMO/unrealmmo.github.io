@@ -1390,6 +1390,28 @@ tbody tr:nth-child(even) {
   letter-spacing: 0.15em;
   pointer-events: none;
 }
+.viewer-selection {
+  position: absolute;
+  bottom: 20px;
+  left: 23px;
+  max-width: calc(100% - 46px);
+  display: grid;
+  gap: 4px;
+  padding: 12px 17px;
+  background: #10271fee;
+  border: 1px solid #c8d99580;
+  color: #fff0a3;
+  pointer-events: none;
+}
+.viewer-selection span {
+  font-size: 0.63rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #d3d8b4;
+}
+.viewer-selection strong {
+  font-size: 1rem;
+}
 .viewer-poster {
   height: 100%;
   display: flex;

@@ -115,6 +115,12 @@ export function StructureViewer({ structure: s }: { structure: Structure }) {
           <span className="viewer-tag">
             {width} × {max + 1} × {width} BLOCKS
           </span>
+          {selectedBlock && (selectedBlock.role !== "air" || air) && (
+            <div className="viewer-selection" role="status">
+              <span>Selected block</span>
+              <strong>{title(selectedBlock.material)}</strong>
+            </div>
+          )}
         </div>
         <div className="viewer-controls">
           <div
