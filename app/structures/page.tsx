@@ -3,7 +3,6 @@ import { ArrowUpRight } from "lucide-react";
 import { PageIntro } from "@/components/ui";
 import { StructurePreview } from "@/components/structure-preview";
 import { structures } from "@/content/game";
-import { HearthstoneProgression } from "@/components/hearthstone-progression";
 export const metadata = {
   title: "Structures",
   description:
@@ -46,7 +45,7 @@ export default function Structures() {
         </div>
         <div className="catalogue-heading">
           <h2>A place of your own</h2>
-          <span>Four stages · From a home to a settlement</span>
+          <span>Four stages of territory protection</span>
         </div>
         {structures
           .filter((s) => s.kind === "hearthstone")
@@ -69,7 +68,6 @@ export default function Structures() {
               </div>
             </Link>
           ))}
-        <HearthstoneProgression />
         <div className="handbook-note">
           <h3>Turn your territory into a settlement</h3>
           <p>

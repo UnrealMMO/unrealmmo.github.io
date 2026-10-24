@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { structures, title, materials } from "@/content/game";
 import { StructureViewer } from "@/components/structure-viewer";
-import { HearthstoneProgression } from "@/components/hearthstone-progression";
 export function generateStaticParams() {
   return structures.map((s) => ({ slug: s.id }));
 }
@@ -200,7 +199,6 @@ export default async function StructurePage({
                 </p>
               </section>
             )}
-            <HearthstoneProgression />
             <section className="membership">
               <h2>Invite your people</h2>
               <p>
@@ -255,15 +253,16 @@ export default async function StructurePage({
               </p>
               <p>
                 Only the owner can abandon a claim, using a fresh confirmation.
-                The buildings remain. Breaking the surrounding pedestal blocks
-                does not switch protection off.
+                The Hearthstone’s required blocks are locked until then.
+                Abandoning destroys its iron core; other blocks remain. Stay
+                near the Hearthstone so its core is loaded.
               </p>
             </section>
           </>
         )}
         <p className="small-note guide-version">
           Development handbook · reviewed{" "}
-          {s.kind === "hearthstone" ? "23 October 2026" : "19 October 2026"} ·
+          {s.kind === "hearthstone" ? "24 October 2026" : "19 October 2026"} ·
           Shipped defaults, subject to change.
         </p>
       </div>
