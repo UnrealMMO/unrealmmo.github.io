@@ -112,6 +112,34 @@ export function StructureViewer({ structure: s }: { structure: Structure }) {
               <p>Rotate, inspect and build layer by layer</p>
             </div>
           )}
+          <div className="viewer-keyboard-inspector">
+            <label htmlFor="block-select">Inspect a block</label>
+            <select
+              id="block-select"
+              value={selected ?? ""}
+              onChange={(e) => {
+                setSelected(e.target.value === "" ? null : +e.target.value);
+                if (
+                  e.target.value !== "" &&
+                  s.blocks[+e.target.value].role === "air"
+                )
+                  setAir(true);
+                setEnabled(true);
+              }}
+            >
+              <option value="">Select a block or click the 3D model</option>
+              {s.blocks
+                .filter((b) => b.y <= layer)
+                .map((b) => {
+                  const i = s.blocks.indexOf(b);
+                  return (
+                    <option value={i} key={i}>
+                      {title(b.material)} · {b.role} · ({b.x}, {b.y}, {b.z})
+                    </option>
+                  );
+                })}
+            </select>
+          </div>
           <span className="viewer-tag">
             {width} × {max + 1} × {width} BLOCKS
           </span>
@@ -220,39 +248,7 @@ export function StructureViewer({ structure: s }: { structure: Structure }) {
           </button>
         </div>
         <p className="step-description">{s.steps[layer]}</p>
-        <div className="block-inspector">
-          <label htmlFor="block-select">Inspect a block</label>
-          <select
-            id="block-select"
-            value={selected ?? ""}
-            onChange={(e) => {
-              setSelected(e.target.value === "" ? null : +e.target.value);
-              if (
-                e.target.value !== "" &&
-                s.blocks[+e.target.value].role === "air"
-              )
-                setAir(true);
-              setEnabled(true);
-            }}
-          >
-            <option value="">Select a block or click the 3D model</option>
-            {s.blocks
-              .filter((b) => b.y <= layer)
-              .map((b) => {
-                const i = s.blocks.indexOf(b);
-                return (
-                  <option value={i} key={i}>
-                    {title(b.material)} · {b.role} · ({b.x}, {b.y}, {b.z})
-                  </option>
-                );
-              })}
-          </select>
-          <p aria-live="polite">
-            {selectedBlock
-              ? `${title(selectedBlock.material)} · ${selectedBlock.role} · layer ${selectedBlock.y + 1}`
-              : "Drag to orbit · scroll to zoom · use camera buttons for keyboard access"}
-          </p>
-        </div>
+
         <p className="share-status" role="status">
           {share}
         </p>
