@@ -8,9 +8,9 @@ export const innExample = {
     { x: 7, z: 5 },
   ],
   storage: [
-    { x: 13, z: 7 },
-    { x: 14, z: 7 },
-    { x: 15, z: 7 },
+    { x: 5, z: 7, kind: "chest" },
+    { x: 7, z: 7, kind: "chest" },
+    { x: 14, z: 10, kind: "barrel" },
   ],
   furnace: { x: 15, z: 10 },
   sign: { x: 10, z: 17 },

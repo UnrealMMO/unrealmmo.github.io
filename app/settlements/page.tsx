@@ -5,145 +5,195 @@ import { InnFloorPlan } from "@/components/inn-floor-plan";
 export const metadata = {
   title: "Settlements & Inns",
   description:
-    "Build your first Inn: a simple checklist, overhead layout, and exterior and interior inspiration. Owners and territory stewards can register settlement structures.",
+    "Create settlement structures: a simple checklist, overhead layout, and exterior and interior inspiration. Owners and territory stewards can register settlement structures.",
 };
 export default function Settlements() {
   return (
     <div className="parchment page-body">
       <PageIntro
-        title="Build an Inn. Make it yours."
-        description="A place to rest. A warm hearth. The beginning of your settlement."
+        title="Settlements"
+        description="Turn your protected territory into a settlement with structures you design. Meet each building’s requirements, register it with a sign, and bring your settlement to life."
       />
-      <div className="wrap inn-build-guide">
-        <section
-          className="inn-build-basics"
-          aria-labelledby="inn-checklist-title"
-        >
-          <div className="inn-checklist">
-            <span className="eyebrow">YOUR FIRST SETTLEMENT BUILDING</span>
-            <h2 id="inn-checklist-title">Five steps. Your design.</h2>
-            <ol>
-              <li>
-                <strong>Build within your existing settlement.</strong>
-                <p>
-                  You must own the territory or be one of its stewards to
-                  register or deregister structures.
-                </p>
-              </li>
-              <li>
-                <strong>Stay within 20 × 20 × 20 blocks.</strong>
-                <p>
-                  The whole Inn’s registered cube must fit your territory and
-                  stay separate from other Inns.
-                </p>
-              </li>
-              <li>
-                <strong>Include the essentials.</strong>
-                <ul>
-                  <li>2–5 complete beds</li>
-                  <li>3–6 chests or barrels</li>
-                  <li>1 furnace or smoker</li>
-                </ul>
-              </li>
-              <li>
-                <strong>Get creative!</strong>
-                <p>
-                  Choose your walls, floors, roof, and decorations. No fixed
-                  blueprint or separate bedrooms required.
-                </p>
-              </li>
-              <li>
-                <strong>Place this sign at the entrance last.</strong>
-                <p>
-                  Write these two lines on the front. Save it to register, or
-                  right-click to check again.
-                </p>
-                <div
-                  className="inn-entry-sign"
-                  aria-label="Example front of entrance sign"
-                >
-                  <code>
-                    [UnrealInn]
-                    <br />
-                    Oak Inn
-                  </code>
+      <div className="wrap settlement-layout">
+        <nav className="settlement-nav" aria-label="Settlement structures">
+          <span className="eyebrow">STRUCTURES</span>
+          <a href="#inn">Inn</a>
+          <a href="#inn-income" className="settlement-nav-child">
+            Income
+          </a>
+        </nav>
+        <div className="inn-build-guide">
+          <section id="inn" aria-labelledby="inn-title">
+            <header className="settlement-structure-heading">
+              <span className="eyebrow">SETTLEMENT STRUCTURE</span>
+              <h2 id="inn-title">Inn</h2>
+              <p>
+                A place to rest, a warm hearth, and a steady income for your
+                territory.
+              </p>
+            </header>
+            <section
+              className="inn-build-basics"
+              aria-labelledby="inn-checklist-title"
+            >
+              <div className="inn-checklist">
+                <h3 id="inn-checklist-title">Build requirements</h3>
+                <ol>
+                  <li>
+                    <strong>Build within your existing territory.</strong>
+                    <p>
+                      You must own the territory or be one of its stewards to
+                      register or deregister structures.
+                    </p>
+                  </li>
+                  <li>
+                    <strong>Stay within 20 × 20 × 20 blocks.</strong>
+                    <p>
+                      The whole Inn’s registered cube must fit your territory
+                      and stay separate from other Inns.
+                    </p>
+                  </li>
+                  <li>
+                    <strong>Include the essentials.</strong>
+                    <ul>
+                      <li>2–5 complete beds</li>
+                      <li>3–6 chests or barrels</li>
+                      <li>1 furnace or smoker</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Get creative!</strong>
+                    <p>
+                      Choose your walls, floors, roof, and decorations. No fixed
+                      blueprint or separate bedrooms required.
+                    </p>
+                  </li>
+                  <li>
+                    <strong>Place this sign at the entrance last.</strong>
+                    <p>
+                      Write [UnrealInn] with your Inn’s unique name underneath.
+                      Save it to register your new structure, or right-click to
+                      manage your inn.
+                    </p>
+                    <div
+                      className="inn-entry-sign"
+                      aria-label="Example front of entrance sign"
+                    >
+                      <code>
+                        [UnrealInn]
+                        <br />
+                        Oak Inn
+                      </code>
+                    </div>
+                  </li>
+                </ol>
+                <Link href="/structures/hearthstone/" className="text-link">
+                  Need territory? Build a Hearthstone <ArrowUpRight size={17} />
+                </Link>
+              </div>
+              <InnFloorPlan />
+            </section>
+            <section
+              className="inn-inspiration"
+              aria-labelledby="inn-inspiration-title"
+            >
+              <div className="inn-inspiration-heading">
+                <div>
+                  <span className="eyebrow">
+                    FROM THE BASICS TO YOUR OWN PLACE
+                  </span>
+                  <h3 id="inn-inspiration-title">
+                    Same essentials. A little imagination.
+                  </h3>
                 </div>
-                <p className="inn-small-note">
-                  Replace “Oak Inn” with your own name. Stay within eight blocks
-                  while it checks.
-                </p>
-              </li>
-            </ol>
-            <Link href="/structures/hearthstone/" className="text-link">
-              Need territory? Build a Hearthstone <ArrowUpRight size={17} />
-            </Link>
-          </div>
-          <InnFloorPlan />
-        </section>
-        <section
-          className="inn-inspiration"
-          aria-labelledby="inn-inspiration-title"
-        >
-          <div className="inn-inspiration-heading">
-            <div>
-              <span className="eyebrow">FROM THE BASICS TO YOUR OWN PLACE</span>
-              <h2 id="inn-inspiration-title">
-                Same essentials. A little imagination.
-              </h2>
+              </div>
+              <div className="inn-inspiration-views">
+                <figure>
+                  <div className="inn-art-view">
+                    <img
+                      src="/art/inn-exterior-interior-v1.png"
+                      width="2056"
+                      height="765"
+                      alt="Minecraft-style timber and stone Inn exterior with a welcoming entrance and an UnrealInn sign beside the door."
+                    />
+                  </div>
+                </figure>
+                <figure>
+                  <div className="inn-art-view inn-art-interior">
+                    <img
+                      src="/art/inn-exterior-interior-v1.png"
+                      width="2056"
+                      height="765"
+                      alt="Cozy Minecraft-style Inn interior with a plank floor, red beds, storage chests, a furnace and warm lanterns."
+                    />
+                  </div>
+                </figure>
+              </div>
+              <p className="inn-art-note">
+                Illustrated build inspiration. Your Inn does not need to look
+                like this.
+              </p>
+            </section>
+            <section
+              id="inn-income"
+              className="inn-income"
+              aria-labelledby="inn-income-title"
+            >
+              <h3 id="inn-income-title">Inn income</h3>
+              <p>
+                Add a bed and a chest or barrel together for each extra room.
+                Earnings go to the territory owner.
+              </p>
+              <div
+                className="inn-income-chart"
+                role="img"
+                aria-label="Hourly Inn income: 2 rooms, 2 beds and 3 storage blocks earn 10 Coins; 3 rooms, 3 beds and 4 storage blocks earn 15; 4 rooms, 4 beds and 5 storage blocks earn 18; 5 rooms, 5 beds and 6 storage blocks earn 20."
+              >
+                {[
+                  { rooms: 2, coins: 10 },
+                  { rooms: 3, coins: 15 },
+                  { rooms: 4, coins: 18 },
+                  { rooms: 5, coins: 20 },
+                ].map(({ rooms, coins }) => (
+                  <div
+                    className="inn-income-row"
+                    key={rooms}
+                    aria-hidden="true"
+                  >
+                    <div className="inn-income-label">
+                      <strong>{rooms} rooms</strong>
+                      <span>
+                        {rooms} beds · {rooms + 1} storage
+                      </span>
+                    </div>
+                    <div className="inn-income-track">
+                      <div
+                        className="inn-income-bar"
+                        style={{ width: `${(coins / 20) * 100}%` }}
+                      >
+                        <strong>{coins}</strong>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+                <span className="inn-income-unit" aria-hidden="true">
+                  COINS PER HOUR
+                </span>
+              </div>
+              <p className="inn-art-note">
+                Validated Inns keep earning while you are offline. Missing
+                requirements or lost territory stop new earnings.
+              </p>
+            </section>
+            <div className="inn-commands">
+              <p>
+                <code>/inn list</code> — status and progress.{" "}
+                <code>/inn remove Oak Inn</code> — deregister without removing
+                blocks.
+              </p>
             </div>
-            <p>
-              Timber beams, a welcoming entrance, and a cozy interior. Make
-              something worth coming home to.
-            </p>
-          </div>
-          <div className="inn-inspiration-views">
-            <figure>
-              <div className="inn-art-view">
-                <img
-                  src="/art/inn-exterior-interior-v1.png"
-                  width="2056"
-                  height="765"
-                  alt="Minecraft-style timber and stone Inn exterior with a welcoming entrance and an UnrealInn sign beside the door."
-                />
-              </div>
-              <figcaption>THE FRONT · A SIGN AT THE ENTRANCE</figcaption>
-            </figure>
-            <figure>
-              <div className="inn-art-view inn-art-interior">
-                <img
-                  src="/art/inn-exterior-interior-v1.png"
-                  width="2056"
-                  height="765"
-                  alt="Cozy Minecraft-style Inn interior with a plank floor, red beds, storage chests, a furnace and warm lanterns."
-                />
-              </div>
-              <figcaption>THE INTERIOR · ROOM TO MAKE IT YOURS</figcaption>
-            </figure>
-          </div>
-          <p className="inn-art-note">
-            Illustrated build inspiration. Your Inn does not need to look like
-            this.
-          </p>
-        </section>
-        <details className="inn-quick-reference">
-          <summary>Income &amp; useful commands</summary>
-          <div>
-            <p>
-              A valid Inn earns{" "}
-              <strong>10 / 15 / 18 / 20 Coins per hour</strong> for 2 / 3 / 4 /
-              5 rooms. After the minimum, add a bed and a storage block together
-              for each extra room. Earnings go to the territory owner, even when
-              a steward registers it.
-            </p>
-            <p>
-              <code>/inn list</code> — status and progress.{" "}
-              <code>/inn remove Oak Inn</code> — deregister without removing
-              blocks. Right-click the sign after expanding. Validated Inns keep
-              earning while you are offline; missing requirements or lost
-              territory stop new earnings.
-            </p>
-          </div>
-        </details>
+          </section>
+        </div>
       </div>
     </div>
   );

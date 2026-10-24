@@ -26,9 +26,9 @@ export function InnFloorPlan() {
         </title>
         <desc id="inn-plan-description">
           An oak plank floor with optional stone walls, an entrance at the
-          bottom, two complete beds at the back left, three storage blocks at
-          the right, one furnace and an entrance sign. Each grid square is one
-          block. Maximum height is also 20 blocks.
+          bottom, two complete beds at the back left, two chests at the foot of
+          the beds, a barrel next to the furnace, and an entrance sign. Each
+          grid square is one block. Maximum height is also 20 blocks.
         </desc>
         <defs>
           <pattern
@@ -139,14 +139,33 @@ export function InnFloorPlan() {
               stroke="#5f4325"
               strokeWidth="1.5"
             />
-            <path d={`M${at(p.x) + 2} ${at(p.z) + 8}h16`} stroke="#5f4325" />
-            <rect
-              x={at(p.x) + 8}
-              y={at(p.z) + 6}
-              width="4"
-              height="6"
-              fill="#e0cd8e"
-            />
+            {p.kind === "barrel" ? (
+              <>
+                <path
+                  d={`M${at(p.x) + 5} ${at(p.z) + 2}v16m5-16v16m5-16v16`}
+                  stroke="#72502c"
+                />
+                <path
+                  d={`M${at(p.x) + 2} ${at(p.z) + 5}h16m-16 10h16`}
+                  stroke="#494d43"
+                  strokeWidth="2.5"
+                />
+              </>
+            ) : (
+              <>
+                <path
+                  d={`M${at(p.x) + 2} ${at(p.z) + 8}h16`}
+                  stroke="#5f4325"
+                />
+                <rect
+                  x={at(p.x) + 8}
+                  y={at(p.z) + 6}
+                  width="4"
+                  height="6"
+                  fill="#e0cd8e"
+                />
+              </>
+            )}
           </g>
         ))}
         <g>
@@ -192,14 +211,6 @@ export function InnFloorPlan() {
           d={`M${at(plan.sign.x) + 3} ${at(plan.sign.z) + 6}h15m-15 4h15`}
           stroke="#6e502d"
         />
-        <text
-          x="240"
-          y="468"
-          textAnchor="middle"
-          className="inn-plan-dimension"
-        >
-          ENTRANCE ↓ · EACH SQUARE = 1 BLOCK
-        </text>
       </svg>
       <ul className="inn-plan-key" aria-label="Floor plan key">
         <li>
@@ -216,10 +227,6 @@ export function InnFloorPlan() {
           Entrance sign
         </li>
       </ul>
-      <figcaption>
-        One simple layout. Walls and flooring are optional. Keep the full
-        registered cube inside your territory, with room above and below.
-      </figcaption>
     </figure>
   );
 }
