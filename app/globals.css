@@ -2238,306 +2238,265 @@ tbody tr:nth-child(even) {
   }
 }
 
-/* Settlements handbook */
-.settlement-guide {
-  padding-bottom: 90px;
+/* Visual settlement build guide */
+.inn-build-guide {
+  padding-bottom: 80px;
 }
-.settlement-jumps {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 25px;
-  border-block: 1px solid var(--line);
-  padding: 18px 0;
-  margin-bottom: 60px;
-}
-.settlement-jumps a {
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-  text-decoration-color: #a3ad91;
-}
-.settlement-foundation {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 64px;
-  align-items: start;
-}
-.settlement-guide .eyebrow {
+.inn-build-guide .eyebrow {
   display: block;
-  color: #617343;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  color: #637449;
+  font-size: 0.72rem;
   font-weight: 600;
-  margin-bottom: 16px;
-}
-.settlement-guide h2 {
-  font-size: clamp(1.8rem, 3vw, 2.8rem);
-  max-width: 780px;
-  margin-bottom: 24px;
-}
-.settlement-guide h3 {
+  letter-spacing: 0.13em;
   margin-bottom: 14px;
 }
-.settlement-guide p + p {
-  margin-top: 16px;
-}
-.settlement-guide .text-link {
-  margin-top: 22px;
-}
-.settlement-guide code {
-  font-size: 0.88em;
-  overflow-wrap: anywhere;
-}
-.settlement-land {
-  background: var(--forest);
-  color: var(--paper);
-  padding: 32px;
-  border-top: 3px solid var(--gold);
-}
-.settlement-land > svg {
-  color: var(--gold);
-  margin-bottom: 18px;
-}
-.settlement-land ol {
-  list-style: none;
-  padding: 0;
-  margin: 22px 0;
-}
-.settlement-land li + li {
-  border-top: 1px solid #eee9db24;
-}
-.settlement-land li a {
-  display: block;
-  padding: 14px 0;
-}
-.settlement-land li a:hover span {
-  text-decoration: underline;
-}
-.settlement-land li span {
-  display: block;
-  font-size: 0.8rem;
-}
-.settlement-land li strong {
-  display: block;
-  font-size: 1.4rem;
-  color: var(--gold);
-  letter-spacing: 0.025em;
-}
-.settlement-land > p {
-  font-size: 0.9rem;
-  color: #d2d8c8;
-}
-.settlement-callout {
-  border-left: 3px solid #8c9d62;
-  padding: 20px 26px;
-  background: #d9ddc84d;
-  margin: 32px 0;
-}
-.settlement-callout > strong {
-  display: block;
-  margin-bottom: 6px;
-}
-.settlement-section {
-  border-top: 1px solid var(--line);
-  margin-top: 64px;
-  padding-top: 48px;
-  scroll-margin-top: 110px;
-}
-.settlement-lead {
-  max-width: 800px;
-  font-size: 1.1rem;
-}
-.inn-requirements {
+.inn-build-basics {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin: 32px 0;
-}
-.inn-requirements article {
-  padding: 24px;
-  background: #ffffff40;
-  border: 1px solid var(--line);
-}
-.inn-requirements svg {
-  width: 28px;
-  height: 28px;
-  margin-bottom: 16px;
-  color: #627343;
-}
-.inn-requirements strong {
-  display: block;
-  margin-bottom: 9px;
-  font-size: 1.1rem;
-}
-.inn-requirements p {
-  font-size: 0.92rem;
-  color: var(--muted);
-}
-.inn-registration {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 48px;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 70px;
   align-items: start;
-  margin: 45px 0 25px;
 }
-.settlement-steps {
-  padding-left: 24px;
+.inn-build-guide h2 {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
 }
-.settlement-steps li {
-  padding-left: 10px;
-  margin-bottom: 22px;
+.inn-checklist > ol {
+  padding: 0;
+  margin: 30px 0;
+  list-style: none;
+  counter-reset: inn-step;
 }
-.settlement-steps li::marker {
-  color: #788b51;
-  font-weight: 600;
+.inn-checklist > ol > li {
+  position: relative;
+  padding-left: 46px;
+  margin-bottom: 27px;
+  counter-increment: inn-step;
 }
-.settlement-steps strong {
+.inn-checklist > ol > li::before {
+  content: counter(inn-step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #a3ac8e;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #607143;
+  font-size: 0.9rem;
+}
+.inn-checklist strong {
   display: block;
+  font-size: 1.08rem;
   margin-bottom: 5px;
 }
-.inn-sign-example {
-  text-align: center;
-  padding: 30px;
-  background: #d7bc811a;
-  border: 1px solid #cbb88c;
-}
-.inn-sign-example > span {
-  font-size: 0.7rem;
-  letter-spacing: 0.13em;
-  color: #736345;
-}
-.inn-sign-board {
-  margin: 24px 0;
-  padding: 28px 12px;
-  background: #493a26;
-  color: #fff1cf;
-  border: 5px double #a18a59;
-  box-shadow: 0 8px 0 #30291c;
-}
-.inn-sign-board code {
-  font-size: clamp(1.1rem, 2vw, 1.6rem);
-  line-height: 1.8;
-}
-.inn-sign-example p {
-  font-size: 0.9rem;
-}
-.settlement-boundary-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 50px;
-  align-items: center;
-}
-.inn-cube-figure {
-  margin: 0;
-  text-align: center;
-}
-.inn-cube-figure svg {
-  width: 100%;
-  max-width: 360px;
-}
-.inn-cube-figure text {
-  fill: var(--muted);
-  font: 10px var(--font-body);
-  letter-spacing: 1.5px;
-}
-.inn-cube-figure figcaption {
-  max-width: 300px;
-  margin: 15px auto;
-  font-size: 0.9rem;
+.inn-checklist p {
+  font-size: 0.94rem;
   color: var(--muted);
 }
-.settlement-guide .table-scroll {
-  margin-top: 28px;
+.inn-checklist ul {
+  padding-left: 18px;
+  margin: 7px 0 0;
+  list-style: disc;
 }
-.settlement-guide table {
-  min-width: 520px;
+.inn-checklist ul li {
+  padding-left: 4px;
+  margin: 3px 0;
 }
-.settlement-two-column {
+.inn-entry-sign {
+  width: 240px;
+  max-width: 100%;
+  text-align: center;
+  background: #4c3d27;
+  color: #fff0cc;
+  border: 4px double #b79a60;
+  padding: 17px;
+  margin: 17px 0;
+  box-shadow: 0 5px 0 #352c1d;
+}
+.inn-entry-sign code {
+  background: transparent;
+  padding: 0;
+  font-size: 1.18rem;
+  line-height: 1.7;
+}
+.inn-checklist .inn-small-note {
+  font-size: 0.8rem;
+}
+.inn-plan {
+  margin: 0;
+  border: 1px solid var(--line);
+  background: #ffffff40;
+  padding: 26px;
+}
+.inn-plan-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.inn-plan-heading span {
+  font-size: 0.7rem;
+  letter-spacing: 0.13em;
+  color: #6b795b;
+}
+.inn-plan-heading strong {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+}
+.inn-plan svg {
+  display: block;
+  width: 100%;
+  margin-top: 22px;
+}
+.inn-plan-dimension {
+  fill: #53664a;
+  font: 10px var(--font-body);
+  letter-spacing: 1px;
+}
+.inn-plan-key {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 35px 50px;
-  margin-top: 38px;
+  gap: 9px 14px;
+  margin: 22px 0;
+  padding: 0;
+  list-style: none;
 }
-.settlement-two-column h3 {
-  font-size: 1.15rem;
+.inn-plan-key li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.82rem;
 }
-.settlement-commands {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin: 30px 0;
-}
-.settlement-commands > div {
-  background: #10282008;
-  border-top: 2px solid #9eb777;
-  padding: 22px;
-}
-.settlement-commands code {
+.inn-plan-key i {
   display: block;
-  margin-bottom: 12px;
-  font-weight: 600;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  border: 1px solid #10282040;
 }
-.settlement-commands p {
-  font-size: 0.9rem;
+.key-bed {
+  background: #9c3836;
 }
-.settlement-faq {
-  margin: 30px 0;
+.key-storage {
+  background: #aa7538;
+}
+.key-furnace {
+  background: #6f7470;
+}
+.key-sign {
+  background: #dfbb79;
+}
+.inn-plan figcaption,
+.inn-inspiration figcaption {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.inn-inspiration {
   border-top: 1px solid var(--line);
+  margin-top: 60px;
+  padding-top: 42px;
 }
-.settlement-faq details {
+.inn-inspiration-heading {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 45px;
+  align-items: end;
+  margin-bottom: 30px;
+}
+.inn-inspiration-heading p {
+  max-width: 410px;
+  color: var(--muted);
+}
+.inn-inspiration figure {
+  margin: 0;
+}
+.inn-inspiration-views {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.inn-art-view {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1028 / 765;
+}
+.inn-art-view img {
+  display: block;
+  width: 200%;
+  max-width: none;
+  height: auto;
+}
+.inn-art-interior img {
+  transform: translateX(-50%);
+}
+.inn-inspiration-views figcaption {
+  padding: 16px;
+  background: var(--forest);
+  color: var(--gold);
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
+}
+.inn-art-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 11px;
+}
+.inn-quick-reference {
+  border-block: 1px solid var(--line);
+  margin-top: 42px;
   padding: 20px 0;
-  border-bottom: 1px solid var(--line);
 }
-.settlement-faq summary {
+.inn-quick-reference summary {
   cursor: pointer;
   font-weight: 600;
-  padding-right: 20px;
 }
-.settlement-faq details p {
-  margin-top: 12px;
+.inn-quick-reference > div {
   max-width: 900px;
+  padding-top: 15px;
+}
+.inn-quick-reference p {
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+.inn-quick-reference code {
+  font-size: 0.88em;
 }
 @media (max-width: 1050px) {
-  .inn-requirements {
-    grid-template-columns: repeat(2, 1fr);
+  .inn-build-basics {
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
   }
-  .settlement-foundation,
-  .inn-registration,
-  .settlement-boundary-grid {
-    gap: 28px;
+  .inn-plan {
+    padding: 20px;
   }
 }
 @media (max-width: 760px) {
-  .settlement-foundation,
-  .inn-registration,
-  .settlement-boundary-grid,
-  .settlement-two-column,
-  .settlement-commands {
+  .inn-build-basics,
+  .inn-inspiration-heading {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
-  .settlement-jumps {
-    margin-bottom: 36px;
-    gap: 13px 22px;
+  .inn-plan {
+    padding: 20px 12px;
   }
-  .settlement-section {
-    margin-top: 42px;
-    padding-top: 34px;
+  .inn-plan-heading,
+  .inn-plan figcaption {
+    padding-inline: 8px;
   }
-  .settlement-land {
-    padding: 25px;
+  .inn-plan-key {
+    padding-inline: 8px;
   }
-  .inn-requirements {
-    gap: 12px;
+
+  .inn-inspiration {
+    margin-top: 40px;
+    padding-top: 32px;
   }
-  .inn-requirements article {
-    padding: 18px;
-  }
-  .settlement-callout {
-    padding: 18px;
-  }
-  .settlement-guide .table-scroll {
-    overflow-x: auto;
+}
+
+@media (max-width: 760px) {
+  .inn-inspiration-views {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 }
