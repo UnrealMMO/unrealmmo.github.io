@@ -180,7 +180,7 @@ export const structures: Structure[] = [
       })),
     ],
     steps: [
-      "Place one gold block, with stone bricks immediately north, south, east and west on the same layer. Right-click the gold heart with your bound Hearthstone Core to preview the claim, then confirm within 60 seconds.",
+      "Place one gold block, with stone bricks immediately north, south, east and west on the same layer. You can finish a higher tier before claiming. Right-click the gold heart with your bound Hearthstone Core to preview the highest completed tier that fits, then confirm within 60 seconds.",
     ],
   },
 ];
@@ -206,7 +206,7 @@ structures.push({
     "Add a complete 5 × 5 stone-brick foundation one block below the original gold heart. This diagram's layer 1 is that new foundation.",
     "Keep the original gold heart and its four cardinal stone bricks. Add polished andesite at all four outer corners of the foundation.",
     "Add a second polished-andesite block to each corner pillar. Extra decoration is allowed; no enclosed rooms or paths are required.",
-    "Cap each pillar with an iron block. Stand within eight blocks of the original core and right-click your Hearthstone Core. A green upgrade item means Stage 2 is ready; click to preview and confirm within 60 seconds.",
+    "Cap each pillar with an iron block. For an initial claim, right-click the gold heart with your Hearthstone Core. For an existing claim, open the Core menu within eight blocks and use its green upgrade item. Review the preview and confirm within 60 seconds.",
   ],
 });
 for (const stage of [3, 4]) {
@@ -244,8 +244,8 @@ for (const stage of [3, 4]) {
             : y === pillar + 2
               ? `Connect the four caps with a complete stone-brick perimeter ring.${stage === 4 ? " Add a stone-brick cross through the center, joining opposite sides in both directions." : ""}`
               : stage === 3
-                ? "Place a lantern on each corner of the upper ring. Open your Hearthstone Core menu near the original core to preview and confirm Stage 3."
-                : "Place chiseled stone bricks on every other block of the crown ring, including all four corners. Place a lantern at the center of the crossbeam. Open your Hearthstone Core menu to preview and confirm Stage 4.",
+                ? "Place a lantern on each corner of the upper ring. For an initial claim, right-click the gold heart with your Hearthstone Core. Already claimed? Use the green upgrade item in the Core menu to preview and confirm Stage 3."
+                : "Place chiseled stone bricks on every other block of the crown ring, including all four corners. Place a lantern at the center of the crossbeam. For an initial claim, right-click the gold heart with your Hearthstone Core. Already claimed? Use the Core menu to preview and confirm Stage 4.",
     ),
   });
 }

@@ -43,7 +43,7 @@ export default async function StructurePage({
           <span>
             {s.kind === "tree"
               ? `${s.seconds}s base active cycle`
-              : "One starter claim per player"}
+              : "One territory per player"}
           </span>
         </div>
       </header>
@@ -144,8 +144,8 @@ export default async function StructurePage({
                   </li>
                   <li>
                     {(s.stage ?? 1) > 1
-                      ? "Follow the layer guide to expand the existing Hearthstone. Retain its original core and every required block from the previous stage."
-                      : "Build the five-block pedestal. Right-click its gold heart with your Hearthstone Core to preview your home."}
+                      ? "Follow the layer guide to complete this Hearthstone tier, keeping the gold heart and every required block from the lower stages."
+                      : "Build the pedestal or a higher complete tier. Right-click the gold heart with your Hearthstone Core to preview the highest completed tier that fits."}
                   </li>
                   <li>
                     {(s.stage ?? 1) > 1
@@ -157,6 +157,14 @@ export default async function StructurePage({
                     its boundary and invite other players.
                   </li>
                 </ol>
+                <p>
+                  Building before your initial claim? Right-click the gold heart
+                  with your Hearthstone Core to detect the highest complete
+                  tier. You can claim its full volume immediately, without
+                  claiming Stage 1 first. If neighbors or world limits block
+                  that size, the preview explains the highest tier that fits.
+                  Confirm the exact preview within 60 seconds.
+                </p>
               </div>
               <div>
                 <h3>Understand your borders</h3>

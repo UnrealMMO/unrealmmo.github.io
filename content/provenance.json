@@ -13,8 +13,8 @@
   },
   "hearthstoneReview": {
     "reviewed": "2026-10-24",
-    "sourceCommit": "ad67fa77e7fe526623380269d290843251019eae",
-    "territory": "0.3.6",
-    "scope": "All four cumulative recipes, one gold heart and unchanged iron pillar caps match the plugin-exported geometry. Gold-only recognition, claimed iron-heart conversion and protection verified with 238 unit tests and 14 isolated Folia scenarios. Other handbook snapshots remain unchanged."
+    "sourceCommit": "67a6965cae3986cf2729452f272b5f0ad71a6640",
+    "territory": "0.3.7",
+    "scope": "All four cumulative recipes retain one gold heart and iron pillar caps and match the plugin-exported geometry. Direct initial tiers, explicit conflict/world-limit fallback, confirmation rechecks, later upgrades and restart verified with 243 unit tests and 13 isolated Folia scenarios. Other handbook snapshots remain unchanged."
   }
 }
