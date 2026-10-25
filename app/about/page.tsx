@@ -43,12 +43,11 @@ export default function About() {
         </p>
         <h2>Privacy</h2>
         <p>
-          This version of the website has no account system, advertising,
-          analytics or sign-up form. Skill filters, material checklists and 3D
-          controls run in your browser. Checklists reset when the page reloads.
-          External GitHub links follow GitHub’s own policies. See our{" "}
-          <Link href="/privacy-policy/">Privacy policy</Link> for website and
-          server data handling.
+          Skill filters, material checklists and 3D controls run in your
+          browser. Checklists reset when the page reloads. We do not show
+          third-party advertising to players. Our{" "}
+          <Link href="/privacy-policy/">Privacy policy</Link> explains website
+          purchases, payment providers, cookies, server data and your choices.
         </p>
       </article>
     </div>

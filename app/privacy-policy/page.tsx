@@ -16,18 +16,20 @@ export default function PrivacyPolicy() {
         <p>
           This policy describes how the UnrealMMO server team (“we”, “us”)
           handles information when you browse our guides, play on our Minecraft
-          server, or contact support. Minecraft, Microsoft, GitHub and other
-          external services have their own privacy policies.
+          server, make a real-money purchase through our website, or contact
+          support. Minecraft, Microsoft, GitHub and other external services have
+          their own privacy policies.
         </p>
         <h2>Information we handle</h2>
         <ul>
           <li>
             <strong>Website visits.</strong> Our public handbook is hosted on
             GitHub Pages. GitHub may receive connection information, including
-            your IP address, when delivering the site. This website has no
-            account registration, advertising or analytics scripts. Fonts and
-            artwork are served with the site; guide controls and checklists run
-            in your browser.
+            your IP address, when delivering the site. The handbook itself has
+            no account registration or analytics scripts. Fonts and artwork are
+            served with the site; guide controls and checklists run in your
+            browser. Purchase and payment services may process additional
+            information as described below.
           </li>
           <li>
             <strong>Minecraft identity and connections.</strong> The server uses
@@ -51,6 +53,24 @@ export default function PrivacyPolicy() {
             Please avoid including passwords or unnecessary personal details.
           </li>
         </ul>
+        <h2>Website purchases and payments</h2>
+        <p>
+          We offer real-money purchases through our website. To process and
+          deliver an order, we and our payment service providers may handle your
+          contact and billing details, Minecraft username or UUID, purchased
+          items, amount and currency, transaction identifiers, payment status,
+          and refund or dispute history. Payment providers may collect payment
+          credentials and device or connection information directly for payment
+          authorization, fraud prevention and their legal obligations.
+        </p>
+        <p>
+          We use order information to deliver purchases to the correct player,
+          send receipts or service messages, provide purchase support, handle
+          refunds and disputes, and maintain accounting records. The payment
+          provider’s privacy notice applies to information it processes,
+          including when you use its hosted checkout. Do not send card details
+          or account passwords to our support email.
+        </p>
         <h2>Why we use it</h2>
         <p>
           We use this information to save and restore gameplay, apply territory
@@ -68,11 +88,14 @@ export default function PrivacyPolicy() {
         </p>
         <p>
           Authorized server administrators may access records for operation,
-          troubleshooting, moderation and support. Hosting, email and Minecraft
-          authentication or profile services process information needed to
-          provide their services. Information may also be disclosed when
-          required by law or needed to investigate abuse and protect players or
-          the service.
+          troubleshooting, moderation and support. We share relevant information
+          with providers supporting hosting, payment processing, order
+          fulfillment, email, Minecraft authentication or profiles, and customer
+          support, as needed for those functions. Payment and authentication
+          providers may also process information for their own legal, security
+          and account-management purposes under their privacy notices.
+          Information may also be disclosed when required by law or needed to
+          investigate abuse and protect players or the service.
         </p>
         <p>
           For information about the website host and Minecraft account services,
@@ -87,21 +110,47 @@ export default function PrivacyPolicy() {
           . External links take you to services governed by their own policies;
           their processing may occur in other countries.
         </p>
-        <h2>Cookies and browser controls</h2>
+        <h2>Advertising UnrealMMO</h2>
         <p>
-          The current handbook does not set advertising or analytics cookies.
-          Its interactive guides do not require a tracking profile. Your browser
-          still makes ordinary requests to the website host, and external sites
-          you choose to visit may use cookies of their own.
+          We promote UnrealMMO on other websites and platforms. We do not
+          display third-party advertisements to players on our website or
+          server. Platforms where our advertisements appear may process
+          information about your interactions with those advertisements under
+          their own privacy notices and your choices on those platforms.
+        </p>
+        <h2>Cookies and consent</h2>
+        <p>
+          Cookies and similar technologies may support checkout sessions,
+          payment security, fraud prevention, authentication, preferences and
+          consent choices. The current handbook does not set advertising or
+          analytics cookies; third-party checkout and other services may use
+          their own technologies.
+        </p>
+        <p>
+          Where applicable law requires consent for non-essential cookies or
+          similar tracking, that consent must be obtained before those
+          technologies are used. Optional tracking should remain disabled unless
+          you choose to enable it. Where a service offers cookie settings, you
+          can use them to change or withdraw your choices. You can also block or
+          delete cookies in your browser, although this may interrupt checkout
+          or other features that rely on essential cookies.
+        </p>
+        <p>
+          Buying something or playing on the server does not itself constitute
+          consent to optional tracking or marketing. For third-party services,
+          consult their cookie notices and privacy controls. Contact us if you
+          need help understanding a choice.
         </p>
         <h2>Retention and security</h2>
         <p>
           Player progress and world records persist between sessions.
           Transaction and moderation records may need to remain available to
           resolve disputes, prevent duplicate payments and investigate abuse.
-          Backups can retain earlier copies after live data changes. Retention
-          depends on the record and its operational or legal purpose; leaving
-          the server does not automatically erase it.
+          Real-money order records may also be retained for accounting, tax,
+          refund and payment-provider obligations. Backups can retain earlier
+          copies after live data changes. Retention depends on the record and
+          its operational or legal purpose; leaving the server does not
+          automatically erase it.
         </p>
         <p>
           We use access restrictions and backups to help protect the server and
@@ -127,10 +176,24 @@ export default function PrivacyPolicy() {
         </p>
         <h2>Children and families</h2>
         <p>
+          UnrealMMO does not set a minimum player age. Minecraft accounts,
+          payment services and other providers may have their own age and
+          parental-permission requirements. Children should involve a parent or
+          guardian before making purchases or providing personal information.
+        </p>
+        <p>
+          Having no minimum player age does not remove protections for
+          children’s information. Where applicable law requires parental notice
+          or verifiable parental consent before collecting, using or sharing a
+          child’s personal information, those requirements must be met. This
+          policy is not itself a request for, or proof of, parental consent.
+        </p>
+        <p>
           Players should avoid sharing real names, addresses, school details or
-          other private information in chat or signs. A parent or guardian who
-          has concerns about a child’s information can contact support so we can
-          review the circumstances and any action required by applicable law.
+          other private information in chat or signs. Parents or guardians can
+          contact support to ask about a child’s information, request access or
+          deletion, or raise concerns about collection or purchases. We may need
+          to verify the requester’s identity and authority before acting.
         </p>
         <h2>Policy updates</h2>
         <p>
