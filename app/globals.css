@@ -237,6 +237,11 @@ p + p {
   letter-spacing: 0.05em;
   white-space: nowrap;
 }
+.brand .brand-logo {
+  display: block;
+  width: 220px;
+  height: auto;
+}
 .brand-small {
   font-size: 0.63em;
   letter-spacing: 0.08em;
@@ -350,23 +355,14 @@ p + p {
   text-shadow: 0 2px 30px #07170ed9;
 }
 .hero-logo {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 10px;
-  font-size: clamp(4rem, 9.1vw, 8.3rem);
-  letter-spacing: -0.055em;
-  font-weight: 700;
-  color: #f7e8bb;
-  text-shadow:
-    0 3px 0 #68582f,
-    0 12px 35px #061b12;
-  margin: 32px 0 4px;
+  margin: 20px auto 4px;
+  width: min(350px, 62vw);
+  filter: drop-shadow(0 5px 14px #031b11cc);
 }
-.hero-logo span {
-  font-size: 0.34em;
-  letter-spacing: 0.03em;
-  color: #e7cd90;
+.hero-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .hero-rule {
   height: 16px;
@@ -1743,8 +1739,8 @@ tbody tr:nth-child(even) {
     font-size: 1rem;
     gap: 7px;
   }
-  .brand img {
-    width: 30px;
+  .brand .brand-logo {
+    width: 185px;
   }
   .desktop-nav,
   .nav-cta {
@@ -1761,9 +1757,8 @@ tbody tr:nth-child(even) {
     object-position: 55% center;
   }
   .hero-logo {
-    font-size: clamp(3.7rem, 13vw, 6rem);
-    margin-top: 38px;
-    gap: 7px;
+    width: min(260px, 70vw);
+    margin-top: 10px;
   }
   .hero h2 {
     font-size: 1.8rem;

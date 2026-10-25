@@ -1,0 +1,8 @@
+{
+  "tool": "Built-in image_gen",
+  "date": "2026-10-25",
+  "approvedConcept": "Option 1 — The Bastion",
+  "source": "hearthmark-master.png",
+  "prompt": "Edit the supplied approved UnrealMMO logo. Remove ONLY the dark green background to genuine transparency, including all gaps inside letters and between the flame and shield. Preserve the exact existing gold U/M shield emblem, flame silhouette, dimensional bevels, gold coloring and the exact UnrealMMO wordmark beneath it. Do not redraw, redesign, change lettering or add elements. Keep the same square canvas, positions, and scale. Crisp clean anti-aliased edges, no green halo, no backdrop or cast shadow outside the gold artwork. This is a production transparent PNG logo extraction.",
+  "exports": "scripts/build-brand-kit.mjs crops the transparent master into emblem and wordmark, creates size variants, and lays them over the existing original valley artwork. No vector master is claimed."
+}

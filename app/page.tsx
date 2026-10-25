@@ -24,7 +24,13 @@ export default function Home() {
         <div className="hero-content wrap">
           <div className="hero-fog" aria-hidden="true" />
           <h1 className="hero-logo">
-            UNREAL<span>MMO</span>
+            <img
+              src="/brand/hearthmark/logo-stacked.webp"
+              alt="UnrealMMO"
+              width={1190}
+              height={1011}
+              fetchPriority="high"
+            />
           </h1>
           <div className="hero-rule" aria-hidden="true" />
           <h2>

@@ -21,10 +21,13 @@ export function Navigation() {
       <header className="nav">
         <div className="nav-inner">
           <Link href="/" className="brand" aria-label="UnrealMMO home">
-            <img src="/brand/emblem.svg" alt="" width="37" height="42" />
-            <span>
-              UNREAL<span className="brand-small">MMO</span>
-            </span>
+            <img
+              className="brand-logo"
+              src="/brand/hearthmark/logo-horizontal.webp"
+              alt=""
+              width={1200}
+              height={280}
+            />
           </Link>
           <nav aria-label="Main navigation" className="desktop-nav">
             {links.map(([href, label]) => (
