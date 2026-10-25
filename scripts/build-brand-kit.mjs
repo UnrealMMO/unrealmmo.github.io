@@ -15,27 +15,11 @@ const icon = await sharp(
   .trim()
   .png()
   .toBuffer();
-// The original capital U/O rise above the other letters. Keep them while excluding the shield tip.
-const word = await blank(1254, 220)
-  .composite(
-    await Promise.all(
-      [
-        [0, 850, 250, 220, 0, 0],
-        [250, 870, 750, 200, 250, 20],
-        [1000, 850, 254, 220, 1000, 0],
-      ].map(async ([left, top, width, height, x, y]) => ({
-        input: await sharp(master)
-          .extract({ left, top, width, height })
-          .png()
-          .toBuffer(),
-        left: x,
-        top: y,
-      })),
-    ),
-  )
+// Use the separately spaced wordmark; the approved emblem remains unchanged.
+const wordmark = await sharp("docs/art/hearthmark-wordmark-spaced.png")
+  .trim()
   .png()
   .toBuffer();
-const wordmark = await sharp(word).trim().png().toBuffer();
 await sharp(icon).toFile(`${out}/icon-transparent.png`);
 await sharp(wordmark).toFile(`${out}/wordmark-transparent.png`);
 const fit = async (input, w, h) =>
@@ -180,7 +164,7 @@ await sharp(`${out}/logo-horizontal-transparent.png`)
   .toFile(`${out}/logo-horizontal.webp`);
 await writeFile(
   `${out}/README.txt`,
-  `UnrealMMO — Hearthmark / The Bastion\n\nApproved option-one logo. Original raster artwork, not vector.\nTransparent PNG: stacked logo, horizontal logo, wordmark, and icon.\nIcons: 16, 32, 48, 64, 128, 180, 192, 256, 512, 1024 pixels.\nUse icon-64.png as Minecraft server-icon.png.\nAvatars: 512 and 1024 pixels with emerald background and circular-crop safe margins.\nBanners: 468x60, 728x90, 1200x300, 1500x500, 1920x1080, 1200x630.\n1200x630 is also the website link-preview artwork. Dimensions are general-purpose exports; each listing service may have its own upload constraints.\nThe largest raster exports are resampled from the approved generated master; they are not vector originals.\nKeep aspect ratios intact. Gold artwork reads best on dark backgrounds. Leave clear space around the mark.\nProduction source and prompt: docs/art/hearthmark-master.png and hearthmark-logo.json in the website repository.\n`,
+  `UnrealMMO — Hearthmark / The Bastion\n\nApproved option-one logo, with the display wordmark Unreal MMO. Original raster artwork, not vector.\nTransparent PNG: stacked logo, horizontal logo, wordmark, and icon.\nIcons: 16, 32, 48, 64, 128, 180, 192, 256, 512, 1024 pixels.\nUse icon-64.png as Minecraft server-icon.png.\nAvatars: 512 and 1024 pixels with emerald background and circular-crop safe margins.\nBanners: 468x60, 728x90, 1200x300, 1500x500, 1920x1080, 1200x630.\n1200x630 is also the website link-preview artwork. Dimensions are general-purpose exports; each listing service may have its own upload constraints.\nThe largest raster exports are resampled from the approved generated master; they are not vector originals.\nKeep aspect ratios intact. Gold artwork reads best on dark backgrounds. Leave clear space around the mark.\nProduction source and prompt: docs/art/hearthmark-master.png, hearthmark-wordmark-spaced.png and hearthmark-logo.json in the website repository.\n`,
 );
 execFileSync("zip", ["-qr", "../unrealmmo-brand-kit.zip", "."], { cwd: out });
 console.log("Built Hearthmark logo kit.");

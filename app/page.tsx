@@ -28,7 +28,7 @@ export default function Home() {
               src="/brand/hearthmark/logo-stacked.webp"
               alt="UnrealMMO"
               width={1190}
-              height={1011}
+              height={1010}
               fetchPriority="high"
             />
           </h1>

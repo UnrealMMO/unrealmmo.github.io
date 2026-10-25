@@ -1,6 +1,6 @@
 # UnrealMMO Hearthmark brand kit
 
-Approved direction: **The Bastion**, option one. Gold U-shaped shield, central flame and angular lower M detail. Gold artwork is best placed on dark emerald or a darkened landscape.
+Approved direction: **The Bastion**, option one. Display wordmark: **Unreal MMO**, with a word space. Gold U-shaped shield, central flame and angular lower M detail. Gold artwork is best placed on dark emerald or a darkened landscape.
 
 Download: `/brand/unrealmmo-brand-kit.zip`.
 
@@ -8,6 +8,6 @@ The kit includes transparent PNG stacked and horizontal logos, wordmark and stan
 
 The website uses compact WebP logos for its hero, navigation and footer, PNG/ICO browser icons and a 1200×630 branded link preview. Minecraft uses the transparent 64×64 PNG as `server-icon.png`.
 
-Production master: `docs/art/hearthmark-master.png`, generated using the built-in image tool. Exact extraction prompt: `docs/art/hearthmark-logo.json`. Rebuild exports with `node scripts/build-brand-kit.mjs` from the repository root. The script uses the existing original valley artwork for banners. Keep shape proportions and the emblem/wordmark spacing intact. These are raster assets; large outputs are resampled, not native vector artwork.
+Emblem source: `docs/art/hearthmark-master.png`. Spaced wordmark source: `docs/art/hearthmark-wordmark-spaced.png`. Both use the built-in image tool. Exact extraction prompt: `docs/art/hearthmark-logo.json`; spacing edit: `docs/art/hearthmark-spacing-prompt.txt`. Rebuild exports with `node scripts/build-brand-kit.mjs` from the repository root. The script uses the existing original valley artwork for banners. Keep shape proportions and the emblem/wordmark spacing intact. These are raster assets; large outputs are resampled, not native vector artwork.
 
 No social accounts or external server-listing entries were modified. The kit supplies assets ready for those uploads.
