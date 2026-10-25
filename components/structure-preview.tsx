@@ -34,6 +34,46 @@ export function StructurePreview({
         const x = 150 + (b.x - b.z) * scale,
           y = cy + (b.x + b.z) * scale * 0.5 - b.y * scale * 1.15,
           c = palette[b.material] || "#89958a";
+        if (b.material === "LANTERN")
+          return (
+            <g
+              key={`${b.x},${b.y},${b.z}`}
+              transform={`translate(${x} ${y + scale * 0.35}) scale(${scale})`}
+            >
+              <path
+                d="M-.12 .12V-.1H.12V.12"
+                fill="none"
+                stroke="#424d50"
+                strokeWidth=".065"
+              />
+              <path
+                d="M-.25 .13H.25L.4 .28H-.4Z"
+                fill="#536062"
+                stroke="#263b37"
+                strokeWidth=".04"
+              />
+              <rect
+                x="-.32"
+                y=".28"
+                width=".64"
+                height=".56"
+                fill="#ffd27c"
+                stroke="#424d50"
+                strokeWidth=".065"
+              />
+              <path
+                d="M-.16 .3V.82M.16 .3V.82"
+                stroke="#b47d3c"
+                strokeWidth=".035"
+              />
+              <path
+                d="M-.4 .84H.4V.95H-.4Z"
+                fill="#424d50"
+                stroke="#263b37"
+                strokeWidth=".04"
+              />
+            </g>
+          );
         return (
           <g key={`${b.x},${b.y},${b.z}`}>
             <path

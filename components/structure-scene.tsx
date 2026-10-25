@@ -4,6 +4,63 @@ import { OrbitControls, Edges } from "@react-three/drei";
 import { useEffect, useRef } from "react";
 import type { OrbitControls as Controls } from "three-stdlib";
 import { palette, type Structure } from "@/content/game";
+function LanternModel({ selected }: { selected: boolean }) {
+  const frame = selected ? "#e6cd85" : "#424d50";
+  return (
+    <group>
+      <mesh position={[0, -0.25, 0]}>
+        <boxGeometry args={[0.38, 0.38, 0.38]} />
+        <meshStandardMaterial
+          color={selected ? "#fff0a3" : "#ffd27c"}
+          emissive="#ff9b32"
+          emissiveIntensity={0.65}
+          roughness={0.45}
+        />
+        <Edges color={selected ? "#fff7cf" : "#bd813b"} />
+      </mesh>
+      {[-0.2, 0.2].flatMap((x) =>
+        [-0.2, 0.2].map((z) => (
+          <mesh key={`${x}-${z}`} position={[x, -0.25, z]}>
+            <boxGeometry args={[0.04, 0.42, 0.04]} />
+            <meshStandardMaterial
+              color={frame}
+              roughness={0.55}
+              metalness={0.65}
+            />
+          </mesh>
+        )),
+      )}
+      {[-0.46, -0.02].map((y) => (
+        <mesh key={y} position={[0, y, 0]}>
+          <boxGeometry args={[0.48, 0.08, 0.48]} />
+          <meshStandardMaterial
+            color={frame}
+            roughness={0.55}
+            metalness={0.65}
+          />
+        </mesh>
+      ))}
+      <mesh position={[0, 0.06, 0]}>
+        <boxGeometry args={[0.3, 0.08, 0.3]} />
+        <meshStandardMaterial color={frame} roughness={0.55} metalness={0.65} />
+      </mesh>
+      {[-0.1, 0.1].map((x) => (
+        <mesh key={x} position={[x, 0.17, 0]}>
+          <boxGeometry args={[0.04, 0.14, 0.04]} />
+          <meshStandardMaterial
+            color={frame}
+            roughness={0.55}
+            metalness={0.65}
+          />
+        </mesh>
+      ))}
+      <mesh position={[0, 0.25, 0]}>
+        <boxGeometry args={[0.24, 0.04, 0.04]} />
+        <meshStandardMaterial color={frame} roughness={0.55} metalness={0.65} />
+      </mesh>
+    </group>
+  );
+}
 function Camera({
   view,
   reset,
@@ -145,6 +202,19 @@ export default function StructureScene({
         {structure.blocks.map((b, i) => {
           if (b.y > layer || (b.role === "air" && !air)) return null;
           const isAir = b.role === "air";
+          if (b.material === "LANTERN")
+            return (
+              <group
+                key={i}
+                position={[b.x, b.y * (exploded ? 1.6 : 1), b.z]}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onSelect(i);
+                }}
+              >
+                <LanternModel selected={selected === i} />
+              </group>
+            );
           return (
             <mesh
               key={i}
