@@ -33,3 +33,11 @@ Create an original cinematic wide landscape illustration for the website of Unre
 `public/art/unreal-valley-v2-1920.webp` and `public/art/unreal-valley-v2-3840.webp` are responsive delivery versions of an image-tool enhancement of the original valley. The generator returned 1672 × 941 pixels despite a 3840 × 2160 request. The enhanced source was resampled with Lanczos3 to 1920 × 1081 and 3840 × 2161 and encoded as quality-92 WebP. These are upscaled delivery assets, not native 4K renders. The original artwork remains available.
 
 Edit prompt: Enhance the existing UnrealMMO hero at maximum available resolution while preserving the voxel valley composition, left sunrise, forest framing, river and waterfalls, lower-right house, right stone arch, snow mountain and emerald/gold palette. Improve fine block edges, stone texture, foliage and distant detail without oversharpening. No text, UI, bars, people, mobs or new structures; uninterrupted landscape to every edge.
+
+## Firestorm showcase — 25 October 2026
+
+`public/art/firestorm-valley-v1.webp` (2172 × 724) and `public/art/firestorm-caster-v1.webp` (600 × 900, alpha preserved) are original artwork created with built-in imagegen. [Exact prompts](art/firestorm.json). The user's gameplay screenshot informed the fire-staff design and rain-of-fire concept; it is not distributed. The valley is a static full-width background; a transparent caster, staff light, targeting ellipse, falling fire and embers share its responsive coordinate plane. This is an illustrative spell scene, not captured gameplay. The caster's PNG master was generated at 1024 × 1536 and downscaled for delivery. Total delivered artwork is about 399 KB.
+
+The nine-second CSS loop charges the staff, reveals the target, rains fire and fades to a resting scene. Pause freezes all layers; replay remounts only the scene to restart its timeline. Intersection observation pauses the scene offscreen. Reduced motion uses a static caster, glow and targeting ring, without rain or embers. Controls use native buttons and visible keyboard focus. Mobile retains the same scene coordinates and crops the static landscape, placing text above the clearing.
+
+Public copy describes implemented Firestorm, Ember Bolt and Inferno Nova without adding new unlocks or balance claims. No plugin or server files changed.

@@ -4,6 +4,7 @@ import { ButtonLink, Icon } from "@/components/ui";
 import { Reveal } from "@/components/reveal";
 import { ServerSign } from "@/components/server-sign";
 import { SneakScene } from "@/components/sneak-scene";
+import { FirestormScene } from "@/components/firestorm-scene";
 import { DiamondTreeScene } from "@/components/diamond-tree-scene";
 import { skills } from "@/content/game";
 export default function Home() {
@@ -212,6 +213,7 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+      <FirestormScene />
       <section className="closing">
         <div className="wrap">
           <h2>

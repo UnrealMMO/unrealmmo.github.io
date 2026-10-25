@@ -2741,3 +2741,446 @@ tbody tr:nth-child(even) {
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+
+/* The landscape, caster, and spell share one coordinate plane at every size. */
+.firestorm-showcase {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  background: #0b191b;
+  color: #fff4df;
+}
+.firestorm-stage {
+  position: absolute;
+  width: max(100%, 1800px);
+  aspect-ratio: 3;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.firestorm-landscape {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.firestorm-effects {
+  position: absolute;
+  inset: 0;
+}
+.firestorm-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      #09191aeb,
+      #09191abc 28%,
+      #09191a26 56%,
+      transparent 72%
+    ),
+    linear-gradient(
+      0deg,
+      #0b191b 0%,
+      transparent 18%,
+      transparent 85%,
+      #0b191b80
+    );
+  pointer-events: none;
+}
+.firestorm-content {
+  position: relative;
+  padding-block: 85px;
+  pointer-events: none;
+}
+.firestorm-copy {
+  max-width: 420px;
+  text-shadow: 0 2px 16px #081314;
+}
+.firestorm-eyebrow {
+  display: block;
+  color: #f7c081;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 22px;
+}
+.firestorm-copy h2 {
+  font-size: clamp(2.1rem, 3.6vw, 3.5rem);
+}
+.firestorm-copy h2 em {
+  color: #f7bb76;
+}
+.firestorm-copy p {
+  color: #dfdfd3;
+  margin-top: 22px;
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+.firestorm-controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 30px;
+  pointer-events: auto;
+}
+.firestorm-controls button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 15px;
+  border: 1px solid #f3c89366;
+  background: #10201ed9;
+  color: #fff0d9;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.75rem;
+}
+.firestorm-controls button:hover {
+  background: #3c3020;
+  border-color: #f3c893;
+}
+.firestorm-controls button:focus-visible {
+  outline: 2px solid #ffe0a5;
+  outline-offset: 4px;
+}
+.firestorm-caption {
+  position: absolute;
+  right: 4%;
+  bottom: 28px;
+  color: #e6ceaa;
+  font-size: 0.6rem;
+  letter-spacing: 0.17em;
+}
+.firestorm-caption span {
+  margin-inline: 10px;
+}
+.firestorm-caster {
+  position: absolute;
+  left: 53%;
+  bottom: 14%;
+  width: 12%;
+  transform-origin: 40% 94%;
+  animation: firestorm-cast 9s ease-in-out infinite;
+}
+.firestorm-caster img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.firestorm-staff-light {
+  position: absolute;
+  left: 87%;
+  top: 9%;
+  width: 30%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #fff4b9,
+    #ffb13680 20%,
+    #ff630040 45%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  animation: firestorm-charge 9s ease-in-out infinite;
+}
+.firestorm-target {
+  position: absolute;
+  left: 71%;
+  top: 65%;
+  width: 25%;
+  height: 11%;
+  border: 2px solid #ffb757;
+  border-radius: 50%;
+  box-shadow:
+    0 0 15px #ff8b36,
+    inset 0 0 20px #ff8b3640;
+  animation: firestorm-ring 9s ease-in-out infinite;
+}
+.firestorm-ground-glow {
+  position: absolute;
+  left: 70%;
+  top: 48%;
+  width: 27%;
+  height: 35%;
+  background: radial-gradient(
+    ellipse at 50% 70%,
+    #ffb32990,
+    #ff4d182a 45%,
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+  animation: firestorm-impact 9s ease-in-out infinite;
+}
+.firestorm-meteor {
+  position: absolute;
+  top: 3%;
+  width: 13px;
+  height: 40px;
+  opacity: 0;
+  transform: rotate(9deg);
+  background: linear-gradient(
+    0deg,
+    #fff7b1,
+    #ffc442 28%,
+    #ff6a0b99 58%,
+    transparent
+  );
+  clip-path: polygon(35% 0, 75% 30%, 100% 77%, 70% 100%, 18% 93%, 0 65%);
+  filter: drop-shadow(0 0 8px #ff6a1a);
+  animation: firestorm-rain 9s linear var(--fall-delay) infinite;
+}
+.firestorm-meteor i {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  bottom: 4px;
+  left: 2px;
+  background: #fff2a1;
+}
+.firestorm-ember {
+  position: absolute;
+  top: 68%;
+  width: 5px;
+  height: 5px;
+  background: #ffd270;
+  opacity: 0;
+  box-shadow: 0 0 8px #ff671d;
+  animation: firestorm-embers 9s ease-out var(--ember-delay) infinite;
+}
+@keyframes firestorm-cast {
+  0%,
+  9%,
+  80%,
+  100% {
+    transform: rotate(0deg);
+  }
+  18%,
+  30% {
+    transform: rotate(-5deg);
+  }
+  38%,
+  65% {
+    transform: rotate(1deg);
+  }
+}
+@keyframes firestorm-charge {
+  0%,
+  8%,
+  78%,
+  100% {
+    opacity: 0.1;
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+  18%,
+  28% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(2.3);
+  }
+  35%,
+  65% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes firestorm-ring {
+  0%,
+  10%,
+  80%,
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  20%,
+  68% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+}
+@keyframes firestorm-impact {
+  0%,
+  28%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+  35%,
+  44%,
+  53%,
+  62% {
+    opacity: 0.85;
+  }
+  39%,
+  48%,
+  57%,
+  68% {
+    opacity: 0.35;
+  }
+}
+@keyframes firestorm-rain {
+  0%,
+  24% {
+    opacity: 0;
+    top: 3%;
+    transform: translateX(18px) scale(0.6);
+  }
+  25% {
+    opacity: 1;
+  }
+  31% {
+    opacity: 1;
+    top: 65%;
+    transform: translateX(var(--fall-x)) scale(1);
+  }
+  32%,
+  35% {
+    opacity: 0;
+    top: 68%;
+  }
+  36% {
+    opacity: 0;
+    top: 3%;
+    transform: translateX(18px) scale(0.6);
+  }
+  37% {
+    opacity: 1;
+  }
+  43% {
+    opacity: 1;
+    top: 66%;
+    transform: translateX(var(--fall-x)) scale(1);
+  }
+  44%,
+  47% {
+    opacity: 0;
+    top: 68%;
+  }
+  48% {
+    opacity: 0;
+    top: 3%;
+    transform: translateX(18px) scale(0.6);
+  }
+  49% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+    top: 65%;
+    transform: translateX(var(--fall-x)) scale(1);
+  }
+  56%,
+  100% {
+    opacity: 0;
+    top: 68%;
+  }
+}
+@keyframes firestorm-embers {
+  0%,
+  30% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  35%,
+  48%,
+  61% {
+    opacity: 0.9;
+    transform: translate(0, 0);
+  }
+  43%,
+  56%,
+  72% {
+    opacity: 0;
+    transform: translate(var(--ember-x), -65px);
+  }
+  73%,
+  100% {
+    opacity: 0;
+  }
+}
+.firestorm-showcase[data-paused="true"] .firestorm-effects * {
+  animation-play-state: paused;
+}
+@media (min-width: 1800px) {
+  .firestorm-showcase {
+    min-height: 33.333vw;
+  }
+}
+@media (max-width: 1200px) {
+  .firestorm-showcase {
+    display: block;
+    min-height: 0;
+    padding-bottom: clamp(335px, 33.333vw, 400px);
+  }
+  .firestorm-content {
+    padding-top: 65px;
+    padding-bottom: 30px;
+  }
+  .firestorm-copy {
+    max-width: 480px;
+  }
+  .firestorm-stage {
+    width: max(900px, 100%);
+    top: auto;
+    bottom: 20px;
+    right: -45px;
+    transform: none;
+  }
+  .firestorm-shade {
+    background: linear-gradient(
+      180deg,
+      #0b191b 0%,
+      #0b191b 50%,
+      #0b191b00 70%,
+      #0b191b00 90%,
+      #0b191b 100%
+    );
+  }
+  .firestorm-caption {
+    right: auto;
+    left: 20px;
+    bottom: 22px;
+    font-size: 0.55rem;
+  }
+  .firestorm-meteor {
+    width: 10px;
+    height: 28px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .firestorm-effects * {
+    animation: none !important;
+  }
+  .firestorm-target {
+    opacity: 0.5;
+  }
+  .firestorm-staff-light {
+    opacity: 0.6;
+  }
+  .firestorm-ground-glow {
+    opacity: 0.25;
+  }
+  .firestorm-meteor,
+  .firestorm-ember {
+    display: none;
+  }
+  .firestorm-controls {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .firestorm-stage {
+    right: -95px;
+  }
+}
+@media (max-width: 1200px) {
+  .firestorm-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 85px;
+    background: linear-gradient(#0b191b, transparent);
+  }
+}

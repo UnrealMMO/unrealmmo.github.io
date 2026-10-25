@@ -60,3 +60,11 @@ Public blueprint JSON is exported from the plugin's tested cumulative recipe dat
 Website verification: 10 tests pass; 23 exported HTML pages, 720 local references, 55 image alt attributes and 495 level rows checked. Browser checks covered both new routes, complete 3D models, Wardtower protection overlay and layer navigation, and a 390×844 mobile viewport with no horizontal document overflow. No browser console errors were observed. Responsive layer grids and camera/diagram fitting handle the taller structures.
 
 Plugin qualification uses offline protocol clients, not authenticated-client acceptance or representative load testing. Website verification does not certify Folia scalability.
+
+## Firestorm homepage row — 25 October 2026
+
+Added an original illustrated Firestorm showcase after the ore-tree row. A static extended valley, transparent staff-wielding caster and CSS spell layers share one coordinate plane. Native controls pause/play and replay the nine-second sequence; intersection observation pauses offscreen. A reduced-motion media rule removes all animation and falling particles; this fallback was reviewed in CSS, rather than tested by changing the operating system's motion preference.
+
+Browser checks cover desktop (1280 × 720), tablet (900 × 900) and mobile (390 × 844) composition, click replay, click/keyboard pause/play, all spell layers paused together, and offscreen pausing. Mobile framing was corrected to retain the caster alongside both enemies. No horizontal page overflow or browser warnings/errors were observed. Screenshots: `docs/screenshots/firestorm-desktop.jpg` and `docs/screenshots/firestorm-mobile.jpg`. These are browser previews of illustrative art, not game captures or native spell qualification.
+
+`npm run verify`: 12 tests passed, production build/type validation passed, 25 exported HTML files, 913 local asset/link references, 67 image alt attributes and all 495 level rows checked. This change affects the website only; it requires no plugin deployment or main-server restart.
