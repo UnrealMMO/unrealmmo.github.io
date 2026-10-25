@@ -214,7 +214,9 @@ export function StructureViewer({ structure: s }: { structure: Structure }) {
                     setEnabled(true);
                   }}
                 />{" "}
-                Show {s.claimSize} × {s.claimSize} × {s.claimSize} territory
+                {s.fullWorldHeight
+                  ? `Show ${s.claimSize} × ${s.claimSize} territory · full world height`
+                  : `Show ${s.claimSize} × ${s.claimSize} × ${s.claimSize} territory`}
               </label>
             )}
           </div>

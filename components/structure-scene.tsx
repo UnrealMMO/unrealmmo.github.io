@@ -11,6 +11,8 @@ function Camera({
   exploded,
   tree,
   claimSize,
+  claimHeight,
+  claimCenter,
   structureHeight,
 }: {
   view: string;
@@ -19,6 +21,8 @@ function Camera({
   exploded: boolean;
   tree: boolean;
   claimSize: number;
+  claimHeight: number;
+  claimCenter: number;
   structureHeight: number;
 }) {
   const { camera, invalidate, size } = useThree();
@@ -26,7 +30,7 @@ function Camera({
   useEffect(() => {
     const d =
       (claim
-        ? claimSize * 1.8
+        ? Math.max(claimSize, claimHeight) * 1.8
         : Math.max(
             exploded ? 13 : 10,
             structureHeight * (exploded ? 2.8 : 1.8),
@@ -37,11 +41,16 @@ function Camera({
       side: [d, d * 0.15, 0],
       top: [0, d, 0.001],
     };
-    camera.position.set(...positions[view]);
+    const position = positions[view];
+    camera.position.set(
+      position[0],
+      position[1] + (claim ? claimCenter : 0),
+      position[2],
+    );
     controls.current?.target.set(
       0,
       claim
-        ? 0
+        ? claimCenter
         : tree
           ? exploded
             ? 3.2
@@ -60,6 +69,8 @@ function Camera({
     exploded,
     tree,
     claimSize,
+    claimHeight,
+    claimCenter,
     structureHeight,
     size.width,
     size.height,
@@ -71,7 +82,7 @@ function Camera({
       makeDefault
       enableDamping={false}
       minDistance={4}
-      maxDistance={Math.max(45, claimSize * 4)}
+      maxDistance={Math.max(45, claimSize * 4, claimHeight * 4)}
       maxPolarAngle={Math.PI * 0.9}
     />
   );
@@ -101,7 +112,7 @@ export default function StructureScene({
     <Canvas
       frameloop="demand"
       dpr={[1, 1.6]}
-      camera={{ position: [10, 7, 10], fov: 38 }}
+      camera={{ position: [10, 7, 10], fov: 38, far: 5000 }}
       aria-label={`Interactive 3D model of ${structure.name}`}
       onCreated={({ gl }) => {
         gl.domElement.setAttribute("data-viewer-ready", "true");
@@ -122,6 +133,12 @@ export default function StructureScene({
         exploded={exploded}
         tree={structure.kind === "tree"}
         claimSize={structure.claimSize ?? 17}
+        claimHeight={structure.claimHeight ?? structure.claimSize ?? 17}
+        claimCenter={
+          structure.fullWorldHeight
+            ? structure.claimFloor! + (structure.claimHeight! - 1) / 2
+            : 0
+        }
         structureHeight={Math.max(...structure.blocks.map((b) => b.y))}
       />
       <group>
@@ -170,13 +187,21 @@ export default function StructureScene({
         {claim && (
           <mesh
             position={
-              (structure.stage ?? 1) > 1 ? [-0.5, 0.5, -0.5] : [0, 0, 0]
+              structure.fullWorldHeight
+                ? [
+                    -0.5,
+                    structure.claimFloor! + (structure.claimHeight! - 1) / 2,
+                    -0.5,
+                  ]
+                : (structure.stage ?? 1) > 1
+                  ? [-0.5, 0.5, -0.5]
+                  : [0, 0, 0]
             }
           >
             <boxGeometry
               args={[
                 structure.claimSize!,
-                structure.claimSize!,
+                structure.claimHeight ?? structure.claimSize!,
                 structure.claimSize!,
               ]}
             />

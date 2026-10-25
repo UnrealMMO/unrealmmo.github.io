@@ -226,3 +226,15 @@ test("Wardtower has netherrack with fire above it and retains Sanctuary lanterns
   assert.equal(s.blocks.filter((b) => b.material === "LANTERN").length, 4);
   assert.ok(s.steps[18].includes("flint and steel"));
 });
+
+test("Stage 4 illustrates a full-height Overworld column while lower tiers stay cubic", () => {
+  const tower = structures.find((s) => s.stage === 4)!;
+  assert.equal(tower.claimSize, 200);
+  assert.equal(tower.fullWorldHeight, true);
+  assert.equal(tower.claimHeight, 384);
+  assert.equal(tower.claimFloor, -127);
+  for (const s of structures.filter(
+    (s) => s.kind === "hearthstone" && s.stage !== 4,
+  ))
+    assert.ok(!s.fullWorldHeight);
+});

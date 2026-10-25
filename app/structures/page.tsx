@@ -60,7 +60,9 @@ export default function Structures() {
                 <h2>{s.name}</h2>
                 <p>{s.description}</p>
                 <p>
-                  {s.claimSize} × {s.claimSize} × {s.claimSize} protected volume
+                  {s.fullWorldHeight
+                    ? `${s.claimSize} × ${s.claimSize} footprint · full world height`
+                    : `${s.claimSize} × ${s.claimSize} × ${s.claimSize} protected volume`}
                 </p>
                 <span className="text-link">
                   Open build guide <ArrowUpRight size={17} />

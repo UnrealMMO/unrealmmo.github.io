@@ -108,6 +108,9 @@ export type Structure = {
   level: number;
   stage?: number;
   claimSize?: number;
+  fullWorldHeight?: boolean;
+  claimHeight?: number;
+  claimFloor?: number;
   description: string;
   color: string;
   blocks: Block[];
@@ -227,13 +230,16 @@ for (const stage of [3, 4]) {
     kind: "hearthstone",
     stage,
     claimSize: stage === 3 ? 100 : 200,
+    ...(stage === 4
+      ? { fullWorldHeight: true, claimHeight: 384, claimFloor: -127 }
+      : {}),
     level: 0,
     color: "#b7c6bc",
     blocks,
     description:
       stage === 3
         ? "Raise a lantern-lit sanctuary for a village, workshops and farms. Protect a 100 × 100 × 100 volume."
-        : "Build an iconic protection tower for a town center, roads and building plots. Protect a 200 × 200 × 200 volume.",
+        : "Build an iconic protection tower for a town center, roads and building plots. Protect a 200 × 200 footprint from the world’s lowest build layer to its highest.",
     steps: Array.from({ length: top + 1 }, (_, y) =>
       y === 0
         ? `Expand the stone-brick foundation to ${width} × ${width}, one block below the original core. Retain every block of the previous stage.`
@@ -281,7 +287,7 @@ export const hearthstoneStages = [
     size: 200,
     guide: "hearthstone-stage-4",
     description:
-      "A 9 × 9 protection tower, 18 blocks above its foundation, with buttresses, a crenellated crown and a burning netherrack beacon. Space for a town center, roads and building plots.",
+      "A 9 × 9 protection tower, 18 blocks above its foundation, with buttresses, a crenellated crown and a burning netherrack beacon. Protects a 200 × 200 footprint through the full world height, with space for a town center, roads and building plots.",
   },
 ] as const;
 export function materials(s: Structure) {

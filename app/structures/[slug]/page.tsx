@@ -38,7 +38,9 @@ export default async function StructurePage({
           <span>
             {s.kind === "tree"
               ? `Produces ${title(s.output!).toLowerCase()}`
-              : `${s.claimSize} × ${s.claimSize} × ${s.claimSize} protected area`}
+              : s.fullWorldHeight
+                ? `${s.claimSize} × ${s.claimSize} footprint · full world height`
+                : `${s.claimSize} × ${s.claimSize} × ${s.claimSize} protected area`}
           </span>
           <span>
             {s.kind === "tree"
@@ -170,7 +172,9 @@ export default async function StructurePage({
                 <h3>Understand your borders</h3>
                 <p>
                   {(s.stage ?? 1) > 1
-                    ? `Stage ${s.stage} protects exactly ${s.claimSize} blocks on each axis. Horizontally, this extends from core −${s.claimSize! / 2} through +${s.claimSize! / 2 - 1}, inclusive. Near world height limits the cube shifts vertically to fit, preserving your previous protection. The viewer illustrates a centered cube; its layer 1 is the foundation below the core.`
+                    ? s.fullWorldHeight
+                      ? "Stage 4 protects a 200 × 200 horizontal footprint from the world’s minimum build Y to its maximum build Y. In the Overworld this is Y −64 through 319, inclusive: 384 blocks high. Other worlds use their own build limits. No one without building permission can build above or beneath your claim within that footprint. Horizontally, protection extends from core −100 through +99, inclusive. The viewer shows an Overworld example with a core at Y 64; layer 1 is the foundation below it. Existing registered Wardtowers receive the full-height protection automatically."
+                      : `Stage ${s.stage} protects exactly ${s.claimSize} blocks on each axis. Horizontally, this extends from core −${s.claimSize! / 2} through +${s.claimSize! / 2 - 1}, inclusive. Near world height limits the cube shifts vertically to fit, preserving your previous protection. The viewer illustrates a centered cube; its layer 1 is the foundation below the core.`
                     : "Protection reaches eight blocks each way from the gold heart, including vertically: a 17 × 17 × 17 cube. The diagram overlay illustrates that boundary."}
                 </p>
                 <p>
