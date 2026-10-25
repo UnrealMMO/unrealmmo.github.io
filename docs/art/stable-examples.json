@@ -1,0 +1,12 @@
+{
+  "tool": "Built-in image_gen",
+  "date": "2026-10-25",
+  "assets": [
+    "public/art/stable-exterior-v1.png",
+    "public/art/stable-interior-v1.png"
+  ],
+  "prompts": [
+    "Use case: stylized-concept. Create one original Minecraft-style voxel screenshot illustration for the UnrealMMO settlement website, landscape 4:3. Exterior example of a beautiful compact timber-and-stone stable that players could build within 20x20x20 blocks. Three-quarter entrance view, oak log pillars, spruce pitched roof, cobblestone foundation, lanterns, fenced paddock in a lush forest at golden sunset. Two clearly visible adult blocky Minecraft horses wearing leather saddles, each with a lead running to an oak fence post. Two yellow hay bale blocks, a barrel for tack, a water-filled cauldron visible near the open stable entrance. Carefully crafted vanilla-style pixel textures, warm cinematic shader lighting, cozy adventurous mood matching a timber Minecraft inn. Entire building comfortably in frame. No people, NPCs, captions, labels, border, watermark, logos or overlay text. Single image, not a collage.",
+    "Use case: stylized-concept. Create one original Minecraft-style voxel screenshot illustration for the UnrealMMO settlement website, landscape 4:3. Interior example of a beautiful compact oak-log and spruce timber stable, looking through a broad open doorway into the aisle. Warm hanging lanterns and late-afternoon sunlight, plank floor and rustic rafters, attractive vanilla-style pixel textures with cinematic shader lighting. Two clearly visible adult blocky Minecraft horses in the spacious open bays, one chestnut and one gray, BOTH wearing visible brown leather saddles and EACH visibly tethered by a lead to an oak fence post. Include two yellow hay bale blocks, a water-filled dark cauldron with visible blue water surface, and one wooden barrel for tack. Cozy practical horse boarding building, within a 20-block cube. No people, NPCs, captions, labels, border, watermark, logos or overlay text. Single image, not a collage."
+  ]
+}

@@ -2678,3 +2678,19 @@ tbody tr:nth-child(even) {
     gap: 12px;
   }
 }
+
+/* Structure examples sit directly below their heading, without captions. */
+.settlement-examples {
+  margin-bottom: 40px;
+}
+.settlement-examples figure {
+  margin: 0;
+  min-width: 0;
+}
+.settlement-example-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}

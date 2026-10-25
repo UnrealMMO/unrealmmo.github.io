@@ -36,6 +36,28 @@ export default function Settlements() {
                 territory.
               </p>
             </header>
+            <div className="inn-inspiration-views settlement-examples">
+              <figure>
+                <div className="inn-art-view">
+                  <img
+                    src="/art/inn-exterior-interior-v1.png"
+                    width="2056"
+                    height="765"
+                    alt="Minecraft-style timber and stone Inn exterior with a welcoming entrance and an UnrealInn sign beside the door."
+                  />
+                </div>
+              </figure>
+              <figure>
+                <div className="inn-art-view inn-art-interior">
+                  <img
+                    src="/art/inn-exterior-interior-v1.png"
+                    width="2056"
+                    height="765"
+                    alt="Cozy Minecraft-style Inn interior with a plank floor, red beds, storage chests, a furnace and warm lanterns."
+                  />
+                </div>
+              </figure>
+            </div>
             <section
               className="inn-build-basics"
               aria-labelledby="inn-checklist-title"
@@ -96,47 +118,6 @@ export default function Settlements() {
                 </Link>
               </div>
               <InnFloorPlan />
-            </section>
-            <section
-              className="inn-inspiration"
-              aria-labelledby="inn-inspiration-title"
-            >
-              <div className="inn-inspiration-heading">
-                <div>
-                  <span className="eyebrow">
-                    FROM THE BASICS TO YOUR OWN PLACE
-                  </span>
-                  <h3 id="inn-inspiration-title">
-                    Same essentials. A little imagination.
-                  </h3>
-                </div>
-              </div>
-              <div className="inn-inspiration-views">
-                <figure>
-                  <div className="inn-art-view">
-                    <img
-                      src="/art/inn-exterior-interior-v1.png"
-                      width="2056"
-                      height="765"
-                      alt="Minecraft-style timber and stone Inn exterior with a welcoming entrance and an UnrealInn sign beside the door."
-                    />
-                  </div>
-                </figure>
-                <figure>
-                  <div className="inn-art-view inn-art-interior">
-                    <img
-                      src="/art/inn-exterior-interior-v1.png"
-                      width="2056"
-                      height="765"
-                      alt="Cozy Minecraft-style Inn interior with a plank floor, red beds, storage chests, a furnace and warm lanterns."
-                    />
-                  </div>
-                </figure>
-              </div>
-              <p className="inn-art-note">
-                Illustrated build inspiration. Your Inn does not need to look
-                like this.
-              </p>
             </section>
             <section
               id="inn-income"
@@ -203,6 +184,28 @@ export default function Settlements() {
               <h2 id="stable-title">Stable</h2>
               <p>A place to board horses and earn income for your territory.</p>
             </header>
+            <div className="inn-inspiration-views settlement-examples">
+              <figure>
+                <img
+                  className="settlement-example-image"
+                  src="/art/stable-exterior-v1.png"
+                  width="1448"
+                  height="1086"
+                  loading="lazy"
+                  alt="Timber Stable exterior at sunset with two saddled horses tethered to fence posts, hay bales, a tack barrel and a water cauldron."
+                />
+              </figure>
+              <figure>
+                <img
+                  className="settlement-example-image"
+                  src="/art/stable-interior-v1.png"
+                  width="1448"
+                  height="1086"
+                  loading="lazy"
+                  alt="Lantern-lit timber Stable interior with two saddled horses tethered beside the aisle, hay bales, water and a tack barrel."
+                />
+              </figure>
+            </div>
             <div className="inn-checklist">
               <h3>Build requirements</h3>
               <ol>
