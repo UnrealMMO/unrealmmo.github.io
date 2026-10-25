@@ -182,11 +182,21 @@ export default function Home() {
         <Reveal className="wrap home-callout">
           <div className="hearth-landscape">
             <img
+              className="hearth-landscape-picture"
               src="/art/wardtower-shield-v1.webp"
               width={1536}
               height={1024}
               loading="lazy"
               alt="A distant Tier 4 Hearthstone Wardtower, crowned with fire, beneath a vast translucent shield over Minecraft forests, meadows and a river"
+            />
+            <img
+              className="hearth-landscape-frame"
+              src="/art/wardtower-frame-v1.webp"
+              width={1536}
+              height={1024}
+              loading="lazy"
+              alt=""
+              aria-hidden="true"
             />
           </div>
           <div>

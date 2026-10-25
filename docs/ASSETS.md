@@ -1,5 +1,7 @@
 # Asset provenance
 
+- `public/art/wardtower-frame-v1.webp`: original antique-gold and emerald oak-leaf picture frame generated with the built-in image tool, encoded as quality-90 WebP with transparency preserved. The landscape remains a separate image. [Generation prompt](art/wardtower-frame.json).
+
 - `public/art/wardtower-shield-v1.webp`: original Tier 4 Wardtower landscape generated with the built-in image tool, encoded as quality-88 WebP (1536 × 1024). The distant tower and protective dome are illustrative artwork, not a gameplay capture. [Generation prompt](art/wardtower-shield.json).
 
 - `public/art/diamond-tree-ingame.webp`: user-supplied Minecraft gameplay screenshot, retained as source. `diamond-tree-cutout.webp` is a transparent background extraction made with the built-in image tool, preserving the tree design and a small grass patch. Homepage CSS fades the ground edge; structure guides are unchanged.
