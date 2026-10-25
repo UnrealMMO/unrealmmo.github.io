@@ -32,20 +32,29 @@ export function FirestormScene() {
           width={2172}
           height={724}
           loading="lazy"
-          alt="An illustrated Firestorm cast: a staff-wielding adventurer rains fireballs onto two zombies, which ignite and recoil in a Minecraft valley at dusk."
+          alt="An illustrated Firestorm cast: an adventurer raises a Fire Staff and rains fireballs onto two zombies, which ignite and recoil in a Minecraft valley at dusk."
         />
         <div className="firestorm-effects" aria-hidden="true">
           <div className="firestorm-target" />
           <div className="firestorm-ground-glow" />
           <div className="firestorm-caster">
             <img
-              src="/art/firestorm-caster-v1.webp"
+              src="/art/firestorm-caster-body-v2.webp"
               width={600}
               height={900}
               loading="lazy"
               alt=""
             />
-            <span className="firestorm-staff-light" />
+            <div className="firestorm-casting-arm">
+              <img
+                src="/art/firestorm-casting-arm-v2.webp"
+                width={600}
+                height={900}
+                loading="lazy"
+                alt=""
+              />
+              <span className="firestorm-staff-light" />
+            </div>
           </div>
           {[0, 1].map((enemy) => (
             <div

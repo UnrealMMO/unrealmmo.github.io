@@ -2861,13 +2861,18 @@ tbody tr:nth-child(even) {
   left: 53%;
   bottom: 14%;
   width: 12%;
-  transform-origin: 40% 94%;
-  animation: firestorm-cast 9s ease-in-out infinite;
 }
 .firestorm-caster img {
   display: block;
   width: 100%;
   height: auto;
+}
+.firestorm-casting-arm {
+  position: absolute;
+  inset: 0;
+  transform-origin: 52% 42%;
+  transform: rotate(28deg);
+  animation: firestorm-raise-staff 9s ease-in-out infinite;
 }
 .firestorm-staff-light {
   position: absolute;
@@ -3071,20 +3076,32 @@ tbody tr:nth-child(even) {
   box-shadow: 0 0 8px #ff671d;
   animation: firestorm-embers 9s ease-out var(--ember-delay) infinite;
 }
-@keyframes firestorm-cast {
+/* Shoulder lift completes before the first volley; each impact gets a follow-through. */
+@keyframes firestorm-raise-staff {
   0%,
-  9%,
+  8%,
   80%,
   100% {
-    transform: rotate(0deg);
+    transform: rotate(28deg);
   }
-  18%,
-  30% {
-    transform: rotate(-5deg);
+  18% {
+    transform: rotate(-12deg);
   }
-  38%,
-  65% {
-    transform: rotate(1deg);
+  24%,
+  28% {
+    transform: rotate(-18deg);
+  }
+  31%,
+  43%,
+  55% {
+    transform: rotate(-9deg);
+  }
+  36%,
+  48% {
+    transform: rotate(-15deg);
+  }
+  64% {
+    transform: rotate(-12deg);
   }
 }
 @keyframes firestorm-charge {
