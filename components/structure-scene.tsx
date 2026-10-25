@@ -137,9 +137,15 @@ export default function StructureScene({
                 onSelect(i);
               }}
             >
-              <boxGeometry args={[0.97, 0.97, 0.97]} />
+              {b.material === "FIRE" ? (
+                <coneGeometry args={[0.42, 0.97, 4]} />
+              ) : (
+                <boxGeometry args={[0.97, 0.97, 0.97]} />
+              )}
               <meshStandardMaterial
                 color={selected === i ? "#fff0a3" : palette[b.material]}
+                emissive={b.material === "FIRE" ? "#e76516" : "#000000"}
+                emissiveIntensity={b.material === "FIRE" ? 0.8 : 0}
                 roughness={0.65}
                 metalness={isAir ? 0 : 0.25}
                 transparent={isAir}

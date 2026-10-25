@@ -195,7 +195,7 @@ export default async function StructurePage({
                     ? "Add 25 stone bricks, 8 polished andesite and 4 iron blocks."
                     : s.stage === 3
                       ? "Add 48 stone bricks, 24 polished andesite, 4 iron blocks and 4 lanterns."
-                      : "Add 77 stone bricks, 56 polished andesite, 4 iron blocks, 16 chiseled stone bricks and 1 lantern."}{" "}
+                      : "Add 77 stone bricks, 56 polished andesite, 4 iron blocks, 16 chiseled stone bricks and 1 netherrack. Bring flint and steel to light the netherrack; the flame stays protected while registered."}{" "}
                   The checklist shows the full structure, including previous
                   stages.
                 </p>

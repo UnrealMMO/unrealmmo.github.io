@@ -179,7 +179,7 @@ test("all four Hearthstone stages have cumulative buildable guides", () => {
     hearthstoneStages.map((s) => s.size),
     [17, 50, 100, 200],
   );
-  const counts = [5, 42, 122, 276];
+  const counts = [5, 42, 122, 277];
   for (const stage of hearthstoneStages) {
     const s = structures.find((s) => s.id === stage.guide)!;
     assert.ok(s);
@@ -208,4 +208,21 @@ test("all four Hearthstone stages have cumulative buildable guides", () => {
         );
     }
   }
+});
+
+test("Wardtower has netherrack with fire above it and retains Sanctuary lanterns", () => {
+  const s = structures.find((s) => s.id === "hearthstone-stage-4")!;
+  assert.ok(
+    s.blocks.some(
+      (b) =>
+        b.x === 0 && b.y === 17 && b.z === 0 && b.material === "NETHERRACK",
+    ),
+  );
+  assert.ok(
+    s.blocks.some(
+      (b) => b.x === 0 && b.y === 18 && b.z === 0 && b.material === "FIRE",
+    ),
+  );
+  assert.equal(s.blocks.filter((b) => b.material === "LANTERN").length, 4);
+  assert.ok(s.steps[18].includes("flint and steel"));
 });

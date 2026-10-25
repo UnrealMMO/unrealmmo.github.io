@@ -450,6 +450,7 @@
     { "x": 0, "y": 15, "z": 2, "material": "STONE_BRICKS" },
     { "x": 3, "y": 15, "z": 0, "material": "STONE_BRICKS" },
     { "x": 0, "y": 15, "z": 3, "material": "STONE_BRICKS" },
-    { "x": 0, "y": 16, "z": 0, "material": "LANTERN" }
+    { "x": 0, "y": 16, "z": 0, "material": "NETHERRACK" },
+    { "x": 0, "y": 17, "z": 0, "material": "FIRE" }
   ]
 ]

@@ -257,6 +257,11 @@ export function StructureViewer({ structure: s }: { structure: Structure }) {
         <div>
           <h2>Your materials</h2>
           <p>Check off what you have. Counts include every solid block.</p>
+          {s.blocks.some((b) => b.material === "FIRE") && (
+            <p>
+              Bring flint and steel to light the netherrack on the final layer.
+            </p>
+          )}
           <div className="materials-list">
             {Object.entries(materials(s)).map(([name, count]) => (
               <label

@@ -245,7 +245,9 @@ for (const stage of [3, 4]) {
               ? `Connect the four caps with a complete stone-brick perimeter ring.${stage === 4 ? " Add a stone-brick cross through the center, joining opposite sides in both directions." : ""}`
               : stage === 3
                 ? "Place a lantern on each corner of the upper ring. For an initial claim, right-click the gold heart with your Hearthstone Core. Already claimed? Use the green upgrade item in the Core menu to preview and confirm Stage 3."
-                : "Place chiseled stone bricks on every other block of the crown ring, including all four corners. Place a lantern at the center of the crossbeam. For an initial claim, right-click the gold heart with your Hearthstone Core. Already claimed? Use the Core menu to preview and confirm Stage 4.",
+                : y === pillar + 3
+                  ? "Place chiseled stone bricks on every other block of the crown ring, including all four corners. Place one netherrack block at the center of the crossbeam."
+                  : "Light a fire on top of the central netherrack with flint and steel. The flame is protected while the Hearthstone is registered. For an initial claim, right-click the gold heart with your Hearthstone Core. Already claimed? Use the Core menu to preview and confirm Stage 4.",
     ),
   });
 }
@@ -279,12 +281,12 @@ export const hearthstoneStages = [
     size: 200,
     guide: "hearthstone-stage-4",
     description:
-      "A 9 × 9 protection tower, 17 blocks above its foundation, with buttresses, a crenellated crown and a raised central light. Space for a town center, roads and building plots.",
+      "A 9 × 9 protection tower, 18 blocks above its foundation, with buttresses, a crenellated crown and a burning netherrack beacon. Space for a town center, roads and building plots.",
   },
 ] as const;
 export function materials(s: Structure) {
   return s.blocks
-    .filter((b) => b.role !== "air")
+    .filter((b) => b.role !== "air" && b.material !== "FIRE")
     .reduce<Record<string, number>>((a, b) => {
       a[b.material] = (a[b.material] || 0) + 1;
       return a;
@@ -304,6 +306,8 @@ export const palette: Record<string, string> = {
   STONE_BRICKS: "#929d91",
   POLISHED_ANDESITE: "#a5a8a1",
   LANTERN: "#efb851",
+  NETHERRACK: "#884239",
+  FIRE: "#ff992f",
   CHISELED_STONE_BRICKS: "#7d8e85",
   AIR: "#c8e8d0",
 };
