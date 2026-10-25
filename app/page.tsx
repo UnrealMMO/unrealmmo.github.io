@@ -153,7 +153,35 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
-      <section className="section orchard">
+      <section className="section hearth-backdrop">
+        <img
+          className="hearth-backdrop-art"
+          src="/art/wardtower-shield-wide-v1.webp"
+          width={2172}
+          height={724}
+          loading="lazy"
+          alt="A fire-crowned Wardtower beneath a vast protective shield over a Minecraft valley"
+        />
+        <div className="hearth-backdrop-shade" aria-hidden="true" />
+        <div className="wrap home-callout">
+          <Reveal className="hearth-copy">
+            <h2>
+              Adventure out.
+              <br />
+              <em>Come home.</em>
+            </h2>
+            <p>
+              Build a Hearthstone pedestal, claim your first protected home and
+              choose who can open its doors, share its stores or build beside
+              you.
+            </p>
+            <Link className="text-link" href="/structures/hearthstone/">
+              Build your Hearthstone <ArrowUpRight size={18} />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+      <section className="section parchment orchard">
         <div className="wrap spotlight reverse">
           <Reveal className="spotlight-copy">
             <h2>
@@ -183,44 +211,6 @@ export default function Home() {
             </Link>
           </Reveal>
         </div>
-      </section>
-      <section className="section parchment">
-        <Reveal className="wrap home-callout">
-          <div className="hearth-landscape">
-            <img
-              className="hearth-landscape-picture"
-              src="/art/wardtower-shield-v1.webp"
-              width={1536}
-              height={1024}
-              loading="lazy"
-              alt="A distant Tier 4 Hearthstone Wardtower, crowned with fire, beneath a vast translucent shield over Minecraft forests, meadows and a river"
-            />
-            <img
-              className="hearth-landscape-frame"
-              src="/art/wardtower-frame-v1.webp"
-              width={1536}
-              height={1024}
-              loading="lazy"
-              alt=""
-              aria-hidden="true"
-            />
-          </div>
-          <div>
-            <h2>
-              Adventure out.
-              <br />
-              <em>Come home.</em>
-            </h2>
-            <p>
-              Build a Hearthstone pedestal, claim your first protected home and
-              choose who can open its doors, share its stores or build beside
-              you.
-            </p>
-            <Link className="text-link" href="/structures/hearthstone/">
-              Build your Hearthstone <ArrowUpRight size={18} />
-            </Link>
-          </div>
-        </Reveal>
       </section>
       <section className="closing">
         <div className="wrap">

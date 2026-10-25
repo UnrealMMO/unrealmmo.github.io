@@ -1,0 +1,6 @@
+{
+  "tool": "Built-in image_gen",
+  "asset": "public/art/wardtower-shield-wide-v1.webp",
+  "source": "public/art/wardtower-shield-v1.webp",
+  "prompt": "Edit this Minecraft Wardtower landscape into an ultra-wide website section background, aspect ratio 3:1. Preserve the same scenic voxel Minecraft world, shader lighting, stone crenellated Wardtower with fire on top, and vast translucent teal shield dome. Recompose the entire dome and tower into the LEFT 50 percent of the wide image; tower centered around x=28%, dome edges around x=5% and x=51%, dome completely visible. Keep tower in the middle distance, clearly readable. Extend natural Minecraft forested valley, river and hills through the right half, with darker quieter tree-covered terrain there suitable behind light website text. Continue the image all the way across; no hard split or panel, no border, no gold frame. Golden sunset sky and Minecraft block textures consistent with original. The right half must have no other towers, buildings or bright focal objects. No text, no lettering, no UI. This is full-bleed website background artwork."
+}

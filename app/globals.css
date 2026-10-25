@@ -455,8 +455,7 @@ p + p {
   color: #b9c6b3;
   font-size: 0.94rem;
 }
-.forest h2 em,
-.orchard h2 em {
+.forest h2 em {
   color: #b9c996;
 }
 .skill-grid {
@@ -582,11 +581,11 @@ p + p {
     display: none;
   }
 }
-.orchard {
-  background: radial-gradient(ellipse at 70% 50%, #315442, #142e24 55%);
+.orchard h2 em {
+  color: #667d48;
 }
 .orchard .spotlight-copy > p {
-  color: #bfcbb5;
+  color: #56685b;
 }
 .tree-showcase {
   position: relative;
@@ -708,51 +707,94 @@ p + p {
   gap: 15px;
   font-size: 0.65rem;
   letter-spacing: 0.12em;
-  color: #e0d5ac;
+  color: #536440;
 }
 .specimen-tag > span {
-  border: 1px solid #c3cba14d;
+  border: 1px solid #63744955;
   padding: 4px 9px;
 }
 .specimen-tag small {
-  color: #a7bb9b;
+  color: #586b4d;
   font-size: 0.55rem;
 }
 .tree-showcase > .text-link {
-  color: #c4d3b3;
+  color: #3f5949;
   font-size: 0.72rem;
 }
-.home-callout {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 70px;
-  align-items: center;
-}
-.hearth-landscape {
+.hearth-backdrop {
   position: relative;
-  min-width: 0;
-  aspect-ratio: 3 / 2;
-  filter: drop-shadow(0 8px 10px #30241126);
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  background: #10281f;
+  color: #fff9e8;
 }
-.hearth-landscape-picture {
-  position: absolute;
-  inset: 9% 6%;
-  width: 88%;
-  height: 82%;
-  object-fit: cover;
-}
-.hearth-landscape-frame {
+.hearth-backdrop-art,
+.hearth-backdrop-shade {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
+  z-index: -1;
+}
+.hearth-backdrop-art {
+  object-fit: cover;
+  object-position: 35% center;
+}
+.hearth-backdrop-shade {
+  background: linear-gradient(
+    90deg,
+    #071d1308 15%,
+    #071d1320 37%,
+    #071d13d9 59%,
+    #071d13f2 100%
+  );
+}
+.home-callout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+.hearth-copy {
+  grid-column: 2;
+  text-shadow: 0 2px 12px #061b14;
+}
+.hearth-copy h2 em {
+  color: #e3cc91;
 }
 .home-callout p {
   max-width: 470px;
   margin-top: 22px;
-  color: #58695c;
+  color: #f0f0df;
   font-size: 0.95rem;
+}
+.hearth-copy .text-link {
+  color: #f4dfaa;
+  border-color: #e3cc9180;
+}
+@media (max-width: 760px) {
+  .section.hearth-backdrop {
+    padding-top: 320px;
+    padding-bottom: 65px;
+  }
+  .hearth-backdrop-art {
+    height: 390px;
+    object-position: 21% center;
+  }
+  .hearth-backdrop-shade {
+    background: linear-gradient(
+      180deg,
+      transparent 180px,
+      #10281f80 290px,
+      #10281f 380px
+    );
+  }
+  .hearth-copy {
+    grid-column: 1 / -1;
+  }
 }
 .closing {
   padding: 100px 0;

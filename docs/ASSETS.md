@@ -1,5 +1,7 @@
 # Asset provenance
 
+- `public/art/wardtower-shield-wide-v1.webp`: wide reframe of the original Wardtower illustration using built-in imagegen, placing the shield and tower on the left for the homepage section background. [Edit prompt](art/wardtower-backdrop.json). A responsive CSS gradient keeps the adjacent copy readable.
+
 - `public/brand/hearthmark/`: approved Hearthmark / Bastion identity, extracted to transparency with built-in imagegen. Stacked and horizontal logos, icon, wordmark, favicons, avatars and six banner sizes derive from the same raster master. [Prompt and source](art/hearthmark-logo.json), [kit guide](BRAND-KIT.md). Replaces the original geometric emblem in the live site; the old SVG remains only as a historical asset.
 
 - `public/art/wardtower-frame-v1.webp`: original antique-gold and emerald oak-leaf picture frame generated with the built-in image tool, encoded as quality-90 WebP with transparency preserved. The landscape remains a separate image. [Generation prompt](art/wardtower-frame.json).
