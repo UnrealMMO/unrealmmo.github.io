@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageIntro } from "@/components/ui";
 export const metadata = { title: "About & credits" };
 export default function About() {
@@ -45,7 +46,9 @@ export default function About() {
           This version of the website has no account system, advertising,
           analytics or sign-up form. Skill filters, material checklists and 3D
           controls run in your browser. Checklists reset when the page reloads.
-          External GitHub links follow GitHub’s own policies.
+          External GitHub links follow GitHub’s own policies. See our{" "}
+          <Link href="/privacy-policy/">Privacy policy</Link> for website and
+          server data handling.
         </p>
       </article>
     </div>

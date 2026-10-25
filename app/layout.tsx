@@ -48,10 +48,11 @@ export default function RootLayout({
               <Link href="/structures/">Structures</Link>
               <Link href="/settlements/">Settlements</Link>
               <Link href="/about/">About & credits</Link>
+              <Link href="/privacy-policy/">Privacy policy</Link>
             </nav>
           </div>
           <div className="wrap footer-bottom">
-            <span>© 2026 UnrealMMO · In development</span>
+            <span>© 2026 UnrealMMO</span>
             <span>
               Not an official Minecraft product. Not approved by or associated
               with Mojang or Microsoft.

@@ -41,7 +41,7 @@ export default function Home() {
           <ServerSign />
         </div>
         <div className="hero-bottom wrap">
-          <span>MINECRAFT JAVA · IN DEVELOPMENT</span>
+          <span>MINECRAFT JAVA</span>
         </div>
       </section>
       <div className="feature-ribbon">

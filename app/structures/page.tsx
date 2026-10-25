@@ -78,10 +78,6 @@ export default function Structures() {
             Read the Settlements &amp; Inns guide <ArrowUpRight size={17} />
           </Link>
         </div>
-        <p className="handbook-note">
-          The catalogue will grow as new custom structures arrive. Each guide
-          includes a model, material checklist and practical instructions.
-        </p>
       </div>
     </div>
   );

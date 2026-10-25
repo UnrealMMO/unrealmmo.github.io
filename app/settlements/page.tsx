@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { PageIntro } from "@/components/ui";
+import { StableFloorPlan } from "@/components/stable-floor-plan";
 import { InnFloorPlan } from "@/components/inn-floor-plan";
 export const metadata = {
   title: "Settlements, Inns & Stables",
@@ -18,13 +19,7 @@ export default function Settlements() {
         <nav className="settlement-nav" aria-label="Settlement structures">
           <span className="eyebrow">STRUCTURES</span>
           <a href="#inn">Inn</a>
-          <a href="#inn-income" className="settlement-nav-child">
-            Income
-          </a>
           <a href="#stable">Stable</a>
-          <a href="#stable-income" className="settlement-nav-child">
-            Income
-          </a>
         </nav>
         <div className="inn-build-guide">
           <section id="inn" aria-labelledby="inn-title">
@@ -206,67 +201,74 @@ export default function Settlements() {
                 />
               </figure>
             </div>
-            <div className="inn-checklist">
-              <h3>Build requirements</h3>
-              <ol>
-                <li>
-                  <strong>Build within your existing territory.</strong>
-                  <p>
-                    Owners and stewards can register and deregister structures.
-                  </p>
-                </li>
-                <li>
-                  <strong>Stay within 20 × 20 × 20 blocks.</strong>
-                  <p>
-                    The entire registered cube must fit inside your territory
-                    without overlapping another settlement structure.
-                  </p>
-                </li>
-                <li>
-                  <strong>Include the essentials.</strong>
-                  <ul>
-                    <li>
-                      At least 2 saddled, tamed adult horses, each led directly
-                      to a fence post
-                    </li>
-                    <li>2 hay bales</li>
-                    <li>1 water-filled cauldron</li>
-                    <li>1 barrel for tack</li>
-                  </ul>
-                  <p>
-                    Horses can share a post and belong to any player. Both horse
-                    and post must be inside the cube. Other equines do not
-                    count.
-                  </p>
-                </li>
-                <li>
-                  <strong>Get creative!</strong>
-                  <p>
-                    Build an open paddock or a grand livery. No separate stalls,
-                    walls, roof, or route checks required. Hay and water are not
-                    consumed.
-                  </p>
-                </li>
-                <li>
-                  <strong>Place this sign at the entrance last.</strong>
-                  <p>
-                    Write [UnrealStable] with your Stable’s unique name
-                    underneath. Save it to register, or right-click to manage
-                    your Stable.
-                  </p>
-                  <div
-                    className="inn-entry-sign"
-                    aria-label="Example Stable entrance sign"
-                  >
-                    <code>
-                      [UnrealStable]
-                      <br />
-                      Green Pastures
-                    </code>
-                  </div>
-                </li>
-              </ol>
-            </div>
+            <section
+              className="inn-build-basics"
+              aria-label="Stable build requirements and layout"
+            >
+              <div className="inn-checklist">
+                <h3>Build requirements</h3>
+                <ol>
+                  <li>
+                    <strong>Build within your existing territory.</strong>
+                    <p>
+                      Owners and stewards can register and deregister
+                      structures.
+                    </p>
+                  </li>
+                  <li>
+                    <strong>Stay within 20 × 20 × 20 blocks.</strong>
+                    <p>
+                      The entire registered cube must fit inside your territory
+                      without overlapping another settlement structure.
+                    </p>
+                  </li>
+                  <li>
+                    <strong>Include the essentials.</strong>
+                    <ul>
+                      <li>
+                        At least 2 saddled, tamed adult horses, each led
+                        directly to a fence post
+                      </li>
+                      <li>2 hay bales</li>
+                      <li>1 water-filled cauldron</li>
+                      <li>1 barrel for tack</li>
+                    </ul>
+                    <p>
+                      Horses can share a post and belong to any player. Both
+                      horse and post must be inside the cube. Other equines do
+                      not count.
+                    </p>
+                  </li>
+                  <li>
+                    <strong>Get creative!</strong>
+                    <p>
+                      Build an open paddock or a grand livery. No separate
+                      stalls, walls, roof, or route checks required. Hay and
+                      water are not consumed.
+                    </p>
+                  </li>
+                  <li>
+                    <strong>Place this sign at the entrance last.</strong>
+                    <p>
+                      Write [UnrealStable] with your Stable’s unique name
+                      underneath. Save it to register, or right-click to manage
+                      your Stable.
+                    </p>
+                    <div
+                      className="inn-entry-sign"
+                      aria-label="Example Stable entrance sign"
+                    >
+                      <code>
+                        [UnrealStable]
+                        <br />
+                        Green Pastures
+                      </code>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+              <StableFloorPlan />
+            </section>
             <section
               id="stable-income"
               className="inn-income"
@@ -320,14 +322,7 @@ export default function Settlements() {
               <p className="inn-art-note">
                 Removing a saddle or lead, taking a horse outside the cube, or
                 losing a horse removes its contribution. Return and tether
-                eligible horses to restore income. Below two, income pauses but
-                the Stable stays registered.
-              </p>
-              <p className="inn-art-note">
-                Validated Stables keep earning while chunks are unloaded,
-                including restart catch-up. Missing required blocks or lost
-                territory pause income. The registered cube stays fixed until
-                you explicitly recheck it.
+                eligible horses to restore income.
               </p>
             </section>
             <div className="inn-commands">
