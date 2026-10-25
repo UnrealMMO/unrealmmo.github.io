@@ -28,11 +28,11 @@ export function FirestormScene() {
       <div className="firestorm-stage" key={replay}>
         <img
           className="firestorm-landscape"
-          src="/art/firestorm-valley-v1.webp"
+          src="/art/firestorm-valley-clean-v2.webp"
           width={2172}
           height={724}
           loading="lazy"
-          alt="An illustrated Minecraft valley at dusk, with two zombies approaching across a clearing beneath a mountain village."
+          alt="An illustrated Firestorm cast: a staff-wielding adventurer rains fireballs onto two zombies, which ignite and recoil in a Minecraft valley at dusk."
         />
         <div className="firestorm-effects" aria-hidden="true">
           <div className="firestorm-target" />
@@ -47,15 +47,61 @@ export function FirestormScene() {
             />
             <span className="firestorm-staff-light" />
           </div>
-          {Array.from({ length: 28 }, (_, i) => (
+          {[0, 1].map((enemy) => (
+            <div
+              className="firestorm-enemy"
+              key={`enemy-${enemy}`}
+              style={
+                {
+                  left: `${74 + enemy * 9.5}%`,
+                  bottom: `${28 + enemy * 2}%`,
+                  "--enemy-delay": `${enemy * 0.24}s`,
+                } as CSSProperties
+              }
+            >
+              <div className="firestorm-enemy-motion">
+                <div className="firestorm-enemy-body">
+                  {["upper", "left-leg", "right-leg"].map((part) => (
+                    <img
+                      className={`firestorm-enemy-${part}`}
+                      key={part}
+                      src="/art/firestorm-enemy-v1.webp"
+                      width={400}
+                      height={600}
+                      alt=""
+                      loading="lazy"
+                    />
+                  ))}
+                </div>
+                <span className="firestorm-hit" />
+                <div className="firestorm-burning">
+                  {Array.from({ length: 5 }, (_, flame) => (
+                    <span
+                      className="firestorm-flame"
+                      key={flame}
+                      style={
+                        {
+                          left: `${4 + flame * 18}%`,
+                          "--flame-height": `${48 + (flame % 3) * 13}%`,
+                          "--flicker-delay": `${-flame * 0.13}s`,
+                        } as CSSProperties
+                      }
+                    />
+                  ))}
+                  <span className="firestorm-smoke" />
+                </div>
+              </div>
+            </div>
+          ))}
+          {Array.from({ length: 14 }, (_, i) => (
             <span
               className="firestorm-meteor"
               key={i}
               style={
                 {
-                  left: `${73 + ((i * 7) % 20)}%`,
-                  "--fall-delay": `${(i % 8) * 0.16}s`,
-                  "--fall-x": `${(i % 3) * 6 - 6}px`,
+                  left: `${i < 2 ? 77.4 + i * 9.5 : 72 + ((i * 7) % 22)}%`,
+                  "--fall-delay": `${i < 2 ? i * 0.24 : (i % 6) * 0.12}s`,
+                  "--fall-x": `${i < 2 ? 0 : (i % 3) * 6 - 6}px`,
                 } as CSSProperties
               }
             >

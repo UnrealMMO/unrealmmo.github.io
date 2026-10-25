@@ -2917,28 +2917,149 @@ tbody tr:nth-child(even) {
 .firestorm-meteor {
   position: absolute;
   top: 3%;
-  width: 13px;
-  height: 40px;
+  width: 42px;
+  height: 104px;
   opacity: 0;
-  transform: rotate(9deg);
+  filter: drop-shadow(0 0 12px #ff6a1a) drop-shadow(0 0 26px #ff3c0070);
+  animation: firestorm-rain 9s linear var(--fall-delay) infinite;
+}
+.firestorm-meteor::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 12%;
   background: linear-gradient(
     0deg,
-    #fff7b1,
-    #ffc442 28%,
-    #ff6a0b99 58%,
+    #fff3ac 5%,
+    #ffb627 32%,
+    #ff4e08aa 65%,
     transparent
   );
-  clip-path: polygon(35% 0, 75% 30%, 100% 77%, 70% 100%, 18% 93%, 0 65%);
-  filter: drop-shadow(0 0 8px #ff6a1a);
-  animation: firestorm-rain 9s linear var(--fall-delay) infinite;
+  clip-path: polygon(
+    43% 0,
+    59% 26%,
+    78% 10%,
+    73% 42%,
+    100% 75%,
+    85% 97%,
+    20% 100%,
+    0 75%,
+    19% 35%,
+    28% 57%
+  );
 }
 .firestorm-meteor i {
   position: absolute;
-  width: 8px;
-  height: 8px;
-  bottom: 4px;
-  left: 2px;
-  background: #fff2a1;
+  width: 84%;
+  aspect-ratio: 1;
+  bottom: 0;
+  left: 8%;
+  border-radius: 38%;
+  background: radial-gradient(
+    circle at 35% 32%,
+    #fffce2 5%,
+    #ffef9c 28%,
+    #ff9d1d 55%,
+    #e73f0d 80%
+  );
+  box-shadow: 0 0 14px #ff9a28;
+}
+.firestorm-enemy {
+  position: absolute;
+  width: 7.2%;
+  animation: firestorm-advance 9s linear var(--enemy-delay) infinite;
+}
+.firestorm-enemy-motion {
+  position: relative;
+  transform-origin: 50% 91%;
+  animation: firestorm-recoil 9s ease-out var(--enemy-delay) infinite;
+}
+.firestorm-enemy-body {
+  position: relative;
+  animation: firestorm-hurt 9s linear var(--enemy-delay) infinite;
+}
+.firestorm-enemy-body img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.firestorm-enemy-upper {
+  clip-path: inset(0 0 39%);
+}
+.firestorm-enemy-left-leg,
+.firestorm-enemy-right-leg {
+  position: absolute;
+  inset: 0;
+  transform-origin: 56% 61%;
+  animation: firestorm-step 9s linear var(--enemy-delay) infinite;
+}
+.firestorm-enemy-left-leg {
+  clip-path: polygon(0 61%, 61% 61%, 61% 100%, 0 100%);
+}
+.firestorm-enemy-right-leg {
+  clip-path: polygon(61% 61%, 100% 61%, 100% 100%, 61% 100%);
+  animation-name: firestorm-step-opposite;
+}
+.firestorm-burning {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: firestorm-burn 9s linear var(--enemy-delay) infinite;
+}
+.firestorm-flame {
+  position: absolute;
+  bottom: 8%;
+  width: 30%;
+  height: var(--flame-height);
+  background: linear-gradient(
+    0deg,
+    #fff9c2 0%,
+    #ffd05b 21%,
+    #ff8b20e8 51%,
+    #f34b14b0 75%,
+    transparent
+  );
+  clip-path: polygon(
+    46% 0,
+    68% 30%,
+    62% 48%,
+    87% 27%,
+    100% 78%,
+    73% 100%,
+    22% 95%,
+    0 66%,
+    22% 37%,
+    26% 58%
+  );
+  transform-origin: 50% 100%;
+  filter: drop-shadow(0 0 5px #ff7d26);
+  animation: firestorm-flicker 0.28s ease-in-out var(--flicker-delay) infinite
+    alternate;
+}
+.firestorm-smoke {
+  position: absolute;
+  left: 15%;
+  top: 0;
+  width: 80%;
+  height: 70%;
+  background: radial-gradient(ellipse, #60595080, transparent 65%);
+  animation: firestorm-smoke 1.8s ease-out infinite;
+}
+.firestorm-hit {
+  position: absolute;
+  left: -45%;
+  top: 15%;
+  width: 190%;
+  aspect-ratio: 1;
+  opacity: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #fff6bcdd,
+    #ffb13170 25%,
+    #ff5a1220 50%,
+    transparent 65%
+  );
+  animation: firestorm-hit 9s ease-out var(--enemy-delay) infinite;
 }
 .firestorm-ember {
   position: absolute;
@@ -3031,13 +3152,13 @@ tbody tr:nth-child(even) {
   }
   31% {
     opacity: 1;
-    top: 65%;
+    top: 48%;
     transform: translateX(var(--fall-x)) scale(1);
   }
   32%,
   35% {
     opacity: 0;
-    top: 68%;
+    top: 53%;
   }
   36% {
     opacity: 0;
@@ -3049,13 +3170,13 @@ tbody tr:nth-child(even) {
   }
   43% {
     opacity: 1;
-    top: 66%;
+    top: 48%;
     transform: translateX(var(--fall-x)) scale(1);
   }
   44%,
   47% {
     opacity: 0;
-    top: 68%;
+    top: 53%;
   }
   48% {
     opacity: 0;
@@ -3067,13 +3188,13 @@ tbody tr:nth-child(even) {
   }
   55% {
     opacity: 1;
-    top: 65%;
+    top: 48%;
     transform: translateX(var(--fall-x)) scale(1);
   }
   56%,
   100% {
     opacity: 0;
-    top: 68%;
+    top: 53%;
   }
 }
 @keyframes firestorm-embers {
@@ -3144,8 +3265,8 @@ tbody tr:nth-child(even) {
     font-size: 0.55rem;
   }
   .firestorm-meteor {
-    width: 10px;
-    height: 28px;
+    width: 25px;
+    height: 64px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -3182,5 +3303,171 @@ tbody tr:nth-child(even) {
     inset: 0 0 auto;
     height: 85px;
     background: linear-gradient(#0b191b, transparent);
+  }
+}
+
+@keyframes firestorm-recoil {
+  0%,
+  10%,
+  20%,
+  30%,
+  42%,
+  54%,
+  78%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  5%,
+  15%,
+  25% {
+    transform: translate(0, -2px) rotate(-1deg);
+  }
+  32%,
+  44%,
+  56% {
+    transform: translate(12px, -7px) rotate(9deg);
+  }
+  36%,
+  48%,
+  60% {
+    transform: translate(4px, 0) rotate(-3deg);
+  }
+  39%,
+  51%,
+  64% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+@keyframes firestorm-hurt {
+  0%,
+  30%,
+  35%,
+  42%,
+  47%,
+  54%,
+  59%,
+  100% {
+    filter: none;
+  }
+  31%,
+  43%,
+  55% {
+    filter: sepia(1) saturate(4) hue-rotate(325deg) brightness(1.65);
+  }
+}
+@keyframes firestorm-burn {
+  0%,
+  30%,
+  83%,
+  100% {
+    opacity: 0;
+  }
+  32%,
+  69% {
+    opacity: 0.9;
+  }
+  76% {
+    opacity: 0.45;
+  }
+}
+@keyframes firestorm-hit {
+  0%,
+  30%,
+  42%,
+  54%,
+  62%,
+  100% {
+    opacity: 0;
+    transform: scale(0.25);
+  }
+  31%,
+  43%,
+  55% {
+    opacity: 0.95;
+    transform: scale(0.7);
+  }
+  35%,
+  47%,
+  59% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+}
+@keyframes firestorm-flicker {
+  from {
+    transform: scaleX(0.85) scaleY(0.8) skewX(-5deg);
+  }
+  to {
+    transform: scaleX(1.1) scaleY(1.15) skewX(6deg);
+  }
+}
+@keyframes firestorm-smoke {
+  from {
+    opacity: 0;
+    transform: translateY(0) scale(0.7);
+  }
+  30% {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-65%) scale(1.4);
+  }
+}
+
+/* The walk advances left; the three impacts return each enemy to its loop origin. */
+@keyframes firestorm-advance {
+  0%,
+  100% {
+    transform: translateX(18px);
+  }
+  30% {
+    transform: translateX(0);
+  }
+  32%,
+  42% {
+    transform: translateX(6px);
+  }
+  44%,
+  54% {
+    transform: translateX(12px);
+  }
+  56%,
+  99% {
+    transform: translateX(18px);
+  }
+}
+@keyframes firestorm-step {
+  0%,
+  10%,
+  20%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  5%,
+  15%,
+  25% {
+    transform: rotate(5deg);
+  }
+  30%,
+  90% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes firestorm-step-opposite {
+  0%,
+  10%,
+  20%,
+  100% {
+    transform: rotate(5deg);
+  }
+  5%,
+  15%,
+  25% {
+    transform: rotate(-5deg);
+  }
+  30%,
+  90% {
+    transform: rotate(0deg);
   }
 }
