@@ -174,19 +174,27 @@ export default function PrivacyPolicy() {
           with “UnrealMMO privacy” in the subject and your Minecraft username or
           UUID, if relevant. Never send your account password.
         </p>
-        <h2>Children and families</h2>
+        <h2>Age requirements and children’s privacy</h2>
         <p>
-          UnrealMMO does not set a minimum player age. Minecraft accounts,
-          payment services and other providers may have their own age and
-          parental-permission requirements. Children should involve a parent or
-          guardian before making purchases or providing personal information.
+          The UnrealMMO website is intended for people aged 13 and older.
+          Children under 13 should not use the website or submit personal
+          information through it. The Minecraft server does not perform age
+          verification or use automated checks to prevent younger players from
+          joining. This age policy should not be understood as a technical age
+          gate on the server.
         </p>
         <p>
-          Having no minimum player age does not remove protections for
-          children’s information. Where applicable law requires parental notice
-          or verifiable parental consent before collecting, using or sharing a
-          child’s personal information, those requirements must be met. This
-          policy is not itself a request for, or proof of, parental consent.
+          Minecraft accounts, payment services and other providers may have
+          their own age and parental-permission requirements. Players under the
+          age of majority should involve a parent or guardian before making
+          purchases or providing personal information.
+        </p>
+        <p>
+          If you believe a child under 13 has provided personal information,
+          contact support@smartify.ai so we can review and address it, including
+          deletion where required. An age statement alone does not replace any
+          parental notice, consent or other protections required by applicable
+          law.
         </p>
         <p>
           Players should avoid sharing real names, addresses, school details or
