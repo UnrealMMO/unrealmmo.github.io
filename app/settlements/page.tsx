@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { PageIntro } from "@/components/ui";
 import { InnFloorPlan } from "@/components/inn-floor-plan";
 export const metadata = {
-  title: "Settlements & Inns",
+  title: "Settlements, Inns & Stables",
   description:
     "Create settlement structures: a simple checklist, overhead layout, and exterior and interior inspiration. Owners and territory stewards can register settlement structures.",
 };
@@ -19,6 +19,10 @@ export default function Settlements() {
           <span className="eyebrow">STRUCTURES</span>
           <a href="#inn">Inn</a>
           <a href="#inn-income" className="settlement-nav-child">
+            Income
+          </a>
+          <a href="#stable">Stable</a>
+          <a href="#stable-income" className="settlement-nav-child">
             Income
           </a>
         </nav>
@@ -50,7 +54,7 @@ export default function Settlements() {
                     <strong>Stay within 20 × 20 × 20 blocks.</strong>
                     <p>
                       The whole Inn’s registered cube must fit your territory
-                      and stay separate from other Inns.
+                      and stay separate from other settlement structures.
                     </p>
                   </li>
                   <li>
@@ -190,6 +194,144 @@ export default function Settlements() {
                 <code>/inn list</code> — status and progress.{" "}
                 <code>/inn remove Oak Inn</code> — deregister without removing
                 blocks.
+              </p>
+            </div>
+          </section>
+          <section id="stable" aria-labelledby="stable-title">
+            <header className="settlement-structure-heading">
+              <span className="eyebrow">SETTLEMENT STRUCTURE</span>
+              <h2 id="stable-title">Stable</h2>
+              <p>A place to board horses and earn income for your territory.</p>
+            </header>
+            <div className="inn-checklist">
+              <h3>Build requirements</h3>
+              <ol>
+                <li>
+                  <strong>Build within your existing territory.</strong>
+                  <p>
+                    Owners and stewards can register and deregister structures.
+                  </p>
+                </li>
+                <li>
+                  <strong>Stay within 20 × 20 × 20 blocks.</strong>
+                  <p>
+                    The entire registered cube must fit inside your territory
+                    without overlapping another settlement structure.
+                  </p>
+                </li>
+                <li>
+                  <strong>Include the essentials.</strong>
+                  <ul>
+                    <li>
+                      At least 2 saddled, tamed adult horses, each led directly
+                      to a fence post
+                    </li>
+                    <li>2 hay bales</li>
+                    <li>1 water-filled cauldron</li>
+                    <li>1 barrel for tack</li>
+                  </ul>
+                  <p>
+                    Horses can share a post and belong to any player. Both horse
+                    and post must be inside the cube. Other equines do not
+                    count.
+                  </p>
+                </li>
+                <li>
+                  <strong>Get creative!</strong>
+                  <p>
+                    Build an open paddock or a grand livery. No separate stalls,
+                    walls, roof, or route checks required. Hay and water are not
+                    consumed.
+                  </p>
+                </li>
+                <li>
+                  <strong>Place this sign at the entrance last.</strong>
+                  <p>
+                    Write [UnrealStable] with your Stable’s unique name
+                    underneath. Save it to register, or right-click to manage
+                    your Stable.
+                  </p>
+                  <div
+                    className="inn-entry-sign"
+                    aria-label="Example Stable entrance sign"
+                  >
+                    <code>
+                      [UnrealStable]
+                      <br />
+                      Green Pastures
+                    </code>
+                  </div>
+                </li>
+              </ol>
+            </div>
+            <section
+              id="stable-income"
+              className="inn-income"
+              aria-labelledby="stable-income-title"
+            >
+              <h3 id="stable-income-title">Stable income</h3>
+              <p>
+                Each eligible horse increases income, up to six. Earnings go to
+                the territory owner.
+              </p>
+              <div
+                className="inn-income-chart"
+                role="img"
+                aria-label="Hourly Stable income: 0 or 1 eligible horse earns 0 Coins; 2 earn 10; 3 earn 15; 4 earn 18; 5 earn 20; 6 or more earn 21."
+              >
+                {[
+                  { horses: "0–1", coins: 0 },
+                  { horses: "2", coins: 10 },
+                  { horses: "3", coins: 15 },
+                  { horses: "4", coins: 18 },
+                  { horses: "5", coins: 20 },
+                  { horses: "6+", coins: 21 },
+                ].map(({ horses, coins }) => (
+                  <div
+                    className="inn-income-row"
+                    key={horses}
+                    aria-hidden="true"
+                  >
+                    <div className="inn-income-label">
+                      <strong>{horses} horses</strong>
+                      <span>Saddled · tamed · tethered</span>
+                    </div>
+                    <div className="inn-income-track">
+                      {coins === 0 ? (
+                        <strong>0</strong>
+                      ) : (
+                        <div
+                          className="inn-income-bar"
+                          style={{ width: `${(coins / 21) * 100}%` }}
+                        >
+                          <strong>{coins}</strong>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+                <span className="inn-income-unit" aria-hidden="true">
+                  COINS PER HOUR
+                </span>
+              </div>
+              <p className="inn-art-note">
+                Removing a saddle or lead, taking a horse outside the cube, or
+                losing a horse removes its contribution. Return and tether
+                eligible horses to restore income. Below two, income pauses but
+                the Stable stays registered.
+              </p>
+              <p className="inn-art-note">
+                Validated Stables keep earning while chunks are unloaded,
+                including restart catch-up. Missing required blocks or lost
+                territory pause income. The registered cube stays fixed until
+                you explicitly recheck it.
+              </p>
+            </section>
+            <div className="inn-commands">
+              <p>
+                <code>/stable list</code> — status and progress.{" "}
+                <code>/stable remove Green Pastures</code> — deregister without
+                removing blocks.
               </p>
             </div>
           </section>

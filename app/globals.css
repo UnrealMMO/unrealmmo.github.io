@@ -2274,6 +2274,9 @@ tbody tr:nth-child(even) {
 .inn-build-guide {
   padding-bottom: 80px;
 }
+.inn-build-guide > section + section {
+  margin-top: 64px;
+}
 .inn-build-guide .eyebrow {
   display: block;
   color: #637449;
@@ -2575,8 +2578,7 @@ tbody tr:nth-child(even) {
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 2.2vw, 2rem);
 }
-.inn-build-guide #inn,
-.inn-build-guide #inn-income {
+.inn-build-guide section[id] {
   scroll-margin-top: 110px;
 }
 .settlement-layout .inn-build-basics {
