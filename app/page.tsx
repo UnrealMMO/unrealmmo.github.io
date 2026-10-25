@@ -2,11 +2,10 @@ import Link from "next/link";
 import { ArrowUpRight, Shield, Layers, Sparkles } from "lucide-react";
 import { ButtonLink, Icon } from "@/components/ui";
 import { Reveal } from "@/components/reveal";
-import { StructurePreview } from "@/components/structure-preview";
 import { ServerSign } from "@/components/server-sign";
 import { SneakScene } from "@/components/sneak-scene";
 import { DiamondTreeScene } from "@/components/diamond-tree-scene";
-import { skills, structures } from "@/content/game";
+import { skills } from "@/content/game";
 export default function Home() {
   return (
     <>
@@ -181,8 +180,14 @@ export default function Home() {
       </section>
       <section className="section parchment">
         <Reveal className="wrap home-callout">
-          <div className="hearth-emblem">
-            <StructurePreview structure={structures[8]} />
+          <div className="hearth-landscape">
+            <img
+              src="/art/wardtower-shield-v1.webp"
+              width={1536}
+              height={1024}
+              loading="lazy"
+              alt="A distant Tier 4 Hearthstone Wardtower, crowned with fire, beneath a vast translucent shield over Minecraft forests, meadows and a river"
+            />
           </div>
           <div>
             <h2>

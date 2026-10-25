@@ -732,12 +732,15 @@ p + p {
   gap: 70px;
   align-items: center;
 }
-.hearth-emblem {
-  background: radial-gradient(ellipse, #c4c5ab88, transparent 64%);
+.hearth-landscape {
+  min-width: 0;
 }
-.hearth-emblem .structure-preview {
-  height: 280px;
+.hearth-landscape img {
+  display: block;
   width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
 }
 .home-callout p {
   max-width: 470px;
@@ -1842,9 +1845,6 @@ tbody tr:nth-child(even) {
   }
   .home-callout {
     gap: 8px;
-  }
-  .hearth-emblem .structure-preview {
-    height: 200px;
   }
   .closing {
     padding: 70px 0;
