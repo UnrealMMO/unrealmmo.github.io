@@ -126,22 +126,21 @@ export function FirestormScene() {
       <div className="firestorm-shade" aria-hidden="true" />
       <div className="wrap firestorm-content">
         <div className="firestorm-copy">
-          <span className="firestorm-eyebrow">MAGIC</span>
           <h2 id="firestorm-heading">
             Wield magic.
             <br />
             <em>Make it yours.</em>
           </h2>
           <p>
-            Choose your staff and find your style. Wield fire and water, from
-            focused bolts to sweeping attacks, healing springs and swirling
-            whirlpools. Grow your Magic skill to unlock new abilities and more
-            ways to turn a fight in your favor.
+            <strong>Make the elements your own.</strong> Unleash searing fire,
+            sweep enemies into swirling whirlpools, or turn the tide with healing
+            springs. Choose your staff, shape your fighting style, and grow your
+            Magic skill to unlock powerful new abilities.
           </p>
           <p>
-            Magic reaches beyond battle, too. Craft Magic Runes and open your
-            Spell Menu to call rain over farmland or use abilities unlocked
-            through Mining and Woodcutting.
+            Your power reaches beyond the battlefield. Craft Magic Runes, call
+            rain over thirsty farmland, and discover unique spells as you explore
+            every skill. <strong>What kind of mage will you become?</strong>
           </p>
         </div>
       </div>
