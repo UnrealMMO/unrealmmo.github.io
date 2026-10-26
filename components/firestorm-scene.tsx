@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { Pause, Play, RotateCcw } from "lucide-react";
+import { FirestormCaster } from "@/components/firestorm-caster";
 
 export function FirestormScene() {
   const section = useRef<HTMLElement>(null);
@@ -37,9 +38,7 @@ export function FirestormScene() {
         <div className="firestorm-effects" aria-hidden="true">
           <div className="firestorm-target" />
           <div className="firestorm-ground-glow" />
-          <div className="firestorm-caster">
-            <div className="firestorm-caster-poses" />
-          </div>
+          <FirestormCaster paused={paused || !visible} />
           {[0, 1].map((enemy) => (
             <div
               className="firestorm-enemy"
@@ -86,28 +85,31 @@ export function FirestormScene() {
               </div>
             </div>
           ))}
-          {Array.from({ length: 14 }, (_, i) => (
-            <span
-              className="firestorm-meteor"
-              key={i}
+          {[0, 1].map((target) => (
+            <div
+              className="firestorm-strike"
+              key={target}
               style={
                 {
-                  left: `${i < 2 ? 77.4 + i * 9.5 : 72 + ((i * 7) % 22)}%`,
-                  "--fall-delay": `${i < 2 ? i * 0.24 : (i % 6) * 0.12}s`,
-                  "--fall-x": `${i < 2 ? 0 : (i % 3) * 6 - 6}px`,
+                  left: `${77.4 + target * 9.5}%`,
+                  "--fall-delay": `${target * 0.24}s`,
+                  "--ground-y": `${72 - target * 2}%`,
                 } as CSSProperties
               }
             >
-              <span className="firestorm-projectile-fire" />
-              <img
-                className="firestorm-projectile-core"
-                src="/art/minecraft-fire/fire_charge.png"
-                width={16}
-                height={16}
-                alt=""
-              />
-              <span className="firestorm-projectile-smoke" />
-            </span>
+              <span className="firestorm-meteor">
+                <span className="firestorm-projectile-fire" />
+                <img
+                  className="firestorm-projectile-core"
+                  src="/art/minecraft-fire/fire_charge.png"
+                  width={16}
+                  height={16}
+                  alt=""
+                />
+                <span className="firestorm-projectile-smoke" />
+              </span>
+              <span className="firestorm-explosion" />
+            </div>
           ))}
           {Array.from({ length: 16 }, (_, i) => (
             <span

@@ -26,6 +26,86 @@
       "source": "assets/minecraft/textures/particle/big_smoke_4.png",
       "file": "public/art/minecraft-fire/big_smoke_4.png",
       "sha256": "1770088929c6a3c8a2069d1c7eaed938f0d71b590385d69691e399bbbdc8c451"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/explosion_0.png",
+      "file": "public/art/minecraft-fire/explosion_0.png",
+      "sha256": "a866f2dd2a7589a2b9b3f813735647ddf03596ebab84883a581edb6b1615adce"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/explosion_1.png",
+      "file": "public/art/minecraft-fire/explosion_1.png",
+      "sha256": "812129f9bb825fe79cc7673d10b0b7338ad2087ef638689e5836ebbe5b3cfef3"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/explosion_2.png",
+      "file": "public/art/minecraft-fire/explosion_2.png",
+      "sha256": "acb8bc2f23ba613ac921733f7f684d2aed7b3ec49b06398a1156d6097b12b29d"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/explosion_3.png",
+      "file": "public/art/minecraft-fire/explosion_3.png",
+      "sha256": "9f7c5726b0645f660e8f26bc5437c17908f8b0470cd02b401a4b152c9d80980c"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/explosion_4.png",
+      "file": "public/art/minecraft-fire/explosion_4.png",
+      "sha256": "2101114aed66f1f25812fcb419416c60f22bb249b4034b4034957769add69158"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/explosion_5.png",
+      "file": "public/art/minecraft-fire/explosion_5.png",
+      "sha256": "88f1b038924db665f411c176c6b8afe1b7e0fe897f432dcafb22f1d95fb1d6f5"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/explosion_6.png",
+      "file": "public/art/minecraft-fire/explosion_6.png",
+      "sha256": "0bd08d58f42fc1824250013294d355d6d564f64946e9111d45833a57be5510fc"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/explosion_7.png",
+      "file": "public/art/minecraft-fire/explosion_7.png",
+      "sha256": "5e0530a2676ac9e6b22b1fba636b8e2677105425e7c651ec346165732dcb7230"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/explosion_8.png",
+      "file": "public/art/minecraft-fire/explosion_8.png",
+      "sha256": "7068773dc258ae8bad83e278de1c02180f41986901a52ad722b725caf6c5eeb3"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/explosion_9.png",
+      "file": "public/art/minecraft-fire/explosion_9.png",
+      "sha256": "321e290169bfd347e73f51e0185e098e3067f75039ee2042a303f267675666f2"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/explosion_10.png",
+      "file": "public/art/minecraft-fire/explosion_10.png",
+      "sha256": "d70c078693d08db702468335f7b0b3ac6e102e052654981b16d0dc8fff7a7e59"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/explosion_11.png",
+      "file": "public/art/minecraft-fire/explosion_11.png",
+      "sha256": "63f51a1d9125323949ec86d3423fa8914ac6a0cdd37c8532a3217f8df9cab147"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/explosion_12.png",
+      "file": "public/art/minecraft-fire/explosion_12.png",
+      "sha256": "3bd75dd62da503ea3eac66bb9c23666a9bd9bdd97a299b25e4003dee47fbd9fe"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/explosion_13.png",
+      "file": "public/art/minecraft-fire/explosion_13.png",
+      "sha256": "7f58b47c1b47ab767c5ca220d8ef2ef53347789993fc1a546e16a60917608855"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/explosion_14.png",
+      "file": "public/art/minecraft-fire/explosion_14.png",
+      "sha256": "e63a58b50a0520cd066f0675de973ff484f2513d9b47c0b01d4e1499c74c7dbf"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/explosion_15.png",
+      "file": "public/art/minecraft-fire/explosion_15.png",
+      "sha256": "b69b08e62197fb8d1387439f24c5d723fc0dabe8b62e2b0502106806c47722ae"
     }
   ]
 }

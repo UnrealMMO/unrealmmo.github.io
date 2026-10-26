@@ -2863,12 +2863,28 @@ tbody tr:nth-child(even) {
   width: 12%;
   aspect-ratio: 2 / 3;
 }
-.firestorm-caster-poses {
+.firestorm-caster-clock {
+  position: absolute;
+  animation: firestorm-clock 9s linear infinite;
+}
+.firestorm-caster-canvas {
+  position: absolute;
+  left: -16.666667%;
+  bottom: 0;
+  width: 133.333333%;
+  height: 116.666667%;
+}
+.firestorm-caster-fallback {
   width: 100%;
-  height: 100%;
-  background: url("/art/firestorm-caster-sequence-v3.webp") 0 0 / 600% 100%
-    no-repeat;
-  animation: firestorm-casting-poses 9s steps(1, end) infinite;
+  height: auto;
+}
+@keyframes firestorm-clock {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
 }
 .firestorm-target {
   position: absolute;
@@ -2898,11 +2914,36 @@ tbody tr:nth-child(even) {
   mix-blend-mode: screen;
   animation: firestorm-impact 9s ease-in-out infinite;
 }
+.firestorm-strike {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  --meteor-width: 88px;
+  --meteor-height: 132px;
+  --explosion-size: 180px;
+}
+.firestorm-explosion {
+  position: absolute;
+  top: var(--ground-y);
+  left: 0;
+  width: var(--explosion-size);
+  height: var(--explosion-size);
+  transform: translate(-50%, -70%);
+  background: url("/art/minecraft-fire/explosion-sequence.png") 0 0 / 1600% 100%
+    no-repeat;
+  image-rendering: pixelated;
+  opacity: 0;
+  animation:
+    firestorm-explosion-frames 9s steps(15, end) var(--fall-delay) infinite,
+    firestorm-explosion-visible 9s steps(1, end) var(--fall-delay) infinite;
+}
 .firestorm-meteor {
   position: absolute;
   top: 3%;
-  width: 52px;
-  height: 88px;
+  left: calc(var(--meteor-width) / -2);
+  width: var(--meteor-width);
+  height: var(--meteor-height);
   opacity: 0;
   animation: firestorm-rain 9s linear var(--fall-delay) infinite;
 }
@@ -3029,31 +3070,6 @@ tbody tr:nth-child(even) {
   opacity: 0;
   animation: firestorm-embers 9s ease-out var(--ember-delay) infinite;
 }
-/* Full-body poses: ready, crouch, lift, overhead, release, settle. No cutout rotation. */
-@keyframes firestorm-casting-poses {
-  0%,
-  8%,
-  80%,
-  100% {
-    background-position: 0% 0;
-  }
-  12%,
-  73% {
-    background-position: 20% 0;
-  }
-  16% {
-    background-position: 40% 0;
-  }
-  20% {
-    background-position: 60% 0;
-  }
-  25% {
-    background-position: 80% 0;
-  }
-  62% {
-    background-position: 100% 0;
-  }
-}
 /* 32 frames at Minecraft's 20 Hz; the endpoint is skipped by the loop. */
 @keyframes firestorm-minecraft-fire {
   from {
@@ -3097,61 +3113,69 @@ tbody tr:nth-child(even) {
     opacity: 0.35;
   }
 }
+/* Each of the two lanes drops three fireballs, then rests. Bottom edges
+   meet the same ground coordinate used by their explosion sprites. */
 @keyframes firestorm-rain {
   0%,
-  24% {
-    opacity: 0;
-    top: 3%;
-    transform: translateX(18px) scale(0.6);
-  }
-  25% {
-    opacity: 1;
-  }
-  31% {
-    opacity: 1;
-    top: 48%;
-    transform: translateX(var(--fall-x)) scale(1);
-  }
-  32%,
-  35% {
-    opacity: 0;
-    top: 53%;
-  }
-  36% {
-    opacity: 0;
-    top: 3%;
-    transform: translateX(18px) scale(0.6);
-  }
-  37% {
-    opacity: 1;
-  }
-  43% {
-    opacity: 1;
-    top: 48%;
-    transform: translateX(var(--fall-x)) scale(1);
-  }
-  44%,
-  47% {
-    opacity: 0;
-    top: 53%;
-  }
+  24%,
+  36%,
   48% {
     opacity: 0;
-    top: 3%;
-    transform: translateX(18px) scale(0.6);
+    top: calc(3% - var(--meteor-height));
+    transform: scale(0.8);
   }
+  25%,
+  37%,
   49% {
     opacity: 1;
   }
+  31%,
+  43%,
   55% {
     opacity: 1;
-    top: 48%;
-    transform: translateX(var(--fall-x)) scale(1);
+    top: calc(var(--ground-y) - var(--meteor-height));
+    transform: scale(1);
   }
-  56%,
+  31.01%,
+  35.99%,
+  43.01%,
+  47.99%,
+  55.01%,
   100% {
     opacity: 0;
-    top: 53%;
+    top: calc(var(--ground-y) - var(--meteor-height));
+    transform: scale(1);
+  }
+}
+@keyframes firestorm-explosion-frames {
+  0%,
+  31%,
+  43%,
+  55% {
+    background-position: 0% 0;
+  }
+  39%,
+  40%,
+  51%,
+  52%,
+  63%,
+  64%,
+  100% {
+    background-position: 100% 0;
+  }
+}
+@keyframes firestorm-explosion-visible {
+  0%,
+  40%,
+  52%,
+  64%,
+  100% {
+    opacity: 0;
+  }
+  31%,
+  43%,
+  55% {
+    opacity: 0.95;
   }
 }
 @keyframes firestorm-embers {
@@ -3221,9 +3245,10 @@ tbody tr:nth-child(even) {
     bottom: 22px;
     font-size: 0.55rem;
   }
-  .firestorm-meteor {
-    width: 32px;
-    height: 54px;
+  .firestorm-strike {
+    --meteor-width: 56px;
+    --meteor-height: 84px;
+    --explosion-size: 100px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -3237,6 +3262,7 @@ tbody tr:nth-child(even) {
     opacity: 0.25;
   }
   .firestorm-meteor,
+  .firestorm-explosion,
   .firestorm-ember {
     display: none;
   }
