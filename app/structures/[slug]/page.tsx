@@ -147,7 +147,7 @@ export default async function StructurePage({
                   <li>
                     {(s.stage ?? 1) > 1
                       ? "Follow the layer guide to complete this Hearthstone tier, keeping the gold heart and every required block from the lower stages."
-                      : "Build the pedestal or a higher complete tier. Right-click the gold heart with your Hearthstone Core to preview the highest completed tier that fits."}
+                      : "Build the pedestal or a higher complete tier. Look at the gold heart and use /territory preview to check the highest completed tier that fits."}
                   </li>
                   <li>
                     {(s.stage ?? 1) > 1
@@ -160,9 +160,9 @@ export default async function StructurePage({
                   </li>
                 </ol>
                 <p>
-                  Building before your initial claim? Right-click the gold heart
-                  with your Hearthstone Core to detect the highest complete
-                  tier. You can claim its full volume immediately, without
+                  Building before your initial claim? Look at the gold heart
+                  and use <code>/territory preview</code> to detect the highest
+                  complete tier. You can claim its full volume immediately, without
                   claiming Stage 1 first. If neighbors or world limits block
                   that size, the preview explains the highest tier that fits.
                   Confirm the exact preview within 60 seconds.
