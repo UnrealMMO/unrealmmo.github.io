@@ -38,23 +38,7 @@ export function FirestormScene() {
           <div className="firestorm-target" />
           <div className="firestorm-ground-glow" />
           <div className="firestorm-caster">
-            <img
-              src="/art/firestorm-caster-body-v2.webp"
-              width={600}
-              height={900}
-              loading="lazy"
-              alt=""
-            />
-            <div className="firestorm-casting-arm">
-              <img
-                src="/art/firestorm-casting-arm-v2.webp"
-                width={600}
-                height={900}
-                loading="lazy"
-                alt=""
-              />
-              <span className="firestorm-staff-light" />
-            </div>
+            <div className="firestorm-caster-poses" />
           </div>
           {[0, 1].map((enemy) => (
             <div
@@ -84,15 +68,15 @@ export function FirestormScene() {
                 </div>
                 <span className="firestorm-hit" />
                 <div className="firestorm-burning">
-                  {Array.from({ length: 5 }, (_, flame) => (
+                  {Array.from({ length: 3 }, (_, flame) => (
                     <span
                       className="firestorm-flame"
                       key={flame}
                       style={
                         {
-                          left: `${4 + flame * 18}%`,
-                          "--flame-height": `${48 + (flame % 3) * 13}%`,
-                          "--flicker-delay": `${-flame * 0.13}s`,
+                          left: `${8 + (flame % 2) * 9}%`,
+                          "--flame-bottom": `${6 + flame * 19}%`,
+                          "--texture-delay": `${-0.8 - flame * 0.25}s`,
                         } as CSSProperties
                       }
                     />
@@ -114,7 +98,15 @@ export function FirestormScene() {
                 } as CSSProperties
               }
             >
-              <i />
+              <span className="firestorm-projectile-fire" />
+              <img
+                className="firestorm-projectile-core"
+                src="/art/minecraft-fire/fire_charge.png"
+                width={16}
+                height={16}
+                alt=""
+              />
+              <span className="firestorm-projectile-smoke" />
             </span>
           ))}
           {Array.from({ length: 16 }, (_, i) => (

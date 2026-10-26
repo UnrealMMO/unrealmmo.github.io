@@ -30,6 +30,11 @@ export default function About() {
           map. Structure diagrams are generated from the game’s block patterns.
         </p>
         <p>
+          The diamond, fire-charge, flame and smoke textures are Minecraft
+          artwork belonging to Mojang and Microsoft. Firestorm combines these
+          game textures with original illustrated characters and scenery.
+        </p>
+        <p>
           The site uses the open-source Cinzel and Figtree fonts, Lucide icons,
           Next.js, React, Tailwind CSS, Framer Motion, Radix UI and Three.js
           with React Three Fiber. Asset provenance and dependency licenses are

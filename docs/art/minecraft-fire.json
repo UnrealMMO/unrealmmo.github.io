@@ -1,0 +1,31 @@
+{
+  "source": "Installed Minecraft Java 26.2 client jar",
+  "owner": "Mojang/Microsoft",
+  "assets": [
+    {
+      "source": "assets/minecraft/textures/block/fire_0.png",
+      "file": "public/art/minecraft-fire/fire_0.png",
+      "sha256": "00cd7ff06026f0261b9d8dc4dc492e9e8abebc50b057738d0f3e4a39a3df7a09"
+    },
+    {
+      "source": "assets/minecraft/textures/block/fire_1.png",
+      "file": "public/art/minecraft-fire/fire_1.png",
+      "sha256": "14f2aff3b724d5c0e015536b591d21735f4954bc04241f34f2fc2cbce2f263ec"
+    },
+    {
+      "source": "assets/minecraft/textures/item/fire_charge.png",
+      "file": "public/art/minecraft-fire/fire_charge.png",
+      "sha256": "cf15c4301ec96a22813f17b11e43a2d047e8b65067c7513a76107fef7a485ad2"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/flame.png",
+      "file": "public/art/minecraft-fire/flame.png",
+      "sha256": "beb1b1fa93b5809b906c850fcba2cdfa65e0166fe510ed592a0510a1585c4991"
+    },
+    {
+      "source": "assets/minecraft/textures/particle/big_smoke_4.png",
+      "file": "public/art/minecraft-fire/big_smoke_4.png",
+      "sha256": "1770088929c6a3c8a2069d1c7eaed938f0d71b590385d69691e399bbbdc8c451"
+    }
+  ]
+}

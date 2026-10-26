@@ -2861,35 +2861,14 @@ tbody tr:nth-child(even) {
   left: 53%;
   bottom: 14%;
   width: 12%;
+  aspect-ratio: 2 / 3;
 }
-.firestorm-caster img {
-  display: block;
+.firestorm-caster-poses {
   width: 100%;
-  height: auto;
-}
-.firestorm-casting-arm {
-  position: absolute;
-  inset: 0;
-  transform-origin: 52% 42%;
-  transform: rotate(28deg);
-  animation: firestorm-raise-staff 9s ease-in-out infinite;
-}
-.firestorm-staff-light {
-  position: absolute;
-  left: 87%;
-  top: 9%;
-  width: 30%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    #fff4b9,
-    #ffb13680 20%,
-    #ff630040 45%,
-    transparent 70%
-  );
-  transform: translate(-50%, -50%);
-  animation: firestorm-charge 9s ease-in-out infinite;
+  height: 100%;
+  background: url("/art/firestorm-caster-sequence-v3.webp") 0 0 / 600% 100%
+    no-repeat;
+  animation: firestorm-casting-poses 9s steps(1, end) infinite;
 }
 .firestorm-target {
   position: absolute;
@@ -2922,51 +2901,44 @@ tbody tr:nth-child(even) {
 .firestorm-meteor {
   position: absolute;
   top: 3%;
-  width: 42px;
-  height: 104px;
+  width: 52px;
+  height: 88px;
   opacity: 0;
-  filter: drop-shadow(0 0 12px #ff6a1a) drop-shadow(0 0 26px #ff3c0070);
   animation: firestorm-rain 9s linear var(--fall-delay) infinite;
 }
-.firestorm-meteor::before {
-  content: "";
+.firestorm-projectile-core {
   position: absolute;
-  inset: 0 0 12%;
-  background: linear-gradient(
-    0deg,
-    #fff3ac 5%,
-    #ffb627 32%,
-    #ff4e08aa 65%,
-    transparent
-  );
-  clip-path: polygon(
-    43% 0,
-    59% 26%,
-    78% 10%,
-    73% 42%,
-    100% 75%,
-    85% 97%,
-    20% 100%,
-    0 75%,
-    19% 35%,
-    28% 57%
-  );
-}
-.firestorm-meteor i {
-  position: absolute;
-  width: 84%;
-  aspect-ratio: 1;
   bottom: 0;
-  left: 8%;
-  border-radius: 38%;
-  background: radial-gradient(
-    circle at 35% 32%,
-    #fffce2 5%,
-    #ffef9c 28%,
-    #ff9d1d 55%,
-    #e73f0d 80%
-  );
-  box-shadow: 0 0 14px #ff9a28;
+  left: 0;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 0 3px #ff822866);
+}
+.firestorm-projectile-fire,
+.firestorm-flame {
+  background: url("/art/minecraft-fire/fire_0.png") 0 0 / 100% 3200% no-repeat;
+  image-rendering: pixelated;
+  animation: firestorm-minecraft-fire 1.6s steps(32, end)
+    var(--texture-delay, -0.8s) infinite;
+}
+.firestorm-projectile-fire {
+  position: absolute;
+  width: 115%;
+  height: 75%;
+  left: -7.5%;
+  bottom: 14%;
+}
+.firestorm-projectile-smoke {
+  position: absolute;
+  top: -8%;
+  left: 25%;
+  width: 50%;
+  aspect-ratio: 1;
+  background: url("/art/minecraft-fire/big_smoke_4.png") center / contain
+    no-repeat;
+  image-rendering: pixelated;
+  opacity: 0.35;
 }
 .firestorm-enemy {
   position: absolute;
@@ -3012,33 +2984,12 @@ tbody tr:nth-child(even) {
 }
 .firestorm-flame {
   position: absolute;
-  bottom: 8%;
-  width: 30%;
-  height: var(--flame-height);
-  background: linear-gradient(
-    0deg,
-    #fff9c2 0%,
-    #ffd05b 21%,
-    #ff8b20e8 51%,
-    #f34b14b0 75%,
-    transparent
-  );
-  clip-path: polygon(
-    46% 0,
-    68% 30%,
-    62% 48%,
-    87% 27%,
-    100% 78%,
-    73% 100%,
-    22% 95%,
-    0 66%,
-    22% 37%,
-    26% 58%
-  );
-  transform-origin: 50% 100%;
-  filter: drop-shadow(0 0 5px #ff7d26);
-  animation: firestorm-flicker 0.28s ease-in-out var(--flicker-delay) infinite
-    alternate;
+  bottom: var(--flame-bottom);
+  width: 82%;
+  aspect-ratio: 1;
+}
+.firestorm-flame:nth-child(2) {
+  background-image: url("/art/minecraft-fire/fire_1.png");
 }
 .firestorm-smoke {
   position: absolute;
@@ -3046,7 +2997,9 @@ tbody tr:nth-child(even) {
   top: 0;
   width: 80%;
   height: 70%;
-  background: radial-gradient(ellipse, #60595080, transparent 65%);
+  background: url("/art/minecraft-fire/big_smoke_4.png") center / contain
+    no-repeat;
+  image-rendering: pixelated;
   animation: firestorm-smoke 1.8s ease-out infinite;
 }
 .firestorm-hit {
@@ -3069,58 +3022,45 @@ tbody tr:nth-child(even) {
 .firestorm-ember {
   position: absolute;
   top: 68%;
-  width: 5px;
-  height: 5px;
-  background: #ffd270;
+  width: 12px;
+  height: 12px;
+  background: url("/art/minecraft-fire/flame.png") center / contain no-repeat;
+  image-rendering: pixelated;
   opacity: 0;
-  box-shadow: 0 0 8px #ff671d;
   animation: firestorm-embers 9s ease-out var(--ember-delay) infinite;
 }
-/* Shoulder lift completes before the first volley; each impact gets a follow-through. */
-@keyframes firestorm-raise-staff {
+/* Full-body poses: ready, crouch, lift, overhead, release, settle. No cutout rotation. */
+@keyframes firestorm-casting-poses {
   0%,
   8%,
   80%,
   100% {
-    transform: rotate(28deg);
+    background-position: 0% 0;
   }
-  18% {
-    transform: rotate(-12deg);
+  12%,
+  73% {
+    background-position: 20% 0;
   }
-  24%,
-  28% {
-    transform: rotate(-18deg);
+  16% {
+    background-position: 40% 0;
   }
-  31%,
-  43%,
-  55% {
-    transform: rotate(-9deg);
+  20% {
+    background-position: 60% 0;
   }
-  36%,
-  48% {
-    transform: rotate(-15deg);
+  25% {
+    background-position: 80% 0;
   }
-  64% {
-    transform: rotate(-12deg);
+  62% {
+    background-position: 100% 0;
   }
 }
-@keyframes firestorm-charge {
-  0%,
-  8%,
-  78%,
-  100% {
-    opacity: 0.1;
-    transform: translate(-50%, -50%) scale(0.6);
+/* 32 frames at Minecraft's 20 Hz; the endpoint is skipped by the loop. */
+@keyframes firestorm-minecraft-fire {
+  from {
+    background-position: 0 0;
   }
-  18%,
-  28% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(2.3);
-  }
-  35%,
-  65% {
-    opacity: 0.7;
-    transform: translate(-50%, -50%) scale(1);
+  to {
+    background-position: 0 103.225806%;
   }
 }
 @keyframes firestorm-ring {
@@ -3282,8 +3222,8 @@ tbody tr:nth-child(even) {
     font-size: 0.55rem;
   }
   .firestorm-meteor {
-    width: 25px;
-    height: 64px;
+    width: 32px;
+    height: 54px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -3292,9 +3232,6 @@ tbody tr:nth-child(even) {
   }
   .firestorm-target {
     opacity: 0.5;
-  }
-  .firestorm-staff-light {
-    opacity: 0.6;
   }
   .firestorm-ground-glow {
     opacity: 0.25;
@@ -3408,14 +3345,6 @@ tbody tr:nth-child(even) {
   59% {
     opacity: 0;
     transform: scale(1.4);
-  }
-}
-@keyframes firestorm-flicker {
-  from {
-    transform: scaleX(0.85) scaleY(0.8) skewX(-5deg);
-  }
-  to {
-    transform: scaleX(1.1) scaleY(1.15) skewX(6deg);
   }
 }
 @keyframes firestorm-smoke {
