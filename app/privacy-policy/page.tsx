@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
         description="Your information on the UnrealMMO website and Minecraft server."
       />
       <article className="wrap prose">
-        <p>Last updated: 25 October 2026</p>
+        <p>Last updated: 26 October 2026</p>
         <p>
           This policy describes how the UnrealMMO server team (“we”, “us”)
           handles information when you browse our guides, play on our Minecraft
@@ -25,11 +25,13 @@ export default function PrivacyPolicy() {
           <li>
             <strong>Website visits.</strong> Our public handbook is hosted on
             GitHub Pages. GitHub may receive connection information, including
-            your IP address, when delivering the site. The handbook itself has
-            no account registration or analytics scripts. Fonts and artwork are
-            served with the site; guide controls and checklists run in your
-            browser. Purchase and payment services may process additional
-            information as described below.
+            your IP address, when delivering the site. We and our service
+            providers may collect device and browser information, IP addresses,
+            approximate location, referral sources, page views, visit times,
+            session duration, and interactions such as clicks, scrolling and
+            navigation. Cookies and similar technologies may associate activity
+            with a browser or device across visits. Purchase and payment
+            services may process additional information as described below.
           </li>
           <li>
             <strong>Minecraft identity and connections.</strong> The server uses
@@ -53,6 +55,17 @@ export default function PrivacyPolicy() {
             Please avoid including passwords or unnecessary personal details.
           </li>
         </ul>
+        <h2>Website analytics and activity monitoring</h2>
+        <p>
+          We may use analytics and activity-monitoring tools to understand how
+          visitors use the website, measure performance and campaigns, identify
+          errors, and improve content, navigation and features. These tools may
+          include traffic reports, interaction tracking, heatmaps, and session
+          replay that reconstructs a visitor’s on-site browsing and
+          interactions. The information collected depends on the tools enabled
+          and their configuration, subject to applicable consent requirements
+          and your privacy choices.
+        </p>
         <h2>Website purchases and payments</h2>
         <p>
           We offer real-money purchases through our website. To process and
@@ -75,9 +88,12 @@ export default function PrivacyPolicy() {
         <p>
           We use this information to save and restore gameplay, apply territory
           permissions, account for Coins, investigate bugs and abuse, enforce
-          server rules, and answer support requests. Backups help us recover
-          worlds and records after failures. Coins transactions described in the
-          game are virtual gameplay records, not bank or card details.
+          server rules, and answer support requests. We also use website
+          activity information to understand visitor interests, improve the
+          website, diagnose technical issues, and measure engagement and the
+          effectiveness of our promotions. Backups help us recover worlds and
+          records after failures. Coins transactions described in the game are
+          virtual gameplay records, not bank or card details.
         </p>
         <h2>Visibility and service providers</h2>
         <p>
@@ -88,8 +104,9 @@ export default function PrivacyPolicy() {
         </p>
         <p>
           Authorized server administrators may access records for operation,
-          troubleshooting, moderation and support. We share relevant information
-          with providers supporting hosting, payment processing, order
+          troubleshooting, moderation, analytics and support. We share relevant
+          information with providers supporting hosting, analytics, activity
+          monitoring, campaign measurement, payment processing, order
           fulfillment, email, Minecraft authentication or profiles, and customer
           support, as needed for those functions. Payment and authentication
           providers may also process information for their own legal, security
@@ -112,28 +129,32 @@ export default function PrivacyPolicy() {
         </p>
         <h2>Advertising UnrealMMO</h2>
         <p>
-          We promote UnrealMMO on other websites and platforms. We do not
-          display third-party advertisements to players on our website or
-          server. Platforms where our advertisements appear may process
-          information about your interactions with those advertisements under
-          their own privacy notices and your choices on those platforms.
+          We promote UnrealMMO on other websites and platforms and may use
+          campaign links, cookies, pixels or similar technologies to understand
+          which promotions bring visitors to our website and how those visitors
+          interact with it. Advertising and measurement providers may process
+          information about visits, referrals and interactions for these
+          purposes, subject to applicable consent requirements and privacy
+          choices. Platforms where our advertisements appear also have their own
+          privacy notices and controls.
         </p>
         <h2>Cookies and consent</h2>
         <p>
-          Cookies and similar technologies may support checkout sessions,
-          payment security, fraud prevention, authentication, preferences and
-          consent choices. The current handbook does not set advertising or
-          analytics cookies; third-party checkout and other services may use
-          their own technologies.
+          We and our service providers may use cookies, local storage, pixels
+          and similar technologies for website functionality, checkout sessions,
+          payment security, fraud prevention, authentication, preferences,
+          analytics, activity monitoring and campaign measurement. These
+          technologies may remember choices, recognize returning browsers, and
+          help us understand how visitors find and use the website.
         </p>
         <p>
-          Where applicable law requires consent for non-essential cookies or
-          similar tracking, that consent must be obtained before those
-          technologies are used. Optional tracking should remain disabled unless
-          you choose to enable it. Where a service offers cookie settings, you
-          can use them to change or withdraw your choices. You can also block or
-          delete cookies in your browser, although this may interrupt checkout
-          or other features that rely on essential cookies.
+          Where applicable law requires consent, we obtain it before enabling
+          the relevant cookies or tracking technologies. Where privacy or cookie
+          controls are provided, you can use them to change or withdraw consent
+          or exercise available opt-outs. You can also block or delete cookies
+          in your browser, although this may affect checkout or other features.
+          Browser cookie settings may not control every form of activity
+          monitoring.
         </p>
         <p>
           Buying something or playing on the server does not itself constitute
@@ -143,14 +164,16 @@ export default function PrivacyPolicy() {
         </p>
         <h2>Retention and security</h2>
         <p>
-          Player progress and world records persist between sessions.
-          Transaction and moderation records may need to remain available to
-          resolve disputes, prevent duplicate payments and investigate abuse.
-          Real-money order records may also be retained for accounting, tax,
-          refund and payment-provider obligations. Backups can retain earlier
-          copies after live data changes. Retention depends on the record and
-          its operational or legal purpose; leaving the server does not
-          automatically erase it.
+          Website analytics and activity records are retained for the purposes
+          described above, with retention depending on the tool, its settings,
+          and our operational and legal needs. Player progress and world records
+          persist between sessions. Transaction and moderation records may need
+          to remain available to resolve disputes, prevent duplicate payments
+          and investigate abuse. Real-money order records may also be retained
+          for accounting, tax, refund and payment-provider obligations. Backups
+          can retain earlier copies after live data changes. Retention depends
+          on the record and its operational or legal purpose; leaving the server
+          does not automatically erase it.
         </p>
         <p>
           We use access restrictions and backups to help protect the server and
@@ -160,14 +183,14 @@ export default function PrivacyPolicy() {
         </p>
         <h2>Your choices and requests</h2>
         <p>
-          You can ask about information associated with your player identity,
-          request a correction or deletion, or raise a privacy concern.
-          Depending on where you live, you may also have rights to access,
-          obtain a copy of, restrict or object to processing, or complain to a
-          privacy authority. We assess requests under applicable law and may
-          need to verify your identity. Some records may need to be retained for
-          security, legal obligations or the integrity of shared worlds and
-          transaction history.
+          You can ask about information associated with your website visits,
+          purchases or player identity, request a correction or deletion, or
+          raise a privacy concern. Depending on where you live, you may also
+          have rights to access, obtain a copy of, restrict or object to
+          processing, or complain to a privacy authority. We assess requests
+          under applicable law and may need to verify your identity. Some
+          records may need to be retained for security, legal obligations or the
+          integrity of shared worlds and transaction history.
         </p>
         <p>
           Contact <a href="mailto:support@smartify.ai">support@smartify.ai</a>{" "}
