@@ -1,14 +1,11 @@
 "use client";
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
-import { Pause, Play, RotateCcw } from "lucide-react";
 import { FirestormCaster } from "@/components/firestorm-caster";
 
 export function FirestormScene() {
   const section = useRef<HTMLElement>(null);
-  const [paused, setPaused] = useState(false);
   const [visible, setVisible] = useState(false);
-  const [replay, setReplay] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -24,9 +21,9 @@ export function FirestormScene() {
       ref={section}
       className="firestorm-showcase"
       aria-labelledby="firestorm-heading"
-      data-paused={paused || !visible}
+      data-paused={!visible}
     >
-      <div className="firestorm-stage" key={replay}>
+      <div className="firestorm-stage">
         <img
           className="firestorm-landscape"
           src="/art/firestorm-valley-clean-v2.webp"
@@ -38,7 +35,7 @@ export function FirestormScene() {
         <div className="firestorm-effects" aria-hidden="true">
           <div className="firestorm-target" />
           <div className="firestorm-ground-glow" />
-          <FirestormCaster paused={paused || !visible} />
+          <FirestormCaster paused={!visible} />
           {[0, 1].map((enemy) => (
             <div
               className="firestorm-enemy"
@@ -129,49 +126,25 @@ export function FirestormScene() {
       <div className="firestorm-shade" aria-hidden="true" />
       <div className="wrap firestorm-content">
         <div className="firestorm-copy">
-          <span className="firestorm-eyebrow">MAGIC · FIRE STAFF</span>
+          <span className="firestorm-eyebrow">MAGIC</span>
           <h2 id="firestorm-heading">
-            Turn the tide.
+            Wield magic.
             <br />
-            <em>Call down fire.</em>
+            <em>Make it yours.</em>
           </h2>
           <p>
-            A staff in your hand. A storm at your command. Mark your ground and
-            unleash Firestorm—a rain of fire over the enemies in your path.
+            Choose your staff and find your style. Wield fire and water, from
+            focused bolts to sweeping attacks, healing springs and swirling
+            whirlpools. Grow your Magic skill to unlock new abilities and more
+            ways to turn a fight in your favor.
           </p>
           <p>
-            From a single Ember Bolt to a sweeping Inferno Nova, discover a
-            different way to fight.
+            Magic reaches beyond battle, too. Craft Magic Runes and open your
+            Spell Menu to call rain over farmland or use abilities unlocked
+            through Mining and Woodcutting.
           </p>
-          <div className="firestorm-controls">
-            <button
-              type="button"
-              aria-label={
-                paused
-                  ? "Play Firestorm animation"
-                  : "Pause Firestorm animation"
-              }
-              onClick={() => setPaused(!paused)}
-            >
-              {paused ? <Play size={15} /> : <Pause size={15} />}
-              {paused ? "Play" : "Pause"}
-            </button>
-            <button
-              type="button"
-              aria-label="Replay Firestorm animation"
-              onClick={() => {
-                setReplay((value) => value + 1);
-                setPaused(false);
-              }}
-            >
-              <RotateCcw size={15} /> Replay spell
-            </button>
-          </div>
         </div>
       </div>
-      <span className="firestorm-caption">
-        FIRESTORM <span>·</span> SPELL ILLUSTRATION
-      </span>
     </section>
   );
 }

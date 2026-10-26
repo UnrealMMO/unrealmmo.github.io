@@ -2819,43 +2819,6 @@ tbody tr:nth-child(even) {
   font-size: 0.95rem;
   line-height: 1.85;
 }
-.firestorm-controls {
-  display: flex;
-  gap: 12px;
-  margin-top: 30px;
-  pointer-events: auto;
-}
-.firestorm-controls button {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 12px 15px;
-  border: 1px solid #f3c89366;
-  background: #10201ed9;
-  color: #fff0d9;
-  cursor: pointer;
-  font: inherit;
-  font-size: 0.75rem;
-}
-.firestorm-controls button:hover {
-  background: #3c3020;
-  border-color: #f3c893;
-}
-.firestorm-controls button:focus-visible {
-  outline: 2px solid #ffe0a5;
-  outline-offset: 4px;
-}
-.firestorm-caption {
-  position: absolute;
-  right: 4%;
-  bottom: 28px;
-  color: #e6ceaa;
-  font-size: 0.6rem;
-  letter-spacing: 0.17em;
-}
-.firestorm-caption span {
-  margin-inline: 10px;
-}
 .firestorm-caster {
   position: absolute;
   left: 53%;
@@ -3239,12 +3202,6 @@ tbody tr:nth-child(even) {
       #0b191b 100%
     );
   }
-  .firestorm-caption {
-    right: auto;
-    left: 20px;
-    bottom: 22px;
-    font-size: 0.55rem;
-  }
   .firestorm-strike {
     --meteor-width: 56px;
     --meteor-height: 84px;
@@ -3264,9 +3221,6 @@ tbody tr:nth-child(even) {
   .firestorm-meteor,
   .firestorm-explosion,
   .firestorm-ember {
-    display: none;
-  }
-  .firestorm-controls {
     display: none;
   }
 }
