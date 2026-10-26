@@ -17,8 +17,10 @@ Run `node scripts/render-sneak.mjs` from the repository root with website depend
 | 6.75–7.5 seconds | Eased return to standing |
 | 7.5–9 seconds | Standing hold, matching the loop start |
 
-The production asset is `public/art/sneak-cloak-v2.mp4`: silent H.264, 640 × 640, 432 frames at 48 fps, nine seconds, 1,026,633 bytes. Generation verifies identical first/last source frames and an unchanged invisible hold. Set `SNEAK_PROOF_DIR` to save sampled PNGs and the render report. This remains an interpolated 2D illustration, not skeletal animation or captured gameplay.
+The production asset is `public/art/sneak-cloak-v3.mp4`: silent H.264, 640 × 640, 432 frames at 48 fps, nine seconds, 1,014,295 bytes. Generation verifies identical first/last source frames and an unchanged invisible hold. Set `SNEAK_PROOF_DIR` to save sampled PNGs and the render report. This remains an interpolated 2D illustration, not skeletal animation or captured gameplay.
 
-The page mounts the video when the section first enters view, pauses it offscreen or when the document is hidden, and preserves the exact frame when Pause is selected. Reduced-motion users receive the standing image without mounting the video. The same image remains as a loading/error and no-JavaScript fallback. A blocked autoplay attempt exposes Play.
+The page mounts the video when the section first enters view, pauses it offscreen or when the document is hidden, with no visible playback controls. Reduced-motion users receive the standing image without mounting the video. The same image remains as a loading/error and no-JavaScript fallback. A blocked autoplay attempt retains the still illustration.
 
 The prior seven-second, 24 fps `sneak-vanish.gif` is retained as a historical asset but is no longer loaded by the component. Existing illustration sources and earlier verification evidence remain unchanged.
+
+The v3 renderer explicitly composites zero visibility as the background. This fixes the single fully visible frame at 5.5 seconds that v2 emitted before the reappearance fade. Generation now asserts that frame 264 exactly matches the invisible hold. Both older animation assets are retained as history.

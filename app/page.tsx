@@ -130,6 +130,38 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="section parchment orchard">
+        <div className="wrap spotlight reverse">
+          <Reveal className="spotlight-copy">
+            <h2>
+              What if your garden
+              <br />
+              grew <em>diamonds?</em>
+            </h2>
+            <p>
+              Beyond the wheat fields lies a different kind of orchard. Build
+              ore trees from precious materials, unlock new varieties and tend a
+              living source of resources.
+            </p>
+            <p>
+              From your first Coal Tree to a Diamond Tree at level 99, each one
+              is something to work toward—and something you build with your own
+              hands.
+            </p>
+            <ButtonLink href="/structures/">Discover ore trees</ButtonLink>
+          </Reveal>
+          <Reveal className="tree-showcase">
+            <DiamondTreeScene />
+            <span className="specimen-tag">
+              <span>VIII</span> DIAMOND TREE <small>FARMING 99</small>
+            </span>
+            <Link href="/structures/diamond-tree/" className="text-link">
+              Inspect the build in 3D <ArrowUpRight size={17} />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+      <FirestormScene />
       <section className="section parchment">
         <div className="wrap spotlight">
           <Reveal>
@@ -182,38 +214,6 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
-      <section className="section parchment orchard">
-        <div className="wrap spotlight reverse">
-          <Reveal className="spotlight-copy">
-            <h2>
-              What if your garden
-              <br />
-              grew <em>diamonds?</em>
-            </h2>
-            <p>
-              Beyond the wheat fields lies a different kind of orchard. Build
-              ore trees from precious materials, unlock new varieties and tend a
-              living source of resources.
-            </p>
-            <p>
-              From your first Coal Tree to a Diamond Tree at level 99, each one
-              is something to work toward—and something you build with your own
-              hands.
-            </p>
-            <ButtonLink href="/structures/">Discover ore trees</ButtonLink>
-          </Reveal>
-          <Reveal className="tree-showcase">
-            <DiamondTreeScene />
-            <span className="specimen-tag">
-              <span>VIII</span> DIAMOND TREE <small>FARMING 99</small>
-            </span>
-            <Link href="/structures/diamond-tree/" className="text-link">
-              Inspect the build in 3D <ArrowUpRight size={17} />
-            </Link>
-          </Reveal>
-        </div>
-      </section>
-      <FirestormScene />
       <section className="closing">
         <div className="wrap">
           <h2>

@@ -1,12 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Pause, Play } from "lucide-react";
 
 export function SneakScene() {
   const scene = useRef<HTMLElement>(null);
   const video = useRef<HTMLVideoElement>(null);
-  const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(true);
   const [inView, setInView] = useState(false);
   const [hasEntered, setHasEntered] = useState(false);
@@ -41,17 +39,17 @@ export function SneakScene() {
     const player = video.current;
     if (!player) return;
     let disposed = false;
-    if (paused || reduced || !inView || !pageVisible) player.pause();
+    if (reduced || !inView || !pageVisible) player.pause();
     else {
       player.play().catch((error: DOMException) => {
-        // Autoplay restrictions leave a usable Play button and the still poster.
-        if (!disposed && error.name !== "AbortError") setPaused(true);
+        // Keep the still illustration if the browser blocks automatic playback.
+        if (!disposed && error.name !== "AbortError") setFailed(true);
       });
     }
     return () => {
       disposed = true;
     };
-  }, [paused, reduced, inView, pageVisible, hasEntered, failed]);
+  }, [reduced, inView, pageVisible, hasEntered, failed]);
 
   return (
     <figure
@@ -71,7 +69,7 @@ export function SneakScene() {
         <video
           ref={video}
           className={`stealth-scene-video${ready ? " is-ready" : ""}`}
-          src="/art/sneak-cloak-v2.mp4"
+          src="/art/sneak-cloak-v3.mp4"
           poster="/art/sneak-visible.webp"
           width="640"
           height="640"
@@ -83,18 +81,6 @@ export function SneakScene() {
           onLoadedData={() => setReady(true)}
           onError={() => setFailed(true)}
         />
-      )}
-      {!reduced && !failed && (
-        <button
-          type="button"
-          className="scene-motion"
-          aria-label={paused ? "Play sneak animation" : "Pause sneak animation"}
-          aria-pressed={paused}
-          onClick={() => setPaused((value) => !value)}
-        >
-          {paused ? <Play size={14} /> : <Pause size={14} />}
-          {paused ? "Play" : "Pause"}
-        </button>
       )}
     </figure>
   );

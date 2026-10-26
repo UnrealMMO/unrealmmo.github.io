@@ -84,7 +84,7 @@ try {
   // Smooth coverage, including the sword and boot shadows; no threshold noise,
   // animated grain, fragments, flashing outline, or limited-palette GIF encoding.
   const keyframes = new Set([
-    0, 96, 144, 174, 204, 240, 288, 318, 348, 384, 431,
+    0, 96, 144, 174, 204, 240, 263, 264, 265, 288, 318, 348, 384, 431,
   ]);
   const proofDir = process.env.SNEAK_PROOF_DIR;
   if (proofDir) await mkdir(proofDir, { recursive: true });
@@ -106,7 +106,8 @@ try {
     } else if (t >= 6.75 && t < 7.5)
       pixels =
         motion[Math.max(0, Math.round((1 - smooth((t - 6.75) / 0.75)) * 36))];
-    if (visibility > 0 && visibility < 1) {
+    if (visibility <= 0) pixels = bg;
+    else if (visibility < 1) {
       const blended = Buffer.alloc(bg.length);
       for (let i = 0; i < bg.length; i++)
         blended[i] = Math.round(bg[i] + (pixels[i] - bg[i]) * visibility);
@@ -123,7 +124,7 @@ try {
         .png()
         .toFile(join(proofDir, `${String(frame).padStart(3, "0")}.png`));
   }
-  const target = "public/art/sneak-cloak-v2.mp4";
+  const target = "public/art/sneak-cloak-v3.mp4";
   execFileSync("ffmpeg", [
     "-loglevel",
     "error",
@@ -149,6 +150,7 @@ try {
   const last = await readFile(join(work, "frames", "431.png"));
   const hiddenA = await readFile(join(work, "frames", "216.png"));
   const hiddenB = await readFile(join(work, "frames", "252.png"));
+  const revealStart = await readFile(join(work, "frames", "264.png"));
   const report = {
     frames: fps * duration,
     fps,
@@ -157,9 +159,10 @@ try {
     height: size,
     identicalLoopEndpoints: first.equals(last),
     invisibleHoldIdentical: hiddenA.equals(hiddenB),
+    revealStartsInvisible: hiddenA.equals(revealStart),
     bytes: (await readFile(target)).length,
   };
-  if (!report.identicalLoopEndpoints || !report.invisibleHoldIdentical)
+  if (!report.identicalLoopEndpoints || !report.invisibleHoldIdentical || !report.revealStartsInvisible)
     throw new Error("Animation continuity check failed");
   if (proofDir)
     await writeFile(

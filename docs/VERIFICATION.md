@@ -117,3 +117,12 @@ Replaced the palette-limited, pixel-dithered GIF with a silent 640 × 640 H.264 
 Browser checks at 1280 × 720 and 390 × 844 confirmed deferred video mounting until the section enters view, successful playback, keyboard resume, Pause holding currentTime exactly at 7.6216 seconds across observations, offscreen pausing, and no horizontal overflow or captured warnings/errors. Screenshots: `docs/screenshots/sneak-smooth-desktop.png` and `docs/screenshots/sneak-smooth-mobile.png`. Reduced-motion, document-hidden and error fallback paths were reviewed in source; OS preference emulation, failure injection and a broad device/performance matrix were not exercised.
 
 `npm run verify` passed: 15 tests, production build/type validation, 25 exported HTML files, 923 local asset/link references, 75 image alt attributes and all 495 level rows. `git diff --check` passed. Historical source artwork, GIF and prior screenshots remain intact. Website-only change; no server-plugin deployment or main-server restart required.
+
+
+## Sneak reveal flash and homepage order — 26 October 2026
+
+Fixed a zero-opacity boundary bug: frame 264 (5.5 seconds) previously bypassed blending and displayed the opaque crouch before fading in. Zero visibility now selects the background explicitly. Renderer assertions pass for loop endpoints, invisible hold and the reveal-start frame. Independently decoding MP4 frames 263–265 yields zero mean channel difference across both adjacent pairs, confirming no flash in the encoded asset. The v3 filename avoids serving a cached v2 video.
+
+Removed the Sneak Pause/Play button, manual pause state and unused control CSS. Automatic offscreen/document-hidden pausing and reduced-motion/static fallback remain. Swapped the requested sections: Diamond Trees, Magic, Sneak, then Adventure/Home. Browser inspection at 1280 × 720 and 390 × 844 confirmed that heading order, no Sneak controls, v3 playback, no horizontal overflow and no captured warnings/errors. Evidence: `docs/screenshots/sneak-no-controls-desktop.png` and `docs/screenshots/sneak-no-controls-mobile.png`. Reduced-motion fallback was source-reviewed; no broad device matrix was exercised.
+
+`npm run verify` passed all 15 tests, production build/type validation, 25 exported HTML files, 923 references, 75 image alt attributes and 495 level rows. Website-only delivery; no server restart required.

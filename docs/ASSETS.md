@@ -70,4 +70,6 @@ Minecraft Java 26.2's original `explosion_0.png` through `explosion_15.png` were
 
 The barrage is reduced from 14 projectiles per volley to two, with three volleys per loop: six total instead of 42. Desktop envelopes are 88 × 132px (previously 52 × 88px); narrow layouts use 56 × 84px (previously 32 × 54px). Fireballs and their explosions share a ground anchor at the enemies' feet, and each lane retains its matching enemy's 0.24-second stagger. All previous art and verification evidence remain available.
 
-- `public/art/sneak-cloak-v2.mp4`: current nine-second, 48 fps full-color sneak loop, rendered from the existing original pose sheet and forest plate. Eased crouch/stand motion and continuous opacity fade replace the historical GIF’s pixel dissolve. No new third-party artwork. See [animation production notes](SNEAK-ANIMATION.md).
+- `public/art/sneak-cloak-v2.mp4`: historical nine-second, 48 fps full-color sneak loop, rendered from the existing original pose sheet and forest plate. Eased crouch/stand motion and continuous opacity fade replace the historical GIF’s pixel dissolve. No new third-party artwork. See [animation production notes](SNEAK-ANIMATION.md).
+
+- `public/art/sneak-cloak-v3.mp4`: current corrected Sneak loop, using the same original art and timing as v2, with the zero-opacity reveal boundary fixed.

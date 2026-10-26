@@ -564,31 +564,6 @@ p + p {
 .stealth-scene-video.is-ready {
   opacity: 1;
 }
-.scene-motion {
-  position: absolute;
-  bottom: 14px;
-  right: 14px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  min-height: 40px;
-  padding: 8px 12px;
-  border: 1px solid #d6b46a88;
-  border-radius: 3px;
-  color: #eed79e;
-  background: #10271fe6;
-  font-size: 0.75rem;
-  cursor: pointer;
-}
-.scene-motion:focus-visible {
-  outline: 2px solid #eed79e;
-  outline-offset: 3px;
-}
-@media (prefers-reduced-motion: reduce) {
-  .scene-motion {
-    display: none;
-  }
-}
 .orchard h2 em {
   color: #667d48;
 }
