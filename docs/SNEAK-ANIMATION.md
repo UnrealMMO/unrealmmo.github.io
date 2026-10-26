@@ -4,16 +4,21 @@ The character retains the original detailed UnrealMMO illustration: layered brow
 
 The built-in imagegen tool created an eight-cell transparent pose sheet using the original crouched character PNG as an identity reference. The prompt required identical design, lighting, camera, scale and boot baseline through progressive standing-to-crouching poses. The first seven cells provide the complete motion; the final redundant cell is unused. The source sheet is retained as lossless `public/art/sneak-poses.webp`.
 
-Run `node scripts/render-sneak.mjs` from the repository root with website dependencies and FFmpeg installed. The renderer uses Sharp (included with Next.js) to align the pose baselines and composite them over the original forest. FFmpeg motion compensation interpolates between pose drawings. Idle breathing is anchored at the feet. A soft pixel dissolve removes the character while preserving the woods. It reverses the pose progression while revealing the character during the return to standing.
+Run `node scripts/render-sneak.mjs` from the repository root with website dependencies and FFmpeg installed. The renderer uses Sharp (included with Next.js) to align the pose baselines and composite them over the original forest. FFmpeg motion compensation interpolates between the pose drawings; quintic easing settles into and out of the crouch. A continuous opacity fade removes the whole character, sword and shadow against the unchanged forest plate. No pixel-dither dissolve or palette quantization is used in the current animation.
 
-| Time              | Action                                  |
-| ----------------- | --------------------------------------- |
-| 0–2 seconds       | Standing with breathing and subtle sway |
-| 2–2.5 seconds     | Smooth crouching motion                 |
-| 2.5–3 seconds     | Hold the crouch                         |
-| 3–3.75 seconds    | Dissolve into invisibility              |
-| 3.75–5.75 seconds | Fully invisible for two seconds         |
-| 5.75–6.5 seconds  | Reappear while standing up              |
-| 6.5–7 seconds     | Settle into the starting idle pose      |
+| Time | Action |
+| --- | --- |
+| 0–1.5 seconds | Standing hold |
+| 1.5–2.25 seconds | Eased crouch |
+| 2.25–3 seconds | Crouched anticipation |
+| 3–4.25 seconds | Smooth fade into invisibility |
+| 4.25–5.5 seconds | Fully invisible hold |
+| 5.5–6.75 seconds | Reappear in the crouch |
+| 6.75–7.5 seconds | Eased return to standing |
+| 7.5–9 seconds | Standing hold, matching the loop start |
 
-The GIF contains 168 frames at 24 fps. Generation verifies identical first/last source frames and an unchanged invisible hold. The page provides pause/play and a standing still for reduced-motion settings.
+The production asset is `public/art/sneak-cloak-v2.mp4`: silent H.264, 640 × 640, 432 frames at 48 fps, nine seconds, 1,026,633 bytes. Generation verifies identical first/last source frames and an unchanged invisible hold. Set `SNEAK_PROOF_DIR` to save sampled PNGs and the render report. This remains an interpolated 2D illustration, not skeletal animation or captured gameplay.
+
+The page mounts the video when the section first enters view, pauses it offscreen or when the document is hidden, and preserves the exact frame when Pause is selected. Reduced-motion users receive the standing image without mounting the video. The same image remains as a loading/error and no-JavaScript fallback. A blocked autoplay attempt exposes Play.
+
+The prior seven-second, 24 fps `sneak-vanish.gif` is retained as a historical asset but is no longer loaded by the component. Existing illustration sources and earlier verification evidence remain unchanged.

@@ -552,9 +552,17 @@ p + p {
   height: 100%;
   object-fit: cover;
 }
-.stealth-scene picture {
+.stealth-scene-video {
+  position: absolute;
+  inset: 0;
   display: block;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+  opacity: 0;
+}
+.stealth-scene-video.is-ready {
+  opacity: 1;
 }
 .scene-motion {
   position: absolute;
