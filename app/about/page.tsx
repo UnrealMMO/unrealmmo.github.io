@@ -11,16 +11,17 @@ export default function About() {
       <article className="wrap prose">
         <h2>A handbook that grows with the game</h2>
         <p>
-          These guides describe the current development build, reviewed on 19
+          These guides describe the current development build, reviewed on 27
           October 2026. Progression figures and probabilities use shipped
           default settings. Server balance may change before launch. Joining
           details will be added when the server is ready.
         </p>
         <p>
-          Five skills are covered here: Sneak, Farming, Mining, Woodcutting and
-          Fishing. The structures catalogue covers eight ore trees and the four
-          Hearthstone stages, from a pedestal to a protection tower. Additional
-          features will be documented as they become available.
+          Seven skills are covered here: Sneak, Farming, Mining, Woodcutting,
+          Fishing, Magic and Construction. The structures catalogue covers eight
+          ore trees and the four Hearthstone stages, from a pedestal to a
+          protection tower. Additional features will be documented as they
+          become available.
         </p>
         <h2>Artwork & identity</h2>
         <p>

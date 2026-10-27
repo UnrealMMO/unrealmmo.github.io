@@ -109,7 +109,6 @@ Removed the requested Pause/Replay controls and Firestorm / Spell Illustration c
 
 The static export was checked at 1280 × 720 and 390 × 844: both display the complete revised copy, no section buttons or caption, and no horizontal overflow or captured browser warnings/errors. Screenshots: `docs/screenshots/magic-section-desktop.jpg` and `docs/screenshots/magic-section-mobile.jpg`. `npm run verify` passed all 15 tests, build/type validation, 25 exported HTML files, 923 references, 75 image alt attributes and 495 level rows. Website-only change; no server restart required.
 
-
 ## Smooth Sneak cloak transition — 25 October 2026
 
 Replaced the palette-limited, pixel-dithered GIF with a silent 640 × 640 H.264 loop at 48 fps. The original character eases into a crouch, fades cleanly with the sword and shadow, holds invisible against the stationary forest, reappears, and rises. The nine-second asset is 1,026,633 bytes, less than half the prior GIF's size. Renderer checks passed for identical loop endpoints and an unchanged invisible hold; ffprobe confirmed 432 frames at 48 fps. Sampled crouch, partial-opacity and fully invisible frames were visually inspected.
@@ -118,7 +117,6 @@ Browser checks at 1280 × 720 and 390 × 844 confirmed deferred video mounting u
 
 `npm run verify` passed: 15 tests, production build/type validation, 25 exported HTML files, 923 local asset/link references, 75 image alt attributes and all 495 level rows. `git diff --check` passed. Historical source artwork, GIF and prior screenshots remain intact. Website-only change; no server-plugin deployment or main-server restart required.
 
-
 ## Sneak reveal flash and homepage order — 26 October 2026
 
 Fixed a zero-opacity boundary bug: frame 264 (5.5 seconds) previously bypassed blending and displayed the opaque crouch before fading in. Zero visibility now selects the background explicitly. Renderer assertions pass for loop endpoints, invisible hold and the reveal-start frame. Independently decoding MP4 frames 263–265 yields zero mean channel difference across both adjacent pairs, confirming no flash in the encoded asset. The v3 filename avoids serving a cached v2 video.
@@ -126,3 +124,11 @@ Fixed a zero-opacity boundary bug: frame 264 (5.5 seconds) previously bypassed b
 Removed the Sneak Pause/Play button, manual pause state and unused control CSS. Automatic offscreen/document-hidden pausing and reduced-motion/static fallback remain. Swapped the requested sections: Diamond Trees, Magic, Sneak, then Adventure/Home. Browser inspection at 1280 × 720 and 390 × 844 confirmed that heading order, no Sneak controls, v3 playback, no horizontal overflow and no captured warnings/errors. Evidence: `docs/screenshots/sneak-no-controls-desktop.png` and `docs/screenshots/sneak-no-controls-mobile.png`. Reduced-motion fallback was source-reviewed; no broad device matrix was exercised.
 
 `npm run verify` passed all 15 tests, production build/type validation, 25 exported HTML files, 923 references, 75 image alt attributes and 495 level rows. Website-only delivery; no server restart required.
+
+## Seven skill guides and cosmetic rewards — 27 October 2026
+
+Added Magic and Construction in the existing skill-guide format, covering all 99 levels, Arcane Attunement, global Builder’s Reach, current spell unlocks and utility costs. Added Mining/Woodcutting utility spell descriptions and seven unique mastery titles. Reconciled Ore Tree operation (loaded chunks, offline owners, ten per type), Sneak activation, and Hearthstone commands with the current plugin. Added a Titles & Colors page, including Gold requiring both Inn and Stable in the same settlement. Staff colors require current permissions. Canonical metadata now matches the already-configured unrealmmo.com Pages domain; DNS/hosting settings were not changed.
+
+Executed Java rules generate all 693 numeric XP/bonus reference rows. Verification includes the static export, internal references, metadata and new tests for mastery-title coverage, milestone boundaries and block-versus-percentage units. Browser checks at 1280 × 720 and 390 × 844 exercised Magic's level-99 preview and Flame Lance search, Construction's level-99 preview, unlock filtering and Personal Chest search, and the mobile navigation link to rewards. Fixed mobile heading/icon overflow for long skill names. No document overflow after the fix or captured console warnings/errors. Tables retain their intentional inner horizontal scroll. Evidence: construction-desktop.png, construction-mobile.png, rewards-desktop.png and rewards-mobile.png under docs/screenshots. This is a focused responsive check, not a broad device matrix or game-server scalability certification.
+
+Final `npm run verify` passed 17 tests, production build/type validation, 28 exported HTML files, 1,063 local references, 81 image alt attributes, and 693 pre-rendered level rows. Numeric fixture source: `f887a60` (the verified game reward release). Main-server reward deployment is tracked in the private game repository; no server logs, player data or plugin code are included in this site.

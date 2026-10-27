@@ -3,7 +3,13 @@ import definitions from "./skills.json";
 import treeDefinitions from "./trees.json";
 import thresholds from "./xp.json";
 export type SkillId =
-  "sneak" | "farming" | "mining" | "woodcutting" | "fishing";
+  | "sneak"
+  | "farming"
+  | "mining"
+  | "woodcutting"
+  | "fishing"
+  | "magic"
+  | "construction";
 export type Trait = {
   level: number;
   name: string;
@@ -26,6 +32,8 @@ export const title = (s: string) =>
     .map((w) => w[0].toUpperCase() + w.slice(1))
     .join(" ");
 export const pct = (n: number) => `${Number(n.toFixed(2))}%`;
+export const formatBonus = (name: string, value: number) =>
+  name === "Placement reach" ? `${value} blocks` : pct(value);
 export function bonuses(id: SkillId, level: number): Record<string, number> {
   const l = Math.max(1, Math.min(99, level));
   const ordinary =
@@ -34,6 +42,21 @@ export function bonuses(id: SkillId, level: number): Record<string, number> {
     (id === "sneak" ? sneakMilestones : milestones).filter((m) => m <= l)
       .length;
   switch (id) {
+    case "magic":
+      return {
+        "Mana regeneration": Math.min(25, 5 * (1 + Math.floor(l / 20))),
+        "Spell potency":
+          l < 10
+            ? 0
+            : l >= 99
+              ? 25
+              : Math.min(20, 5 * Math.floor((l + 10) / 20)),
+      };
+    case "construction":
+      return {
+        "Placement reach": l >= 99 ? 2 : l >= 60 ? 1.5 : l >= 30 ? 1 : 0.5,
+        "Home hunger reduction": l >= 75 ? 100 : l >= 30 ? 50 : 0,
+      };
     case "sneak":
       return { "Sneak speed": (ordinary * 200) / 88 };
     case "farming":
@@ -61,21 +84,11 @@ export function traitsFor(skill: Skill): Trait[] {
       ? trees.map((t) => ({
           level: t.level,
           name: t.name,
-          description: `Build a ${t.name.toLowerCase()} to produce ${title(t.output).toLowerCase()} while you tend it nearby. Base cycle: ${t.seconds} active seconds.`,
+          description: `Build a ${t.name.toLowerCase()} to produce ${title(t.output).toLowerCase()} while its chunks are loaded, even while you are offline. Base cycle: ${t.seconds} active seconds.`,
           structure: t.id,
         }))
       : [];
-  const slots: Trait[] =
-    skill.id === "farming"
-      ? [25, 50, 75, 99].map((level, i) => ({
-          level,
-          name: `${i + 1} active ore ${i ? "trees" : "tree"}`,
-          description: `Up to ${i + 1} eligible nearby ore ${i ? "trees can" : "tree can"} produce at once. Other registered trees remain dormant.`,
-        }))
-      : [];
-  return [...skill.traits, ...extra, ...slots].sort(
-    (a, b) => a.level - b.level,
-  );
+  return [...skill.traits, ...extra].sort((a, b) => a.level - b.level);
 }
 export function levelRows(skill: Skill) {
   return xp.map((total, i) => {
@@ -89,7 +102,9 @@ export function levelRows(skill: Skill) {
       bonuses: current,
       delta: Object.entries(current)
         .filter(([key, value]) => value - before[key] > 0.000001)
-        .map(([key, value]) => `${key} +${pct(value - before[key])}`),
+        .map(
+          ([key, value]) => `${key} +${formatBonus(key, value - before[key])}`,
+        ),
       traits: traitsFor(skill).filter((t) => t.level === level),
     };
   });

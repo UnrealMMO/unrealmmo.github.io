@@ -27,7 +27,15 @@ for (const f of files) {
   assert.ok(html.includes('id="main"'), `${f}: missing main landmark`);
   assert.ok(!html.includes("sentinel.smartify.ai"), `${f}: unrelated tracking`);
 }
-for (const skill of ["sneak", "farming", "mining", "woodcutting", "fishing"]) {
+for (const skill of [
+  "sneak",
+  "farming",
+  "mining",
+  "woodcutting",
+  "fishing",
+  "magic",
+  "construction",
+]) {
   const html = fs.readFileSync(`out/skills/${skill}/index.html`, "utf8");
   for (let level = 1; level <= 99; level++)
     assert.ok(
@@ -37,5 +45,5 @@ for (const skill of ["sneak", "farming", "mining", "woodcutting", "fishing"]) {
 }
 assert.ok(fs.existsSync("out/404.html"));
 console.log(
-  `Verified ${files.length} exported HTML files, ${links} local asset/link references, ${images} image alt attributes, and all 495 pre-rendered level rows.`,
+  `Verified ${files.length} exported HTML files, ${links} local asset/link references, ${images} image alt attributes, and all 693 pre-rendered level rows.`,
 );

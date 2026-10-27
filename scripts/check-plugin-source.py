@@ -5,7 +5,7 @@ Only numeric public handbook data is written; Java source stays in a temporary d
 from pathlib import Path
 import json,subprocess,sys,tempfile,shutil
 repo=Path(sys.argv[1]).resolve(); jdk=Path(sys.argv[2]).resolve()
-specs={'sneak':('SneakRules','SneakRules.speedBonus(l)*100'), 'farming':('FarmRules','FarmRules.growth(l)*100, FarmRules.yield(l)*100'),'mining':('MiningRules','MiningRules.bonus(l)*100, MiningRules.bonus(l)*100'),'woodcutting':('WoodRules','WoodRules.speed(l)*100, WoodRules.yield(l)*100'),'fishing':('FishingRules','FishingRules.reduction(l)*100')}
+specs={'sneak':('SneakRules','SneakRules.speedBonus(l)*100'), 'farming':('FarmRules','FarmRules.growth(l)*100, FarmRules.yield(l)*100'),'mining':('MiningRules','MiningRules.bonus(l)*100, MiningRules.bonus(l)*100'),'woodcutting':('WoodRules','WoodRules.speed(l)*100, WoodRules.yield(l)*100'),'fishing':('FishingRules','FishingRules.reduction(l)*100'), 'magic':('AttunementRules','AttunementRules.regenPercent(l), AttunementRules.potencyPercent(l)'), 'construction':('BuildingRules','BuildingRules.reach(l), Math.round((1-BuildingRules.hungerMultiplier(l))*100)')}
 fixture={'sourceCommit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=repo,text=True).strip(),'levels':{}}
 with tempfile.TemporaryDirectory(prefix='unrealmmo-handbook-') as temp:
  root=Path(temp); sources=[]
@@ -23,4 +23,4 @@ public class HandbookSnapshot {{public static void main(String[] args) {{for(int
   fixture['levels'][skill]=[[float(x) if '.' in x else int(x) for x in line.split(',')] for line in out.splitlines()]
 Path('tests/fixtures').mkdir(exist_ok=True)
 Path('tests/fixtures/plugin-rules.json').write_text(json.dumps(fixture,indent=2)+'\n')
-print('Executed original Java rules for all 495 skill levels; saved numerical reference fixture.')
+print('Executed original Java rules for all 693 skill levels; saved numerical reference fixture.')

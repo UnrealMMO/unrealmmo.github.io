@@ -9,18 +9,19 @@ import {
   materials,
   traitsFor,
   hearthstoneStages,
+  formatBonus,
 } from "../content/game";
 import { readFileSync } from "node:fs";
 const near = (a: number, b: number) =>
   assert.ok(Math.abs(a - b) < 1e-9, `${a} ≠ ${b}`);
-test("complete monotonic XP curve and all 495 readable level entries", () => {
+test("complete monotonic XP curve and all 693 readable level entries", () => {
   assert.equal(xp.length, 99);
   assert.equal(xp[0], 0);
   assert.equal(xp[98], 1_000_000);
   assert.equal(xp[49], 40594);
   assert.equal(xp[74], 183678);
   for (let i = 1; i < 99; i++) assert.ok(xp[i] > xp[i - 1]);
-  assert.equal(skills.flatMap(levelRows).length, 495);
+  assert.equal(skills.flatMap(levelRows).length, 693);
   for (const s of skills) {
     const rows = levelRows(s);
     assert.equal(
@@ -33,7 +34,9 @@ test("complete monotonic XP curve and all 495 readable level entries", () => {
   }
 });
 test("ordinary progression and milestone pauses match documented caps", () => {
-  for (const s of skills) {
+  for (const s of skills.filter(
+    (s) => !["magic", "construction"].includes(s.id),
+  )) {
     for (const value of Object.values(bonuses(s.id, 1))) near(value, 0);
     assert.deepEqual(bonuses(s.id, 98), bonuses(s.id, 99));
   }
@@ -55,7 +58,7 @@ test("Farming additional structure unlocks preserve crop progression and multipl
   assert.ok(rows[24].traits.some((t) => t.name === "Coal Tree"));
   assert.ok(rows[49].traits.some((t) => t.name === "Green Thumb"));
   assert.ok(rows[49].traits.some((t) => t.name === "Redstone Tree"));
-  assert.ok(rows[49].traits.some((t) => t.name === "2 active ore trees"));
+  assert.ok(!rows[49].traits.some((t) => t.name === "2 active ore trees"));
   assert.equal(rows[49].delta.length, 0);
   assert.equal(traitsFor(farmer).filter((t) => t.structure).length, 8);
 });
@@ -237,4 +240,31 @@ test("Stage 4 illustrates a full-height Overworld column while lower tiers stay 
     (s) => s.kind === "hearthstone" && s.stage !== 4,
   ))
     assert.ok(!s.fullWorldHeight);
+});
+
+test("new skill milestones display the correct units and caps", () => {
+  assert.equal(formatBonus("Placement reach", 2), "2 blocks");
+  assert.equal(bonuses("construction", 29)["Placement reach"], 0.5);
+  assert.equal(bonuses("construction", 30)["Placement reach"], 1);
+  assert.equal(bonuses("construction", 99)["Placement reach"], 2);
+  assert.equal(bonuses("construction", 74)["Home hunger reduction"], 50);
+  assert.equal(bonuses("construction", 75)["Home hunger reduction"], 100);
+  assert.deepEqual(Object.values(bonuses("magic", 1)), [5, 0]);
+  assert.deepEqual(Object.values(bonuses("magic", 99)), [25, 25]);
+});
+test("each skill has a unique mastery title in its progression", () => {
+  const { mastery } = JSON.parse(readFileSync("content/rewards.json", "utf8"));
+  assert.equal(
+    new Set(mastery.map((r: { title: string }) => r.title)).size,
+    skills.length,
+  );
+  for (const skill of skills) {
+    const reward = mastery.find((r: { skill: string }) => r.skill === skill.id);
+    assert.ok(reward);
+    assert.ok(
+      skill.traits.some(
+        (t) => t.level === 99 && t.name === reward.title + " title",
+      ),
+    );
+  }
 });

@@ -3,6 +3,25 @@ import type { SVGProps } from "react";
 // Original UnrealMMO emblems. Filled silhouettes remain readable at small sizes;
 // the dark inlays and pale bevels supply a consistent carved-metal finish.
 const emblems = {
+  wand: (
+    <>
+      <path d="m22 106 60-65 9 9-59 65Z" />
+      <path d="m83 9 9 18 20 3-15 14 4 20-18-10-18 10 4-20-15-14 20-3Z" />
+      <path
+        d="m83 20 5 11 12 2-9 9 2 12-10-6-10 6 2-12-9-9 12-2Z"
+        fill="#f3dfb0"
+      />
+      <path d="m25 22 3 9 9 3-9 3-3 9-3-9-9-3 9-3Zm72 61 4 11 11 4-11 4-4 11-4-11-11-4 11-4Z" />
+    </>
+  ),
+  hammer: (
+    <>
+      <path d="m55 53 15 1-6 61H48Z" />
+      <path d="M16 22h69l29 18-10 23-25-8H16Z" />
+      <path d="M23 29h55v19H23Z" fill="#f3dfb0" opacity=".5" />
+      <path d="m85 22-6 33 25 8 10-23Z" fill="#102b24" opacity=".5" />
+    </>
+  ),
   eye: (
     <>
       <path d="M64 9C42 18 27 37 25 65L14 88l18-5-8 20 25-9 15 23 15-23 25 9-8-20 18 5-11-23C101 37 86 18 64 9Z" />

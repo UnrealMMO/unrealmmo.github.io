@@ -1,6 +1,6 @@
 # UnrealMMO website
 
-The public home and player handbook for UnrealMMO, an upcoming Minecraft MMORPG built on SMP. Original woodland-fantasy branding, five full skill guides (495 level entries), eight ore-tree guides, four cumulative Hearthstone build guides, with a reusable interactive 3D build explorer.
+The public home and player handbook for UnrealMMO, an upcoming Minecraft MMORPG built on SMP. Original woodland-fantasy branding, seven full skill guides (693 level entries), eight ore-tree guides, four cumulative Hearthstone build guides, with a reusable interactive 3D build explorer.
 
 ## Run locally
 
@@ -21,11 +21,11 @@ This runs numerical/content/geometry checks, a production static export, and a c
 
 ## Publishing
 
-The site is published at https://unrealmmo.github.io/. The user authorized publication on 19 October 2026. The repository uses GitHub Actions as its Pages source; the legacy branch/Jekyll publisher is disabled.
+The site is published at https://unrealmmo.com/. The user authorized publication on 19 October 2026. The repository uses GitHub Actions as its Pages source; the legacy branch/Jekyll publisher is disabled.
 
-`.github/workflows/verify.yml` verifies pull requests and main pushes. Only a successful main push uploads the `out/` export and publishes it through the `github-pages` environment. Deployment permissions are scoped to the deployment job. No custom domain is configured yet.
+`.github/workflows/verify.yml` verifies pull requests and main pushes. Only a successful main push uploads the `out/` export and publishes it through the `github-pages` environment. Deployment permissions are scoped to the deployment job. The existing custom domain is `unrealmmo.com`.
 
-This organization repository uses the root path, so no `basePath` is needed. `trailingSlash: true` produces directory-index routes that survive direct navigation and refresh. When the user supplies a domain, update `config/site.ts` and the Pages domain settings after configuring DNS.
+This organization repository uses the root path, so no `basePath` is needed. `trailingSlash: true` produces directory-index routes that survive direct navigation and refresh. Canonical metadata uses the configured custom domain.
 
 ## Stack
 
@@ -38,7 +38,7 @@ Next.js 15 App Router, React 19, TypeScript, Tailwind CSS 4, Framer Motion, Radi
 - `content/game.ts`: progression calculations and shared structure geometry.
 - `content/trees.json`: eight ore-tree variants and shipped cycle defaults.
 - `content/provenance.json`: source revision and review date.
-- `tests/fixtures/plugin-rules.json`: numeric reference produced by executing the private plugin's pure Java rules for all 495 skill levels. No Java source is included here.
+- `tests/fixtures/plugin-rules.json`: numeric reference produced by executing the private plugin's pure Java rules for all 693 skill levels. No Java source is included here.
 
 An authorized maintainer with the plugin checkout can refresh that fixture:
 
@@ -47,7 +47,7 @@ python3 scripts/check-plugin-source.py /path/to/UnrealSkills /path/to/JDK25/Home
 npm test
 ```
 
-Review every public content change against the game and update the provenance date/revision. Balance changes are not automatically inferred from a live server. The handbook is a source snapshot, not a live-server inventory. `content/provenance.json` distinguishes the historical handbook revision from the current source review: XP/passive bonuses have been rechecked, but older Ore Tree proximity/active-slot text still needs reconciliation. Do not advance the whole-handbook revision from numerical checks alone.
+Review every public content change against the game and update the provenance date/revision. Balance changes are not automatically inferred from a live server. The handbook is a source snapshot, not a live-server inventory. The current review reconciles all seven skill guides, utility spell unlocks, Ore Tree operation, Hearthstone commands, and cosmetic rewards. Numerical verification does not certify live gameplay or scalability.
 
 To add a structure, add a definition in `content/game.ts` (or a tree variant in `content/trees.json`) with coordinates, materials and steps. It is picked up by static route generation, the catalogue, the viewer and the materials checklist. Extend tests for new geometry and unique operating rules.
 

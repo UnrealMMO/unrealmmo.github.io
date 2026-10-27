@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import * as Tabs from "@radix-ui/react-tabs";
 import { Search, ArrowUpRight } from "lucide-react";
-import { type Skill, levelRows, bonuses, pct } from "@/content/game";
+import { type Skill, levelRows, bonuses, formatBonus } from "@/content/game";
 export function SkillExplorer({ skill }: { skill: Skill }) {
   const [mode, setMode] = useState("all"),
     [level, setLevel] = useState(1),
@@ -61,7 +61,7 @@ export function SkillExplorer({ skill }: { skill: Skill }) {
           {Object.entries(bonuses(skill.id, level)).map(([label, value]) => (
             <div key={label}>
               <span>{label.toUpperCase()}</span>
-              <strong>{pct(value)}</strong>
+              <strong>{formatBonus(label, value)}</strong>
             </div>
           ))}
           <p>
@@ -163,7 +163,7 @@ export function SkillExplorer({ skill }: { skill: Skill }) {
                     <td>
                       {Object.entries(r.bonuses).map(([name, value]) => (
                         <div key={name}>
-                          <strong>{pct(value)}</strong>{" "}
+                          <strong>{formatBonus(name, value)}</strong>{" "}
                           <span>{name.toLowerCase()}</span>
                         </div>
                       ))}

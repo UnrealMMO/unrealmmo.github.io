@@ -64,7 +64,9 @@ export default async function SkillPage({
             <p>
               {s.id === "sneak"
                 ? "Sneak abilities activate automatically when their conditions are met. Open your journal to check your progress."
-                : "Unlockable controls are available in your Skill Journal. Optional collection and mastery controls default off."}
+                : s.id === "magic" || s.id === "construction"
+                  ? "Right-click a Magic Rune to open your unlocked spells. Your Skill Journal shows progression; the Hearthstone menu manages titles and colors."
+                  : "Unlockable controls are available in your Skill Journal. Optional collection and mastery controls default off."}
             </p>
             {s.commands.map((c) => (
               <code key={c}>{c}</code>
@@ -77,7 +79,7 @@ export default async function SkillPage({
             {traitsFor(s)
               .filter((t) => t.level > 1)
               .map((t) => (
-                <article key={t.name} className="trait-card">
+                <article key={`${t.level}-${t.name}`} className="trait-card">
                   <span className="level-badge">LEVEL {t.level}</span>
                   <h3>{t.name}</h3>
                   <p>{t.description}</p>
@@ -99,7 +101,7 @@ export default async function SkillPage({
             ))}
           </ul>
           <p className="small-note">
-            Development handbook · reviewed 19 October 2026 · Default balance
+            Development handbook · reviewed 27 October 2026 · Default balance
             values. Gameplay may change before launch.
           </p>
         </section>

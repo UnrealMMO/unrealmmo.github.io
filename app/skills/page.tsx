@@ -5,14 +5,14 @@ import { skills, traitsFor } from "@/content/game";
 export const metadata = {
   title: "Skills",
   description:
-    "Explore five skills with 99 levels each: Sneak, Farming, Mining, Woodcutting and Fishing.",
+    "Explore seven skills with 99 levels each: Sneak, Farming, Mining, Woodcutting, Fishing, Magic and Construction.",
 };
 export default function Skills() {
   return (
     <div className="parchment page-body">
       <PageIntro
         title="Choose your path. Grow your possibilities."
-        description="Five skills, trained through the way you play. Discover their defining abilities, then follow every step from level 1 to mastery."
+        description="Seven skills, trained through the way you play. Discover their defining abilities, then follow every step from level 1 to mastery."
       />
       <div className="wrap skill-index">
         {skills.map((s, i) => (

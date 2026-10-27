@@ -1,0 +1,81 @@
+{
+  "mastery": [
+    {
+      "skill": "sneak",
+      "title": "Shadow",
+      "level": 99
+    },
+    {
+      "skill": "mining",
+      "title": "Earthshaper",
+      "level": 99
+    },
+    {
+      "skill": "woodcutting",
+      "title": "Grovewarden",
+      "level": 99
+    },
+    {
+      "skill": "farming",
+      "title": "Harvestmaster",
+      "level": 99
+    },
+    {
+      "skill": "fishing",
+      "title": "Angler",
+      "level": 99
+    },
+    {
+      "skill": "magic",
+      "title": "Wizard",
+      "level": 99
+    },
+    {
+      "skill": "construction",
+      "title": "Architect",
+      "level": 99
+    }
+  ],
+  "colors": [
+    {
+      "name": "White",
+      "requirement": "Everyone",
+      "hex": "#ffffff"
+    },
+    {
+      "name": "Yellow",
+      "requirement": "Found your first Hearthstone, any tier",
+      "hex": "#ffff55"
+    },
+    {
+      "name": "Gold",
+      "requirement": "Complete both an Inn and a Stable in the same settlement",
+      "hex": "#ffaa00"
+    },
+    {
+      "name": "Aqua",
+      "requirement": "Complete a tier-4 Hearthstone Wardtower",
+      "hex": "#55ffff"
+    },
+    {
+      "name": "Blue",
+      "requirement": "Defeat the Ender Dragon (credited killer)",
+      "hex": "#5555ff"
+    },
+    {
+      "name": "Dark Gray",
+      "requirement": "Defeat the Wither (credited killer)",
+      "hex": "#555555"
+    },
+    {
+      "name": "Red",
+      "requirement": "Administrators only",
+      "hex": "#ff5555"
+    },
+    {
+      "name": "Purple",
+      "requirement": "Moderators only",
+      "hex": "#aa00aa"
+    }
+  ]
+}

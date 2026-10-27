@@ -63,8 +63,8 @@ export default async function StructurePage({
                     owner.
                   </li>
                   <li>
-                    Reach Farming level {s.level} and stay online, alive and
-                    eligible within 32 blocks of the core in the same world.
+                    Reach Farming level {s.level}. Production runs while the
+                    tree’s chunks are loaded, even when you are offline.
                   </li>
                   <li>
                     Keep the four output spaces open. Resources appear there for
@@ -84,15 +84,13 @@ export default async function StructurePage({
                   each output.
                 </p>
                 <p>
-                  You can run one nearby tree at level 25, two at 50, three at
-                  75 and four at 99. Low-level or excess trees remain dormant
-                  until eligible.
+                  You can register up to 10 trees of each type. Low-level trees
+                  remain dormant until their owner qualifies.
                 </p>
                 <p>
-                  Production pauses while you are away or offline, while chunks
-                  are unloaded, when the structure is damaged, or when its
-                  output is blocked. There is no offline catch-up or passive
-                  Farming XP.
+                  Production pauses while chunks are unloaded, when the
+                  structure is damaged, or when its output is blocked. There is
+                  no unloaded-chunk catch-up or passive Farming XP.
                 </p>
                 <Link className="text-link" href="/skills/farming/">
                   Explore Farming progression ↗
@@ -142,12 +140,12 @@ export default async function StructurePage({
                 <ol className="guide-list">
                   <li>
                     The item you carry is your bound Hearthstone Core. Recover
-                    it with <code>/territory token</code> if needed.
+                    it with <code>/hearthstone token</code> if needed.
                   </li>
                   <li>
                     {(s.stage ?? 1) > 1
                       ? "Follow the layer guide to complete this Hearthstone tier, keeping the gold heart and every required block from the lower stages."
-                      : "Build the pedestal or a higher complete tier. Look at the gold heart and use /territory preview to check the highest completed tier that fits."}
+                      : "Build the pedestal or a higher complete tier. Look at the gold heart and use /hearthstone preview to check the highest completed tier that fits."}
                   </li>
                   <li>
                     {(s.stage ?? 1) > 1
@@ -160,12 +158,12 @@ export default async function StructurePage({
                   </li>
                 </ol>
                 <p>
-                  Building before your initial claim? Look at the gold heart
-                  and use <code>/territory preview</code> to detect the highest
-                  complete tier. You can claim its full volume immediately, without
-                  claiming Stage 1 first. If neighbors or world limits block
-                  that size, the preview explains the highest tier that fits.
-                  Confirm the exact preview within 60 seconds.
+                  Building before your initial claim? Look at the gold heart and
+                  use <code>/hearthstone preview</code> to detect the highest
+                  complete tier. You can claim its full volume immediately,
+                  without claiming Stage 1 first. If neighbors or world limits
+                  block that size, the preview explains the highest tier that
+                  fits. Confirm the exact preview within 60 seconds.
                 </p>
               </div>
               <div>
@@ -255,8 +253,8 @@ export default async function StructurePage({
                 </table>
               </div>
               <p>
-                <code>/territory invite &lt;player&gt; &lt;role&gt;</code> ·{" "}
-                <code>/territory accept &lt;owner&gt;</code>
+                <code>/hearthstone invite &lt;player&gt; &lt;role&gt;</code> ·{" "}
+                <code>/hearthstone accept &lt;owner&gt;</code>
               </p>
               <p>
                 Stewards manage ordinary members, not owners or other stewards.
@@ -273,9 +271,8 @@ export default async function StructurePage({
           </>
         )}
         <p className="small-note guide-version">
-          Development handbook · reviewed{" "}
-          {s.kind === "hearthstone" ? "24 October 2026" : "19 October 2026"} ·
-          Shipped defaults, subject to change.
+          Development handbook · reviewed 27 October 2026 · Shipped defaults,
+          subject to change.
         </p>
       </div>
     </div>

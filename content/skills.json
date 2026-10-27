@@ -12,7 +12,7 @@
       "Sneaking melee attacks against enemy mobs grant 5 base XP per final damage point, capped against overkill. PvP does not grant this XP."
     ],
     "rules": [
-      "Concealment is distance-based, not potion invisibility. Sounds, particles, the player list and mob awareness remain.",
+      "Concealment activates after three seconds of continuous sneaking, hiding you from players and mobs beyond its distance threshold. Standing upright ends it. Taking damage reveals you for 15 seconds.",
       "Taking damage prevents concealment for 15 seconds. Ambush also reveals you.",
       "Threat Sense can reveal a concealed player to the sensing viewer inside 20 blocks.",
       "The sneak-speed bonus reaches +200% at level 98. Walking and sprinting are unchanged; vanilla attribute caps still apply."
@@ -22,7 +22,7 @@
       {
         "level": 10,
         "name": "Concealment I",
-        "description": "While sneaking, your body, equipment and name disappear for players farther than 25 blocks. Damage reveals you for 15 seconds. Players at the threshold can still see you."
+        "description": "While concealed, your body, equipment and name disappear for players and mobs farther than 25 blocks. Damage reveals you for 15 seconds. Players at the threshold can still see you."
       },
       {
         "level": 15,
@@ -32,7 +32,7 @@
       {
         "level": 25,
         "name": "Concealment II",
-        "description": "The visibility boundary moves inward to 20 blocks. Players farther away cannot see your rendered entity while you sneak."
+        "description": "The visibility boundary moves inward to 20 blocks. Players farther away cannot see your rendered entity while concealed."
       },
       {
         "level": 35,
@@ -68,6 +68,11 @@
         "level": 99,
         "name": "Master Concealment",
         "description": "Your concealment boundary reaches 10 blocks. Your accumulated sneak-speed bonus remains +200%."
+      },
+      {
+        "level": 99,
+        "name": "Shadow title",
+        "description": "Unlock the Shadow chat title. Select it in Hearthstone → Titles."
       }
     ]
   },
@@ -87,7 +92,8 @@
       "Growth bonuses apply to your planted crops while you are online and within 32 blocks. Vanilla light, hydration and soil rules still apply.",
       "Ordinary levels alternate growth first, then double-produce chance. Both reach 25% at level 98.",
       "Growth means extra random-tick opportunities, not a guaranteed harvest time. Seeds and XP are not doubled.",
-      "Ore trees grant resources, not passive Farming XP. Their additional unlocks do not interrupt ordinary level bonuses."
+      "Ore trees grant resources, not passive Farming XP. Their additional unlocks do not interrupt ordinary level bonuses.",
+      "Ore Trees operate while their chunks are loaded, including while their owner is offline. Up to 10 registered trees per type; no proximity-based active slots."
     ],
     "commands": [
       "/farming",
@@ -136,6 +142,11 @@
         "level": 99,
         "name": "Master Farmer",
         "description": "Optional sneak-harvest with a hoe: up to nine mature crops in a 3 by 3 area."
+      },
+      {
+        "level": 99,
+        "name": "Harvestmaster title",
+        "description": "Unlock the Harvestmaster chat title. Select it in Hearthstone → Titles."
       }
     ]
   },
@@ -180,6 +191,11 @@
         "description": "Removes the airborne mining penalty; underwater penalties remain."
       },
       {
+        "level": 45,
+        "name": "Veinsight",
+        "description": "Spell Menu: 3 runes reveal nearby natural ores privately."
+      },
+      {
         "level": 50,
         "name": "Prospector",
         "description": "Select an ore in the journal for a quiet directional chime within 12 blocks."
@@ -190,14 +206,29 @@
         "description": "25% less damage from TNT and TNT minecarts, regardless of owner."
       },
       {
+        "level": 70,
+        "name": "Earthshatter I",
+        "description": "Spell Menu: 5 runes excavate a 3×3×3 tunnel. Territory and protection checks apply."
+      },
+      {
         "level": 75,
         "name": "Careful Hands II",
         "description": "20% chance to preserve mining durability."
       },
       {
+        "level": 90,
+        "name": "Earthshatter II",
+        "description": "Upgrade Earthshatter to a 3×3×10 tunnel for 10 runes."
+      },
+      {
         "level": 99,
         "name": "Master Miner",
         "description": "Enable Master Miner, then sneak-mine up to 12 connected matching natural ores per activation. Normal drops, durability and protection apply."
+      },
+      {
+        "level": 99,
+        "name": "Earthshaper title",
+        "description": "Unlock the Earthshaper chat title. Select it in Hearthstone → Titles."
       }
     ]
   },
@@ -231,6 +262,11 @@
         "description": "Up to +50% speed across ordinary levels."
       },
       {
+        "level": 1,
+        "name": "Timber Yield",
+        "description": "Up to 25% chance to double a normal wood drop across ordinary levels."
+      },
+      {
         "level": 10,
         "name": "Steady Axe",
         "description": "10% chance to preserve axe durability on eligible logs."
@@ -246,6 +282,11 @@
         "description": "Toggle automatic collection; overflow stays on the ground."
       },
       {
+        "level": 45,
+        "name": "Verdant Surge",
+        "description": "Spell Menu: 3 runes advance sapling growth along a 20-block wave."
+      },
+      {
         "level": 50,
         "name": "Canopy Care",
         "description": "Harvested trees have 50% higher sapling and apple drop chances. No shears or Silk Touch."
@@ -256,14 +297,29 @@
         "description": "Replant has a 25% chance to preserve each required sapling."
       },
       {
+        "level": 70,
+        "name": "Gale Cleave",
+        "description": "Spell Menu: 10 runes harvest up to three trees or 64 harvestable tree blocks, including supported giant mushrooms."
+      },
+      {
         "level": 75,
         "name": "Steady Axe II",
         "description": "Durability preservation increases to 20%."
       },
       {
+        "level": 90,
+        "name": "Fleeceweave",
+        "description": "Spell Menu: 10 runes permanently turn a targeted tree or giant mushroom into matching wool. No wood drops or Woodcutting XP."
+      },
+      {
         "level": 99,
         "name": "Master Lumberjack",
         "description": "Enable Master Lumberjack, then sneak-chop up to 32 logs of one confirmed tree per activation. Normal durability and protection apply."
+      },
+      {
+        "level": 99,
+        "name": "Grovewarden title",
+        "description": "Unlock the Grovewarden chat title. Select it in Hearthstone → Titles."
       }
     ]
   },
@@ -325,6 +381,229 @@
         "level": 99,
         "name": "Master Angler",
         "description": "Open-water ordinary catches gain a 0.5% legendary-trophy chance and a 4% rare-trophy chance. These outcomes replace the fish."
+      },
+      {
+        "level": 99,
+        "name": "Angler title",
+        "description": "Unlock the Angler chat title. Select it in Hearthstone → Titles."
+      }
+    ]
+  },
+  {
+    "id": "magic",
+    "name": "Magic",
+    "tagline": "Shape the elements.",
+    "description": "Begin with water, master fire, and weave practical spells into everyday adventures. Arcane Attunement strengthens your mana regeneration, damage and healing as you grow.",
+    "color": "#91b9e5",
+    "icon": "wand",
+    "training": [
+      "Damage enemy mobs with staff spells to earn Magic XP: 2 base XP per effective damage point, rounded up per qualifying hit. Overkill is capped.",
+      "PvP, peaceful targets, healing, utility spells and Creative do not train Magic."
+    ],
+    "rules": [
+      "Right-click a staff to cast. Sneak + swap hands cycles unlocked spells; an offhand staff uses sneak + right-click. Only one staff can be equipped at a time.",
+      "Every staff activation costs one Magic Rune plus mana. Craft 1 ordinary flint + 1 lapis lazuli into 8 runes in either crafting grid. Right-click a rune to open the Spell Menu.",
+      "Mana capacity is 100. Regeneration begins three seconds after casting: 5.25 per second at level 1, reaching 6.25 at level 80.",
+      "Arcane Attunement alternates +5 percentage points of regeneration and potency. Both cap at +25%; potency affects spell damage, attributed burns and healing, not durations or terrain effects.",
+      "Downpour has no level requirement: 1 rune sends a rain cloud 20 blocks, watering exposed farmland and extinguishing fires. Ten-second cooldown.",
+      "Mining, Woodcutting and Construction spells unlock through those skills, not Magic. Protection and combat restrictions still apply."
+    ],
+    "commands": ["/skills"],
+    "traits": [
+      {
+        "level": 1,
+        "name": "Arcane Attunement",
+        "description": "+5% mana regeneration and +0% spell damage and healing. Bonuses are additive, not compounded."
+      },
+      {
+        "level": 1,
+        "name": "Water Bolt",
+        "description": "Water Staff: a traveling bolt with a brief slow. 10 mana; 1.5-second shared cooldown."
+      },
+      {
+        "level": 5,
+        "name": "Tidal Surge",
+        "description": "Water Staff: a wave that slows, pushes and extinguishes. 30 mana; 10-second cooldown."
+      },
+      {
+        "level": 10,
+        "name": "Arcane Attunement",
+        "description": "+5% mana regeneration and +5% spell damage and healing. Bonuses are additive, not compounded."
+      },
+      {
+        "level": 20,
+        "name": "Arcane Attunement",
+        "description": "+10% mana regeneration and +5% spell damage and healing. Bonuses are additive, not compounded."
+      },
+      {
+        "level": 20,
+        "name": "Healing Spring",
+        "description": "Water Staff: a ten-second pool that heals players and peaceful creatures. 40 mana; 25-second cooldown."
+      },
+      {
+        "level": 25,
+        "name": "Whirlpool",
+        "description": "Water Staff: target ground to pull enemies into a six-second swirling pool. 45 mana; 20-second cooldown."
+      },
+      {
+        "level": 25,
+        "name": "Ember Bolt",
+        "description": "Fire Staff: a traveling bolt of flame. 10 mana; 1.5-second shared cooldown."
+      },
+      {
+        "level": 25,
+        "name": "Featherbound",
+        "description": "Spell Menu: 2 runes, 20-second cooldown. Jump or begin falling within three seconds for one enhanced jump/slow fall; ends on landing, never halfway through a fall."
+      },
+      {
+        "level": 30,
+        "name": "Arcane Attunement",
+        "description": "+10% mana regeneration and +10% spell damage and healing. Bonuses are additive, not compounded."
+      },
+      {
+        "level": 30,
+        "name": "Firestorm",
+        "description": "Fire Staff: rain fire over a targeted area. 45 mana; 15-second cooldown."
+      },
+      {
+        "level": 40,
+        "name": "Arcane Attunement",
+        "description": "+15% mana regeneration and +10% spell damage and healing. Bonuses are additive, not compounded."
+      },
+      {
+        "level": 40,
+        "name": "Inferno Nova",
+        "description": "Fire Staff: an expanding close-range blast with four seconds of burn. 35 mana; 12-second cooldown."
+      },
+      {
+        "level": 40,
+        "name": "Superheat",
+        "description": "Spell Menu: 3 runes, 45-second cooldown. Double one furnace, blast furnace, smoker or lit campfire’s processing speed for 30 seconds."
+      },
+      {
+        "level": 50,
+        "name": "Arcane Attunement",
+        "description": "+15% mana regeneration and +15% spell damage and healing. Bonuses are additive, not compounded."
+      },
+      {
+        "level": 50,
+        "name": "Flame Lance",
+        "description": "Fire Staff: charge for 0.75 seconds, then spear up to three targets across 24 blocks. Carries targets and can pin them against walls; four-second burn. 40 mana; 12-second cooldown."
+      },
+      {
+        "level": 60,
+        "name": "Arcane Attunement",
+        "description": "+20% mana regeneration and +15% spell damage and healing. Bonuses are additive, not compounded."
+      },
+      {
+        "level": 70,
+        "name": "Arcane Attunement",
+        "description": "+20% mana regeneration and +20% spell damage and healing. Bonuses are additive, not compounded."
+      },
+      {
+        "level": 80,
+        "name": "Arcane Attunement",
+        "description": "+25% mana regeneration and +20% spell damage and healing. Bonuses are additive, not compounded."
+      },
+      {
+        "level": 99,
+        "name": "Arcane Attunement",
+        "description": "+25% mana regeneration and +25% spell damage and healing. Bonuses are additive, not compounded."
+      },
+      {
+        "level": 99,
+        "name": "Wizard title",
+        "description": "Unlock the Wizard chat title. Select it in Hearthstone → Titles."
+      }
+    ]
+  },
+  {
+    "id": "construction",
+    "name": "Construction",
+    "tagline": "Build a place worth returning to.",
+    "description": "Turn thoughtful building and crafting into mastery. Reach farther, return home through magic, and shape your settlement as a flying spirit.",
+    "color": "#dfbd7f",
+    "icon": "hammer",
+    "training": [
+      "Fresh eligible placements award 16 XP for basic materials, 24 for finished masonry, 32 for decorative blocks, and 48 for functional furnishings.",
+      "Eligible crafting awards 8 / 16 / 24 / 32 XP per recipe batch. Stonecutting awards half the matching crafting rate. Output stack size does not multiply XP.",
+      "First completed Hearthstone tiers award 500 / 1,500 / 3,500 / 7,500 XP. Your first completed Inn and Stable award 2,000 XP each.",
+      "Breaking and replacing blocks cannot farm XP. Recorded positions do not pay twice; reclaimed materials remain ineligible through crafting and processing. Creative never grants Construction XP."
+    ],
+    "rules": [
+      "Builder’s Reach works everywhere while holding eligible building materials: +0.5 block at 1, +1 at 30, +1.5 at 60 and +2 at 99. Breaking and attack range remain normal.",
+      "Home benefits apply inside your own territory, not another player’s claim. Hunger traits preserve food; they do not refill it.",
+      "Right-click a Magic Rune for spells. Bedbound and Hearthward have a three-second stationary channel and share a five-minute cooldown. Recent combat blocks casting, using the same 15-second timer as Sneak.",
+      "Personal Chest is your native 27-slot Ender Chest storage, shared across worlds and preserved through restarts. Access is spell-only; custom item data is preserved.",
+      "Astral Projection leaves your body defenseless. Damage returns you and applies to your real health. Your spirit can build with real inventory within your territory but cannot deal damage. Press Shift+F to return; there is no duration limit.",
+      "Construction abilities also work in Creative when an administrator enables Creative skills. Level, rune and combat requirements still apply."
+    ],
+    "commands": ["/skills", "/hearthstone", "/construction return"],
+    "traits": [
+      {
+        "level": 1,
+        "name": "Builder’s Reach",
+        "description": "+0.5 blocks of global placement reach while holding building materials."
+      },
+      {
+        "level": 10,
+        "name": "Bedbound",
+        "description": "2 runes: return beside your active bed after a three-second stationary channel."
+      },
+      {
+        "level": 20,
+        "name": "Hearthward",
+        "description": "3 runes: return to the top of your Hearthstone’s gold heart after a three-second stationary channel."
+      },
+      {
+        "level": 30,
+        "name": "Builder’s Reach",
+        "description": "+1 blocks of global placement reach while holding building materials."
+      },
+      {
+        "level": 30,
+        "name": "Personal Chest",
+        "description": "1 rune: open your private 27-slot chest from any world. No cooldown; unavailable during combat or Astral Projection."
+      },
+      {
+        "level": 30,
+        "name": "Comforts of Home",
+        "description": "50% less hunger and saturation drain from exhaustion in your own territory."
+      },
+      {
+        "level": 45,
+        "name": "Astral Projection",
+        "description": "4 runes: leave your vulnerable body to fly and build within your territory. No time limit; Shift+F returns. Three-second channel and three-minute casting cooldown."
+      },
+      {
+        "level": 60,
+        "name": "Builder’s Reach",
+        "description": "+1.5 blocks of global placement reach while holding building materials."
+      },
+      {
+        "level": 60,
+        "name": "Builder’s Stride",
+        "description": "10% movement speed while holding building materials in your own territory and out of combat."
+      },
+      {
+        "level": 75,
+        "name": "Well Provisioned",
+        "description": "100% less hunger drain in your own territory. Does not refill food; exhaustion carried in from outside can still consume existing saturation."
+      },
+      {
+        "level": 99,
+        "name": "Builder’s Reach",
+        "description": "+2 blocks of global placement reach while holding building materials."
+      },
+      {
+        "level": 99,
+        "name": "Master Architect",
+        "description": "Construction spells cost one fewer rune, with a minimum cost of one."
+      },
+      {
+        "level": 99,
+        "name": "Architect title",
+        "description": "Unlock the Architect chat title. Select it in Hearthstone → Titles."
       }
     ]
   }

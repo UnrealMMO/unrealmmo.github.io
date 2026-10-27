@@ -1931,6 +1931,7 @@ tbody tr:nth-child(even) {
     font-size: 0.62rem;
   }
   .skill-hero > div {
+    flex-direction: column;
     gap: 20px;
     align-items: start;
   }
@@ -1943,7 +1944,7 @@ tbody tr:nth-child(even) {
     height: 64px;
   }
   .skill-hero h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 8vw, 3rem);
   }
   .skill-hero h2 {
     font-size: 1.05rem;
