@@ -3565,6 +3565,28 @@ tbody tr:nth-child(even) {
   background-attachment: fixed;
   scroll-margin-top: 155px;
 }
+.road-chapter::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 24px;
+  background: #10241e;
+  border-block: 1px solid #b9965d;
+  box-shadow: 0 8px 24px #0008, 0 -8px 24px #0008;
+  pointer-events: none;
+}
+.road-chapter::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: calc(50% - 6px);
+  width: 12px;
+  height: 12px;
+  background: #18372c;
+  border: 1px solid #d9b579;
+  transform: rotate(45deg);
+  pointer-events: none;
+}
 .road-woodland {
   background-image:
     linear-gradient(#0b1a16b8, #0c211c99, #0b1915dd),
