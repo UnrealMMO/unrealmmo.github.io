@@ -1,0 +1,88 @@
+
+> unrealmmo-web@1.0.0 verify
+> npm run test && npm run build && node scripts/check-export.mjs
+
+
+> unrealmmo-web@1.0.0 test
+> node --import tsx --test tests/*.test.ts
+
+✔ complete monotonic XP curve and all 693 readable level entries (5.669042ms)
+✔ ordinary progression and milestone pauses match documented caps (0.788792ms)
+✔ Farming additional structure unlocks preserve crop progression and multiple same-level traits (0.478ms)
+✔ all ore trees have exact geometry, quantities and open output ports (0.337833ms)
+✔ Hearthstone is a five-block cardinal pedestal on one layer (0.093041ms)
+✔ every structure trait resolves to a guide and identifiers are unique (0.122708ms)
+✔ Pages publishes only verified main pushes, never pull requests (0.156625ms)
+✔ every displayed XP and passive bonus matches the executed Java plugin rules (1.129167ms)
+✔ Stage 2 preserves the pedestal and matches every required construction block (0.297041ms)
+✔ all four Hearthstone stages have cumulative buildable guides (0.364375ms)
+✔ Wardtower has netherrack with fire above it and retains Sanctuary lanterns (0.101ms)
+✔ Stage 4 illustrates a full-height Overworld column while lower tiers stay cubic (0.07475ms)
+✔ new skill milestones display the correct units and caps (0.068417ms)
+✔ each skill has a unique mastery title in its progression (0.165917ms)
+✔ casting loops continuously and keeps both boot anchors planted (3.555041ms)
+✔ caster joints flow between key poses without a positional jump (0.478458ms)
+✔ staff crown remains rigid through the lift and release (1.885708ms)
+✔ Season 0 has 40 shared tiers with cosmetic-only premium milestones (0.837792ms)
+✔ Published gameplay totals match the reward schedule (0.78325ms)
+✔ Checkout placeholders stay local and cannot collect payment or fulfill premium (0.245875ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 143.202
+
+> unrealmmo-web@1.0.0 build
+> next build
+
+   ▲ Next.js 15.5.28
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 1725ms
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/32) ...
+   Generating static pages (8/32) 
+   Generating static pages (16/32) 
+   Generating static pages (24/32) 
+ ✓ Generating static pages (32/32)
+   Finalizing page optimization ...
+   Collecting build traces ...
+   Exporting (0/2) ...
+ ✓ Exporting (2/2)
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    43.5 kB         151 kB
+├ ○ /_not-found                            128 B         103 kB
+├ ○ /about                                 184 B         108 kB
+├ ○ /privacy-policy                        178 B         108 kB
+├ ○ /rewards                               184 B         108 kB
+├ ○ /robots.txt                            128 B         103 kB
+├ ○ /season-pass                           178 B         108 kB
+├ ○ /settlements                           184 B         108 kB
+├ ○ /sitemap.xml                           128 B         103 kB
+├ ○ /skills                                184 B         108 kB
+├ ● /skills/[slug]                       7.58 kB         125 kB
+├   ├ /skills/sneak
+├   ├ /skills/farming
+├   ├ /skills/mining
+├   └ [+4 more paths]
+├ ○ /structures                            184 B         108 kB
+└ ● /structures/[slug]                   5.13 kB         118 kB
+    ├ /structures/coal-tree
+    ├ /structures/copper-tree
+    ├ /structures/iron-tree
+    └ [+9 more paths]
++ First Load JS shared by all             103 kB
+  ├ chunks/255-1f92380adbc6ec99.js       46.7 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js  54.2 kB
+  └ other shared chunks (total)          2.08 kB
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+
+Verified 29 exported HTML files, 1127 local asset/link references, 84 image alt attributes, and all 693 pre-rendered level rows.

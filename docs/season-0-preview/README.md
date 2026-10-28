@@ -1,0 +1,11 @@
+# Season 0 page verification — 28 October 2026
+
+The static `/season-pass/` page presents the Hollow Harvest Premium Pass at USD15, compares the included regular track and cosmetic-only premium track, and renders all 40 tiers / 56 reward slots from a public projection of the canonical Season 0 catalog. The projection deliberately excludes internal asset and service identifiers. All 43 reward definitions, tier entries, price and initial date window were compared to the canonical catalog before publication. Configured XP is 2,500 per tier / 100,000 total; accepted connected votes grant 500. Max-level gameplay eligibility and scroll/admin exclusions match the implemented season consumer.
+
+Checkout links point only to local explanatory anchors. There is no Stripe connection, payment collection, premium-activation action, form or checkout success state. The page explicitly notes that checkout is unavailable and parts of reward delivery are still being enabled. Decorative collection symbols are not presented as in-game screenshots. Static site content does not claim Folia or load qualification.
+
+`npm run verify` passed: 20 tests, production static build, 29 exported HTML files, 1,127 local references, image alt checks and all 693 existing skill rows. Three new tests check the season schedule/premium rule, gameplay totals and placeholder restrictions. The existing main-only GitHub Pages workflow is unchanged.
+
+Browser checks used the in-app browser against the static export: desktop 1280×720, phone 390×844 and tablet 820×900. Checked hero, comparison/price, expandable tables, final-tier contents, keyboard disclosure, mobile navigation and both placeholder anchors. Phone/tablet document width equals viewport width. Fixed inherited nowrap table headers on mobile. No browser error logs. Screenshot evidence is retained here. A failed exact role selector for a native summary was corrected using the observed summary element; keyboard Enter then expanded it. Viewport override reset afterward.
+
+No plugin/server restart is required. This page is a catalog preview; it does not resolve the separate supply/cosmetic fulfillment or visual/authenticated/load verification gates. When changing the canonical catalog, update this public projection and repeat parity checks. Dates remain server-configurable and are identified as initial dates on the page.

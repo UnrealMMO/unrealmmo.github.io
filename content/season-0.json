@@ -1,0 +1,639 @@
+{
+  "label": "Season 0",
+  "theme": "Hollow Harvest",
+  "window": {
+    "zone": "America/New_York",
+    "startInclusive": "2026-10-28T00:00:00-04:00",
+    "endExclusive": "2026-12-23T00:00:00-05:00",
+    "initialDatesAreConfigurable": true
+  },
+  "price": {
+    "currency": "USD",
+    "minorUnits": 1500
+  },
+  "xpPerTier": 2500,
+  "voteXp": 500,
+  "tiers": [
+    {
+      "tier": 1,
+      "free": {
+        "reward": "harvestbound",
+        "count": 1
+      },
+      "premium": {
+        "reward": "hollow_pilgrim_hood",
+        "count": 1
+      }
+    },
+    {
+      "tier": 2,
+      "free": {
+        "reward": "small_pouch",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 3,
+      "free": {
+        "reward": "basic_provisions",
+        "count": 1
+      },
+      "premium": {
+        "reward": "of_the_hollow_court",
+        "count": 1
+      }
+    },
+    {
+      "tier": 4,
+      "free": {
+        "reward": "lesser_scroll",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 5,
+      "free": {
+        "reward": "harvest_warden_mask",
+        "count": 1
+      },
+      "premium": {
+        "reward": "hollow_regent_mask",
+        "count": 1
+      }
+    },
+    {
+      "tier": 6,
+      "free": {
+        "reward": "basic_gathering",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 7,
+      "free": {
+        "reward": "small_pouch",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 8,
+      "free": {
+        "reward": "full_repair",
+        "count": 1
+      },
+      "premium": {
+        "reward": "graveglass_pickaxe",
+        "count": 1
+      }
+    },
+    {
+      "tier": 9,
+      "free": {
+        "reward": "lesser_scroll",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 10,
+      "free": {
+        "reward": "candlekeeper_pickaxe",
+        "count": 1
+      },
+      "premium": {
+        "reward": "nevermore",
+        "count": 1
+      }
+    },
+    {
+      "tier": 11,
+      "free": {
+        "reward": "basic_crafting",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 12,
+      "free": {
+        "reward": "medium_pouch",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 13,
+      "free": {
+        "reward": "harvest_planting",
+        "count": 1
+      },
+      "premium": {
+        "reward": "graveglass_axe",
+        "count": 1
+      }
+    },
+    {
+      "tier": 14,
+      "free": {
+        "reward": "lesser_scroll",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 15,
+      "free": {
+        "reward": "little_lantern",
+        "count": 1
+      },
+      "premium": {
+        "reward": "hollow_regent_sword",
+        "count": 1
+      }
+    },
+    {
+      "tier": 16,
+      "free": {
+        "reward": "improved_provisions",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 17,
+      "free": {
+        "reward": "medium_pouch",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 18,
+      "free": {
+        "reward": "improved_gathering",
+        "count": 1
+      },
+      "premium": {
+        "reward": "graveglass_shovel",
+        "count": 1
+      }
+    },
+    {
+      "tier": 19,
+      "free": {
+        "reward": "greater_scroll",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 20,
+      "free": {
+        "reward": "harvest_warden_sword",
+        "count": 1
+      },
+      "premium": {
+        "reward": "hollow_regent_mantle",
+        "count": 1
+      }
+    },
+    {
+      "tier": 21,
+      "free": {
+        "reward": "full_repair",
+        "count": 2
+      },
+      "premium": null
+    },
+    {
+      "tier": 22,
+      "free": {
+        "reward": "medium_pouch",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 23,
+      "free": {
+        "reward": "improved_crafting",
+        "count": 1
+      },
+      "premium": {
+        "reward": "graveglass_hoe",
+        "count": 1
+      }
+    },
+    {
+      "tier": 24,
+      "free": {
+        "reward": "greater_scroll",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 25,
+      "free": {
+        "reward": "harvest_warden_hat",
+        "count": 1
+      },
+      "premium": {
+        "reward": "hollow_regent_bow",
+        "count": 1
+      }
+    },
+    {
+      "tier": 26,
+      "free": {
+        "reward": "improved_provisions",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 27,
+      "free": {
+        "reward": "large_pouch",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 28,
+      "free": {
+        "reward": "harvest_builder",
+        "count": 1
+      },
+      "premium": {
+        "reward": "hollow_regent_shield",
+        "count": 1
+      }
+    },
+    {
+      "tier": 29,
+      "free": {
+        "reward": "greater_scroll",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 30,
+      "free": {
+        "reward": "harvest_warden_shield",
+        "count": 1
+      },
+      "premium": {
+        "reward": "hollow_regent_crown",
+        "count": 1
+      }
+    },
+    {
+      "tier": 31,
+      "free": {
+        "reward": "advanced_gathering",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 32,
+      "free": {
+        "reward": "large_pouch",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 33,
+      "free": {
+        "reward": "advanced_crafting",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 34,
+      "free": {
+        "reward": "grand_scroll",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 35,
+      "free": {
+        "reward": "witch",
+        "count": 1
+      },
+      "premium": {
+        "reward": "nevermore_ghost",
+        "count": 1
+      }
+    },
+    {
+      "tier": 36,
+      "free": {
+        "reward": "full_repair",
+        "count": 3
+      },
+      "premium": null
+    },
+    {
+      "tier": 37,
+      "free": {
+        "reward": "large_pouch",
+        "count": 1
+      },
+      "premium": {
+        "reward": "sovereign_of_the_hollow",
+        "count": 1
+      }
+    },
+    {
+      "tier": 38,
+      "free": {
+        "reward": "grand_scroll",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 39,
+      "free": {
+        "reward": "harvest_treasury",
+        "count": 1
+      },
+      "premium": null
+    },
+    {
+      "tier": 40,
+      "free": {
+        "reward": "harvest_warden_regalia",
+        "count": 1
+      },
+      "premium": {
+        "reward": "hollow_regent_regalia",
+        "count": 1
+      }
+    }
+  ],
+  "rewards": {
+    "small_pouch": {
+      "label": "Small Coin Pouch",
+      "kind": "gift",
+      "amount": 20,
+      "rarity": "common",
+      "unit": "Coins"
+    },
+    "medium_pouch": {
+      "label": "Medium Coin Pouch",
+      "kind": "gift",
+      "amount": 60,
+      "rarity": "uncommon",
+      "unit": "Coins"
+    },
+    "large_pouch": {
+      "label": "Large Coin Pouch",
+      "kind": "gift",
+      "amount": 150,
+      "rarity": "rare",
+      "unit": "Coins"
+    },
+    "harvest_treasury": {
+      "label": "Harvest Treasury",
+      "kind": "gift",
+      "amount": 250,
+      "rarity": "epic",
+      "unit": "Coins"
+    },
+    "lesser_scroll": {
+      "label": "Lesser Harvest Scroll",
+      "kind": "gift",
+      "amount": 5000,
+      "rarity": "uncommon",
+      "minimumSkillLevel": 40,
+      "unit": "skill EXP"
+    },
+    "greater_scroll": {
+      "label": "Greater Harvest Scroll",
+      "kind": "gift",
+      "amount": 15000,
+      "rarity": "rare",
+      "minimumSkillLevel": 60,
+      "unit": "skill EXP"
+    },
+    "grand_scroll": {
+      "label": "Grand Harvest Scroll",
+      "kind": "gift",
+      "amount": 30000,
+      "rarity": "epic",
+      "minimumSkillLevel": 75,
+      "unit": "skill EXP"
+    },
+    "full_repair": {
+      "label": "Full Repair Note",
+      "kind": "gift",
+      "amount": 100,
+      "rarity": "rare",
+      "unit": "% repair"
+    },
+    "basic_provisions": {
+      "label": "Basic Provisions",
+      "kind": "supplies",
+      "items": {
+        "minecraft:bread": 8,
+        "minecraft:baked_potato": 4
+      }
+    },
+    "basic_gathering": {
+      "label": "Basic Gathering Supplies",
+      "kind": "supplies",
+      "items": {
+        "minecraft:spruce_log": 32,
+        "minecraft:cobblestone": 64,
+        "minecraft:coal": 16
+      }
+    },
+    "basic_crafting": {
+      "label": "Basic Crafting Supplies",
+      "kind": "supplies",
+      "items": {
+        "minecraft:iron_ingot": 16,
+        "minecraft:glass": 16,
+        "minecraft:leather": 16
+      }
+    },
+    "harvest_planting": {
+      "label": "Harvest Planting Pack",
+      "kind": "supplies",
+      "items": {
+        "minecraft:wheat_seeds": 16,
+        "minecraft:carrot": 8,
+        "minecraft:potato": 8,
+        "minecraft:pumpkin_seeds": 4,
+        "minecraft:bone_meal": 16
+      }
+    },
+    "improved_provisions": {
+      "label": "Improved Provisions",
+      "kind": "supplies",
+      "items": {
+        "minecraft:cooked_chicken": 8,
+        "minecraft:baked_potato": 8
+      }
+    },
+    "improved_gathering": {
+      "label": "Improved Gathering Supplies",
+      "kind": "supplies",
+      "items": {
+        "minecraft:spruce_log": 64,
+        "minecraft:cobblestone": 128,
+        "minecraft:coal": 32
+      }
+    },
+    "improved_crafting": {
+      "label": "Improved Crafting Supplies",
+      "kind": "supplies",
+      "items": {
+        "minecraft:iron_ingot": 24,
+        "minecraft:gold_ingot": 8,
+        "minecraft:glass": 32
+      }
+    },
+    "harvest_builder": {
+      "label": "Harvest Builder Pack",
+      "kind": "supplies",
+      "items": {
+        "minecraft:spruce_log": 64,
+        "minecraft:stone_bricks": 64,
+        "minecraft:glass": 32,
+        "minecraft:lantern": 8
+      }
+    },
+    "advanced_gathering": {
+      "label": "Advanced Gathering Supplies",
+      "kind": "supplies",
+      "items": {
+        "minecraft:spruce_log": 128,
+        "minecraft:cobblestone": 192,
+        "minecraft:coal": 48
+      }
+    },
+    "advanced_crafting": {
+      "label": "Advanced Crafting Supplies",
+      "kind": "supplies",
+      "items": {
+        "minecraft:iron_ingot": 32,
+        "minecraft:gold_ingot": 16,
+        "minecraft:lapis_lazuli": 16,
+        "minecraft:redstone": 8
+      }
+    },
+    "harvestbound": {
+      "label": "Harvestbound",
+      "kind": "title"
+    },
+    "of_the_hollow_court": {
+      "label": "Of the Hollow Court",
+      "kind": "title"
+    },
+    "witch": {
+      "label": "Witch",
+      "kind": "title"
+    },
+    "sovereign_of_the_hollow": {
+      "label": "Sovereign of the Hollow",
+      "kind": "title"
+    },
+    "harvest_warden_mask": {
+      "label": "Harvest Warden Mask",
+      "kind": "cosmetic"
+    },
+    "candlekeeper_pickaxe": {
+      "label": "Candlekeeper Pickaxe",
+      "kind": "cosmetic"
+    },
+    "little_lantern": {
+      "label": "Little Lantern",
+      "kind": "cosmetic"
+    },
+    "harvest_warden_sword": {
+      "label": "Harvest Warden Sword",
+      "kind": "cosmetic"
+    },
+    "harvest_warden_hat": {
+      "label": "Harvest Warden Hat",
+      "kind": "cosmetic"
+    },
+    "harvest_warden_shield": {
+      "label": "Harvest Warden Shield",
+      "kind": "cosmetic"
+    },
+    "hollow_pilgrim_hood": {
+      "label": "Hollow Pilgrim Hood",
+      "kind": "cosmetic"
+    },
+    "hollow_regent_mask": {
+      "label": "Hollow Regent Mask",
+      "kind": "cosmetic"
+    },
+    "graveglass_pickaxe": {
+      "label": "Graveglass Pickaxe",
+      "kind": "cosmetic"
+    },
+    "nevermore": {
+      "label": "Nevermore",
+      "kind": "cosmetic"
+    },
+    "graveglass_axe": {
+      "label": "Graveglass Axe",
+      "kind": "cosmetic"
+    },
+    "hollow_regent_sword": {
+      "label": "Hollow Regent Sword",
+      "kind": "cosmetic"
+    },
+    "graveglass_shovel": {
+      "label": "Graveglass Shovel",
+      "kind": "cosmetic"
+    },
+    "hollow_regent_mantle": {
+      "label": "Hollow Regent Mantle",
+      "kind": "cosmetic"
+    },
+    "graveglass_hoe": {
+      "label": "Graveglass Hoe",
+      "kind": "cosmetic"
+    },
+    "hollow_regent_bow": {
+      "label": "Hollow Regent Bow",
+      "kind": "cosmetic"
+    },
+    "hollow_regent_shield": {
+      "label": "Hollow Regent Shield",
+      "kind": "cosmetic"
+    },
+    "hollow_regent_crown": {
+      "label": "Hollow Regent Crown",
+      "kind": "cosmetic"
+    },
+    "nevermore_ghost": {
+      "label": "Nevermore: Ghost Raven",
+      "kind": "cosmetic"
+    },
+    "harvest_warden_regalia": {
+      "label": "Harvest Warden Regalia",
+      "kind": "cosmetic"
+    },
+    "hollow_regent_regalia": {
+      "label": "Hollow Regent Regalia",
+      "kind": "cosmetic"
+    }
+  }
+}

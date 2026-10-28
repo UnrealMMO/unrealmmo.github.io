@@ -10,6 +10,7 @@ const links = [
   ["/structures/", "Structures"],
   ["/settlements/", "Settlements"],
   ["/rewards/", "Titles & colors"],
+  ["/season-pass/", "Season Pass"],
 ];
 export function Navigation() {
   const path = usePathname();
