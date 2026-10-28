@@ -80,18 +80,61 @@ def render(polys,angle,size=360):
    w0=((b[1]-c[1])*(x-c[0])+(c[0]-b[0])*(y-c[1]))/den;w1=((c[1]-a[1])*(x-c[0])+(a[0]-c[0])*(y-c[1]))/den;w2=1-w0-w1
    z=w0*a[2]+w1*b[2]+w2*c[2];u=w0*uvt[0,0]+w1*uvt[1,0]+w2*uvt[2,0];vv=w0*uvt[0,1]+w1*uvt[1,1]+w2*uvt[2,1]
    pixels=tex[np.clip((vv*tex.shape[0]).astype(int),0,tex.shape[0]-1),np.clip((u*tex.shape[1]).astype(int),0,tex.shape[1]-1)].copy();pixels[:,:,:3]=(pixels[:,:,:3]*shade).astype(np.uint8)
-   zz=zbuf[mn[1]:mx[1]+1,mn[0]:mx[0]+1];mask=(w0>=-1e-6)&(w1>=-1e-6)&(w2>=-1e-6)&(z>zz)&(pixels[:,:,3]>10)
+   zz=zbuf[mn[1]:mx[1]+1,mn[0]:mx[0]+1];mask=(w0>=-1e-6)&(w1>=-1e-6)&(w2>=-1e-6)&(z>zz+1e-7)&(pixels[:,:,3]>10)
    output[mn[1]:mx[1]+1,mn[0]:mx[0]+1][mask]=pixels[mask];zz[mask]=z[mask]
  return Image.fromarray(output)
-manifest={}
+
+def worn_outfit(names):
+ # Player proportions, wearing the actual equipment layers rather than inventory icons.
+ # Coordinates are Y-up, front toward -Z. Vanilla armor uses a 64x32 UV atlas.
+ result=[]; provenance={}
+ parts={'body':([-4,12,-2],[4,24,2],16,16),
+        'arm':([-8,12,-2],[-4,24,2],40,16),
+        'leg':([-4,0,-2],[0,12,2],0,16)}
+ def cube(lo,hi,texture=None,u=0,v=0,inflate=0):
+  lo=np.array(lo,float);hi=np.array(hi,float);w,h,d=hi-lo
+  e=box((lo-inflate).tolist(),(hi+inflate).tolist(),'layer')
+  if texture is not None:
+   coords={'north':[u+d,v+d,u+d+w,v+d+h],
+           'south':[u+2*d+w,v+d,u+2*d+2*w,v+d+h],
+           'east':[u,v+d,u+d,v+d+h],
+           'west':[u+d+w,v+d,u+2*d+w,v+d+h],
+           'up':[u+d,v,u+d+w,v+d],
+           'down':[u+d+w,v+d,u+d+2*w,v]}
+   for face,uv in coords.items():e['faces'][face]['uv']=[uv[0]/4,uv[1]/2,uv[2]/4,uv[3]/2]
+  return geometry({'elements':[e]},{'layer':texture if texture is not None else solid((44,51,48))})
+ def mirrored(polys):return [(v*np.array([-1,1,1]),uv,tex,f) for v,uv,tex,f in polys]
+ for part,(lo,hi,u,v) in parts.items():
+  polys=cube(lo,hi);result+=polys
+  if part!='body':result+=mirrored(polys)
+ # A neutral studio mannequin keeps attention on the earned outfit; no extra helmet is implied.
+ result+=geometry({'elements':[box([-4,24,-4],[4,32,4],'head')]},{'head':np.full((16,16,4),(145,143,127,255),dtype=np.uint8)})
+ for name in names:
+  equipment_path=pack/'equipment'/f'{name}.json'
+  equipment=json.load(open(equipment_path));is_legs=name.endswith('_legs');is_boots=name.endswith('_boots')
+  layer='humanoid_leggings' if is_legs else 'humanoid'
+  tex_id=equipment['layers'][layer][0]['texture'].split(':')[1]
+  path=pack/'textures/entity/equipment'/layer/f'{tex_id}.png'
+  tex=np.array(Image.open(path).convert('RGBA'))
+  provenance[name]={'equipmentSha256':hashlib.sha256(equipment_path.read_bytes()).hexdigest(),'texture':str(path.relative_to(pack)),'textureSha256':hashlib.sha256(path.read_bytes()).hexdigest()}
+  for part in (['leg'] if is_boots else ['body','leg'] if is_legs else ['body','arm']):
+   lo,hi,u,v=parts[part];polys=cube(lo,hi,tex,u,v,.5 if is_legs else 1)
+   result+=polys
+   if part!='body':result+=mirrored(polys)
+ return result,provenance
+
+manifest=json.loads(Path('content/season-previews.json').read_text()) if len(sys.argv)>2 else {}
+armor_sources={}
 for rid,r in source['rewards'].items():
  if r['kind']=='title':continue
+ if len(sys.argv)>2 and rid not in sys.argv[2:]:continue
  polys=[];names=[]
  if r['kind']=='cosmetic':
   for i,asset in enumerate(r['assetIds']):
    name=mapping[asset.split(':')[1]];names.append(name);m,t=load(name)
-   # Outfit previews are a three-piece product lineup, not an invented worn mesh.
    polys+=geometry(m,t,((i-1)*18,0,0) if len(r['assetIds'])>1 else (0,0,0))
+  if rid.endswith('_regalia'):
+   polys,provenance=worn_outfit(names);armor_sources.update(provenance)
   origin='game-model'
  else:
   kind='supply' if r['kind']=='supplies' else 'scroll' if 'SCROLL' in r['giftReward'] else 'repair' if 'REPAIR' in r['giftReward'] else 'coins'
@@ -100,4 +143,5 @@ for rid,r in source['rewards'].items():
  render(polys,30,800).save(out/f'{rid}-large.webp',quality=94)
  manifest[rid]={'source':origin,'models':names,'frames':8,'image':f'/season/rewards/{rid}-0.webp','large':f'/season/rewards/{rid}-large.webp'}
 Path('content/season-previews.json').write_text(json.dumps(manifest,indent=2))
+if armor_sources:Path('docs/season-road/armor-sources.json').write_text(json.dumps(armor_sources,indent=2)+'\n')
 print(f'Rendered {len(manifest)} rewards, eight angles and large hero variants each.')

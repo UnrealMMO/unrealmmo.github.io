@@ -112,7 +112,7 @@ export default function SeasonPass() {
               src="/season/rewards/hollow_regent_regalia-large.webp"
               width={800}
               height={800}
-              alt="Actual Hollow Regent chest, leggings and boots models"
+              alt="Hollow Regent chest, leggings and boots worn together on a neutral mannequin"
               loading="lazy"
             />
             <img

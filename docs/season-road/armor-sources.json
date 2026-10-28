@@ -1,0 +1,32 @@
+{
+  "season1_harvest_warden_chest": {
+    "equipmentSha256": "2dde9d7cb98356c934e2b7f73e7ad7e91fc13728d7626668006035378a800793",
+    "texture": "textures/entity/equipment/humanoid/season1_harvest_warden_chest.png",
+    "textureSha256": "9d0c1f7a7e47d107429946d5548fc6bfdf3e816f3bcde1cc723ca943074e76d8"
+  },
+  "season1_harvest_warden_legs": {
+    "equipmentSha256": "130c2058ddbd912f34b3ea92a9897346ad14022fa120644ad62b69a3fb77031b",
+    "texture": "textures/entity/equipment/humanoid_leggings/season1_harvest_warden_legs.png",
+    "textureSha256": "ccdffa425f9a17b508ae4546b72f3bf0a57ea3c9b9f73a36f213783e7f469149"
+  },
+  "season1_harvest_warden_boots": {
+    "equipmentSha256": "819b0160ee231ead89bed7a28174bebaffe02e3d83020e5b246bce9ea8b69b56",
+    "texture": "textures/entity/equipment/humanoid/season1_harvest_warden_boots.png",
+    "textureSha256": "f7af7e09a5d4a5ff5b1474bcd61530f75435cf4e7e23023b476c6cbd6b750c2b"
+  },
+  "season1_hollow_regent_chest": {
+    "equipmentSha256": "a6155384d4add0aee702cbf5f225110f2466fed1c68d680649c2c9437e57aaae",
+    "texture": "textures/entity/equipment/humanoid/season1_hollow_regent_chest.png",
+    "textureSha256": "867af6df5fa663a1d8474ef62a6f5429352768780830765f9cc552fb9aaf808f"
+  },
+  "season1_hollow_regent_legs": {
+    "equipmentSha256": "feedae9c3e7d2ff2d03dde9a5785e4e6756f312ea83779ace9095386f6ae34a4",
+    "texture": "textures/entity/equipment/humanoid_leggings/season1_hollow_regent_legs.png",
+    "textureSha256": "0cc53e85d195f9b24f647f35f2523e6d27f583b6af7614c1c09f0d52356a846f"
+  },
+  "season1_hollow_regent_boots": {
+    "equipmentSha256": "84561648023fb446a6c8cc50235f23ef7711ca2e2678ffa225a894dd31e807fb",
+    "texture": "textures/entity/equipment/humanoid/season1_hollow_regent_boots.png",
+    "textureSha256": "250ab5543a821e46d38f8166117cb8eafc3da0cd00620e927ee57e5f500810d2"
+  }
+}

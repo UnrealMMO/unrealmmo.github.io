@@ -308,7 +308,7 @@ export function SeasonRoad() {
                   <Details reward={reward} />
                   <p className="reward-preview-note">
                     {preview?.source === "game-model"
-                      ? "Rendered from our actual game models and textures. Outfit bundles show the individual pieces. Studio lighting differs from the game."
+                      ? "Rendered from our actual game models and textures. Regalia is shown worn on a neutral mannequin using its in-game armor textures. Studio lighting differs from the game."
                       : reward.kind === "title"
                         ? "Nameplate preview. Your selected title appears with your character’s name."
                         : "Original reward artwork. In-game consumables currently use vanilla item appearances."}
