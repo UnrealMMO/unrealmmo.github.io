@@ -47,3 +47,23 @@ test("Checkout placeholders stay local and cannot collect payment or fulfill pre
     /https:\/\/.*stripe|<form|fetch\(|localStorage|sessionStorage|use server/,
   );
 });
+
+test("Every visual reward has eight real render views and a large preview", async () => {
+  const { existsSync } = await import("node:fs");
+  const previews = JSON.parse(
+    readFileSync("content/season-previews.json", "utf8"),
+  );
+  for (const [id, reward] of Object.entries(season.rewards)) {
+    if (reward.kind === "title") continue;
+    assert.ok(previews[id], id);
+    assert.equal(
+      previews[id].source,
+      reward.kind === "cosmetic" ? "game-model" : "original-item-art",
+    );
+    for (let angle = 0; angle < 8; angle++)
+      assert.ok(existsSync(`public/season/rewards/${id}-${angle}.webp`));
+    assert.ok(existsSync(`public/season/rewards/${id}-large.webp`));
+  }
+  assert.ok(existsSync("public/season/woodland.webp"));
+  assert.ok(existsSync("public/season/court.webp"));
+});

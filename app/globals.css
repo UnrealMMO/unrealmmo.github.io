@@ -3382,7 +3382,7 @@ tbody tr:nth-child(even) {
   }
 }
 
-/* Hollow Harvest: a seasonal collection within the UnrealMMO palette. */
+/* Hollow Harvest reward road. Static renders keep the full track light. */
 .season-page {
   --season-gold: #e6bd83;
   background: #101d1a;
@@ -3390,411 +3390,777 @@ tbody tr:nth-child(even) {
 .season-page em {
   color: var(--season-gold);
 }
-.season-hero {
-  position: relative;
-  isolation: isolate;
-  padding: 175px 0 95px;
-  overflow: hidden;
-}
-.season-backdrop {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-  opacity: 0.3;
-  filter: sepia(0.5);
-}
-.season-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, #101d1aed, #101d1a75),
-    linear-gradient(0deg, #101d1a, transparent 70%);
-  z-index: -1;
-}
-.season-hero-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 80px;
-  align-items: center;
-}
 .season-kicker {
-  font-size: 0.76rem;
+  font-size: 0.73rem;
   letter-spacing: 0.18em;
   font-weight: 700;
   color: var(--season-gold);
-  margin-bottom: 22px;
-}
-.season-hero h1 {
-  font-size: clamp(4rem, 8.5vw, 7.6rem);
-  line-height: 0.98;
-}
-.season-hero p:not(.season-kicker) {
-  max-width: 560px;
-  color: #cbd1c6;
-}
-.season-hero .season-lead {
-  font-size: 1.4rem;
-  line-height: 1.5;
-  margin: 28px 0 18px;
-  color: #f0e8d7 !important;
-}
-.season-actions {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 24px;
-  margin: 32px 0 14px;
+  margin-bottom: 20px;
 }
 .season-button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   gap: 14px;
-  padding: 16px 23px;
+  padding: 17px 25px;
   background: var(--season-gold);
   color: #17251d;
   font-weight: 700;
   line-height: 1.4;
-  border: 1px solid transparent;
   text-align: center;
 }
 .season-button:hover {
   background: #f2d3a5;
 }
 .season-text-link {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
   text-decoration: underline;
   text-underline-offset: 5px;
 }
-.season-note,
-.season-caption {
-  font-size: 0.85rem;
-  color: #b9c2b7;
+.harvest-hero {
+  min-height: 800px;
+  height: 95svh;
+  max-height: 1100px;
+  position: relative;
+  isolation: isolate;
+  background: #152421 url("/season/woodland.webp") center 65% / cover;
+  overflow: hidden;
 }
-.season-seal {
-  margin: auto;
-  width: 300px;
-  height: 380px;
-  border: 1px solid #d3af735c;
-  border-radius: 150px 150px 6px 6px;
-  outline: 1px solid #d3af7330;
-  outline-offset: 12px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  color: var(--season-gold);
-  background: #17251c77;
+.harvest-hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #07140fec, transparent 83%),
+    linear-gradient(0deg, #101d1a, transparent 30%);
+  z-index: -1;
 }
-.season-seal svg {
-  width: 145px;
-  height: 110px;
-  margin: 25px 0 0;
+.harvest-hero-copy {
+  padding-top: 195px;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
 }
-.season-seal b {
-  font-family: var(--font-display);
-  font-size: 5rem;
-  line-height: 1.2;
+.harvest-hero-copy h1 {
+  font-size: clamp(4rem, 7.7vw, 7.4rem);
+  line-height: 1;
 }
-.season-seal span {
-  font-size: 0.66rem;
-  letter-spacing: 0.22em;
-}
-.season-seal span:last-child {
-  margin-top: 24px;
-}
-.season-ribbon {
-  border-block: 1px solid #d3af7330;
-  background: #1d2b24;
-}
-.season-ribbon > div {
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  padding-block: 20px;
-  font-size: 0.85rem;
-  color: #e5d7bd;
-}
-.season-section {
-  padding-top: 90px;
-  padding-bottom: 90px;
-}
-.season-section-heading {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: end;
-  margin-bottom: 45px;
-}
-.season-section-heading > p {
-  max-width: 540px;
-  color: #c4ccbf;
-}
-.season-collection {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 36px;
-}
-.season-collection article {
-  padding: 32px 0;
-  border-top: 1px solid #d3af7360;
-}
-.season-collection svg {
-  color: var(--season-gold);
-  margin-bottom: 24px;
-}
-.season-collection span {
-  display: block;
-  color: #bdc5b8;
-  letter-spacing: 0.15em;
-  font-size: 0.7rem;
-  margin-bottom: 12px;
-}
-.season-collection h3 {
+.harvest-hero-copy > p:not(.season-kicker) {
   font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 26px 0 18px;
+}
+.harvest-hero-copy > span {
+  display: block;
+  color: #c6cbbd;
+  margin-bottom: 30px;
+}
+.harvest-hero-copy a {
+  pointer-events: auto;
+}
+.harvest-hero-models {
+  position: absolute;
+  inset: 80px 0 0 37%;
+  pointer-events: none;
+}
+.harvest-hero-models img {
+  position: absolute;
+  object-fit: contain;
+  filter: drop-shadow(0 25px 30px #000b);
+}
+.hero-crown {
+  width: 83%;
+  top: 18%;
+  right: -3%;
+  transform: rotate(-9deg);
+}
+.hero-raven {
+  width: 57%;
+  top: -5%;
+  left: -4%;
+  transform: rotate(9deg);
+}
+.hero-lantern {
+  width: 48%;
+  bottom: -1%;
+  left: -8%;
+  transform: rotate(-8deg);
+}
+.harvest-scene-label {
+  position: absolute;
+  bottom: 24px;
+  right: 35px;
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  color: #c7c4ad;
+}
+.road-intro {
+  padding-block: 85px 65px;
+  text-align: center;
+}
+.road-intro > p:not(.season-kicker) {
+  max-width: 640px;
+  margin: 25px auto;
+  color: #c5cbbc;
+}
+.road-facts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px 35px;
+  color: var(--season-gold);
+  font-size: 0.8rem;
+}
+.road-jumps {
+  position: sticky;
+  top: 82px;
+  z-index: 15;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  background: #13211bf2;
+  border-block: 1px solid #bc965b60;
+  padding: 14px 20px;
+  backdrop-filter: blur(10px);
+}
+.road-jumps > span {
+  font-size: 0.65rem;
+  letter-spacing: 0.13em;
+  margin-right: 24px;
+  color: #d0b784;
+}
+.road-jumps a {
+  border: 1px solid #a8905a55;
+  padding: 5px 17px;
+  font-size: 0.8rem;
+}
+.road-jumps a:hover {
+  background: #c3a778;
+  color: #102820;
+}
+.road-legend {
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
+  text-align: center;
+  padding-block: 28px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: #d6c8a9;
+}
+.road-legend > svg {
+  margin: auto;
+}
+.road-legend > span:last-child {
+  color: var(--season-gold);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.road-chapter {
+  position: relative;
+  isolation: isolate;
+  padding: 40px 0 80px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  scroll-margin-top: 155px;
+}
+.road-woodland {
+  background-image:
+    linear-gradient(#0b1a16b8, #0c211c99, #0b1915dd),
+    url("/season/woodland.webp");
+}
+.road-court {
+  background-image:
+    linear-gradient(#191922a8, #10231c88, #0b1915dd), url("/season/court.webp");
+}
+.road-scenery {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: clip;
+  pointer-events: none;
+}
+.road-scenery img {
+  position: sticky;
+  top: 170px;
+  display: block;
+  width: 650px;
+  max-width: 65vw;
+  margin-left: -250px;
+  opacity: 0.28;
+  filter: drop-shadow(0 0 45px #57978a77);
+  transform: rotate(-18deg);
+}
+.road-chapter:nth-of-type(even) .road-scenery img {
+  margin-left: calc(100% - 400px);
+  transform: rotate(18deg);
+}
+.road-chapter-title {
+  text-align: center;
+  padding: 40px 20px 55px;
+}
+.road-chapter-title p {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: #dbb97f;
   margin-bottom: 15px;
 }
-.season-collection p {
-  color: #c4ccbf;
-  margin-bottom: 20px;
+.road-chapter-title h2 {
+  font-size: clamp(2rem, 4vw, 3.3rem);
 }
-.season-collection small {
-  color: var(--season-gold);
+.road-chapter-title > span {
+  display: block;
+  color: #c4cbbd;
+  margin-top: 15px;
 }
-.season-caption {
-  max-width: 820px;
+.road-path {
+  max-width: 1000px;
+  position: relative;
 }
-.season-compare-section {
-  background: #eae3d3;
-  color: #24382c;
-  padding-block: 80px;
+.road-path::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #6d654d, #d5b57b, #6d654d);
+  box-shadow:
+    0 0 0 9px #1c302569,
+    0 0 45px #d7b57833;
 }
-.season-compare {
+.road-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 120px minmax(0, 1fr);
+  align-items: center;
+  gap: 25px;
+  padding: 22px 0;
+}
+.road-row:nth-child(even) {
+  transform: translateX(24px);
+}
+.road-row:nth-child(odd) {
+  transform: translateX(-24px);
+}
+.road-marker {
+  text-align: center;
+  width: 100px;
+  justify-self: center;
+  position: relative;
+  background: #172b24;
+  border: 1px solid #bc965b80;
+  border-radius: 50%;
+  padding: 12px 0;
+  box-shadow: 0 0 0 7px #0b1e1988;
+}
+.road-marker span {
+  display: block;
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  color: #b8c1af;
+}
+.road-marker b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  line-height: 1.25;
+  color: #e5c58e;
+}
+.road-marker small {
+  display: block;
+  font-size: 0.57rem;
+  color: #c1c9b9;
+}
+.road-milestone .road-marker {
+  border-color: #e6bd83;
+  box-shadow:
+    0 0 0 7px #b19a6222,
+    0 0 35px #d7b57844;
+}
+.road-card {
+  position: relative;
+  width: 100%;
+  min-height: 290px;
+  border: 1px solid #b9ac8970;
+  background: radial-gradient(ellipse at 50% 35%, #435449c7, #15251eef 75%);
+  color: #eee9db;
+  cursor: pointer;
+  text-align: center;
+  padding: 18px;
+  transition:
+    transform 0.2s,
+    border-color 0.2s,
+    background 0.2s;
+}
+.road-card::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid #adac8c25;
+  pointer-events: none;
+}
+.road-card:hover {
+  transform: translateY(-5px);
+  border-color: #e3d1ab;
+  background: radial-gradient(ellipse at 50% 35%, #536650d9, #15251eef 75%);
+}
+.road-premium {
+  border: 2px solid #d7b579;
+  background: radial-gradient(ellipse at 50% 35%, #51434ec7, #1d2223f5 75%);
+  box-shadow: 0 0 20px #d6ae6517;
+}
+.road-premium::before {
+  border-color: #c5a86c55;
+}
+.road-premium:hover {
+  background: radial-gradient(ellipse at 50% 35%, #6a5265d9, #1d2223f5 75%);
+  border-color: #ffe0a7;
+}
+.road-card-track {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  align-items: center;
+  font-size: 0.55rem;
+  letter-spacing: 0.16em;
+  color: #c1c6b4;
+}
+.road-premium .road-card-track {
+  color: #edc98d;
+}
+.road-card > img {
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 10px #0007);
+  transition: transform 0.3s;
+}
+.road-card:hover > img {
+  transform: scale(1.07);
+}
+.road-card-caption h3 {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.road-card-caption > span {
+  display: block;
+  font-size: 0.72rem;
+  color: #bfc6b7;
+  margin-top: 7px;
+}
+.road-card-caption > small {
+  display: block;
+  font-size: 0.58rem;
+  color: #d9be8c;
+  margin-top: 11px;
+}
+.road-title-art {
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #e6c58b;
+  font-family: var(--font-display);
+  text-shadow: 0 0 25px #daaa6655;
+}
+.road-title-art b {
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.road-rest {
+  color: #ddbc7750;
+  text-align: center;
+  font-size: 1.8rem;
+}
+.road-progress {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 75px;
+  gap: 30px 65px;
+  padding-block: 90px;
+}
+.road-progress > svg {
+  grid-column: 1/-1;
+  color: #d7b579;
+}
+.road-progress p {
+  color: #c2ccbe;
+  margin-bottom: 20px;
+}
+.road-purchase {
+  background:
+    linear-gradient(90deg, #101c1bb0, #18251fef),
+    url("/season/court.webp") center/cover;
+  border-top: 1px solid #caaa6b70;
+  padding: 70px 0 35px;
+}
+.road-purchase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
+  gap: 60px;
 }
-.season-free .season-kicker {
-  color: #735728;
+.purchase-models {
+  position: relative;
+  min-height: 480px;
 }
-.season-free h2 {
-  font-size: clamp(2rem, 3vw, 3rem);
-  margin-bottom: 25px;
+.purchase-models > img:first-child {
+  position: absolute;
+  width: 125%;
+  max-width: none;
+  top: 140px;
+  left: -12%;
+  filter: drop-shadow(0 12px 20px #0008);
 }
-.season-compare ul {
-  padding-left: 20px;
-  margin: 24px 0;
+.purchase-crown {
+  position: absolute;
+  width: 65%;
+  top: -100px;
+  left: 18%;
 }
-.season-compare li {
-  padding: 5px 0;
-}
-.season-premium {
-  background: #1c3028;
-  padding: 38px;
-  color: #ede6d6;
-  border-top: 4px solid #cba66c;
-}
-.season-premium > svg {
-  color: #e6bd83;
-  float: right;
+.road-purchase .season-kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .season-price {
   font-family: var(--font-display);
   font-size: 3.7rem;
-  line-height: 1;
-  margin-bottom: 25px;
+  margin: 25px 0 15px;
+  color: #e6bd83;
 }
 .season-price span {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  color: #c4ccbf;
+  font: 0.8rem var(--font-body);
+  color: #ccd1c4;
   display: inline-block;
 }
-.season-premium h3 {
-  font-size: 1.65rem;
+.road-purchase ul {
+  padding-left: 20px;
+  margin: 20px 0 28px;
+  color: #ccd1c4;
 }
-.season-premium .season-button {
-  width: 100%;
+.road-purchase li {
+  padding-block: 5px;
 }
-.season-premium > small {
-  display: block;
-  margin-top: 13px;
-  color: #c4ccbf;
+.road-purchase .reward-preview-note {
+  margin-top: 22px;
 }
-.season-track details {
-  border: 1px solid #d3af7340;
-  margin-top: 14px;
+.road-checkout {
+  text-align: center;
+  border-top: 1px solid #ab97674d;
+  padding-top: 28px;
+  margin-top: 65px;
 }
-.season-track summary {
-  padding: 20px 24px;
-  cursor: pointer;
-  font-size: 1.15rem;
-  background: #22342b;
+.road-checkout a {
+  display: inline-block;
+  margin: 15px;
+  font-size: 0.8rem;
+  color: #e6bd83;
 }
-.season-track summary span {
-  float: right;
-  font-size: 0.85rem;
-  color: #c4ccbf;
-  padding-top: 4px;
-}
-.season-track table {
-  border-collapse: collapse;
-  width: 100%;
-  table-layout: fixed;
-}
-.season-track th,
-.season-track td {
-  padding: 16px 22px;
-  border-bottom: 1px solid #d3af7328;
-  text-align: left;
-  vertical-align: top;
-  overflow-wrap: anywhere;
-}
-.season-track th:first-child {
-  width: 70px;
-  color: var(--season-gold);
-}
-.season-track thead {
-  background: #172920;
+.road-checkout p {
+  color: #c4cbbd;
   font-size: 0.85rem;
 }
-.season-track td:last-child {
-  background: #423c271c;
+.reward-overlay {
+  position: fixed;
+  inset: 0;
+  background: #030a08dc;
+  z-index: 100;
+  backdrop-filter: blur(8px);
 }
-.season-track td strong {
-  display: block;
-  font-weight: 500;
-}
-.season-track td small {
-  display: block;
-  color: #bac3b5;
-  line-height: 1.5;
-  margin-top: 5px;
-  font-size: 0.78rem;
-}
-.season-empty {
-  color: #9aa899;
-}
-.season-how {
-  border-top: 1px solid #d3af7340;
+.reward-inspector {
+  position: fixed;
+  z-index: 101;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(900px, 94vw);
+  max-height: 90svh;
+  overflow: auto;
+  background: #1a2b23;
+  border: 1px solid #b1ab8d;
+  color: #eae7db;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 70px;
+  padding: 30px;
+  gap: 30px;
+  box-shadow: 0 30px 100px #0009;
 }
-.season-how svg {
-  margin-bottom: 22px;
-  color: var(--season-gold);
+.reward-inspector-premium {
+  border: 2px solid #ddbc7d;
 }
-.season-how h3 {
-  margin: 0 0 12px;
+.reward-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 2;
 }
-.season-how p {
-  margin: 0 0 30px;
-  color: #c4ccbf;
+.reward-inspector-art {
+  align-self: center;
+  background: radial-gradient(ellipse, #52605277, transparent 70%);
 }
-.season-checkout {
-  border-top: 1px solid #d3af7360;
-  padding-block: 65px 100px;
-  text-align: center;
+.reward-inspector-art > img {
+  width: 100%;
+  height: auto;
 }
-.season-checkout > svg {
-  color: var(--season-gold);
-  margin: 0 auto 22px;
-}
-.season-checkout p:not(.season-kicker) {
-  max-width: 580px;
-  margin: 25px auto;
-  color: #c4ccbf;
-}
-.season-checkout .season-text-link {
+.reward-turn {
   display: flex;
   justify-content: center;
-  margin-top: 24px;
+  align-items: center;
+  gap: 20px;
+}
+.reward-turn button {
+  cursor: pointer;
+  padding: 12px;
+  border: 1px solid #bca16b88;
+}
+.reward-turn span {
+  font-size: 0.75rem;
+}
+.reward-inspector-copy {
+  padding-block: 30px 12px;
+}
+.reward-inspector-copy h2 {
+  font-size: 1.9rem;
+  margin-bottom: 20px;
+}
+.reward-inspector-copy p {
+  margin-bottom: 16px;
+}
+.reward-preview-note {
+  font-size: 0.75rem;
+  color: #aebba9;
+  line-height: 1.6;
+}
+.reward-inspector-copy ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
 }
 @media (max-width: 1200px) and (min-width: 761px) {
   .nav-cta {
     display: none;
   }
 }
-@media (max-width: 900px) {
-  .season-hero-grid {
-    gap: 30px;
-    grid-template-columns: 1fr 0.65fr;
+@media (max-width: 1050px) {
+  .road-path {
+    max-width: 850px;
   }
-  .season-seal {
-    width: 210px;
-    height: 310px;
+  .road-row {
+    gap: 15px;
+    grid-template-columns: minmax(0, 1fr) 85px minmax(0, 1fr);
   }
-  .season-compare {
-    gap: 32px;
+  .road-marker {
+    width: 85px;
   }
 }
 @media (max-width: 760px) {
-  .season-hero {
-    padding: 125px 0 55px;
+  .harvest-hero {
+    min-height: 820px;
+    height: 100svh;
   }
-  .season-hero-grid,
-  .season-section-heading,
-  .season-compare,
-  .season-how {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  .harvest-hero-copy {
+    padding-top: 115px;
   }
-  .season-seal {
+  .harvest-hero-copy h1 {
+    font-size: 4rem;
+  }
+  .harvest-hero-copy > p:not(.season-kicker) {
+    font-size: 1.15rem;
+    margin-top: 18px;
+  }
+  .harvest-hero-copy > span {
+    font-size: 0.9rem;
+  }
+  .harvest-hero-models {
+    inset: 390px 0 0 0;
+  }
+  .hero-crown {
+    width: 85%;
+    top: 0;
+    right: -12%;
+  }
+  .hero-raven {
+    width: 60%;
+    top: -10%;
+    left: -8%;
+  }
+  .hero-lantern {
+    width: 50%;
+    bottom: -15%;
+    left: 0;
+  }
+  .harvest-scene-label {
+    right: 20px;
+    font-size: 0.43rem;
+  }
+  .road-intro {
+    padding-block: 55px 40px;
+  }
+  .road-jumps {
+    top: 70px;
+    gap: 8px;
+    padding: 10px;
+  }
+  .road-jumps > span {
     display: none;
   }
-  .season-ribbon > div {
-    flex-wrap: wrap;
-    justify-content: center;
-    font-size: 0.8rem;
-    gap: 8px 20px;
-    text-align: center;
+  .road-jumps a {
+    font-size: 0.75rem;
+    padding: 5px 15px;
   }
-  .season-section {
-    padding-block: 55px;
+  .road-legend {
+    grid-template-columns: 1fr 40px 1fr;
+    font-size: 0.58rem;
+    padding-block: 20px;
   }
-  .season-collection {
-    grid-template-columns: 1fr;
+  .road-chapter {
+    background-attachment: scroll;
+    padding-bottom: 40px;
+  }
+  .road-chapter-title {
+    padding: 30px 20px;
+  }
+  .road-chapter-title h2 {
+    font-size: 1.85rem;
+  }
+  .road-path {
+    width: calc(100% - 20px);
+  }
+  .road-row {
+    grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr);
+    gap: 6px;
+    padding-block: 14px;
+    transform: none !important;
+  }
+  .road-marker {
+    width: 44px;
+    padding: 8px 0;
+    box-shadow: 0 0 0 3px #0b1e1988;
+  }
+  .road-marker b {
+    font-size: 1.1rem;
+  }
+  .road-marker small {
+    font-size: 0.42rem;
+  }
+  .road-marker span {
+    font-size: 0.4rem;
+  }
+  .road-card {
+    min-height: 210px;
+    padding: 12px 7px;
+  }
+  .road-card > img {
+    height: 125px;
+  }
+  .road-card-track {
+    font-size: 0.43rem;
+    gap: 3px;
+    letter-spacing: 0.07em;
+  }
+  .road-card-caption h3 {
+    font-size: 0.73rem;
+  }
+  .road-card-caption > span {
+    font-size: 0.58rem;
+  }
+  .road-card-caption > small {
+    font-size: 0.5rem;
+  }
+  .road-title-art {
+    min-height: 120px;
     gap: 0;
   }
-  .season-collection article {
-    padding: 26px 0;
+  .road-title-art b {
+    font-size: 0.77rem;
   }
-  .season-premium {
-    padding: 28px 22px;
+  .road-title-art > span {
+    display: none;
   }
-  .season-track th,
-  .season-track td {
-    padding: 13px 10px;
-    font-size: 0.85rem;
+  .road-progress {
+    grid-template-columns: 1fr;
+    padding-block: 55px;
+    gap: 20px;
   }
-  .season-track th:first-child {
-    width: 42px;
+  .road-purchase-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
-  .season-track summary {
-    padding: 16px 12px;
-    font-size: 1rem;
+  .purchase-models {
+    min-height: 330px;
+    max-width: 430px;
+    width: 100%;
+    margin: auto;
   }
-  .season-track summary span {
-    font-size: 0.75rem;
+  .purchase-models > img:first-child {
+    top: 70px;
   }
-  .season-checkout {
-    padding-block: 45px 65px;
+  .purchase-crown {
+    top: -70px;
+  }
+  .road-purchase {
+    padding-top: 45px;
+  }
+  .reward-inspector {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 20px;
+  }
+  .reward-inspector-art {
+    max-width: 250px;
+    margin: auto;
+  }
+  .reward-inspector-copy {
+    padding-top: 20px;
+  }
+  .reward-inspector-copy h2 {
+    font-size: 1.6rem;
   }
 }
-.season-track th {
-  white-space: normal;
-  letter-spacing: 0.025em;
+@media (prefers-reduced-motion: reduce) {
+  .road-chapter {
+    background-attachment: scroll;
+  }
+  .road-card,
+  .road-card > img {
+    transition: none;
+  }
+  .road-card:hover,
+  .road-card:hover > img {
+    transform: none;
+  }
 }
-.season-track thead th:first-child {
-  white-space: nowrap;
-  padding-inline: 6px;
-  letter-spacing: 0;
+.road-purchase {
+  overflow: hidden;
+}
+.road-path::before {
+  display: none;
+}
+.road-line {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.road-line path {
+  fill: none;
+  stroke: #c5a970;
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 8px #cbb58166);
+}
+@media (max-width: 760px) {
+  .road-line {
+    display: none;
+  }
+  .road-path::before {
+    display: block;
+  }
 }

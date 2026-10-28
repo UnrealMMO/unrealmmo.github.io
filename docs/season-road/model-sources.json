@@ -1,0 +1,333 @@
+{
+  "harvest_warden_mask": {
+    "modelSha256": "a70b9dd72bf2ff77667999f59752de95f93ee181246931a64323ecd8c6ed0bbe",
+    "textureSha256": {
+      "front": "6d6ee8430038dc18a68c6ffc7fefee1c48cae3513912fb632a9e06d069c0660a",
+      "cloth": "db96c55373bad416fe8607eb24683a61bc86aa34ac37844435370db2bec8a05a",
+      "back": "936df54949389ff4c4291588fca52dd14e207077e9b019dabc2f9d3f652deafa",
+      "particle": "db96c55373bad416fe8607eb24683a61bc86aa34ac37844435370db2bec8a05a"
+    }
+  },
+  "candlekeeper_pickaxe": {
+    "modelSha256": "692116fdfa9a4240fd096b861b12ddbd282438a286f0edd4edccd60c7c72fb63",
+    "textureSha256": {
+      "wood": "da11da655f3306eccbc7e666626bd9b94aae8957eb9b291e55d5ce2d622654d7",
+      "iron": "34636da120cb1b0a535a833119483ac20b366844c0518ac7d6ba95cdb46111ed",
+      "brass": "503a981dba548e4206db15c48c3647b2e18fd67659fe7b126fc6a45ba17a3105",
+      "amber": "8d3bf09eb39904e1f351917ef8ae488276687a812be230038f8f4aa9a8a326fb",
+      "leather": "e6de04cc5facf69748e4ecb8fbe8d9d69f1d05d5e8fff3b4a5f37cb93d73231d",
+      "particle": "da11da655f3306eccbc7e666626bd9b94aae8957eb9b291e55d5ce2d622654d7"
+    }
+  },
+  "season1_little_lantern": {
+    "modelSha256": "456568117c3743b77734efea99dbdaada2a35614d775bb38cecd8f3b703cdac5",
+    "textureSha256": {
+      "wood": "9d2eab0def3f33e917d8ecd27de88556d2946e586dd99a4074565d4ad8c4c3ca",
+      "brass": "ffb02a87f40f6a36ae01d0fa6de06ca232616454d3aaf174a534f5142c512b47",
+      "wax": "1b46c7c45e0e72be98d679e553d46336ac9c18cc76c81925fda57f560338d059",
+      "flame": "e968bab014c433afa761928bc0b0c23813df7a485bca73a47b92ece7730a1b61",
+      "cloth": "73dcca217ca726bb8c773aa88c7bfd02d27d7b8b5ba666e54d8e7e7a8560ec50",
+      "particle": "9d2eab0def3f33e917d8ecd27de88556d2946e586dd99a4074565d4ad8c4c3ca"
+    }
+  },
+  "harvest_warden_sword": {
+    "modelSha256": "aeb9adeeea8833433ac77ecc5d56996374d5920ed55021efe6536522eb6c7570",
+    "textureSha256": {
+      "steel": "2bc73729ccc0058ac1c0f3b1d366ed8123b5d290254d80b35ed460021ab44c1b",
+      "edge": "5336c2993283d2699776e3360f4a71c2391ecad38fdf7bb9418c9e9c6f1c219d",
+      "brass": "b0c5951a1dc8c502627bf8dc5388b07df5cb32e849f0203624bfe6eb351c2e39",
+      "leather": "5a4eae0b2519949498520b8df91e59d0df6c06b303bb464fe84a4823c1a385d7",
+      "wood": "1776c1ade0cb765ce0fd77d0f3a5c14dfdd9be49855a3712c385ea308b968db3",
+      "amber": "07f3e532adfde240548129410a7bd09253439b6f40ce51912e49db6912f6284d",
+      "particle": "2bc73729ccc0058ac1c0f3b1d366ed8123b5d290254d80b35ed460021ab44c1b"
+    }
+  },
+  "harvest_warden_hat": {
+    "modelSha256": "7636ecfa16bfbc7209bfe662096144170ed5ece70b04841e1ad7228b4a768d52",
+    "textureSha256": {
+      "straw": "ad4e3766bd3b09355913391799b1b3c5b3d02ef82e13a1d71c2e348030652b97",
+      "binding": "fb5961fa9fdedf19e5d0a4c85df54b5069df671a0119233504d939faaeab019a",
+      "cloth": "cfaa94ab2569b6caea3523d12d87357865ab2f2ba4b991e8b6fdfd300d2220c0",
+      "wood": "6555947ee647ea0f1a24fd250daa55572adb286a9c6126d1b14625b4b741f6c7",
+      "amber": "742b19677b9dd3143800edb3317f03c35d99165af943d34dc4c7a86b6ce59723",
+      "particle": "ad4e3766bd3b09355913391799b1b3c5b3d02ef82e13a1d71c2e348030652b97"
+    }
+  },
+  "harvest_warden_shield": {
+    "modelSha256": "5f710b475d150462ad9cfcef3b28f5cb88c26049c5b21afd9d7dd5933881cf86",
+    "textureSha256": {
+      "oak": "55918585f91e02c45e7a310ed175b81ed05caebc1fc6c4d4584689bdbc3621bb",
+      "brass": "1f324dbfd53ae80aba7d16ac87e59ec042f35286b40b9601022caa1c20a508f0",
+      "leather": "c28a1b61eb30154d38d614baa1aa828676c4f80f154392869fba3df5638a79d2",
+      "amber": "aba5ce98bcc5e94d0974c52e634bee23f26d91f9803d1ed82cb15938feb8e22f",
+      "particle": "55918585f91e02c45e7a310ed175b81ed05caebc1fc6c4d4584689bdbc3621bb"
+    }
+  },
+  "hollow_pilgrim_hood": {
+    "modelSha256": "cfad662ae975a13e83eee4a705082a4950b757de81aa4ee008362accca5210dc",
+    "textureSha256": {
+      "cloth": "9da2f93a1685d294486e9e60d83b68733e15cf48244de29bf91eee16b289b393",
+      "lining": "14df49151b97617a3c9f339d5cd690f24bb6f31aa4635d63ec75ce18a3996e4d",
+      "binding": "9d3045582c567abecde46ccaeac0b68e2eac3c6f0cb5effbf15d26d3934b483c",
+      "clasp": "ea41f0d4ec2d12c819c52ce4d5287bce1dd8b09cfc6949cf8e72ec4b014a4af4",
+      "particle": "9da2f93a1685d294486e9e60d83b68733e15cf48244de29bf91eee16b289b393"
+    }
+  },
+  "hollow_regent_mask": {
+    "modelSha256": "f89bc1a51d8f8676eb6e0916debd86dba2af56a1efe48f4743e7c152f0759d37",
+    "textureSha256": {
+      "porcelain": "99047dce1b94a6b2786126b61220a9733c27d7ac5a7b2eaa2dfc47dfd858cf06",
+      "face": "6774c89cf6d0acd5848e3e4f243dc0cbd10ba0b19569617ba1a1a9a92e1b9395",
+      "plum": "fb888bf63a0a5becc9e821a3da41893cf535df321ccc0fe83405c1a57702144c",
+      "silver": "9a6e29b8752197fa18812146a3f22d5786811891826c373eacacc3b2fb72f1bb",
+      "glass": "e0a2ab57ae737d5d64b4784d7a3e6ce1a331f4fd9021f76b00484fd90512d173",
+      "particle": "99047dce1b94a6b2786126b61220a9733c27d7ac5a7b2eaa2dfc47dfd858cf06"
+    }
+  },
+  "graveglass_pickaxe": {
+    "modelSha256": "2260bd0423c31da73adc9b256a645029af1dbf2dcaa4073a83f2aaa3b0fb7728",
+    "textureSha256": {
+      "glass": "4a5393df07c7f9fe754dc67bee5c9252f8ddfdf1a205093f00a8824ecd958f3e",
+      "silver": "e2abc0d5094fefc47e6be75a87d6b192ccf22e35bcbc1d04d5771db104329baf",
+      "porcelain": "716847015b92531d4fc9d43f884d57f0223788d75703842b1db8a8a0bcd975e0",
+      "plum": "d9fbafb660e4d48e75e3f3803e1723846e1ec37323bdc15b014d98a1a3c7754e",
+      "particle": "4a5393df07c7f9fe754dc67bee5c9252f8ddfdf1a205093f00a8824ecd958f3e"
+    }
+  },
+  "season1_nevermore": {
+    "modelSha256": "403306ce7d7b5e924872874918adea23e8b575951fdfe805c4110ef78bcbc613",
+    "textureSha256": {
+      "feather": "56da946b12b7bc4df423a663c09e9ca22b767b19c1c301d1d5928e4ba9514d8e",
+      "breast": "1366646db6e80cefa45376224e1db0bb9089f17656be8289bbbe26b33fe1b7a1",
+      "beak": "545f47c449eae7bb0e76163801544fb268e554998f57b73b7dfc9341d1a90224",
+      "eye": "1d7179d506af0a6edf7fbfb1c5ff608ef89d2b2d3981d04e0e0c7b5b18cb221f",
+      "silver": "8142c9ff599592536288b065135a7282c36fcec3f91387c18a0782f8ea744ff9",
+      "particle": "56da946b12b7bc4df423a663c09e9ca22b767b19c1c301d1d5928e4ba9514d8e"
+    }
+  },
+  "graveglass_axe": {
+    "modelSha256": "067098c4b9d3406572453daae5e64e03149de56f878b3ad843075f998cac0603",
+    "textureSha256": {
+      "glass": "4a5393df07c7f9fe754dc67bee5c9252f8ddfdf1a205093f00a8824ecd958f3e",
+      "silver": "e2abc0d5094fefc47e6be75a87d6b192ccf22e35bcbc1d04d5771db104329baf",
+      "porcelain": "716847015b92531d4fc9d43f884d57f0223788d75703842b1db8a8a0bcd975e0",
+      "plum": "d9fbafb660e4d48e75e3f3803e1723846e1ec37323bdc15b014d98a1a3c7754e",
+      "particle": "4a5393df07c7f9fe754dc67bee5c9252f8ddfdf1a205093f00a8824ecd958f3e"
+    }
+  },
+  "hollow_regent_sword": {
+    "modelSha256": "d6fc4c21a9e8a9683dc94c9844a65ebe510ae996c8042d7e10bbdc4fdb694222",
+    "textureSha256": {
+      "glass": "c6b3ca266cd2bee058577fe071102e413378c1abbdbce0c6d6cf402e1d1c5933",
+      "silver": "4d0e70a0df85a71a4e4e0d7b892ed3e349eb5cce71f353727d94cc656cfba207",
+      "porcelain": "adce23bf2fa43fea9c0d9ff78c6c8ea3782b6b3f532ce08c6ee65b2f7ecf069b",
+      "plum": "c786073cd2198e186e8d2205d59400fb184fb8b68166b6623d4eb7cbaa7d613c",
+      "particle": "4d0e70a0df85a71a4e4e0d7b892ed3e349eb5cce71f353727d94cc656cfba207"
+    }
+  },
+  "graveglass_shovel": {
+    "modelSha256": "1a3f0ec63104df49be1a144bc03f98af0d53c1a0e992fa23c24905c06afa2f51",
+    "textureSha256": {
+      "glass": "4a5393df07c7f9fe754dc67bee5c9252f8ddfdf1a205093f00a8824ecd958f3e",
+      "silver": "e2abc0d5094fefc47e6be75a87d6b192ccf22e35bcbc1d04d5771db104329baf",
+      "porcelain": "716847015b92531d4fc9d43f884d57f0223788d75703842b1db8a8a0bcd975e0",
+      "plum": "d9fbafb660e4d48e75e3f3803e1723846e1ec37323bdc15b014d98a1a3c7754e",
+      "particle": "4a5393df07c7f9fe754dc67bee5c9252f8ddfdf1a205093f00a8824ecd958f3e"
+    }
+  },
+  "season1_hollow_regent_mantle_empty": {
+    "modelSha256": "1f1a46e644d3de377a30d9cc91706ce5a59a048b89ba8c47e7b0f57536939bf8",
+    "textureSha256": {
+      "glass": "4a5393df07c7f9fe754dc67bee5c9252f8ddfdf1a205093f00a8824ecd958f3e",
+      "silver": "e2abc0d5094fefc47e6be75a87d6b192ccf22e35bcbc1d04d5771db104329baf",
+      "porcelain": "716847015b92531d4fc9d43f884d57f0223788d75703842b1db8a8a0bcd975e0",
+      "plum": "d9fbafb660e4d48e75e3f3803e1723846e1ec37323bdc15b014d98a1a3c7754e",
+      "particle": "4a5393df07c7f9fe754dc67bee5c9252f8ddfdf1a205093f00a8824ecd958f3e",
+      "season1_hollow_regent_mantle_empty_0_north_anchor": "c4ab0db8ed6e501d10618450f642025792e33e307b570f282361c66188e4e47e",
+      "season1_hollow_regent_mantle_empty_0_south_anchor": "87446d2a47f327bd7687df424d9b951cfc15a37804d98ff1424cd6992e4947ed",
+      "season1_hollow_regent_mantle_empty_0_east_anchor": "5af581e2800820ae593b0eba4a764d1a1a274db8c9c6e4c846e6b565a71c7286",
+      "season1_hollow_regent_mantle_empty_0_west_anchor": "e41a5ac1ef1ea9a60bf26e196eb3f19f538e15f84b117d1c1aca89865cb31512",
+      "season1_hollow_regent_mantle_empty_0_up_anchor": "ea7f8437c235a187d77438c0be02cdf964b7734e8bbbfb7832f28239fd3245ee",
+      "season1_hollow_regent_mantle_empty_0_down_anchor": "b406511a18464d316eb31f6affe00b25a2ff576ba7d79779d70a846b01389d5a",
+      "season1_hollow_regent_mantle_empty_1_north_anchor": "76da5de99b4577bc404779453a784d32baba51019e0062789adacf8927804cd1",
+      "season1_hollow_regent_mantle_empty_1_south_anchor": "19d567cdeccef72c1faa7eaf04170f42b05f78dc5ae081381e95c66f4c0598fe",
+      "season1_hollow_regent_mantle_empty_1_east_anchor": "5bcb5c134d14be059b13d9731959916b9ead4f887104d8ab1414281130d88e0a",
+      "season1_hollow_regent_mantle_empty_1_west_anchor": "4e3d4c3545a6b506bae56b3a6c8dfeedf225b5e54b02fd1d636b11d076e027a1",
+      "season1_hollow_regent_mantle_empty_1_up_anchor": "4ec0468e17e19778fd43bfb193fb7ff2b9c9d09a6c94f513da7945801d1884b2",
+      "season1_hollow_regent_mantle_empty_1_down_anchor": "2c6183b9b9d659f4e6f9da9b83efc028964f9e5c9218114f909e814d405c7ea5",
+      "season1_hollow_regent_mantle_empty_2_north_anchor": "3f71aa5f34f6b796c028bfda7d7bf643b16752ddb369ea65c43e684ac1a4831b",
+      "season1_hollow_regent_mantle_empty_2_south_anchor": "68091b54abc2debb4761902422bac9f225b57962603300e4179b3d1b6885aef1",
+      "season1_hollow_regent_mantle_empty_2_east_anchor": "ccf8a97d64a536e9826622e3d04c678dd1382cce19b7dc520f70ec3f0b734d80",
+      "season1_hollow_regent_mantle_empty_2_west_anchor": "e66a50c84ade61f6c7c939958a532e5a08422320cb1eb4ab428097e59f8a5738",
+      "season1_hollow_regent_mantle_empty_2_up_anchor": "814b34bdc159b1f30fedcd280e37a1e8b7b07f38193246a86cb47a5fe27d0537",
+      "season1_hollow_regent_mantle_empty_2_down_anchor": "1ba4e5dd1f3b4cd48fa915ca90c8a812c4aedb247bef673dde1df2265f7f7a7c",
+      "season1_hollow_regent_mantle_empty_3_north_anchor": "ea78e2ca76e5e8ddc27b98cbd5ed2f6c4c1239ee608c04d08215a03a8e2a69ab",
+      "season1_hollow_regent_mantle_empty_3_south_anchor": "2c21d18f00b350fddad1946d1ae7c70f9aa63ad38b22c5c72468aa011e9c109e",
+      "season1_hollow_regent_mantle_empty_3_east_anchor": "5daddd2ec304aa18a2f67a2fcb72611f1ae406eed97b1296837d0f4516d253f9",
+      "season1_hollow_regent_mantle_empty_3_west_anchor": "48c05dfb3c27a965179e3f4177c6bc0c024729435ecfee9c228b94890afa01c0",
+      "season1_hollow_regent_mantle_empty_3_up_anchor": "f3596b61d468b5a0193841a81d23126e95dcd3f301d596b4dc66fe32c40fb561",
+      "season1_hollow_regent_mantle_empty_3_down_anchor": "78f124f540f315af92b91fac048ba47c1a902a919c0bd1061a866799c8c936a8",
+      "season1_hollow_regent_mantle_empty_4_north_anchor": "d884087e3035d62c4f4cb3231be1fda05d9b06e48aae7170cd2451e7383b0fc3",
+      "season1_hollow_regent_mantle_empty_4_south_anchor": "2016615f7cb477e7047f2b696afcc34df10c297fd2d736a55107190be7dcbdff",
+      "season1_hollow_regent_mantle_empty_4_east_anchor": "873545e171a777da4979a360689dd3791409c76eb5e2d9493e3b57bc9ac78614",
+      "season1_hollow_regent_mantle_empty_4_west_anchor": "1f8e8a30c6938150bf6b26050715fb7c381e9fa5b14e239146ff64844676abaa",
+      "season1_hollow_regent_mantle_empty_4_up_anchor": "c0a5cdb315e39dc3f2211d042e57c400ef147460b2cbbe5b96a482f2b8783e88",
+      "season1_hollow_regent_mantle_empty_4_down_anchor": "4b1a2607667d65c36ccadd1186dc26f17aec14f8e5f6b051a67cd4d8cd291d23",
+      "season1_hollow_regent_mantle_empty_5_north_anchor": "9b7f1252c95ae151b485227a7d7c1fa14e962deed8a709fa0d7af418cee230a8",
+      "season1_hollow_regent_mantle_empty_5_south_anchor": "b4e988ac947722f5ab1ca062d7e0795be3f0ac64c5d66a2d083752d51c075a9c",
+      "season1_hollow_regent_mantle_empty_5_east_anchor": "9f28da1df8a86c8635e88ef03323e943241250d2874975569cab7869b23f4157",
+      "season1_hollow_regent_mantle_empty_5_west_anchor": "cf18cad8174de31bf908984c275d8f8218d51257cf258363a0026ada100fbf43",
+      "season1_hollow_regent_mantle_empty_5_up_anchor": "88a10fbc011e64bd310ad34080e193701fc8897e104d708931adbe5229db9069",
+      "season1_hollow_regent_mantle_empty_5_down_anchor": "95b673da39f4aa753a89746e384a16f53945262fe05f24cee85bb0fbbae9575f",
+      "season1_hollow_regent_mantle_empty_6_north_anchor": "59878d4757b55552084e77b344c439d79088ddbff566bdd39d48ad5b823ae154",
+      "season1_hollow_regent_mantle_empty_6_south_anchor": "0c5a728e55ee01c6ba0d7f3a8ef3153addd163553342ac935fac8798184025df",
+      "season1_hollow_regent_mantle_empty_6_east_anchor": "5193ad6fd435c40e9016bf2fc170e1d67c7c1d75c621243b8c21ab46b93a466c",
+      "season1_hollow_regent_mantle_empty_6_west_anchor": "b89d5460950302f845ecba83a25578ecde3413f255b4d2936c91f006caa15668",
+      "season1_hollow_regent_mantle_empty_6_up_anchor": "30f5ae1b355f50aed35f0aacf4e68f506d84fdd81a005eb089b21b38ff009290",
+      "season1_hollow_regent_mantle_empty_6_down_anchor": "ce0655ce3e1c8603874e673ed1809e7d6078892c432c24f02a30e740805ac451",
+      "season1_hollow_regent_mantle_empty_7_north_anchor": "1f431539ba81db97b6dfda13a997ff0845690ba4f9f80fecdd9796e4c4569a22",
+      "season1_hollow_regent_mantle_empty_7_south_anchor": "5a37e1b8010e5dbaec3c79ff49ce4ca469b45ffcbd1777715214a00bef5c9d6d",
+      "season1_hollow_regent_mantle_empty_7_east_anchor": "0e9db54d9dae380395c5a5a82502cfaef3b9fbbd6c650e9cdd9e389d6145be97",
+      "season1_hollow_regent_mantle_empty_7_west_anchor": "0cfd6ee27a0831e8ab14211d11930c6ec52a913f1ee1f5e51443f055f4f247c2",
+      "season1_hollow_regent_mantle_empty_7_up_anchor": "65bd7e11b22806ed8e84b549eca0de784222b9c3b7179d494421248bbfb87f02",
+      "season1_hollow_regent_mantle_empty_7_down_anchor": "2127277f8ad96ba0af36fa5d28588d0fc2c06848a956bd64eb4fde43c56baaa5",
+      "season1_hollow_regent_mantle_empty_8_north_anchor": "c3a626cb024cdb5b8cc2ebdd2f4f6652f4f639403349f0ce12cc75e889a3d079",
+      "season1_hollow_regent_mantle_empty_8_south_anchor": "293e78418a3d74a88aa8b874269fe687acaee767e7be13c46470f195a81df441",
+      "season1_hollow_regent_mantle_empty_8_east_anchor": "8242ca70a30fa81b39cc9378d5615a64583ad2f2da941b29d335e99cec5f7a37",
+      "season1_hollow_regent_mantle_empty_8_west_anchor": "b9b8b9775338895decdd41bfb02fa78ba06f8b57d50b7406e906e21ba89e26b6",
+      "season1_hollow_regent_mantle_empty_8_up_anchor": "9687a404116863db7a9c7641b062bba6955829e8f723ed4500714a8b28d7320a",
+      "season1_hollow_regent_mantle_empty_8_down_anchor": "2db894f3f2117d55ef51b908ccc35d124d540292777f7e24086b9ecfd6b1c17e",
+      "season1_hollow_regent_mantle_empty_9_north_anchor": "9e6eabb63622873d01d88700d14cbf2318350c87fc66444c33e45c7a7ed1ac94",
+      "season1_hollow_regent_mantle_empty_9_south_anchor": "09f9a6fec27deeca266d31c2fa3f43b2eac618dab4a109d70adc61c62fae343a",
+      "season1_hollow_regent_mantle_empty_9_east_anchor": "abea3252c5ea8eea972689dffd7d68580b05cab110cd6dd8c42e33d06c33cad0",
+      "season1_hollow_regent_mantle_empty_9_west_anchor": "710c9bcc7e203dc04c9efde8616b2ab345508ab33fda9d023855a9f3c26da2fb",
+      "season1_hollow_regent_mantle_empty_9_up_anchor": "80b9a55e5771d626ad6210b6d9a2835d843313f3c839ef8ef53e69f42a840c7a",
+      "season1_hollow_regent_mantle_empty_9_down_anchor": "285d45cbc00cc4f06336e3e4fef34e48f980e3df512202fe4d4849815aac4221",
+      "season1_hollow_regent_mantle_empty_10_north_anchor": "58b0bf8351c3676f7d9619b4f42b72906189ae910acbf1458be026c2d4372ebb",
+      "season1_hollow_regent_mantle_empty_10_south_anchor": "87a324bf1c476bef42d59122d231448847ab5aff7370d75f3b1db55573f3cc72",
+      "season1_hollow_regent_mantle_empty_10_east_anchor": "47f8ae3e3d2093cb3ce689f7ab51d1a86501a9249caa1aa59c3842484a3b3a5d",
+      "season1_hollow_regent_mantle_empty_10_west_anchor": "d5ce3ab35b044c0f5d13e81cd51704f329724d2a0c95cae5f1f6aeb74677e9df",
+      "season1_hollow_regent_mantle_empty_10_up_anchor": "e103719620fb645c8f15b61081962b36b05e76ba4146939b500d94243dc730c5",
+      "season1_hollow_regent_mantle_empty_10_down_anchor": "9fe8beeb7f1be08ac0b03a1b9a8d45db6868b50e9a7be65e7c2f07e07aba5ee2",
+      "season1_hollow_regent_mantle_empty_11_north_anchor": "b5357281ea1ba1ffe72b1f9a00ab9d7cdd78ddf20a677b85315420848c36cdd4",
+      "season1_hollow_regent_mantle_empty_11_south_anchor": "9cc1d3adec487faf9b2c664078f64c1058d02ecb4eea887156f41e6d7868a4bf",
+      "season1_hollow_regent_mantle_empty_11_east_anchor": "9a5add79016ddaf7cc91dd234753b7635998a9dc5e6380f2e5a01bbd486cb423",
+      "season1_hollow_regent_mantle_empty_11_west_anchor": "a9210c2251cd593c58049c52033bfd472d38ddcffec03f16b1dba418c53b092b",
+      "season1_hollow_regent_mantle_empty_11_up_anchor": "db6eabf6fc1126cacc475c75de48d2999d8e7cd8f3cc95f12747d84cafeb58ad",
+      "season1_hollow_regent_mantle_empty_11_down_anchor": "01e7af45e25409f1e194becd43e42939c9372a97d8b00c4581c0590df20f8d62",
+      "season1_hollow_regent_mantle_empty_12_north_anchor": "7fa0ef01fdc2b35be5fed217b3f664fee2ad764f917050580e3547bc60b1da33",
+      "season1_hollow_regent_mantle_empty_12_south_anchor": "f7f44325fd35921358e25cb145162924b50bbb170a49ee0fa1afcf55f58bbb10",
+      "season1_hollow_regent_mantle_empty_12_east_anchor": "e103e7728bab95f0861007c9b2acb0b3de5ec3c959ba0accdc1142c91592ee45",
+      "season1_hollow_regent_mantle_empty_12_west_anchor": "3185c9cae45d93c2f813aee9d8c492aee917cc5318a707df748b3234ee656bdf",
+      "season1_hollow_regent_mantle_empty_12_up_anchor": "b44609d4c09233ed7dfbc26f10f83f892f2499aef564740aa9f2c14efd59313d",
+      "season1_hollow_regent_mantle_empty_12_down_anchor": "8f69322238c2cd283ee1cb9a3e6e36a96d06f903cbe8a3a71fa80917bd14472e",
+      "season1_hollow_regent_mantle_empty_13_north_anchor": "2590fc0d559037beb3e5032bd460672b489ba007c52f8686c25f1a113625d80e",
+      "season1_hollow_regent_mantle_empty_13_south_anchor": "ec6f441b1055b4b74316cd28fce2b423a87f156281110f608a0213a505ee4935",
+      "season1_hollow_regent_mantle_empty_13_east_anchor": "bb007d29cd96a5b477a3adf58a24e7bff3858f2bb491832cb5fdb01f5adc9994",
+      "season1_hollow_regent_mantle_empty_13_west_anchor": "fd5575944be9075e346fd107ff93a779c4483359d4042830155a279f9fa430b4",
+      "season1_hollow_regent_mantle_empty_13_up_anchor": "9c4838893f02883c342c7114925e8230c0f95df738f332c3dace9c5ec9d8ef32",
+      "season1_hollow_regent_mantle_empty_13_down_anchor": "43f95b87eeb1c894e0d0e54a8cc7fc1d89dcb718acc47bb6287c07bf9147b7e5",
+      "season1_hollow_regent_mantle_empty_14_north_anchor": "79840654af14bb0b0d315b63ef55343017a50971b7a6b7ba3fc31b308f1b18e7",
+      "season1_hollow_regent_mantle_empty_14_south_anchor": "317b31c1620444ee638581bf3fd66a31a2f94cc4f29bd2cc52b068ce3812c9bd",
+      "season1_hollow_regent_mantle_empty_14_east_anchor": "e13d87e4b2e14ff66863047df2d2a827e68444b6aed4833c4f150eb22239f9d8",
+      "season1_hollow_regent_mantle_empty_14_west_anchor": "696fb044785148df661843fb3365a0828e7b4835a49f6becedbe22ccee267006",
+      "season1_hollow_regent_mantle_empty_14_up_anchor": "337485739816f3a13a41025403ed6d81a2a12b36c2c7a36a32a4b8ab1b846164",
+      "season1_hollow_regent_mantle_empty_14_down_anchor": "a42b18797ba10fc3d2494e4b781c8bcfbf08603073b803ee3d7fbb0ae7569710",
+      "season1_hollow_regent_mantle_empty_15_north_anchor": "0b84c98ab51b91707c159897d2ca63a566a3d86c7ba3b2439e9059f125ecee8c",
+      "season1_hollow_regent_mantle_empty_15_south_anchor": "c8acd204f53681c22e8c6ca88f260c8e4227f602ab3a292138d4127745420c67",
+      "season1_hollow_regent_mantle_empty_15_east_anchor": "a4c8a4188140a0d2167ded63d91631620ee1985edae8c8b53cb6f23d5a89426c",
+      "season1_hollow_regent_mantle_empty_15_west_anchor": "61557bd94f48682816296094c6faeb07c40ab9fa9fe888c9dde1940b693194c2",
+      "season1_hollow_regent_mantle_empty_15_up_anchor": "3bc18cf7cda3652c0eb151d1a491350d97503d636e4966b8017eff68eceb01ce",
+      "season1_hollow_regent_mantle_empty_15_down_anchor": "97ddb8b4be9ea3affdbf489c6de0d33d45fcf93a49504c316efb1a01649afabb"
+    }
+  },
+  "graveglass_hoe": {
+    "modelSha256": "f6007ef3ae8de92eab1b9946b42e2b112bb9a8ed593063d6cdd057064cfb8f74",
+    "textureSha256": {
+      "glass": "4a5393df07c7f9fe754dc67bee5c9252f8ddfdf1a205093f00a8824ecd958f3e",
+      "silver": "e2abc0d5094fefc47e6be75a87d6b192ccf22e35bcbc1d04d5771db104329baf",
+      "porcelain": "716847015b92531d4fc9d43f884d57f0223788d75703842b1db8a8a0bcd975e0",
+      "plum": "d9fbafb660e4d48e75e3f3803e1723846e1ec37323bdc15b014d98a1a3c7754e",
+      "particle": "4a5393df07c7f9fe754dc67bee5c9252f8ddfdf1a205093f00a8824ecd958f3e"
+    }
+  },
+  "hollow_regent_bow": {
+    "modelSha256": "f73e8ece5d1002c3af756167104a456174152c55c151afbf044784c832409fe4",
+    "textureSha256": {
+      "glass": "2a130f1963babca5d6ba45e5ef05e96e9c5d6ba11ceb5d53ac4437cbb33af174",
+      "silver": "b8c98b3f4bc980e6ccb6ad8fee0c7acbd07e38de4fcfc085b81b634f85bca420",
+      "porcelain": "b0ef3e9eda9a521c73b9f2be0c5ab534d9fcb1b916f450256561add88edceb82",
+      "plum": "0cd72d9b69183a635aba28924ccfd353062128548299cea5625b4fd9a8947641",
+      "string": "e10af3c480155b738e6f4cbb0fc7de137b232024750c86e8231e0c965f135d2b",
+      "particle": "2a130f1963babca5d6ba45e5ef05e96e9c5d6ba11ceb5d53ac4437cbb33af174"
+    }
+  },
+  "hollow_regent_shield": {
+    "modelSha256": "02d38a0e2a17c76d3ab4ea9bdd20b226b37e01a4f6440685325c0b81e0c5accb",
+    "textureSha256": {
+      "plum": "e68a843a54a99d4e6e99f17a6d056c0669344faf48fddd7fdf2ec158bbabd4c0",
+      "silver": "6c16bf9b2f50b855620f65758735a9becfdd995eb718cea22848c168cd4df80e",
+      "porcelain": "c4b353baaac7b6447c3429254d4f231f3caf1e72398a65bce32a1585799e16b0",
+      "glass": "f466d91fdd7e0f0aebcc26ca21ad72a6ad26b20178c700d57a0321ae794974d4",
+      "leather": "3bf54cc382435990b3042994e6ac7cd9e39c03c9381425d44a6a797ab24147bc",
+      "particle": "e68a843a54a99d4e6e99f17a6d056c0669344faf48fddd7fdf2ec158bbabd4c0"
+    }
+  },
+  "hollow_regent_crown": {
+    "modelSha256": "961c535e11b0ed2d407ce3ae124692ac53d447fb1ace32704205785a234ff108",
+    "textureSha256": {
+      "silver": "33f22a1bbbdfb347f82bf89c168cbf873c136ddfa0cb4e1fc6507eaf07f3e014",
+      "porcelain": "ae567d27f52bd9a755241ea9d84da08d91cdd7e3c2cd266e1d4b13f3fa703e95",
+      "plum": "4d6573ce93875c87eea61920d301e5767ef51bf4edbb5870db9ad4f2b452147e",
+      "glass": "ccd27f79291c381ff89e7cc0951f63573a8df495736ee323275980bcdda14219",
+      "particle": "33f22a1bbbdfb347f82bf89c168cbf873c136ddfa0cb4e1fc6507eaf07f3e014"
+    }
+  },
+  "season1_nevermore_ghost": {
+    "modelSha256": "9bca1f9dd0feab739f11690560feeeb68ab250cd6d4d768022766841a7174d79",
+    "textureSha256": {
+      "feather": "bda1fe438ef71e54031b13f689270084ad68b81e517f04382ca5f9a3ea2b7bc5",
+      "breast": "52a76b3652c56e702c3aec691268fcd543c3d036b315a5aeb5d5feee377258b6",
+      "beak": "901141a23d5b19747e156641f73bcfb45c184f6ddde890679d1bba3d4a6a685d",
+      "eye": "5da81edab6afb3e449a414d6773bc089e1a179eb3ee158cd8e1fdcb054ca69f5",
+      "silver": "c60b6909ac73e052bc6df69dd3cf4fff7c44bf8f66f1a21a5499614d6a2ef8bb",
+      "particle": "bda1fe438ef71e54031b13f689270084ad68b81e517f04382ca5f9a3ea2b7bc5"
+    }
+  },
+  "season1_harvest_warden_chest": {
+    "modelSha256": "f91566bb83fec7ebd12763e24ad80a4eadc423516aee7754723b64eccd09747c",
+    "textureSha256": {
+      "coat": "9d0c1f7a7e47d107429946d5548fc6bfdf3e816f3bcde1cc723ca943074e76d8"
+    }
+  },
+  "season1_harvest_warden_legs": {
+    "modelSha256": "9ab71872072f0fa9990b9d1f2a6b06aabf35fb018133a36595121e2ec3e5a0b9",
+    "textureSha256": {
+      "cloth": "ccdffa425f9a17b508ae4546b72f3bf0a57ea3c9b9f73a36f213783e7f469149"
+    }
+  },
+  "season1_harvest_warden_boots": {
+    "modelSha256": "ac7d085b29956be2cd5c2a8b719fd1979586f48648113a4a79dd8777b183d917",
+    "textureSha256": {
+      "leather": "f7af7e09a5d4a5ff5b1474bcd61530f75435cf4e7e23023b476c6cbd6b750c2b"
+    }
+  },
+  "season1_hollow_regent_chest": {
+    "modelSha256": "a580b31d592e9896968bfc4912c7e2082126b6a88d2690a3f0da3decf6b91ffe",
+    "textureSha256": {
+      "coat": "867af6df5fa663a1d8474ef62a6f5429352768780830765f9cc552fb9aaf808f"
+    }
+  },
+  "season1_hollow_regent_legs": {
+    "modelSha256": "37bfcc980f191fd2dffec56af9b7adff2a965a7732841470825ca4e07c8a9093",
+    "textureSha256": {
+      "cloth": "0cc53e85d195f9b24f647f35f2523e6d27f583b6af7614c1c09f0d52356a846f"
+    }
+  },
+  "season1_hollow_regent_boots": {
+    "modelSha256": "8c5e8cb6ee4e620ae51f4b04e275317132af33cc10cc809bdc0b8a3d36fb084b",
+    "textureSha256": {
+      "leather": "250ab5543a821e46d38f8166117cb8eafc3da0cd00620e927ee57e5f500810d2"
+    }
+  }
+}

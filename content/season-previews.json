@@ -1,0 +1,321 @@
+{
+  "small_pouch": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/small_pouch-0.webp",
+    "large": "/season/rewards/small_pouch-large.webp"
+  },
+  "medium_pouch": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/medium_pouch-0.webp",
+    "large": "/season/rewards/medium_pouch-large.webp"
+  },
+  "large_pouch": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/large_pouch-0.webp",
+    "large": "/season/rewards/large_pouch-large.webp"
+  },
+  "harvest_treasury": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/harvest_treasury-0.webp",
+    "large": "/season/rewards/harvest_treasury-large.webp"
+  },
+  "lesser_scroll": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/lesser_scroll-0.webp",
+    "large": "/season/rewards/lesser_scroll-large.webp"
+  },
+  "greater_scroll": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/greater_scroll-0.webp",
+    "large": "/season/rewards/greater_scroll-large.webp"
+  },
+  "grand_scroll": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/grand_scroll-0.webp",
+    "large": "/season/rewards/grand_scroll-large.webp"
+  },
+  "full_repair": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/full_repair-0.webp",
+    "large": "/season/rewards/full_repair-large.webp"
+  },
+  "basic_provisions": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/basic_provisions-0.webp",
+    "large": "/season/rewards/basic_provisions-large.webp"
+  },
+  "basic_gathering": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/basic_gathering-0.webp",
+    "large": "/season/rewards/basic_gathering-large.webp"
+  },
+  "basic_crafting": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/basic_crafting-0.webp",
+    "large": "/season/rewards/basic_crafting-large.webp"
+  },
+  "harvest_planting": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/harvest_planting-0.webp",
+    "large": "/season/rewards/harvest_planting-large.webp"
+  },
+  "improved_provisions": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/improved_provisions-0.webp",
+    "large": "/season/rewards/improved_provisions-large.webp"
+  },
+  "improved_gathering": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/improved_gathering-0.webp",
+    "large": "/season/rewards/improved_gathering-large.webp"
+  },
+  "improved_crafting": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/improved_crafting-0.webp",
+    "large": "/season/rewards/improved_crafting-large.webp"
+  },
+  "harvest_builder": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/harvest_builder-0.webp",
+    "large": "/season/rewards/harvest_builder-large.webp"
+  },
+  "advanced_gathering": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/advanced_gathering-0.webp",
+    "large": "/season/rewards/advanced_gathering-large.webp"
+  },
+  "advanced_crafting": {
+    "source": "original-item-art",
+    "models": [],
+    "frames": 8,
+    "image": "/season/rewards/advanced_crafting-0.webp",
+    "large": "/season/rewards/advanced_crafting-large.webp"
+  },
+  "harvest_warden_mask": {
+    "source": "game-model",
+    "models": [
+      "harvest_warden_mask"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/harvest_warden_mask-0.webp",
+    "large": "/season/rewards/harvest_warden_mask-large.webp"
+  },
+  "candlekeeper_pickaxe": {
+    "source": "game-model",
+    "models": [
+      "candlekeeper_pickaxe"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/candlekeeper_pickaxe-0.webp",
+    "large": "/season/rewards/candlekeeper_pickaxe-large.webp"
+  },
+  "little_lantern": {
+    "source": "game-model",
+    "models": [
+      "season1_little_lantern"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/little_lantern-0.webp",
+    "large": "/season/rewards/little_lantern-large.webp"
+  },
+  "harvest_warden_sword": {
+    "source": "game-model",
+    "models": [
+      "harvest_warden_sword"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/harvest_warden_sword-0.webp",
+    "large": "/season/rewards/harvest_warden_sword-large.webp"
+  },
+  "harvest_warden_hat": {
+    "source": "game-model",
+    "models": [
+      "harvest_warden_hat"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/harvest_warden_hat-0.webp",
+    "large": "/season/rewards/harvest_warden_hat-large.webp"
+  },
+  "harvest_warden_shield": {
+    "source": "game-model",
+    "models": [
+      "harvest_warden_shield"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/harvest_warden_shield-0.webp",
+    "large": "/season/rewards/harvest_warden_shield-large.webp"
+  },
+  "hollow_pilgrim_hood": {
+    "source": "game-model",
+    "models": [
+      "hollow_pilgrim_hood"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/hollow_pilgrim_hood-0.webp",
+    "large": "/season/rewards/hollow_pilgrim_hood-large.webp"
+  },
+  "hollow_regent_mask": {
+    "source": "game-model",
+    "models": [
+      "hollow_regent_mask"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/hollow_regent_mask-0.webp",
+    "large": "/season/rewards/hollow_regent_mask-large.webp"
+  },
+  "graveglass_pickaxe": {
+    "source": "game-model",
+    "models": [
+      "graveglass_pickaxe"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/graveglass_pickaxe-0.webp",
+    "large": "/season/rewards/graveglass_pickaxe-large.webp"
+  },
+  "nevermore": {
+    "source": "game-model",
+    "models": [
+      "season1_nevermore"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/nevermore-0.webp",
+    "large": "/season/rewards/nevermore-large.webp"
+  },
+  "graveglass_axe": {
+    "source": "game-model",
+    "models": [
+      "graveglass_axe"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/graveglass_axe-0.webp",
+    "large": "/season/rewards/graveglass_axe-large.webp"
+  },
+  "hollow_regent_sword": {
+    "source": "game-model",
+    "models": [
+      "hollow_regent_sword"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/hollow_regent_sword-0.webp",
+    "large": "/season/rewards/hollow_regent_sword-large.webp"
+  },
+  "graveglass_shovel": {
+    "source": "game-model",
+    "models": [
+      "graveglass_shovel"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/graveglass_shovel-0.webp",
+    "large": "/season/rewards/graveglass_shovel-large.webp"
+  },
+  "hollow_regent_mantle": {
+    "source": "game-model",
+    "models": [
+      "season1_hollow_regent_mantle_empty"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/hollow_regent_mantle-0.webp",
+    "large": "/season/rewards/hollow_regent_mantle-large.webp"
+  },
+  "graveglass_hoe": {
+    "source": "game-model",
+    "models": [
+      "graveglass_hoe"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/graveglass_hoe-0.webp",
+    "large": "/season/rewards/graveglass_hoe-large.webp"
+  },
+  "hollow_regent_bow": {
+    "source": "game-model",
+    "models": [
+      "hollow_regent_bow"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/hollow_regent_bow-0.webp",
+    "large": "/season/rewards/hollow_regent_bow-large.webp"
+  },
+  "hollow_regent_shield": {
+    "source": "game-model",
+    "models": [
+      "hollow_regent_shield"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/hollow_regent_shield-0.webp",
+    "large": "/season/rewards/hollow_regent_shield-large.webp"
+  },
+  "hollow_regent_crown": {
+    "source": "game-model",
+    "models": [
+      "hollow_regent_crown"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/hollow_regent_crown-0.webp",
+    "large": "/season/rewards/hollow_regent_crown-large.webp"
+  },
+  "nevermore_ghost": {
+    "source": "game-model",
+    "models": [
+      "season1_nevermore_ghost"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/nevermore_ghost-0.webp",
+    "large": "/season/rewards/nevermore_ghost-large.webp"
+  },
+  "harvest_warden_regalia": {
+    "source": "game-model",
+    "models": [
+      "season1_harvest_warden_chest",
+      "season1_harvest_warden_legs",
+      "season1_harvest_warden_boots"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/harvest_warden_regalia-0.webp",
+    "large": "/season/rewards/harvest_warden_regalia-large.webp"
+  },
+  "hollow_regent_regalia": {
+    "source": "game-model",
+    "models": [
+      "season1_hollow_regent_chest",
+      "season1_hollow_regent_legs",
+      "season1_hollow_regent_boots"
+    ],
+    "frames": 8,
+    "image": "/season/rewards/hollow_regent_regalia-0.webp",
+    "large": "/season/rewards/hollow_regent_regalia-large.webp"
+  }
+}
