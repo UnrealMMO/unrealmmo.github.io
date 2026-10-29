@@ -44,8 +44,8 @@ const cosmeticTypes: Record<string, string> = {
   hollow_regent_shield: "Shield Style",
   hollow_regent_crown: "Headwear Style",
   nevermore_ghost: "Pet",
-  harvest_warden_regalia: "Armor & Helmet Styles",
-  hollow_regent_regalia: "Armor Style",
+  harvest_warden_regalia: "Armor Style",
+  hollow_regent_regalia: "Armor & Helmet Styles",
 };
 function Details({ reward: r, id }: { reward: Reward; id: string }) {
   return (

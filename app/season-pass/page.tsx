@@ -87,7 +87,7 @@ export default function SeasonPass() {
               src="/season/rewards/hollow_regent_regalia-large.webp"
               width={800}
               height={800}
-              alt="Hollow Regent chest, leggings and boots worn together on a neutral mannequin"
+              alt="Hollow Regent armor with the Dread Lantern helmet"
               loading="lazy"
             />
             <img

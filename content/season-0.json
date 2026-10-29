@@ -628,11 +628,11 @@
       "kind": "cosmetic"
     },
     "harvest_warden_regalia": {
-      "label": "Warden Regalia + Dread Lantern",
+      "label": "Harvest Warden Regalia",
       "kind": "cosmetic"
     },
     "hollow_regent_regalia": {
-      "label": "Hollow Regent Regalia",
+      "label": "Regent Regalia + Dread Lantern",
       "kind": "cosmetic"
     }
   }

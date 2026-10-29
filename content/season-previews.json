@@ -305,8 +305,7 @@
     "models": [
       "season1_harvest_warden_chest",
       "season1_harvest_warden_legs",
-      "season1_harvest_warden_boots",
-      "jack_o_lantern"
+      "season1_harvest_warden_boots"
     ],
     "frames": 8,
     "image": "/season/rewards/harvest_warden_regalia-0.webp",
@@ -317,7 +316,8 @@
     "models": [
       "season1_hollow_regent_chest",
       "season1_hollow_regent_legs",
-      "season1_hollow_regent_boots"
+      "season1_hollow_regent_boots",
+      "jack_o_lantern"
     ],
     "frames": 8,
     "image": "/season/rewards/hollow_regent_regalia-0.webp",
