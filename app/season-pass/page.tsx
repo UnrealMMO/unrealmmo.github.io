@@ -50,19 +50,6 @@ export default function SeasonPass() {
             />
           </div>
         </div>
-        <span className="harvest-scene-label">HOLLOW HARVEST</span>
-      </section>
-      <section className="road-intro wrap" id="reward-road">
-        <p className="season-kicker">THE REWARDS</p>
-        <h2>See what’s waiting.</h2>
-        <p>
-          Free rewards on the left. Premium on the right. Pick one for a closer
-          look.
-        </p>
-        <div className="road-facts">
-          <span>40 tiers</span>
-          <span>2,500 XP per tier</span>
-        </div>
       </section>
       <SeasonRoad />
       <section className="road-progress wrap">

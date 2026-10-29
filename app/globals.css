@@ -3484,50 +3484,6 @@ tbody tr:nth-child(even) {
   left: -8%;
   transform: rotate(-8deg);
 }
-.harvest-scene-label {
-  position: absolute;
-  bottom: 24px;
-  right: 35px;
-  font-size: 0.55rem;
-  letter-spacing: 0.15em;
-  color: #c7c4ad;
-}
-.road-intro {
-  padding-block: 85px 65px;
-  text-align: center;
-}
-.road-intro > p:not(.season-kicker) {
-  max-width: 640px;
-  margin: 25px auto;
-  color: #c5cbbc;
-}
-.road-facts {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px 35px;
-  color: var(--season-gold);
-  font-size: 0.8rem;
-}
-.road-legend {
-  display: grid;
-  grid-template-columns: 1fr 100px 1fr;
-  text-align: center;
-  padding-block: 28px;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  color: #d6c8a9;
-}
-.road-legend > svg {
-  margin: auto;
-}
-.road-legend > span:last-child {
-  color: var(--season-gold);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
 .road-lineup {
   position: relative;
   isolation: isolate;
@@ -3968,18 +3924,6 @@ tbody tr:nth-child(even) {
     bottom: -15%;
     left: 0;
   }
-  .harvest-scene-label {
-    right: 20px;
-    font-size: 0.43rem;
-  }
-  .road-intro {
-    padding-block: 55px 40px;
-  }
-  .road-legend {
-    grid-template-columns: 1fr 40px 1fr;
-    font-size: 0.58rem;
-    padding-block: 20px;
-  }
   .road-lineup {
     background-attachment: scroll;
     padding-bottom: 40px;
@@ -4170,12 +4114,6 @@ tbody tr:nth-child(even) {
   left: auto;
   right: 0;
   transform: rotate(-8deg);
-}
-.road-intro {
-  padding-block: 42px 22px;
-}
-.road-intro h2 {
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
 }
 .road-row {
   padding-block: 8px;

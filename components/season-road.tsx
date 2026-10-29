@@ -1,7 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { X, Crown, ArrowDown } from "lucide-react";
+import { X, Crown } from "lucide-react";
 import { RewardTurntable } from "@/components/reward-turntable";
 import season from "@/content/season-0.json";
 import images from "@/content/season-previews.json";
@@ -146,14 +146,8 @@ export function SeasonRoad() {
   }
   return (
     <>
-      <div className="road-legend wrap">
-        <span>REGULAR · INCLUDED</span>
-        <ArrowDown size={18} />
-        <span>
-          <Crown size={16} /> PREMIUM
-        </span>
-      </div>
       <section
+        id="reward-road"
         className="road-lineup road-woodland"
         aria-label="Season rewards, tiers 1 to 40"
       >
