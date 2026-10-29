@@ -14,9 +14,6 @@ export function SkillExplorer({ skill }: { skill: Skill }) {
         <div>
           <h2>Skill unlocks</h2>
         </div>
-        <span className="small-note">
-          Exact XP thresholds · Default balance
-        </span>
       </div>
       <div className="level-inspector">
         <div className="level-dial">

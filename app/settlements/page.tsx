@@ -17,14 +17,12 @@ export default function Settlements() {
       />
       <div className="wrap settlement-layout">
         <nav className="settlement-nav" aria-label="Settlement structures">
-          <span className="eyebrow">STRUCTURES</span>
           <a href="#inn">Inn</a>
           <a href="#stable">Stable</a>
         </nav>
         <div className="inn-build-guide">
           <section id="inn" aria-labelledby="inn-title">
             <header className="settlement-structure-heading">
-              <span className="eyebrow">SETTLEMENT STRUCTURE</span>
               <h2 id="inn-title">Inn</h2>
               <p>
                 A place to rest, a warm hearth, and a steady income for your
@@ -175,7 +173,6 @@ export default function Settlements() {
           </section>
           <section id="stable" aria-labelledby="stable-title">
             <header className="settlement-structure-heading">
-              <span className="eyebrow">SETTLEMENT STRUCTURE</span>
               <h2 id="stable-title">Stable</h2>
               <p>A place to board horses and earn income for your territory.</p>
             </header>

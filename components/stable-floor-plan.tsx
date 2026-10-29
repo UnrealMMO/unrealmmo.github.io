@@ -2,7 +2,6 @@ export function StableFloorPlan() {
   return (
     <figure className="inn-plan">
       <div className="inn-plan-heading">
-        <span>THE BARE BONES</span>
         <strong>Overhead view</strong>
       </div>
       <svg

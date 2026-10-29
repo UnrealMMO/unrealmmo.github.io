@@ -18,7 +18,6 @@ export default function Structures() {
       <div className="wrap">
         <div className="catalogue-heading">
           <h2>The ore orchard</h2>
-          <span>8 varieties · Farming levels 25–99</span>
         </div>
         <div className="structure-grid">
           {structures
@@ -45,7 +44,6 @@ export default function Structures() {
         </div>
         <div className="catalogue-heading">
           <h2>A place of your own</h2>
-          <span>Four stages of territory protection</span>
         </div>
         {structures
           .filter((s) => s.kind === "hearthstone")
