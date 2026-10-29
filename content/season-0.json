@@ -406,14 +406,14 @@
       "unit": "Coins"
     },
     "harvest_treasury": {
-      "label": "Harvest Treasury",
+      "label": "Grand Coin Pouch",
       "kind": "gift",
       "amount": 250,
       "rarity": "epic",
       "unit": "Coins"
     },
     "lesser_scroll": {
-      "label": "Lesser Harvest Scroll",
+      "label": "Lesser EXP Scroll",
       "kind": "gift",
       "amount": 5000,
       "rarity": "uncommon",
@@ -421,7 +421,7 @@
       "unit": "skill EXP"
     },
     "greater_scroll": {
-      "label": "Greater Harvest Scroll",
+      "label": "Greater EXP Scroll",
       "kind": "gift",
       "amount": 15000,
       "rarity": "rare",
@@ -429,7 +429,7 @@
       "unit": "skill EXP"
     },
     "grand_scroll": {
-      "label": "Grand Harvest Scroll",
+      "label": "Grand EXP Scroll",
       "kind": "gift",
       "amount": 30000,
       "rarity": "epic",
