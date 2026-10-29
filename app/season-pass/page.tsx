@@ -4,7 +4,7 @@ import { SeasonRoad } from "@/components/season-road";
 export const metadata = {
   title: "Season 0: Hollow Harvest · $15 Premium Pass",
   description:
-    "Walk the Hollow Harvest reward road: 40 tiers of real model previews, pets, apparel, Coins and EXP. Explore the cosmetic-only $15 Premium Pass. Checkout is not open yet.",
+    "Explore 40 tiers of Hollow Harvest rewards, from pets and outfits to Coins and EXP. Premium is $15. Coming soon.",
 };
 export default function SeasonPass() {
   return (
@@ -42,37 +42,23 @@ export default function SeasonPass() {
             <br />
             <em>Harvest.</em>
           </h1>
-          <p>
-            Follow the lanterns.
-            <br />
-            Find your next obsession.
-          </p>
-          <span>
-            Forty tiers. Two reward tracks.
-            <br />A collection from the other side of the woods.
-          </span>
+          <p>Spooky companions. New outfits. Plenty to earn.</p>
+          <span>Play your way through 40 reward tiers.</span>
           <a className="season-button" href="#reward-road">
-            Walk the reward road <ArrowDown size={18} />
+            Explore the rewards <ArrowDown size={18} />
           </a>
         </div>
-        <span className="harvest-scene-label">
-          HOLLOW HARVEST · ORIGINAL SCENERY & GAME MODEL PREVIEWS
-        </span>
+        <span className="harvest-scene-label">HOLLOW HARVEST</span>
       </section>
       <section className="road-intro wrap" id="reward-road">
-        <p className="season-kicker">SOMETHING WORTH THE JOURNEY</p>
-        <h2>
-          A little candlelight.
-          <br />
-          <em>A touch of the uncanny.</em>
-        </h2>
+        <p className="season-kicker">THE REWARDS</p>
+        <h2>See what’s waiting.</h2>
         <p>
-          From your first Coin Pouch to the Hollow Regent’s regalia, discover
-          every reward along the way. Regular rewards wait on the left.
-          Gold-framed premium rewards wait on the right.
+          Free rewards on the left. Premium on the right. Pick one for a closer
+          look.
         </p>
         <div className="road-facts">
-          <span>40 shared tiers</span>
+          <span>40 tiers</span>
           <span>2,500 XP per tier</span>
           <span>Premium is cosmetic only</span>
         </div>
@@ -80,28 +66,16 @@ export default function SeasonPass() {
       <SeasonRoad />
       <section className="road-progress wrap">
         <Sparkles size={28} />
-        <h2>
-          Your adventures
-          <br />
-          <em>move you forward.</em>
-        </h2>
+        <h2>Play. Earn XP. Unlock rewards.</h2>
         <div>
           <p>
-            Eligible skill actions count even at level 99. Each accepted real
-            vote from a connected server list adds{" "}
-            <strong>500 Season XP</strong>. Reach tier 40 at{" "}
-            <strong>100,000 XP</strong>; reward scrolls and admin XP do not feed
-            the pass.
+            Earn Season XP by training your skills—even at level 99. Each server
+            vote adds <strong>500 XP</strong>.
           </p>
-          <p>
-            Your Hearthstone Core → Season 0 shows dates and granted, pending or
-            locked rewards. Earned gift items wait in your mailbox; use{" "}
-            <code>/gifts claim</code> with inventory space.
-          </p>
+          <p>Check your progress in Hearthstone → Season 0.</p>
           <p className="reward-preview-note">
-            The initial season ends at midnight at the start of December 23,
-            2026, America/New_York. In-game dates are authoritative. Some supply
-            and cosmetic deliveries are still being enabled.
+            Ends December 23 at midnight, New York time. Some rewards are still
+            rolling out.
           </p>
         </div>
       </section>
@@ -126,49 +100,43 @@ export default function SeasonPass() {
           </div>
           <div>
             <p className="season-kicker">
-              <Crown size={18} /> THE HOLLOW COURT AWAITS
+              <Crown size={18} /> PREMIUM PASS
             </p>
-            <h2>
-              Make the season
-              <br />
-              <em>your own.</em>
-            </h2>
+            <h2>More looks to collect.</h2>
             <div className="season-price">
               $15 <span>USD · Season 0 Premium Pass</span>
             </div>
             <p>
-              Unlock the premium track’s 16 cosmetic milestones: Regent apparel,
-              Graveglass tools, companions and collectible titles.
+              Add 16 cosmetic rewards, including Regent outfits, Graveglass
+              tools, companions and titles.
             </p>
             <ul>
-              <li>The same shared progression as the regular pass.</li>
+              <li>One XP track for both passes.</li>
               <li>
-                Already-earned premium tiers included when you upgrade during
-                the season.
+                Upgrade during the season to get the premium rewards you’ve
+                already earned.
               </li>
-              <li>No paid XP boosts, tier skips or gameplay advantages.</li>
+              <li>Cosmetics only. No gameplay advantage.</li>
             </ul>
             <a className="season-button" href="#checkout-placeholder">
-              Premium checkout · Coming soon
+              Premium · Coming soon
             </a>
             <p className="reward-preview-note">
-              The regular pass is included for everyone: 920 Coins, 120,000
-              chosen-skill EXP, six full Repair Notes, 11 supply-pack awards and
-              cosmetic milestones across the full track.
+              The regular pass is free, with Coins, EXP Scrolls, Repair Notes,
+              supplies and cosmetics.
             </p>
           </div>
         </div>
         <div className="wrap road-checkout" id="checkout-placeholder">
           <p id="checkout-status">
-            Checkout is not available yet. This preview cannot take payment or
-            activate Premium.
+            Checkout is coming soon. No payments are taken here.
           </p>
           <a
             className="season-text-link"
             href="#checkout-status"
             aria-describedby="checkout-status"
           >
-            Checkout unavailable · Placeholder
+            Checkout unavailable
           </a>
           <Link href="/skills/">Explore the skills →</Link>
         </div>

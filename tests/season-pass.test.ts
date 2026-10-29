@@ -41,7 +41,7 @@ test("Checkout placeholders stay local and cannot collect payment or fulfill pre
   const source = readFileSync("app/season-pass/page.tsx", "utf8");
   assert.ok(source.includes('href="#checkout-placeholder"'));
   assert.ok(source.includes('href="#checkout-status"'));
-  assert.ok(source.includes("Checkout is not available yet"));
+  assert.ok(source.includes("No payments are taken here"));
   assert.doesNotMatch(
     source,
     /https:\/\/.*stripe|<form|fetch\(|localStorage|sessionStorage|use server/,

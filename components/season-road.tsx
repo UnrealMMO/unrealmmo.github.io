@@ -67,8 +67,8 @@ function Details({ reward: r }: { reward: Reward }) {
       ) : null}
       {r.minimumSkillLevel ? (
         <p>
-          Choose an UnrealMMO skill at level {r.minimumSkillLevel} or above with
-          room for the full EXP award.
+          For a skill at level {r.minimumSkillLevel}+. Requires room for the
+          full EXP.
         </p>
       ) : null}
       {r.kind === "supplies" ? (
@@ -80,12 +80,8 @@ function Details({ reward: r }: { reward: Reward }) {
           ))}
         </ul>
       ) : null}
-      {r.kind === "title" ? (
-        <p>A collectible title to equip from your Hearthstone menu.</p>
-      ) : null}
-      {r.kind === "cosmetic" ? (
-        <p>Appearance only. No added stats or gameplay advantage.</p>
-      ) : null}
+      {r.kind === "title" ? <p>A title for your character.</p> : null}
+      {r.kind === "cosmetic" ? <p>Cosmetic reward.</p> : null}
     </>
   );
 }
@@ -158,10 +154,10 @@ export function SeasonRoad() {
               : r.kind === "title"
                 ? "Collectible title"
                 : r.kind === "supplies"
-                  ? "Supplies for the journey"
-                  : "Cosmetic unlock"}
+                  ? "Supply pack"
+                  : "Cosmetic"}
           </span>
-          <small>Inspect reward ↗</small>
+          <small>View reward ↗</small>
         </div>
       </button>
     );
@@ -297,25 +293,18 @@ export function SeasonRoad() {
                   <Dialog.Title>{reward.label}</Dialog.Title>
                   <Dialog.Description>
                     {selected.count > 1 ? `${selected.count} rewards. ` : ""}
-                    Unlocks at {(selected.tier * 2500).toLocaleString(
+                    {(selected.tier * season.xpPerTier).toLocaleString(
                       "en-US",
                     )}{" "}
                     Season XP
-                    {selected.premium
-                      ? " with Premium."
-                      : " on the included regular track."}
                   </Dialog.Description>
                   <Details reward={reward} />
                   <p className="reward-preview-note">
                     {preview?.source === "game-model"
-                      ? "Rendered from our actual game models and textures. Regalia is shown worn on a neutral mannequin using its in-game armor textures. Studio lighting differs from the game."
+                      ? "Game model preview"
                       : reward.kind === "title"
-                        ? "Nameplate preview. Your selected title appears with your character’s name."
-                        : "Original reward artwork. In-game consumables currently use vanilla item appearances."}
-                  </p>
-                  <p className="reward-preview-note">
-                    See Hearthstone → Season 0 for your saved grant status. Some
-                    deliveries are still being enabled.
+                        ? "Title preview"
+                        : "Reward artwork · In-game appearance differs"}
                   </p>
                 </div>
               </>
