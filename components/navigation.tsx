@@ -2,8 +2,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { ServerSign } from "@/components/server-sign";
 const links = [
   ["/", "Home"],
   ["/skills/", "Skills"],
@@ -45,9 +46,7 @@ export function Navigation() {
               </Link>
             ))}
           </nav>
-          <Link href="/skills/" className="nav-cta">
-            Begin your journey <ArrowUpRight size={15} />
-          </Link>
+          <ServerSign compact />
           <Dialog.Root open={open} onOpenChange={setOpen}>
             <Dialog.Trigger
               className="mobile-toggle"
@@ -75,6 +74,7 @@ export function Navigation() {
                     </Link>
                   ))}
                 </nav>
+                <ServerSign compact />
               </Dialog.Content>
             </Dialog.Portal>
           </Dialog.Root>

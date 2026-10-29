@@ -1,10 +1,11 @@
 "use client";
 
+import { Copy, Check } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const address = "mc.unrealmmo.com";
 
-export function ServerSign() {
+export function ServerSign({ compact = false }: { compact?: boolean }) {
   const [feedback, setFeedback] = useState("");
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const copying = useRef(false);
@@ -30,6 +31,28 @@ export function ServerSign() {
       timer.current = setTimeout(() => setFeedback(""), 4000);
     }
   }
+
+  if (compact)
+    return (
+      <div className="nav-cta server-address">
+        <span>{address}</span>
+        <button
+          type="button"
+          onClick={copyAddress}
+          aria-label={`Copy server address ${address}`}
+          title={feedback || "Copy server address"}
+        >
+          {feedback === "Address copied" ? (
+            <Check size={17} />
+          ) : (
+            <Copy size={17} />
+          )}
+        </button>
+        <span className="address-feedback" role="status" aria-live="polite">
+          {feedback}
+        </span>
+      </div>
+    );
 
   return (
     <div className="server-sign">

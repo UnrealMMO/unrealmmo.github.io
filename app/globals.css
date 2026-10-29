@@ -4583,3 +4583,46 @@ tbody tr:nth-child(even) {
   top: -112px;
   height: calc(100% + 224px);
 }
+
+.server-address {
+  position: relative;
+  padding: 0 0 0 14px;
+  gap: 12px;
+  white-space: nowrap;
+}
+.server-address > span:first-child {
+  user-select: all;
+}
+.server-address button {
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  background: transparent;
+  color: var(--gold);
+  border: 0;
+  border-left: 1px solid #d1c08866;
+  cursor: pointer;
+}
+.server-address button:hover {
+  background: #d1c08822;
+}
+.address-feedback {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: max-content;
+  max-width: 260px;
+  white-space: normal;
+  background: #10281f;
+  color: #efe9d5;
+  padding: 8px 12px;
+  font-size: 0.75rem;
+}
+.address-feedback:empty {
+  display: none;
+}
+.mobile-menu .server-address {
+  display: flex;
+  width: fit-content;
+  margin-top: 24px;
+}
