@@ -6,21 +6,12 @@ import { ServerSign } from "@/components/server-sign";
 import { SneakScene } from "@/components/sneak-scene";
 import { FirestormScene } from "@/components/firestorm-scene";
 import { DiamondTreeScene } from "@/components/diamond-tree-scene";
+import { HeroWindow } from "@/components/hero-window";
 import { skills } from "@/content/game";
 export default function Home() {
   return (
     <>
-      <section className="hero">
-        <img
-          className="hero-art"
-          src="/art/unreal-valley-v2-1920.webp"
-          srcSet="/art/unreal-valley-v2-1920.webp 1920w, /art/unreal-valley-v2-3840.webp 3840w"
-          sizes="max(100vw, 177.69svh)"
-          width={3840}
-          height={2161}
-          alt="An imagined Minecraft valley of forested mountains, a riverside homestead and ancient stone arches"
-          fetchPriority="high"
-        />
+      <HeroWindow>
         <div className="hero-shade" />
         <div className="hero-content wrap">
           <div className="hero-fog" aria-hidden="true" />
@@ -49,7 +40,7 @@ export default function Home() {
         <div className="hero-bottom wrap">
           <span>MINECRAFT JAVA</span>
         </div>
-      </section>
+      </HeroWindow>
       <div className="feature-ribbon">
         <div className="wrap">
           <span>

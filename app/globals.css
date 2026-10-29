@@ -472,7 +472,7 @@ p + p {
   border-right: 1px solid #d6d8ad33;
   transition: background 0.25s;
 }
-.skill-card:last-child {
+.skill-card:nth-child(5n) {
   border-right: 0;
 }
 .skill-card:hover {
@@ -4388,4 +4388,48 @@ tbody tr:nth-child(even) {
   .discover-scene h2 {
     font-size: clamp(1.8rem, 7vw, 2.6rem);
   }
+}
+
+/* The scenery moves within an overscanned window; content stays still. */
+.hero .hero-art {
+  top: -100px;
+  height: calc(100% + 200px);
+}
+@media (min-width: 761px) {
+  .hero {
+    min-height: min(900px, 92svh);
+    padding-block: 105px 65px;
+  }
+  .hero-content {
+    margin-top: 0;
+  }
+  .hero-logo {
+    width: clamp(120px, 22svh, 250px);
+    margin: 0 auto;
+  }
+  .hero-rule {
+    margin: 10px 0 16px;
+    height: 10px;
+  }
+  .hero h2 {
+    font-size: clamp(1.6rem, 3.5svh, 2.4rem);
+  }
+  .hero-content > p {
+    margin: 12px auto 18px;
+    line-height: 1.5;
+  }
+  .hero .server-sign {
+    width: clamp(300px, 50svh, 480px);
+    margin-top: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero .hero-art {
+    transform: none !important;
+  }
+}
+
+@media (min-width: 761px) {
+  .hero .server-sign { container-type: inline-size; }
+  .hero .server-sign-button > span { font-size: 7cqw; }
 }
