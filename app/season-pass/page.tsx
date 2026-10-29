@@ -11,42 +11,44 @@ export default function SeasonPass() {
     <div className="season-page season-road-page">
       <section className="harvest-hero">
         <div className="harvest-hero-shade" />
-        <div className="harvest-hero-models" aria-hidden="true">
-          <img
-            className="hero-crown"
-            src="/season/rewards/hollow_regent_crown-large.webp"
-            width={800}
-            height={800}
-            alt=""
-            fetchPriority="high"
-          />
-          <img
-            className="hero-raven"
-            src="/season/rewards/nevermore_ghost-large.webp"
-            width={800}
-            height={800}
-            alt=""
-          />
-          <img
-            className="hero-lantern"
-            src="/season/rewards/little_lantern-large.webp"
-            width={800}
-            height={800}
-            alt=""
-          />
-        </div>
-        <div className="wrap harvest-hero-copy">
-          <p className="season-kicker">SEASON 0 · OCT 28 — DEC 23, 2026</p>
-          <h1>
-            Hollow
-            <br />
-            <em>Harvest.</em>
-          </h1>
-          <p>Spooky companions. New outfits. Plenty to earn.</p>
-          <span>Play your way through 40 reward tiers.</span>
-          <a className="season-button" href="#reward-road">
-            Explore the rewards <ArrowDown size={18} />
-          </a>
+        <div className="wrap harvest-hero-layout">
+          <div className="harvest-hero-copy">
+            <p className="season-kicker">SEASON 0 · OCT 28 — DEC 23, 2026</p>
+            <h1>
+              Hollow
+              <br />
+              <em>Harvest.</em>
+            </h1>
+            <p>Spooky companions. New outfits. Plenty to earn.</p>
+            <span>Play your way through 40 reward tiers.</span>
+            <a className="season-button" href="#reward-road">
+              Explore the rewards <ArrowDown size={18} />
+            </a>
+          </div>
+          <div className="harvest-hero-models" aria-hidden="true">
+            <img
+              className="hero-regent"
+              src="/season/rewards/regent-hero.webp"
+              width={1000}
+              height={1000}
+              alt=""
+              fetchPriority="high"
+            />
+            <img
+              className="hero-raven"
+              src="/season/rewards/nevermore_ghost-large.webp"
+              width={800}
+              height={800}
+              alt=""
+            />
+            <img
+              className="hero-lantern"
+              src="/season/rewards/little_lantern-large.webp"
+              width={800}
+              height={800}
+              alt=""
+            />
+          </div>
         </div>
         <span className="harvest-scene-label">HOLLOW HARVEST</span>
       </section>
@@ -60,7 +62,6 @@ export default function SeasonPass() {
         <div className="road-facts">
           <span>40 tiers</span>
           <span>2,500 XP per tier</span>
-          <span>Premium is cosmetic only</span>
         </div>
       </section>
       <SeasonRoad />
@@ -116,7 +117,6 @@ export default function SeasonPass() {
                 Upgrade during the season to get the premium rewards you’ve
                 already earned.
               </li>
-              <li>Cosmetics only. No gameplay advantage.</li>
             </ul>
             <a className="season-button" href="#checkout-placeholder">
               Premium · Coming soon

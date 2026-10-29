@@ -1,6 +1,6 @@
 # Hollow Harvest reward road
 
-Published design replaces the text-led catalog with four atmospheric road chapters,40 tier markers and56 reward cards. Regular rewards stay left;16 premium rewards have gold borders on the right. The USD15 premium offer appears after tier40. All checkout links remain local explanatory anchors with no payment or entitlement behavior.
+Published design replaces the text-led catalog with one continuous compact lineup,40 tier markers and56 reward cards. Regular rewards stay left;16 premium rewards have gold borders on the right. The USD15 premium offer appears after tier40. All checkout links remain local explanatory anchors with no payment or entitlement behavior.
 
 ## Artwork and model provenance
 
@@ -14,6 +14,12 @@ The woodland and court backdrops are original generated artwork: a moonlit lante
 
 ## Verification
 
-21 tests and full static export verification passed:29 HTML pages,1189 local references,144 image alt checks and all693 existing skill rows. The reward catalog/amounts did not change. Browser checks at1280×720,390×844 and820×900 verify desktop/phone presentation, chapter links, all40 rows/56 cards/16 premium borders, actual-model rotation in both directions/wrap, scroll requirements, Escape and restored focus, and unavailable checkout anchors. No browser errors. Phone overflow caused by the purchase composition was corrected; final phone/tablet document width equals viewport width. Static card posters load lazily and inspector angles load only on demand; the complete artwork directory is approximately4.1MB, not the initial page transfer. No new WebGL contexts or runtime rendering dependency.
+21 tests and full static export verification passed:29 HTML pages,1189 local references,144 image alt checks and all693 existing skill rows. The reward catalog/amounts did not change. Browser checks at1280×720,390×844 and820×900 verify desktop/phone presentation, continuous tier ordering, all40 rows/56 cards/16 premium borders, actual-model rotation in both directions/wrap, scroll requirements, Escape and restored focus, and unavailable checkout anchors. No browser errors. Phone overflow caused by the purchase composition was corrected; final phone/tablet document width equals viewport width. Static card posters load lazily and inspector angles load only on demand; the complete artwork directory is approximately4.1MB, not the initial page transfer. No new WebGL contexts or runtime rendering dependency.
 
 Screenshots here show desktop hero, premium showcase, model inspector and phone road. Preview did not test authenticated game clients or close outstanding Folia/cosmetic release gates. Source edits are website-only and require no server restart.
+
+## Compact lineup and hero update
+
+The hero now uses separate text/art grid columns (stacked on phone) and a posed player wearing the actual Regent equipment textures, with an original neutral character skin. No artwork crosses the copy region. Both ravens now assemble body plus real left/right wing geometry, facing the camera at165 degrees with wings spread; all8 preview angles were regenerated. Hero assembly recipe and source hashes are recorded alongside this document. These are static flight poses, not an in-game animation change. The regalia reward inspector remains the neutral mannequin; only the hero adds the posed character.
+
+Cards use compact thumbnail-and-caption rows on desktop and small stacked cards on phones. Full-size model inspection remains available. Measured desktop lineup height5832px and phone5842px, preserving40 rows/56cards/16premium borders. Desktop1280, tablet820 and phone390 widths show no horizontal overflow; text and art rectangles do not overlap. Removed cosmetic-only marketing notices as requested; price and placeholder checkout unchanged. All21 tests/static export passed. No game server files were changed.

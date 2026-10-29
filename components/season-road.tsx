@@ -1,14 +1,7 @@
 "use client";
 import { useState, useRef } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import {
-  X,
-  RotateCcw,
-  RotateCw,
-  Sparkles,
-  Crown,
-  ArrowDown,
-} from "lucide-react";
+import { X, RotateCcw, RotateCw, Crown, ArrowDown } from "lucide-react";
 import season from "@/content/season-0.json";
 import images from "@/content/season-previews.json";
 
@@ -123,10 +116,6 @@ export function SeasonRoad() {
         onClick={() => open(entry.reward, tier, premium, entry.count)}
         aria-label={`Preview ${r.label}, ${premium ? "premium" : "regular"} tier ${tier}`}
       >
-        <span className="road-card-track">
-          {premium ? <Crown size={12} /> : <Sparkles size={12} />}{" "}
-          {premium ? "PREMIUM" : "REGULAR"}
-        </span>
         {p ? (
           <img
             src={p.image}
@@ -137,9 +126,7 @@ export function SeasonRoad() {
           />
         ) : (
           <div className="road-title-art">
-            <span>〈</span>
-            <b>{r.label}</b>
-            <span>〉</span>
+            <span aria-hidden="true">✧</span>
           </div>
         )}
         <div className="road-card-caption">
@@ -154,7 +141,6 @@ export function SeasonRoad() {
                   ? "Supply pack"
                   : cosmeticTypes[entry.reward]}
           </span>
-          <small>View reward ↗</small>
         </div>
       </button>
     );

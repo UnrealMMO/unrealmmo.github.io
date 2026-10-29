@@ -84,7 +84,7 @@ def render(polys,angle,size=360):
    output[mn[1]:mx[1]+1,mn[0]:mx[0]+1][mask]=pixels[mask];zz[mask]=z[mask]
  return Image.fromarray(output)
 
-def worn_outfit(names):
+def worn_outfit(names,posed=False):
  # Player proportions, wearing the actual equipment layers rather than inventory icons.
  # Coordinates are Y-up, front toward -Z. Vanilla armor uses a 64x32 UV atlas.
  result=[]; provenance={}
@@ -103,12 +103,30 @@ def worn_outfit(names):
            'down':[u+d+w,v+d,u+d+2*w,v]}
    for face,uv in coords.items():e['faces'][face]['uv']=[uv[0]/4,uv[1]/2,uv[2]/4,uv[3]/2]
   return geometry({'elements':[e]},{'layer':texture if texture is not None else solid((44,51,48))})
+ def pose(polys,part,side=1):
+  if not posed or part=='body':return polys
+  pivot=np.array([-6*side,23,0] if part=='arm' else [-2*side,12,0])
+  angle=math.radians((-22 if side==1 else 28) if part=='arm' else (15 if side==1 else -12))
+  axis=2 if part=='arm' else 0
+  R=np.eye(3);i,j=[q for q in range(3) if q!=axis];R[i,i]=R[j,j]=math.cos(angle);R[i,j]=-math.sin(angle);R[j,i]=math.sin(angle)
+  return [((v-pivot)@R.T+pivot,uv,tex,f) for v,uv,tex,f in polys]
  def mirrored(polys):return [(v*np.array([-1,1,1]),uv,tex,f) for v,uv,tex,f in polys]
  for part,(lo,hi,u,v) in parts.items():
-  polys=cube(lo,hi);result+=polys
-  if part!='body':result+=mirrored(polys)
+  polys=cube(lo,hi);result+=pose(polys,part)
+  if part!='body':result+=pose(mirrored(polys),part,-1)
  # A neutral studio mannequin keeps attention on the earned outfit; no extra helmet is implied.
- result+=geometry({'elements':[box([-4,24,-4],[4,32,4],'head')]},{'head':np.full((16,16,4),(145,143,127,255),dtype=np.uint8)})
+ head=np.full((16,16,4),(145,143,127,255),dtype=np.uint8)
+ if posed:
+  head[:]=[178,126,91,255];head[:5]=[47,33,29,255]
+  head[7:9,3:6]=[226,219,193,255];head[7:9,10:13]=[226,219,193,255]
+  head[7:9,4:6]=[46,76,66,255];head[7:9,10:12]=[46,76,66,255];head[12:13,6:10]=[104,58,47,255]
+ head_box=box([-4,24,-4],[4,32,4],'head')
+ if posed:
+  for face in head_box['faces']:
+   if face!='north':head_box['faces'][face]['texture']='#skin'
+ result+=geometry({'elements':[head_box]},{'head':head,'skin':solid((178,126,91))})
+ if posed:result+=geometry({'elements':[box([-4.2,29,-3.9],[4.2,32.2,4.2],'hair')]},{'hair':solid((47,33,29))})
+
  for name in names:
   equipment_path=pack/'equipment'/f'{name}.json'
   equipment=json.load(open(equipment_path));is_legs=name.endswith('_legs');is_boots=name.endswith('_boots')
@@ -119,29 +137,30 @@ def worn_outfit(names):
   provenance[name]={'equipmentSha256':hashlib.sha256(equipment_path.read_bytes()).hexdigest(),'texture':str(path.relative_to(pack)),'textureSha256':hashlib.sha256(path.read_bytes()).hexdigest()}
   for part in (['leg'] if is_boots else ['body','leg'] if is_legs else ['body','arm']):
    lo,hi,u,v=parts[part];polys=cube(lo,hi,tex,u,v,.5 if is_legs else 1)
-   result+=polys
-   if part!='body':result+=mirrored(polys)
+   result+=pose(polys,part)
+   if part!='body':result+=pose(mirrored(polys),part,-1)
  return result,provenance
 
-manifest=json.loads(Path('content/season-previews.json').read_text()) if len(sys.argv)>2 else {}
-armor_sources={}
-for rid,r in source['rewards'].items():
- if r['kind']=='title':continue
- if len(sys.argv)>2 and rid not in sys.argv[2:]:continue
- polys=[];names=[]
- if r['kind']=='cosmetic':
-  for i,asset in enumerate(r['assetIds']):
-   name=mapping[asset.split(':')[1]];names.append(name);m,t=load(name)
-   polys+=geometry(m,t,((i-1)*18,0,0) if len(r['assetIds'])>1 else (0,0,0))
-  if rid.endswith('_regalia'):
-   polys,provenance=worn_outfit(names);armor_sources.update(provenance)
-  origin='game-model'
- else:
-  kind='supply' if r['kind']=='supplies' else 'scroll' if 'SCROLL' in r['giftReward'] else 'repair' if 'REPAIR' in r['giftReward'] else 'coins'
-  tier=['common','uncommon','rare','epic','legendary'].index(r.get('rarity','common'));m,t=invented(kind,tier);polys=geometry(m,t);origin='original-item-art'
- for frame in range(8):render(polys,30+frame*45).save(out/f'{rid}-{frame}.webp',quality=90)
- render(polys,30,800).save(out/f'{rid}-large.webp',quality=94)
- manifest[rid]={'source':origin,'models':names,'frames':8,'image':f'/season/rewards/{rid}-0.webp','large':f'/season/rewards/{rid}-large.webp'}
-Path('content/season-previews.json').write_text(json.dumps(manifest,indent=2))
-if armor_sources:Path('docs/season-road/armor-sources.json').write_text(json.dumps(armor_sources,indent=2)+'\n')
-print(f'Rendered {len(manifest)} rewards, eight angles and large hero variants each.')
+if __name__=='__main__':
+ manifest=json.loads(Path('content/season-previews.json').read_text()) if len(sys.argv)>2 else {}
+ armor_sources={}
+ for rid,r in source['rewards'].items():
+  if r['kind']=='title':continue
+  if len(sys.argv)>2 and rid not in sys.argv[2:]:continue
+  polys=[];names=[]
+  if r['kind']=='cosmetic':
+   for i,asset in enumerate(r['assetIds']):
+    name=mapping[asset.split(':')[1]];names.append(name);m,t=load(name)
+    polys+=geometry(m,t,((i-1)*18,0,0) if len(r['assetIds'])>1 else (0,0,0))
+   if rid.endswith('_regalia'):
+    polys,provenance=worn_outfit(names);armor_sources.update(provenance)
+   origin='game-model'
+  else:
+   kind='supply' if r['kind']=='supplies' else 'scroll' if 'SCROLL' in r['giftReward'] else 'repair' if 'REPAIR' in r['giftReward'] else 'coins'
+   tier=['common','uncommon','rare','epic','legendary'].index(r.get('rarity','common'));m,t=invented(kind,tier);polys=geometry(m,t);origin='original-item-art'
+  for frame in range(8):render(polys,30+frame*45).save(out/f'{rid}-{frame}.webp',quality=90)
+  render(polys,30,800).save(out/f'{rid}-large.webp',quality=94)
+  manifest[rid]={'source':origin,'models':names,'frames':8,'image':f'/season/rewards/{rid}-0.webp','large':f'/season/rewards/{rid}-large.webp'}
+ Path('content/season-previews.json').write_text(json.dumps(manifest,indent=2))
+ if armor_sources:Path('docs/season-road/armor-sources.json').write_text(json.dumps(armor_sources,indent=2)+'\n')
+ print(f'Rendered {len(manifest)} rewards, eight angles and large hero variants each.')

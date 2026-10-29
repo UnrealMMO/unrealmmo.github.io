@@ -1,0 +1,32 @@
+{
+  "birdModels": [
+    "season1_nevermore",
+    "season1_nevermore_left",
+    "season1_nevermore_right",
+    "season1_nevermore_ghost",
+    "season1_nevermore_ghost_left",
+    "season1_nevermore_ghost_right"
+  ],
+  "files": {
+    "models/item/season1_nevermore.json": "403306ce7d7b5e924872874918adea23e8b575951fdfe805c4110ef78bcbc613",
+    "textures/item/season1_nevermore_feather.png": "56da946b12b7bc4df423a663c09e9ca22b767b19c1c301d1d5928e4ba9514d8e",
+    "textures/item/season1_nevermore_breast.png": "1366646db6e80cefa45376224e1db0bb9089f17656be8289bbbe26b33fe1b7a1",
+    "textures/item/season1_nevermore_beak.png": "545f47c449eae7bb0e76163801544fb268e554998f57b73b7dfc9341d1a90224",
+    "textures/item/season1_nevermore_eye.png": "1d7179d506af0a6edf7fbfb1c5ff608ef89d2b2d3981d04e0e0c7b5b18cb221f",
+    "textures/item/season1_nevermore_silver.png": "8142c9ff599592536288b065135a7282c36fcec3f91387c18a0782f8ea744ff9",
+    "models/item/season1_nevermore_left.json": "66f458d35c7333f6364bec7df21e3ad11dab2cc9a66b060b48f727a0b6f34103",
+    "models/item/season1_nevermore_right.json": "ddd33715f53922079ea9c03d4cfe889c1f84989f53fc20bb618123b9e389920e",
+    "models/item/season1_nevermore_ghost.json": "9bca1f9dd0feab739f11690560feeeb68ab250cd6d4d768022766841a7174d79",
+    "textures/item/season1_nevermore_ghost_feather.png": "bda1fe438ef71e54031b13f689270084ad68b81e517f04382ca5f9a3ea2b7bc5",
+    "textures/item/season1_nevermore_ghost_breast.png": "52a76b3652c56e702c3aec691268fcd543c3d036b315a5aeb5d5feee377258b6",
+    "textures/item/season1_nevermore_ghost_beak.png": "901141a23d5b19747e156641f73bcfb45c184f6ddde890679d1bba3d4a6a685d",
+    "textures/item/season1_nevermore_ghost_eye.png": "5da81edab6afb3e449a414d6773bc089e1a179eb3ee158cd8e1fdcb054ca69f5",
+    "textures/item/season1_nevermore_ghost_silver.png": "c60b6909ac73e052bc6df69dd3cf4fff7c44bf8f66f1a21a5499614d6a2ef8bb",
+    "models/item/season1_nevermore_ghost_left.json": "f36d94493f97f912d9d7b8732028ef6878782483be2f0cae067ba4caf2b692fd",
+    "models/item/season1_nevermore_ghost_right.json": "c3bea36f2f28f1ca1765ffa6dfbf741f0b08c7c4f05d6972e6a4a97cd746407c"
+  },
+  "birdYaw": 165,
+  "armor": "Existing armor-sources.json; actual Regent equipment layers on posed player proportions",
+  "character": "Original neutral player skin, website only",
+  "recipe": "render-season-hero.py after render-season-assets.py"
+}

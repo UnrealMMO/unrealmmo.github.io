@@ -209,7 +209,9 @@
   "nevermore": {
     "source": "game-model",
     "models": [
-      "season1_nevermore"
+      "season1_nevermore",
+      "season1_nevermore_left",
+      "season1_nevermore_right"
     ],
     "frames": 8,
     "image": "/season/rewards/nevermore-0.webp",
@@ -290,7 +292,9 @@
   "nevermore_ghost": {
     "source": "game-model",
     "models": [
-      "season1_nevermore_ghost"
+      "season1_nevermore_ghost",
+      "season1_nevermore_ghost_left",
+      "season1_nevermore_ghost_right"
     ],
     "frames": 8,
     "image": "/season/rewards/nevermore_ghost-0.webp",
