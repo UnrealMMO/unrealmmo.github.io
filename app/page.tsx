@@ -217,11 +217,17 @@ export default function Home() {
           </div>
         </div>
       </SceneWindow>
-      <section className="harvest-promo" aria-labelledby="harvest-promo-title">
+      <SceneWindow className="harvest-promo">
         <div className="harvest-promo-backdrop" aria-hidden="true" />
         <div className="wrap harvest-promo-layout">
           <div className="harvest-promo-copy">
-            <p className="harvest-promo-season">Season 0 · Hollow Harvest</p>
+            <p className="harvest-promo-season">
+              Season Zero
+              <span>Hollow Harvest</span>
+              <span className="harvest-promo-dates">
+                October 28 – December 23, 2026
+              </span>
+            </p>
             <h2 id="harvest-promo-title">
               A little haunting.
               <br />
@@ -234,9 +240,6 @@ export default function Home() {
             <ButtonLink href="/season-pass/">
               Explore the Season Pass
             </ButtonLink>
-            <p className="harvest-promo-price">
-              Free track for everyone. Premium $15 · Coming soon.
-            </p>
           </div>
           <div className="harvest-promo-rewards">
             <img
@@ -265,7 +268,7 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </SceneWindow>
     </>
   );
 }

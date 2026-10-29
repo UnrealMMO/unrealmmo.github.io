@@ -788,7 +788,8 @@ p + p {
 }
 .harvest-promo-backdrop {
   position: absolute;
-  inset: 0;
+  inset: -40px 0;
+  translate: 0 var(--scene-pan, 0px);
   z-index: -1;
   background:
     linear-gradient(
@@ -830,10 +831,19 @@ p + p {
   color: #e1e3d6;
   font-size: 1rem;
 }
-.harvest-promo-price {
-  margin-top: 16px;
-  color: #c3c8b9;
-  font-size: 0.8rem;
+.harvest-promo-season span {
+  display: block;
+}
+.harvest-promo-dates {
+  margin-top: 6px;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .harvest-promo-backdrop {
+    translate: none;
+  }
 }
 .harvest-promo-rewards {
   position: relative;
