@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import assert from "node:assert/strict";
+import { skills, levelRows } from "../content/game.ts";
 const files = fs
   .readdirSync("out", { recursive: true })
   .filter((f) => f.endsWith(".html"));
@@ -27,23 +28,23 @@ for (const f of files) {
   assert.ok(html.includes('id="main"'), `${f}: missing main landmark`);
   assert.ok(!html.includes("sentinel.smartify.ai"), `${f}: unrelated tracking`);
 }
-for (const skill of [
-  "sneak",
-  "farming",
-  "mining",
-  "woodcutting",
-  "fishing",
-  "magic",
-  "construction",
-]) {
-  const html = fs.readFileSync(`out/skills/${skill}/index.html`, "utf8");
-  for (let level = 1; level <= 99; level++)
-    assert.ok(
-      html.includes(`id="level-${level}"`),
-      `${skill} missing level ${level}`,
+let unlockCount = 0;
+for (const skill of skills) {
+  const html = fs.readFileSync(`out/skills/${skill.id}/index.html`, "utf8");
+  for (const row of levelRows(skill)) {
+    const unlocked = row.traits.length > 0;
+    assert.equal(
+      html.includes(`id="level-${row.level}"`),
+      unlocked,
+      `${skill.id}: incorrect visibility for level ${row.level}`,
     );
+    if (unlocked) unlockCount++;
+  }
+  assert.ok(html.includes("Cumulative bonuses"));
+  assert.ok(!html.includes("Find a level or trait"));
+  assert.ok(!html.includes("All 99 levels"));
 }
 assert.ok(fs.existsSync("out/404.html"));
 console.log(
-  `Verified ${files.length} exported HTML files, ${links} local asset/link references, ${images} image alt attributes, and all 693 pre-rendered level rows.`,
+  `Verified ${files.length} exported HTML files, ${links} local asset/link references, ${images} image alt attributes, and ${unlockCount} pre-rendered unlock rows.`,
 );

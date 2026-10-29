@@ -45,7 +45,7 @@ export default async function SkillPage({
         <nav className="anchor-nav" aria-label="On this skill page">
           <a href="#training">How to train</a>
           <a href="#traits">Signature traits</a>
-          <a href="#progression">All 99 levels</a>
+          <a href="#progression">Unlocks & bonuses</a>
           <a href="#rules">Know before you go</a>
         </nav>
       </header>
