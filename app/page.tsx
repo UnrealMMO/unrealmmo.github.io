@@ -53,13 +53,18 @@ export default function Home() {
       <div className="feature-ribbon">
         <div className="wrap">
           <span>
-            <Sparkles size={18} /> Seven skills to master.
+            <Sparkles size={18} aria-hidden="true" />
+            <span className="feature-label">Seven skills to master.</span>
           </span>
           <span>
-            <Layers size={18} /> Progression that changes how you play.
+            <Layers size={18} aria-hidden="true" />
+            <span className="feature-label">
+              Progression that changes how you play.
+            </span>
           </span>
           <span>
-            <Shield size={18} /> A place to call your own.
+            <Shield size={18} aria-hidden="true" />
+            <span className="feature-label">A place to call your own.</span>
           </span>
         </div>
       </div>
