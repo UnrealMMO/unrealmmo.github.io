@@ -30,32 +30,6 @@ type Preview = {
 };
 const rewards: Record<string, Reward> = season.rewards;
 const previews: Record<string, Preview> = images;
-const chapters = [
-  {
-    name: "The lantern path",
-    note: "Every journey starts with a spark.",
-    art: "woodland",
-    model: "little_lantern",
-  },
-  {
-    name: "Through the graveglass",
-    note: "Tools of a stranger trade.",
-    art: "court",
-    model: "graveglass_axe",
-  },
-  {
-    name: "The court awakens",
-    note: "Wear the mark of Hollow Harvest.",
-    art: "woodland",
-    model: "hollow_regent_crown",
-  },
-  {
-    name: "A sovereign’s arrival",
-    note: "Your season. Your signature.",
-    art: "court",
-    model: "nevermore_ghost",
-  },
-];
 const cosmeticTypes: Record<string, string> = {
   harvest_warden_mask: "Headwear Style",
   candlekeeper_pickaxe: "Pickaxe Style",
@@ -187,14 +161,6 @@ export function SeasonRoad() {
   }
   return (
     <>
-      <nav className="road-jumps" aria-label="Reward chapters">
-        <span>THE REWARD ROAD</span>
-        {chapters.map((c, i) => (
-          <a href={`#road-${i}`} key={c.name}>
-            {i * 10 + 1}–{i * 10 + 10}
-          </a>
-        ))}
-      </nav>
       <div className="road-legend wrap">
         <span>REGULAR · INCLUDED</span>
         <ArrowDown size={18} />
@@ -202,58 +168,46 @@ export function SeasonRoad() {
           <Crown size={16} /> PREMIUM
         </span>
       </div>
-      {chapters.map((c, index) => (
-        <section
-          id={`road-${index}`}
-          className={`road-chapter road-${c.art}`}
-          key={c.name}
-          aria-labelledby={`chapter-${index}`}
-        >
-          <div className="road-scenery" aria-hidden="true">
-            <img
-              src={previews[c.model].large}
-              alt=""
-              loading="lazy"
-              width={800}
-              height={800}
-            />
-          </div>
-          <header className="road-chapter-title">
-            <p>
-              CHAPTER {String(index + 1).padStart(2, "0")} · TIERS{" "}
-              {index * 10 + 1}–{index * 10 + 10}
-            </p>
-            <h2 id={`chapter-${index}`}>{c.name}</h2>
-            <span>{c.note}</span>
-          </header>
-          <div className="road-path wrap">
-            <svg
-              className="road-line"
-              viewBox="0 0 1000 4000"
-              preserveAspectRatio="none"
-              aria-hidden="true"
+      <section
+        className="road-lineup road-woodland"
+        aria-label="Season rewards, tiers 1 to 40"
+      >
+        <div className="road-scenery" aria-hidden="true">
+          <img
+            src={previews.little_lantern.large}
+            alt=""
+            loading="lazy"
+            width={800}
+            height={800}
+          />
+        </div>
+        <div className="road-path wrap">
+          <svg
+            className="road-line"
+            viewBox="0 0 1000 16000"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path d="M476 0 C476 200 524 200 524 400 S476 600 476 800 S524 1000 524 1200 S476 1400 476 1600 S524 1800 524 2000 S476 2200 476 2400 S524 2600 524 2800 S476 3000 476 3200 S524 3400 524 3600 S476 3800 476 4000 S524 4200 524 4400 S476 4600 476 4800 S524 5000 524 5200 S476 5400 476 5600 S524 5800 524 6000 S476 6200 476 6400 S524 6600 524 6800 S476 7000 476 7200 S524 7400 524 7600 S476 7800 476 8000 S524 8200 524 8400 S476 8600 476 8800 S524 9000 524 9200 S476 9400 476 9600 S524 9800 524 10000 S476 10200 476 10400 S524 10600 524 10800 S476 11000 476 11200 S524 11400 524 11600 S476 11800 476 12000 S524 12200 524 12400 S476 12600 476 12800 S524 13000 524 13200 S476 13400 476 13600 S524 13800 524 14000 S476 14200 476 14400 S524 14600 524 14800 S476 15000 476 15200 S524 15400 524 15600 S476 15800 476 16000" />
+          </svg>
+          {season.tiers.map((t) => (
+            <div
+              className={`road-row ${t.tier % 5 === 0 ? "road-milestone" : ""}`}
+              key={t.tier}
             >
-              <path d="M476 0 C476 200 524 200 524 400 S476 600 476 800 S524 1000 524 1200 S476 1400 476 1600 S524 1800 524 2000 S476 2200 476 2400 S524 2600 524 2800 S476 3000 476 3200 S524 3400 524 3600 S476 3800 476 4000" />
-            </svg>
-            {season.tiers.slice(index * 10, index * 10 + 10).map((t) => (
-              <div
-                className={`road-row ${t.tier % 5 === 0 ? "road-milestone" : ""}`}
-                key={t.tier}
-              >
-                {card(t.free, t.tier, false)}
-                <div className="road-marker">
-                  <span>TIER</span>
-                  <b>{t.tier}</b>
-                  <small>
-                    {(t.tier * season.xpPerTier).toLocaleString("en-US")} XP
-                  </small>
-                </div>
-                {card(t.premium, t.tier, true)}
+              {card(t.free, t.tier, false)}
+              <div className="road-marker">
+                <span>TIER</span>
+                <b>{t.tier}</b>
+                <small>
+                  {(t.tier * season.xpPerTier).toLocaleString("en-US")} XP
+                </small>
               </div>
-            ))}
-          </div>
-        </section>
-      ))}
+              {card(t.premium, t.tier, true)}
+            </div>
+          ))}
+        </div>
+      </section>
       <Dialog.Root
         open={selected !== null}
         onOpenChange={(v) => {
