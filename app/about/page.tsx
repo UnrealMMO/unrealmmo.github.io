@@ -21,9 +21,9 @@ export default function About() {
         </p>
         <h2>Artwork & identity</h2>
         <p>
-          Our branding and illustrations were made for UnrealMMO. The valley is
-          AI-assisted concept art, not an in-game screenshot. Structure diagrams
-          use the game’s actual block patterns.
+          Our branding and illustrations were made for UnrealMMO. The valley and
+          settlement scenes are AI-assisted concept art, not in-game
+          screenshots. Structure diagrams use the game’s actual block patterns.
         </p>
         <p>
           The diamond, fire-charge, flame, smoke and explosion textures are

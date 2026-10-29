@@ -68,7 +68,17 @@ export default function Home() {
           </span>
         </div>
       </div>
-      <section className="section parchment" id="discover">
+      <section className="discover-scene" id="discover">
+        <img
+          className="discover-scene-art"
+          src="/art/discover-valley-v1.webp"
+          srcSet="/art/discover-valley-v1-768.webp 768w, /art/discover-valley-v1.webp 1536w"
+          sizes="100vw"
+          width={1536}
+          height={1024}
+          loading="lazy"
+          alt="A sunny Minecraft-style settlement with players mining, farming, fishing and casting water magic beside an ore tree and horse stable. Original concept artwork."
+        />
         <Reveal className="wrap intro-split">
           <div>
             <h2>

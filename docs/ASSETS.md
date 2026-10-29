@@ -73,3 +73,7 @@ The barrage is reduced from 14 projectiles per volley to two, with three volleys
 - `public/art/sneak-cloak-v2.mp4`: historical nine-second, 48 fps full-color sneak loop, rendered from the existing original pose sheet and forest plate. Eased crouch/stand motion and continuous opacity fade replace the historical GIF’s pixel dissolve. No new third-party artwork. See [animation production notes](SNEAK-ANIMATION.md).
 
 - `public/art/sneak-cloak-v3.mp4`: current corrected Sneak loop, using the same original art and timing as v2, with the zero-opacity reveal boundary fixed.
+
+## Bright discovery scene — 29 October 2026
+
+`public/art/discover-valley-v1.webp` and `discover-valley-v1-768.webp` are original artwork generated with the built-in image_gen tool. Promotional concept art depicting existing skill and settlement themes, not a server screenshot or exact structure blueprint. The full prompt is in `docs/discover-scene-prompt.txt`. WebP encoding uses Sharp; 1536px and 768px variants serve desktop and mobile.
