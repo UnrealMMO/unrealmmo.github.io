@@ -540,7 +540,7 @@
       "kind": "title"
     },
     "of_the_hollow_court": {
-      "label": "Of the Hollow Court",
+      "label": "Hollow Court",
       "kind": "title"
     },
     "witch": {
@@ -548,7 +548,7 @@
       "kind": "title"
     },
     "sovereign_of_the_hollow": {
-      "label": "Sovereign of the Hollow",
+      "label": "Sovereign",
       "kind": "title"
     },
     "harvest_warden_mask": {
@@ -576,15 +576,15 @@
       "kind": "cosmetic"
     },
     "hollow_pilgrim_hood": {
-      "label": "Hollow Pilgrim Hood",
+      "label": "Pilgrim Hood",
       "kind": "cosmetic"
     },
     "hollow_regent_mask": {
-      "label": "Hollow Regent Mask",
+      "label": "Regent Mask",
       "kind": "cosmetic"
     },
     "graveglass_pickaxe": {
-      "label": "Graveglass Pickaxe",
+      "label": "Grave Pick",
       "kind": "cosmetic"
     },
     "nevermore": {
@@ -592,39 +592,39 @@
       "kind": "cosmetic"
     },
     "graveglass_axe": {
-      "label": "Graveglass Axe",
+      "label": "Grave Axe",
       "kind": "cosmetic"
     },
     "hollow_regent_sword": {
-      "label": "Hollow Regent Sword",
+      "label": "Regent Sword",
       "kind": "cosmetic"
     },
     "graveglass_shovel": {
-      "label": "Graveglass Shovel",
+      "label": "Grave Shovel",
       "kind": "cosmetic"
     },
     "hollow_regent_mantle": {
-      "label": "Hollow Regent Mantle",
+      "label": "Regent Cape",
       "kind": "cosmetic"
     },
     "graveglass_hoe": {
-      "label": "Graveglass Hoe",
+      "label": "Grave Hoe",
       "kind": "cosmetic"
     },
     "hollow_regent_bow": {
-      "label": "Hollow Regent Bow",
+      "label": "Regent Bow",
       "kind": "cosmetic"
     },
     "hollow_regent_shield": {
-      "label": "Hollow Regent Shield",
+      "label": "Regal Shield",
       "kind": "cosmetic"
     },
     "hollow_regent_crown": {
-      "label": "Hollow Regent Crown",
+      "label": "Regent Crown",
       "kind": "cosmetic"
     },
     "nevermore_ghost": {
-      "label": "Nevermore: Ghost Raven",
+      "label": "Ghost Raven",
       "kind": "cosmetic"
     },
     "harvest_warden_regalia": {
@@ -632,7 +632,7 @@
       "kind": "cosmetic"
     },
     "hollow_regent_regalia": {
-      "label": "Regent Regalia + Dread Lantern",
+      "label": "Regent Set",
       "kind": "cosmetic"
     }
   }
