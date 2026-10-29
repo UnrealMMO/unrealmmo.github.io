@@ -6,7 +6,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     "",
     "skills/",
-    "rewards/",
     "season-pass/",
     "structures/",
     "settlements/",

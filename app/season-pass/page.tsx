@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowDown, Crown, Sparkles } from "lucide-react";
 import { SeasonRoad } from "@/components/season-road";
 export const metadata = {
-  title: "Season 0: Hollow Harvest · $15 Premium Pass",
+  title: "Season Zero: Hollow Harvest · $15 Premium Pass",
   description:
     "Explore 40 tiers of Hollow Harvest rewards, from pets and outfits to Coins and EXP. Premium is $15. Coming soon.",
 };
@@ -13,12 +13,12 @@ export default function SeasonPass() {
         <div className="harvest-hero-shade" />
         <div className="wrap harvest-hero-layout">
           <div className="harvest-hero-copy">
-            <p className="season-kicker">SEASON 0 · OCT 28 — DEC 23, 2026</p>
             <h1>
-              Hollow
+              Season Zero
               <br />
-              <em>Harvest.</em>
+              <em>Hollow Harvest</em>
             </h1>
+            <p className="season-kicker">October 28 – December 23, 2026</p>
             <p>Spooky companions. New outfits. Plenty to earn.</p>
             <span>Play your way through 40 reward tiers.</span>
             <a className="season-button" href="#reward-road">
@@ -60,7 +60,7 @@ export default function SeasonPass() {
             Earn Season XP by training your skills—even at level 99. Each server
             vote adds <strong>500 XP</strong>.
           </p>
-          <p>Check your progress in Hearthstone → Season 0.</p>
+          <p>Check your progress in Hearthstone → Season Zero.</p>
           <p className="reward-preview-note">
             Ends December 23 at midnight, New York time. Some rewards are still
             rolling out.
@@ -92,7 +92,7 @@ export default function SeasonPass() {
             </p>
             <h2>More looks to collect.</h2>
             <div className="season-price">
-              $15 <span>USD · Season 0 Premium Pass</span>
+              $15 <span>USD · Season Zero Premium Pass</span>
             </div>
             <p>
               Add 16 cosmetic rewards, including Regent outfits, Graveglass

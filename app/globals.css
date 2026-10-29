@@ -4565,3 +4565,16 @@ tbody tr:nth-child(even) {
     translate: none;
   }
 }
+
+/* Keep both season names on their own line beside the reward artwork. */
+.harvest-hero-copy h1 {
+  font-size: clamp(1.65rem, 3.45vw, 3.6rem);
+}
+.harvest-hero-copy > .season-kicker {
+  margin: 20px 0;
+}
+@media (max-width: 760px) {
+  .harvest-hero-copy h1 {
+    font-size: clamp(1.65rem, 7.2vw, 3.2rem);
+  }
+}

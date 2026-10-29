@@ -9,7 +9,6 @@ const links = [
   ["/skills/", "Skills"],
   ["/structures/", "Structures"],
   ["/settlements/", "Settlements"],
-  ["/rewards/", "Titles & colors"],
   ["/season-pass/", "Season Pass"],
 ];
 export function Navigation() {
