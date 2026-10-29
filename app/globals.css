@@ -811,14 +811,6 @@ p + p {
 .harvest-promo-copy {
   padding-block: 65px;
 }
-.harvest-promo-season {
-  color: #e6be7d;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
 .harvest-promo h2 {
   font-size: clamp(2rem, 3.4vw, 3.5rem);
 }
@@ -831,12 +823,10 @@ p + p {
   color: #e1e3d6;
   font-size: 1rem;
 }
-.harvest-promo-season span {
-  display: block;
-}
 .harvest-promo-dates {
-  margin-top: 6px;
-  font-size: 0.7rem;
+  margin-top: 16px;
+  color: #e6be7d;
+  font-size: 0.85rem;
   letter-spacing: 0.04em;
   text-transform: none;
 }

@@ -221,18 +221,14 @@ export default function Home() {
         <div className="harvest-promo-backdrop" aria-hidden="true" />
         <div className="wrap harvest-promo-layout">
           <div className="harvest-promo-copy">
-            <p className="harvest-promo-season">
-              Season Zero
-              <span>Hollow Harvest</span>
-              <span className="harvest-promo-dates">
-                October 28 – December 23, 2026
-              </span>
-            </p>
             <h2 id="harvest-promo-title">
-              A little haunting.
+              Season Zero
               <br />
-              <em>A lot to collect.</em>
+              <em>Hollow Harvest</em>
             </h2>
+            <p className="harvest-promo-dates">
+              October 28 – December 23, 2026
+            </p>
             <p className="harvest-promo-description">
               Ghostly companions. Regal armor. One wicked pumpkin helmet. Play
               your way through 40 tiers of Hollow Harvest rewards.
