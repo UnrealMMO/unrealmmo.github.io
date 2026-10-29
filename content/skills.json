@@ -11,10 +11,9 @@
       "Land melee hits on enemy mobs while sneaking. Attacking players does not train Sneak."
     ],
     "rules": [
-      "Sneak for three seconds to hide from players and mobs beyond your concealment range. Standing ends it; damage reveals you for 15 seconds.",
-      "Ambush also reveals you.",
-      "Threat Sense can reveal a concealed player to the sensing viewer inside 20 blocks.",
-      "The sneak-speed bonus reaches +200% at level 98. Walking and sprinting are unchanged; vanilla attribute caps still apply."
+      "Sneak for three seconds to hide beyond your concealment range. Standing or using Ambush reveals you; damage keeps you visible for 15 seconds.",
+      "Threat Sense can spot hidden players within 20 blocks. Only the player using it sees them.",
+      "Speed bonuses affect sneaking, not walking or sprinting. Minecraft’s speed limits still apply."
     ],
     "commands": ["/skills"],
     "traits": [
@@ -87,11 +86,9 @@
       "Harvest naturally grown pumpkins and melons. Planting, tilling, placed fruit and automatic farms do not train Farming."
     ],
     "rules": [
-      "Growth bonuses apply to your planted crops while you are online and within 32 blocks. Vanilla light, hydration and soil rules still apply.",
-      "Ordinary levels alternate growth first, then double-produce chance. Both reach 25% at level 98.",
-      "Growth means extra random-tick opportunities, not a guaranteed harvest time. Seeds and XP are not doubled.",
-      "Ore trees grant resources, not passive Farming XP. Their additional unlocks do not interrupt ordinary level bonuses.",
-      "Ore trees work while their chunks are loaded, even when you’re offline. Register up to 10 per type; you don’t need to stay nearby."
+      "Crop bonuses need you online and within 32 blocks of crops you planted. Normal light, water and soil requirements still apply.",
+      "Growth boosts help crops grow sooner, but harvest times vary. Double harvests do not double seeds or XP.",
+      "Ore trees produce resources, not Farming XP. They work in loaded chunks even while you’re offline, with up to 10 registered trees per type."
     ],
     "commands": [
       "/farming",
@@ -160,10 +157,9 @@
       "Rarer ores give more experience. Blocks placed by players do not count."
     ],
     "rules": [
-      "Speed and double-ore chance each reach 50% by level 98.",
-      "Silk Touch is excluded from ore doubling. Fortune keeps its normal result before a qualifying double roll.",
-      "Prospector is a directional chime for your selected ore within 12 blocks.",
-      "Master Miner is bounded to 12 matching connected natural ores and respects ordinary protection."
+      "Silk Touch cannot double ores. Fortune works normally, and its drops can then be doubled.",
+      "Prospector chimes toward your chosen ore within 12 blocks.",
+      "Master Miner breaks up to 12 connected natural ores of the same type. It cannot bypass protection."
     ],
     "commands": [
       "/mining",
@@ -241,10 +237,9 @@
       "Placed or stripped logs, leaves, decorative wood, bamboo and mushrooms do not train Woodcutting."
     ],
     "rules": [
-      "Chopping speed reaches +50%; double-wood chance reaches 25%. Both cap at level 98.",
-      "Replant uses your inventory’s saplings after you fully harvest a recognized tree.",
-      "Canopy Care raises sapling and apple drop chances by 50% relative to their normal chance, not by 50 percentage points.",
-      "Unusual or oversized trees can be ineligible for automatic felling; manual harvesting still works. Nether-fungus replanting is not automated."
+      "Replant uses saplings from your inventory after you finish harvesting a recognized tree.",
+      "Canopy Care makes sapling and apple drops 50% more likely, rather than adding a flat 50% chance.",
+      "Unusual or oversized trees may need manual chopping. Nether fungi must be replanted by hand."
     ],
     "commands": [
       "/woodcutting",
@@ -332,10 +327,9 @@
       "Bonus fish, treasure and trophies do not give extra experience."
     ],
     "rules": [
-      "Ordinary levels reduce base waiting time, reaching 25% at level 98. Lure and vanilla fishing conditions still matter.",
-      "Rare trophies, legendary trophies and treasure upgrades require open water.",
-      "Trophies take priority over treasure and double-fish rolls. Chances shown use the default settings.",
-      "Tackle Pouch collects catches directly; full-inventory overflow remains in the world."
+      "Leveling reduces your wait for bites. Lure and normal fishing conditions still matter.",
+      "Trophies and treasure upgrades need open water. Trophies take priority over treasure and bonus fish.",
+      "Tackle Pouch sends catches to your inventory. If it’s full, they drop normally."
     ],
     "commands": ["/fishing", "/fishing pouch on"],
     "traits": [
@@ -398,12 +392,11 @@
       "Healing, utility spells, peaceful creatures, other players and Creative mode do not train Magic."
     ],
     "rules": [
-      "Right-click a staff to cast. Sneak + swap hands cycles unlocked spells; an offhand staff uses sneak + right-click. Only one staff can be equipped at a time.",
-      "Every staff activation costs one Magic Rune plus mana. Craft 1 ordinary flint + 1 lapis lazuli into 8 runes in either crafting grid. Right-click a rune to open the Spell Menu.",
-      "Mana capacity is 100. Regeneration begins three seconds after casting: 5.25 per second at level 1, reaching 6.25 at level 80.",
-      "Arcane Attunement alternates +5 percentage points of regeneration and potency. Both cap at +25%; potency affects spell damage, attributed burns and healing, not durations or terrain effects.",
-      "Downpour has no level requirement: 1 rune sends a rain cloud 20 blocks, watering exposed farmland and extinguishing fires. Ten-second cooldown.",
-      "Mining, Woodcutting and Construction spells unlock through those skills, not Magic. Protection and combat restrictions still apply."
+      "Right-click a staff to cast. Sneak + swap hands changes spells; with an offhand staff, use sneak + right-click. Equip only one staff at a time.",
+      "Each cast uses one Magic Rune plus mana. Craft 1 flint and 1 lapis lazuli into 8 runes. Right-click a rune for the Spell Menu.",
+      "You have 100 mana. It starts refilling three seconds after casting. Leveling improves regeneration, damage, burns and healing—not spell duration or terrain effects.",
+      "Downpour needs no skill level: spend 1 rune to water exposed farmland and put out fires along a 20-block path. Wait 10 seconds between casts.",
+      "Mining, Woodcutting and Construction spells unlock through those skills. Protection and combat restrictions still apply."
     ],
     "commands": ["/skills"],
     "traits": [
@@ -527,12 +520,12 @@
       "Breaking and replacing blocks does not count. Reclaimed materials stay ineligible, even after crafting or processing. Creative mode does not train Construction."
     ],
     "rules": [
-      "Builder’s Reach works everywhere while holding eligible building materials: +0.5 block at 1, +1 at 30, +1.5 at 60 and +2 at 99. Breaking and attack range remain normal.",
-      "Home benefits apply inside your own territory, not another player’s claim. Hunger traits preserve food; they do not refill it.",
-      "Right-click a Magic Rune for spells. Stand still for three seconds to cast Bedbound or Hearthward; they share a five-minute cooldown. Neither works within 15 seconds of combat.",
-      "Personal Chest opens your 27-slot Ender Chest through a spell. Items keep their data and remain across worlds and restarts.",
-      "Astral Projection lets you fly and build with your inventory inside your territory, but you cannot attack. Your body stays vulnerable: damage hurts you and brings you back. Press Shift+F to return anytime; there’s no time limit.",
-      "Construction abilities also work in Creative when an administrator enables Creative skills. Level, rune and combat requirements still apply."
+      "Builder’s Reach extends block placement while you hold building materials. It does not extend mining or attack range.",
+      "Home bonuses work only in your own territory. Hunger perks save food but do not refill it.",
+      "Right-click a Magic Rune for spells. Bedbound and Hearthward need three seconds standing still and share a five-minute cooldown. Wait 15 seconds after combat to cast.",
+      "Personal Chest opens your 27-slot Ender Chest. Your items stay saved across worlds and restarts.",
+      "Astral Projection lets you fly and build in your territory, but not attack. Your body stays vulnerable; damage hurts you and ends the spell. Press Shift+F to return, or stay as long as you like.",
+      "Creative abilities need an administrator to enable them. Level, rune and combat rules still apply."
     ],
     "commands": ["/skills", "/hearthstone", "/construction return"],
     "traits": [
