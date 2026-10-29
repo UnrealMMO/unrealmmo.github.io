@@ -58,7 +58,26 @@ def geometry(model,textures,offset=(0,0,0)):
    result.append((v,uv,textures[key],f))
  return result
 
+def separate_coplanar_faces(polys):
+ # A deterministic, sub-pixel separation prevents equal-depth surfaces from
+ # competing. Apply it once to the assembled model, including armor layers.
+ planes={};result=[]
+ for vertices,uv,texture,face in polys:
+  normal=np.cross(vertices[1]-vertices[0],vertices[2]-vertices[0]);length=np.linalg.norm(normal)
+  if length<1e-10:continue
+  normal=normal/length
+  canonical=normal.copy()
+  for component in canonical:
+   if abs(component)>1e-7:
+    if component<0:canonical=-canonical
+    break
+  key=tuple(np.round(canonical,5))+(round(float(vertices[0]@canonical),5),)
+  layer=planes.get(key,0);planes[key]=layer+1
+  result.append((vertices+normal*(layer*.0005),uv,texture,face))
+ return result
+
 def render(polys,angle,size=360):
+ polys=separate_coplanar_faces(polys)
  yaw=math.radians(angle);pitch=math.radians(18)
  right=np.array([math.cos(yaw),0,math.sin(yaw)]);depth=np.array([math.sin(yaw)*math.cos(pitch),math.sin(pitch),-math.cos(yaw)*math.cos(pitch)]);up=np.cross(depth,right)
  # up must point toward positive world Y
@@ -128,6 +147,11 @@ def worn_outfit(names,posed=False):
  if posed:result+=geometry({'elements':[box([-4.2,29,-3.9],[4.2,32.2,4.2],'hair')]},{'hair':solid((47,33,29))})
 
  for name in names:
+  if name=='jack_o_lantern':
+   m,t=load(name)
+   result += [(v*.5+np.array([-4,20,-4]),uv,tex,f) for v,uv,tex,f in geometry(m,t)]
+   provenance[name]={'modelSha256':hashlib.sha256((pack/'models/item'/f'{name}.json').read_bytes()).hexdigest()}
+   continue
   equipment_path=pack/'equipment'/f'{name}.json'
   equipment=json.load(open(equipment_path));is_legs=name.endswith('_legs');is_boots=name.endswith('_boots')
   layer='humanoid_leggings' if is_legs else 'humanoid'
@@ -143,7 +167,7 @@ def worn_outfit(names,posed=False):
 
 if __name__=='__main__':
  manifest=json.loads(Path('content/season-previews.json').read_text()) if len(sys.argv)>2 else {}
- armor_sources={}
+ armor_sources=json.loads(Path("docs/season-road/armor-sources.json").read_text()) if Path("docs/season-road/armor-sources.json").exists() else {}
  for rid,r in source['rewards'].items():
   if r['kind']=='title':continue
   if len(sys.argv)>2 and rid not in sys.argv[2:]:continue

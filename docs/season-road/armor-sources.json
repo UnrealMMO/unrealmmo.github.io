@@ -28,5 +28,8 @@
     "equipmentSha256": "84561648023fb446a6c8cc50235f23ef7711ca2e2678ffa225a894dd31e807fb",
     "texture": "textures/entity/equipment/humanoid/season1_hollow_regent_boots.png",
     "textureSha256": "250ab5543a821e46d38f8166117cb8eafc3da0cd00620e927ee57e5f500810d2"
+  },
+  "jack_o_lantern": {
+    "modelSha256": "a72789f2e804cac21002c42fd47d6aab3efb1bc4ef53a0e5b8767b657ca42586"
   }
 }

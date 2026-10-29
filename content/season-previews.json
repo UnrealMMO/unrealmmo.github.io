@@ -305,7 +305,8 @@
     "models": [
       "season1_harvest_warden_chest",
       "season1_harvest_warden_legs",
-      "season1_harvest_warden_boots"
+      "season1_harvest_warden_boots",
+      "jack_o_lantern"
     ],
     "frames": 8,
     "image": "/season/rewards/harvest_warden_regalia-0.webp",

@@ -18,7 +18,7 @@ for rid,reward in r['source']['rewards'].items():
   kind='supply' if reward['kind']=='supplies' else 'scroll' if 'SCROLL' in reward['giftReward'] else 'repair' if 'REPAIR' in reward['giftReward'] else 'coins'
   tier=['common','uncommon','rare','epic','legendary'].index(reward.get('rarity','common'));m,t=r['invented'](kind,tier);polys=r['geometry'](m,t)
  groups={}
- for v,uv,tex,face in polys:
+ for v,uv,tex,face in r['separate_coplanar_faces'](polys):
   key=hashlib.sha256(tex.tobytes()).hexdigest()
   if key not in groups:
    b=io.BytesIO();Image.fromarray(tex).save(b,format='PNG');groups[key]={'texture':'data:image/png;base64,'+base64.b64encode(b.getvalue()).decode(),'positions':[],'uvs':[]}

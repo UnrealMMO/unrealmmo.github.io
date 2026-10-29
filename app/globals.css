@@ -4306,3 +4306,14 @@ tbody tr:nth-child(even) {
   gap: 8px;
   padding: 10px 14px;
 }
+
+/* Keep the purchase artwork inside its own grid row on every screen. */
+.purchase-models { min-height: 0; height: 510px; overflow: hidden; isolation: isolate; }
+.purchase-models > img:first-child { width: 100%; height: 86%; object-fit: contain; max-width: 100%; inset: auto 0 0; }
+.purchase-crown { width: 45%; height: 29%; object-fit: contain; top: 0; left: 27.5%; }
+@media (max-width: 760px) {
+ .purchase-models { height: 330px; min-height: 0; }
+ .road-purchase-grid { gap: 26px; }
+ .purchase-models > img:first-child { inset: auto 0 0; }
+ .purchase-crown { top: 0; }
+}
