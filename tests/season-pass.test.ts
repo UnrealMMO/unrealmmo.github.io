@@ -67,3 +67,20 @@ test("Every visual reward has eight real render views and a large preview", asyn
   assert.ok(existsSync("public/season/woodland.webp"));
   assert.ok(existsSync("public/season/court.webp"));
 });
+
+test("Every visual reward has self-contained turntable geometry and textures", () => {
+  for (const [id, reward] of Object.entries(season.rewards)) {
+    if (reward.kind === "title") continue;
+    const model = JSON.parse(
+      readFileSync(`public/season/models/${id}.json`, "utf8"),
+    );
+    assert.ok(Number.isFinite(model.angle));
+    assert.ok(model.meshes.length > 0);
+    for (const mesh of model.meshes) {
+      assert.match(mesh.texture, /^data:image\/png;base64,/);
+      assert.ok(mesh.positions.length > 0 && mesh.positions.length % 9 === 0);
+      assert.equal(mesh.uvs.length, (mesh.positions.length / 3) * 2);
+      assert.ok([...mesh.positions, ...mesh.uvs].every(Number.isFinite));
+    }
+  }
+});

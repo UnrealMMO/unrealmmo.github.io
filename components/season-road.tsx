@@ -1,7 +1,8 @@
 "use client";
 import { useState, useRef } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-import { X, RotateCcw, RotateCw, Crown, ArrowDown } from "lucide-react";
+import { X, Crown, ArrowDown } from "lucide-react";
+import { RewardTurntable } from "@/components/reward-turntable";
 import season from "@/content/season-0.json";
 import images from "@/content/season-previews.json";
 
@@ -82,14 +83,12 @@ export function SeasonRoad() {
     premium: boolean;
     count: number;
   } | null>(null);
-  const [angle, setAngle] = useState(0);
   const returnFocus = useRef<HTMLElement | null>(null);
   const open = (id: string, tier: number, premium: boolean, count: number) => {
     returnFocus.current =
       document.activeElement instanceof HTMLElement
         ? document.activeElement
         : null;
-    setAngle(0);
     setSelected({ id, tier, premium, count });
   };
   const reward = selected ? rewards[selected.id] : null,
@@ -219,32 +218,14 @@ export function SeasonRoad() {
               <>
                 <div className="reward-inspector-art">
                   {preview ? (
-                    <img
-                      src={`/season/rewards/${selected.id}-${angle}.webp`}
-                      width={360}
-                      height={360}
-                      alt={`${reward.label}, view ${angle + 1} of 8`}
+                    <RewardTurntable
+                      key={selected.id}
+                      id={selected.id}
+                      label={reward.label}
                     />
                   ) : (
                     <div className="road-title-art">
                       <b>〈{reward.label}〉</b>
-                    </div>
-                  )}
-                  {preview && (
-                    <div className="reward-turn">
-                      <button
-                        aria-label="Rotate preview left"
-                        onClick={() => setAngle((angle + 7) % 8)}
-                      >
-                        <RotateCcw size={20} />
-                      </button>
-                      <span aria-live="polite">View {angle + 1} / 8</span>
-                      <button
-                        aria-label="Rotate preview right"
-                        onClick={() => setAngle((angle + 1) % 8)}
-                      >
-                        <RotateCw size={20} />
-                      </button>
                     </div>
                   )}
                 </div>
