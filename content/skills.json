@@ -7,9 +7,8 @@
     "color": "#a9a1da",
     "icon": "eye",
     "training": [
-      "Earn 1 base XP per horizontal block of grounded sneaking. Flying, swimming, riding and teleport jumps do not train movement.",
-      "Sneaking within 20 blocks of an enemy mob grants 2 base XP per second. Multiple enemies do not multiply this rate.",
-      "Sneaking melee attacks against enemy mobs grant 5 base XP per final damage point, capped against overkill. PvP does not grant this XP."
+      "Move while sneaking on the ground, or sneak near enemy mobs.",
+      "Land melee hits on enemy mobs while sneaking. Attacking players does not train Sneak."
     ],
     "rules": [
       "Sneak for three seconds to hide from players and mobs beyond your concealment range. Standing ends it; damage reveals you for 15 seconds.",
@@ -84,9 +83,8 @@
     "color": "#a8c983",
     "icon": "sprout",
     "training": [
-      "Mature wheat, carrots, potatoes and beetroot: 3 base XP per harvest.",
-      "Mature nether wart and cocoa: 4 XP. Naturally grown pumpkins and melons: 6 XP. Mature sweet berries: 2 XP.",
-      "Planting, tilling, immature crops, placed fruit and automatic farms do not award Farming XP."
+      "Harvest fully grown crops yourself, including wheat, carrots, potatoes, beetroot, nether wart, cocoa and sweet berries.",
+      "Harvest naturally grown pumpkins and melons. Planting, tilling, placed fruit and automatic farms do not train Farming."
     ],
     "rules": [
       "Growth bonuses apply to your planted crops while you are online and within 32 blocks. Vanilla light, hydration and soil rules still apply.",
@@ -158,9 +156,8 @@
     "color": "#8bbccb",
     "icon": "pickaxe",
     "training": [
-      "Natural coal, copper and quartz ore: 8 base XP; iron: 12 XP.",
-      "Gold, redstone and lapis ore: 18 XP; diamond and emerald: 40 XP; ancient debris: 80 XP.",
-      "Eligible natural stone grants 1 XP. Use a pickaxe; player-placed blocks do not train the skill."
+      "Use a pickaxe to mine natural stone and ores.",
+      "Rarer ores give more experience. Blocks placed by players do not count."
     ],
     "rules": [
       "Speed and double-ore chance each reach 50% by level 98.",
@@ -240,8 +237,8 @@
     "color": "#cdb18a",
     "icon": "axe",
     "training": [
-      "Eligible natural logs and stems harvested with an axe: 8 base XP each.",
-      "Player-grown trees qualify. Placed logs, leaves, stripped logs, decorative wood, bamboo and mushrooms do not award training XP."
+      "Use an axe to harvest logs and stems from trees or nether fungi. Trees grown from your own saplings count too.",
+      "Placed or stripped logs, leaves, decorative wood, bamboo and mushrooms do not train Woodcutting."
     ],
     "rules": [
       "Chopping speed reaches +50%; double-wood chance reaches 25%. Both cap at level 98.",
@@ -331,8 +328,8 @@
     "color": "#84c6bd",
     "icon": "fish",
     "training": [
-      "A successful catch grants 20 base XP, before shared XP boosts.",
-      "Extra fish do not create extra XP. Treasure and trophy upgrades replace an ordinary fish rather than generating an extra catch."
+      "Cast your rod and reel in successful catches to level up.",
+      "Bonus fish, treasure and trophies do not give extra experience."
     ],
     "rules": [
       "Ordinary levels reduce base waiting time, reaching 25% at level 98. Lure and vanilla fishing conditions still matter.",
@@ -397,8 +394,8 @@
     "color": "#91b9e5",
     "icon": "wand",
     "training": [
-      "Damage enemy mobs with staff spells to earn Magic XP: 2 base XP per effective damage point, rounded up per qualifying hit. Overkill is capped.",
-      "PvP, peaceful targets, healing, utility spells and Creative do not train Magic."
+      "Use staff spells to damage enemy mobs.",
+      "Healing, utility spells, peaceful creatures, other players and Creative mode do not train Magic."
     ],
     "rules": [
       "Right-click a staff to cast. Sneak + swap hands cycles unlocked spells; an offhand staff uses sneak + right-click. Only one staff can be equipped at a time.",
@@ -525,10 +522,9 @@
     "color": "#dfbd7f",
     "icon": "hammer",
     "training": [
-      "Fresh eligible placements award 16 XP for basic materials, 24 for finished masonry, 32 for decorative blocks, and 48 for functional furnishings.",
-      "Eligible crafting awards 8 / 16 / 24 / 32 XP per recipe batch. Stonecutting awards half the matching crafting rate. Output stack size does not multiply XP.",
-      "First completed Hearthstone tiers award 500 / 1,500 / 3,500 / 7,500 XP. Your first completed Inn and Stable award 2,000 XP each.",
-      "Breaking and replacing blocks cannot farm XP. Recorded positions do not pay twice; reclaimed materials remain ineligible through crafting and processing. Creative never grants Construction XP."
+      "Build with new materials, craft building items and furniture, or use a stonecutter.",
+      "Complete each Hearthstone stage for the first time, and build your first Inn and Stable, for bonus experience.",
+      "Breaking and replacing blocks does not count. Reclaimed materials stay ineligible, even after crafting or processing. Creative mode does not train Construction."
     ],
     "rules": [
       "Builder’s Reach works everywhere while holding eligible building materials: +0.5 block at 1, +1 at 30, +1.5 at 60 and +2 at 99. Breaking and attack range remain normal.",
