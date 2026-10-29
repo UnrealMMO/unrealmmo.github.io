@@ -779,23 +779,116 @@ p + p {
     grid-column: 1 / -1;
   }
 }
-.closing {
-  padding: 100px 0;
-  text-align: center;
+.harvest-promo {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #10201d;
+  border-block: 1px solid #bd98555c;
+}
+.harvest-promo-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background:
-    linear-gradient(#0e251fdd, #0c211bf0),
-    url("/art/unreal-valley.webp") center 70% / cover;
+    linear-gradient(
+      90deg,
+      #0b1b18f5 0%,
+      #0b1b18d9 32%,
+      #0b1b1850 65%,
+      #0b1b1830
+    ),
+    url("/season/court.webp") center 58% / cover;
 }
-.closing h2 {
-  font-size: clamp(2rem, 3.7vw, 3.5rem);
+.harvest-promo-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 24px;
+  min-height: 610px;
 }
-.closing h2 em {
-  color: #c1d1a3;
+.harvest-promo-copy {
+  padding-block: 65px;
 }
-.closing p {
-  margin: 25px 0 30px;
-  color: #bdc8b4;
-  font-size: 0.9rem;
+.harvest-promo-season {
+  color: #e6be7d;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.harvest-promo h2 {
+  font-size: clamp(2rem, 3.4vw, 3.5rem);
+}
+.harvest-promo h2 em {
+  color: #e6be7d;
+}
+.harvest-promo-description {
+  max-width: 430px;
+  margin: 22px 0 28px;
+  color: #e1e3d6;
+  font-size: 1rem;
+}
+.harvest-promo-price {
+  margin-top: 16px;
+  color: #c3c8b9;
+  font-size: 0.8rem;
+}
+.harvest-promo-rewards {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: radial-gradient(ellipse, #58b8a426, transparent 65%);
+}
+.harvest-promo-rewards img {
+  position: absolute;
+  height: auto;
+  filter: drop-shadow(0 18px 18px #07171290);
+}
+.harvest-promo-regent {
+  width: 100%;
+  left: -12%;
+  top: 3%;
+}
+.harvest-promo-raven {
+  width: 58%;
+  right: -12%;
+  top: -8%;
+}
+.harvest-promo-lantern {
+  width: 42%;
+  right: -1%;
+  bottom: 0;
+}
+@media (max-width: 760px) {
+  .harvest-promo-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+    min-height: 0;
+  }
+  .harvest-promo-backdrop {
+    background:
+      linear-gradient(0deg, #0b1b18 0%, #0b1b18e6 35%, #0b1b1830 80%),
+      url("/season/court.webp") center top / auto 640px no-repeat;
+  }
+  .harvest-promo-rewards {
+    grid-row: 1;
+    width: min(100%, 450px);
+    margin: 12px auto 0;
+  }
+  .harvest-promo-copy {
+    padding: 12px 0 48px;
+  }
+  .harvest-promo-regent {
+    left: -8%;
+  }
+  .harvest-promo-raven {
+    right: -5%;
+  }
+  .harvest-promo-lantern {
+    right: 2%;
+  }
 }
 .footer {
   padding: 45px 0 22px;
@@ -1911,9 +2004,6 @@ tbody tr:nth-child(even) {
   }
   .home-callout {
     gap: 8px;
-  }
-  .closing {
-    padding: 70px 0;
   }
   .footer-main {
     display: block;

@@ -217,19 +217,53 @@ export default function Home() {
           </div>
         </div>
       </SceneWindow>
-      <section className="closing">
-        <div className="wrap">
-          <h2>
-            The world is familiar.
-            <br />
-            <em>Your story will be Unreal.</em>
-          </h2>
-          <p>
-            We’re building a deeper kind of Minecraft SMP.
-            <br />
-            Explore the handbook while the next chapter takes shape.
-          </p>
-          <ButtonLink href="/skills/">Find your first skill</ButtonLink>
+      <section className="harvest-promo" aria-labelledby="harvest-promo-title">
+        <div className="harvest-promo-backdrop" aria-hidden="true" />
+        <div className="wrap harvest-promo-layout">
+          <div className="harvest-promo-copy">
+            <p className="harvest-promo-season">Season 0 · Hollow Harvest</p>
+            <h2 id="harvest-promo-title">
+              A little haunting.
+              <br />
+              <em>A lot to collect.</em>
+            </h2>
+            <p className="harvest-promo-description">
+              Ghostly companions. Regal armor. One wicked pumpkin helmet. Play
+              your way through 40 tiers of Hollow Harvest rewards.
+            </p>
+            <ButtonLink href="/season-pass/">
+              Explore the Season Pass
+            </ButtonLink>
+            <p className="harvest-promo-price">
+              Free track for everyone. Premium $15 · Coming soon.
+            </p>
+          </div>
+          <div className="harvest-promo-rewards">
+            <img
+              className="harvest-promo-regent"
+              src="/season/rewards/hollow_regent_regalia-large.webp"
+              alt="Hollow Regent armor worn with the Dread Lantern pumpkin helmet"
+              width={800}
+              height={800}
+              loading="lazy"
+            />
+            <img
+              className="harvest-promo-raven"
+              src="/season/rewards/nevermore_ghost-large.webp"
+              alt="Nevermore ghost raven in flight"
+              width={800}
+              height={800}
+              loading="lazy"
+            />
+            <img
+              className="harvest-promo-lantern"
+              src="/season/rewards/little_lantern-large.webp"
+              alt="Little Lantern companion"
+              width={800}
+              height={800}
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
     </>
