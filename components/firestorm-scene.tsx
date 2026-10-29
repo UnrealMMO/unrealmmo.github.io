@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
+import { motion } from "framer-motion";
+import { useScenePan } from "@/components/scene-window";
 import { FirestormCaster } from "@/components/firestorm-caster";
 
 export function FirestormScene() {
   const section = useRef<HTMLElement>(null);
+  const panStyle = useScenePan(section);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -17,9 +20,10 @@ export function FirestormScene() {
   }, []);
 
   return (
-    <section
+    <motion.section
+      style={panStyle}
       ref={section}
-      className="firestorm-showcase"
+      className="firestorm-showcase scene-window"
       aria-labelledby="firestorm-heading"
       data-paused={!visible}
     >
@@ -141,6 +145,6 @@ export function FirestormScene() {
           </p>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

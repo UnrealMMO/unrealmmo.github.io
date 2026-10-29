@@ -4430,6 +4430,48 @@ tbody tr:nth-child(even) {
 }
 
 @media (min-width: 761px) {
-  .hero .server-sign { container-type: inline-size; }
-  .hero .server-sign-button > span { font-size: 7cqw; }
+  .hero .server-sign {
+    container-type: inline-size;
+  }
+  .hero .server-sign-button > span {
+    font-size: 7cqw;
+  }
+}
+
+/* Scroll only the scenery; copy and contrast overlays stay fixed in each scene. */
+.discover-art-window {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: -2;
+}
+.scene-window .discover-scene-art,
+.scene-window .hearth-backdrop-art {
+  top: -40px;
+  height: calc(100% + 80px);
+  translate: 0 var(--scene-pan, 0px);
+}
+.scene-window .firestorm-stage {
+  translate: 0 var(--scene-pan, 0px);
+  scale: 1.12;
+}
+@media (max-width: 760px) {
+  .discover-art-window {
+    position: relative;
+    aspect-ratio: 3 / 2;
+    z-index: 0;
+  }
+  .scene-window .discover-scene-art {
+    position: absolute;
+  }
+  .scene-window .hearth-backdrop-art {
+    height: 470px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scene-window .discover-scene-art,
+  .scene-window .hearth-backdrop-art,
+  .scene-window .firestorm-stage {
+    translate: none;
+  }
 }

@@ -6,6 +6,7 @@ import { ServerSign } from "@/components/server-sign";
 import { SneakScene } from "@/components/sneak-scene";
 import { FirestormScene } from "@/components/firestorm-scene";
 import { DiamondTreeScene } from "@/components/diamond-tree-scene";
+import { SceneWindow } from "@/components/scene-window";
 import { HeroWindow } from "@/components/hero-window";
 import { skills } from "@/content/game";
 export default function Home() {
@@ -59,18 +60,20 @@ export default function Home() {
           </span>
         </div>
       </div>
-      <section className="discover-scene" id="discover">
-        <img
-          className="discover-scene-art"
-          src="/art/discover-valley-v1.webp"
-          srcSet="/art/discover-valley-v1-768.webp 768w, /art/discover-valley-v1.webp 1536w"
-          sizes="100vw"
-          width={1536}
-          height={1024}
-          loading="lazy"
-          alt="A sunny Minecraft-style settlement with players mining, farming, fishing and casting water magic beside an ore tree and horse stable. Original concept artwork."
-        />
-        <Reveal className="wrap intro-split">
+      <SceneWindow className="discover-scene" id="discover">
+        <div className="discover-art-window">
+          <img
+            className="discover-scene-art"
+            src="/art/discover-valley-v1.webp"
+            srcSet="/art/discover-valley-v1-768.webp 768w, /art/discover-valley-v1.webp 1536w"
+            sizes="100vw"
+            width={1536}
+            height={1024}
+            loading="lazy"
+            alt="A sunny Minecraft-style settlement with players mining, farming, fishing and casting water magic beside an ore tree and horse stable. Original concept artwork."
+          />
+        </div>
+        <div className="wrap intro-split">
           <div>
             <h2>
               Your next chapter
@@ -91,8 +94,8 @@ export default function Home() {
               Meet the skills <ArrowUpRight size={18} />
             </Link>
           </div>
-        </Reveal>
-      </section>
+        </div>
+      </SceneWindow>
       <section className="section forest">
         <div className="wrap">
           <Reveal className="section-heading">
@@ -187,7 +190,7 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
-      <section className="section hearth-backdrop">
+      <SceneWindow className="section hearth-backdrop">
         <img
           className="hearth-backdrop-art"
           src="/art/wardtower-shield-wide-v1.webp"
@@ -198,7 +201,7 @@ export default function Home() {
         />
         <div className="hearth-backdrop-shade" aria-hidden="true" />
         <div className="wrap home-callout">
-          <Reveal className="hearth-copy">
+          <div className="hearth-copy">
             <h2>
               Adventure out.
               <br />
@@ -211,9 +214,9 @@ export default function Home() {
             <Link className="text-link" href="/structures/hearthstone/">
               Build your Hearthstone <ArrowUpRight size={18} />
             </Link>
-          </Reveal>
+          </div>
         </div>
-      </section>
+      </SceneWindow>
       <section className="closing">
         <div className="wrap">
           <h2>
