@@ -132,15 +132,12 @@ export function FirestormScene() {
             <em>Make it yours.</em>
           </h2>
           <p>
-            <strong>Make the elements your own.</strong> Unleash searing fire,
-            sweep enemies into swirling whirlpools, or turn the tide with healing
-            springs. Choose your staff, shape your fighting style, and grow your
-            Magic skill to unlock powerful new abilities.
+            Cast fire, pull enemies into whirlpools or heal with a spring. Train
+            Magic to unlock more spells for your staff.
           </p>
           <p>
-            Your power reaches beyond the battlefield. Craft Magic Runes, call
-            rain over thirsty farmland, and discover unique spells as you explore
-            every skill. <strong>What kind of mage will you become?</strong>
+            Craft Magic Runes to water farmland and use spells unlocked through
+            other skills.
           </p>
         </div>
       </div>

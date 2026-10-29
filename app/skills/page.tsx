@@ -12,7 +12,7 @@ export default function Skills() {
     <div className="parchment page-body">
       <PageIntro
         title="Choose your path. Grow your possibilities."
-        description="Seven skills, trained through the way you play. Discover their defining abilities, then follow every step from level 1 to mastery."
+        description="Train seven skills as you play. See what each one unlocks on the way to level 99."
       />
       <div className="wrap skill-index">
         {skills.map((s, i) => (
@@ -45,9 +45,8 @@ export default function Skills() {
         <h3>Your Skill Journal</h3>
         <p>
           Craft it with one paper and one stick, or open <code>/skills</code>.
-          View your progression, read traits and toggle unlocked abilities.
-          These guides describe the current development build and shipped
-          balance defaults; numbers may change before launch.
+          Check your progress and turn unlocked abilities on or off. Balance may
+          change before launch.
         </p>
       </div>
     </div>

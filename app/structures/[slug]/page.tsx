@@ -58,9 +58,8 @@ export default async function StructurePage({
                 <h2>Build. Tend. Collect.</h2>
                 <ol className="guide-list">
                   <li>
-                    Build the exact pattern. Your final normal block placement
-                    registers the completed tree; the final placer becomes its
-                    owner.
+                    Follow the exact pattern. Whoever places the last block
+                    normally registers and owns the tree.
                   </li>
                   <li>
                     Reach Farming level {s.level}. Production runs while the
@@ -88,9 +87,9 @@ export default async function StructurePage({
                   remain dormant until their owner qualifies.
                 </p>
                 <p>
-                  Production pauses while chunks are unloaded, when the
-                  structure is damaged, or when its output is blocked. There is
-                  no unloaded-chunk catch-up or passive Farming XP.
+                  Production pauses if chunks unload, the tree is damaged or
+                  outputs are blocked. Unloaded time earns no resources, and
+                  trees grant no Farming XP.
                 </p>
                 <Link className="text-link" href="/skills/farming/">
                   Explore Farming progression ↗
@@ -100,10 +99,9 @@ export default async function StructurePage({
             <section className="handbook-note">
               <h3>Builder’s notes</h3>
               <p>
-                Trees may cross chunk borders. Their five-by-five-by-five
-                bounding volumes cannot overlap. Repairs preserve the registered
-                owner. Eight uncollected item entities pause production until
-                cleared.
+                Trees can cross chunk borders, but their 5 × 5 × 5 spaces cannot
+                overlap. Repairs keep the same owner. Clear dropped items: eight
+                uncollected item entities pause production.
               </p>
               {s.id === "copper-tree" && (
                 <p>
@@ -149,7 +147,7 @@ export default async function StructurePage({
                   </li>
                   <li>
                     {(s.stage ?? 1) > 1
-                      ? "Stand within eight blocks of the original core and right-click your Hearthstone Core. The menu item turns green when the upgrade is ready, or red with a reason when it is unavailable. Click green to preview, then confirm within 60 seconds."
+                      ? "Stand within eight blocks of the original core and right-click your Hearthstone Core. Green means ready; red explains what’s missing. Click green to preview and confirm within 60 seconds."
                       : "Inspect the private border preview. Confirm within 60 seconds using the menu."}
                   </li>
                   <li>
@@ -158,12 +156,10 @@ export default async function StructurePage({
                   </li>
                 </ol>
                 <p>
-                  Building before your initial claim? Look at the gold heart and
-                  use <code>/hearthstone preview</code> to detect the highest
-                  complete tier. You can claim its full volume immediately,
-                  without claiming Stage 1 first. If neighbors or world limits
-                  block that size, the preview explains the highest tier that
-                  fits. Confirm the exact preview within 60 seconds.
+                  You can start at any completed tier. Look at the gold heart
+                  and use <code>/hearthstone preview</code> to find the highest
+                  tier that fits around neighbors and world limits. Confirm
+                  within 60 seconds.
                 </p>
               </div>
               <div>
@@ -171,21 +167,19 @@ export default async function StructurePage({
                 <p>
                   {(s.stage ?? 1) > 1
                     ? s.fullWorldHeight
-                      ? "Stage 4 protects a 200 × 200 horizontal footprint from the world’s minimum build Y to its maximum build Y. In the Overworld this is Y −64 through 319, inclusive: 384 blocks high. Other worlds use their own build limits. No one without building permission can build above or beneath your claim within that footprint. Horizontally, protection extends from core −100 through +99, inclusive. The viewer shows an Overworld example with a core at Y 64; layer 1 is the foundation below it. Existing registered Wardtowers receive the full-height protection automatically."
+                      ? "Stage 4 protects 200 × 200 blocks from bedrock to build height, including above and below your home. Borders run from core −100 to +99. In the Overworld, that covers Y −64 to 319; other worlds use their own limits. Existing Wardtowers get this protection automatically. The diagram uses a core at Y 64, with the foundation on layer 1."
                       : `Stage ${s.stage} protects exactly ${s.claimSize} blocks on each axis. Horizontally, this extends from core −${s.claimSize! / 2} through +${s.claimSize! / 2 - 1}, inclusive. Near world height limits the cube shifts vertically to fit, preserving your previous protection. The viewer illustrates a centered cube; its layer 1 is the foundation below the core.`
                     : "Protection reaches eight blocks each way from the gold heart, including vertically: a 17 × 17 × 17 cube. The diagram overlay illustrates that boundary."}
                 </p>
                 <p>
-                  One starter territory per owner, across all worlds. Protection
-                  persists offline and has no upkeep. Previewing alone does not
-                  claim the land.
+                  You get one starter territory across all worlds. Protection
+                  works offline with no upkeep. Confirm the preview to claim it.
                 </p>
                 <p>
-                  The default spawn exclusion is 128 horizontal blocks. World
-                  boundaries, reserved areas and existing claim columns can
-                  prevent placement. Recent PvP damage adds a 30-second founding
-                  or upgrade delay. The full protected volume must fit within
-                  world limits.
+                  Stay at least 128 horizontal blocks from spawn. Claims must
+                  fit within world limits and avoid reserved areas and existing
+                  claim columns. After PvP damage, wait 30 seconds to found or
+                  upgrade.
                 </p>
               </div>
             </section>
@@ -202,10 +196,10 @@ export default async function StructurePage({
                   stages.
                 </p>
                 <p>
-                  No Coin charge, rooms, paths or enclosure checks. Extra
-                  decoration is welcome. Only the owner can confirm an upgrade;
-                  members and invitations stay intact. The menu refreshes while
-                  open and checks the structure again when confirming.
+                  Upgrades cost no Coins and need no rooms, paths or enclosure.
+                  Decorate freely. Only the owner can confirm; members and
+                  invitations stay. The menu updates live and rechecks the build
+                  on confirmation.
                 </p>
               </section>
             )}
@@ -262,17 +256,15 @@ export default async function StructurePage({
                 does not transfer tree ownership.
               </p>
               <p>
-                Only the owner can abandon a claim, using a fresh confirmation.
-                The Hearthstone’s required blocks are locked until then.
-                Abandoning destroys its gold heart; other blocks remain. Stay
-                near the Hearthstone so its core is loaded.
+                Only the owner can abandon a claim and must confirm again. This
+                destroys the gold heart and unlocks the remaining blocks. Stay
+                near the Hearthstone to keep it loaded.
               </p>
             </section>
           </>
         )}
         <p className="small-note guide-version">
-          Development handbook · reviewed 27 October 2026 · Shipped defaults,
-          subject to change.
+          Balance may change before launch.
         </p>
       </div>
     </div>

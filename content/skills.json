@@ -3,7 +3,7 @@
     "id": "sneak",
     "name": "Sneak",
     "tagline": "Become the unseen.",
-    "description": "The quieter path can be the most powerful. Move faster through the shadows, conceal your presence and learn to read the threats around you.",
+    "description": "Move quietly, hide from enemies and sense nearby threats.",
     "color": "#a9a1da",
     "icon": "eye",
     "training": [
@@ -12,8 +12,8 @@
       "Sneaking melee attacks against enemy mobs grant 5 base XP per final damage point, capped against overkill. PvP does not grant this XP."
     ],
     "rules": [
-      "Concealment activates after three seconds of continuous sneaking, hiding you from players and mobs beyond its distance threshold. Standing upright ends it. Taking damage reveals you for 15 seconds.",
-      "Taking damage prevents concealment for 15 seconds. Ambush also reveals you.",
+      "Sneak for three seconds to hide from players and mobs beyond your concealment range. Standing ends it; damage reveals you for 15 seconds.",
+      "Ambush also reveals you.",
       "Threat Sense can reveal a concealed player to the sensing viewer inside 20 blocks.",
       "The sneak-speed bonus reaches +200% at level 98. Walking and sprinting are unchanged; vanilla attribute caps still apply."
     ],
@@ -80,7 +80,7 @@
     "id": "farming",
     "name": "Farming",
     "tagline": "Cultivate the extraordinary.",
-    "description": "Begin with a handful of seeds. Grow into a master of richer harvests, thriving fields and remarkable trees that bear resources.",
+    "description": "Grow better harvests and unlock ore trees that produce resources.",
     "color": "#a8c983",
     "icon": "sprout",
     "training": [
@@ -93,7 +93,7 @@
       "Ordinary levels alternate growth first, then double-produce chance. Both reach 25% at level 98.",
       "Growth means extra random-tick opportunities, not a guaranteed harvest time. Seeds and XP are not doubled.",
       "Ore trees grant resources, not passive Farming XP. Their additional unlocks do not interrupt ordinary level bonuses.",
-      "Ore Trees operate while their chunks are loaded, including while their owner is offline. Up to 10 registered trees per type; no proximity-based active slots."
+      "Ore trees work while their chunks are loaded, even when you’re offline. Register up to 10 per type; you don’t need to stay nearby."
     ],
     "commands": [
       "/farming",
@@ -154,7 +154,7 @@
     "id": "mining",
     "name": "Mining",
     "tagline": "Find more beneath the surface.",
-    "description": "Read the stone, follow the sound of hidden ore and turn every expedition underground into a more rewarding journey.",
+    "description": "Mine faster, find hidden ores and unlock spells for bigger excavations.",
     "color": "#8bbccb",
     "icon": "pickaxe",
     "training": [
@@ -236,7 +236,7 @@
     "id": "woodcutting",
     "name": "Woodcutting",
     "tagline": "Leave a thriving forest.",
-    "description": "Gather timber with purpose. Preserve your tools, replant what you harvest and eventually bring down a whole tree with a practiced swing.",
+    "description": "Save tool durability, replant saplings and learn to fell whole trees.",
     "color": "#cdb18a",
     "icon": "axe",
     "training": [
@@ -245,7 +245,7 @@
     ],
     "rules": [
       "Chopping speed reaches +50%; double-wood chance reaches 25%. Both cap at level 98.",
-      "Replanting uses saplings already in your inventory and requires a recognized, completely harvested tree.",
+      "Replant uses your inventory’s saplings after you fully harvest a recognized tree.",
       "Canopy Care raises sapling and apple drop chances by 50% relative to their normal chance, not by 50 percentage points.",
       "Unusual or oversized trees can be ineligible for automatic felling; manual harvesting still works. Nether-fungus replanting is not automated."
     ],
@@ -327,7 +327,7 @@
     "id": "fishing",
     "name": "Fishing",
     "tagline": "Every cast holds a story.",
-    "description": "Find your quiet corner of the world. Spend less time waiting, recover missed opportunities and land a trophy worth remembering.",
+    "description": "Wait less, recover missed bites and catch rare trophies.",
     "color": "#84c6bd",
     "icon": "fish",
     "training": [
@@ -337,7 +337,7 @@
     "rules": [
       "Ordinary levels reduce base waiting time, reaching 25% at level 98. Lure and vanilla fishing conditions still matter.",
       "Rare trophies, legendary trophies and treasure upgrades require open water.",
-      "Trophies take priority over treasure and double-fish rolls. Displayed percentages are the shipped configurable defaults.",
+      "Trophies take priority over treasure and double-fish rolls. Chances shown use the default settings.",
       "Tackle Pouch collects catches directly; full-inventory overflow remains in the world."
     ],
     "commands": ["/fishing", "/fishing pouch on"],
@@ -393,7 +393,7 @@
     "id": "magic",
     "name": "Magic",
     "tagline": "Shape the elements.",
-    "description": "Begin with water, master fire, and weave practical spells into everyday adventures. Arcane Attunement strengthens your mana regeneration, damage and healing as you grow.",
+    "description": "Cast water and fire spells. Level up to improve mana regeneration, damage and healing.",
     "color": "#91b9e5",
     "icon": "wand",
     "training": [
@@ -521,7 +521,7 @@
     "id": "construction",
     "name": "Construction",
     "tagline": "Build a place worth returning to.",
-    "description": "Turn thoughtful building and crafting into mastery. Reach farther, return home through magic, and shape your settlement as a flying spirit.",
+    "description": "Build and craft to gain reach, teleport home and build as a flying spirit.",
     "color": "#dfbd7f",
     "icon": "hammer",
     "training": [
@@ -533,9 +533,9 @@
     "rules": [
       "Builder’s Reach works everywhere while holding eligible building materials: +0.5 block at 1, +1 at 30, +1.5 at 60 and +2 at 99. Breaking and attack range remain normal.",
       "Home benefits apply inside your own territory, not another player’s claim. Hunger traits preserve food; they do not refill it.",
-      "Right-click a Magic Rune for spells. Bedbound and Hearthward have a three-second stationary channel and share a five-minute cooldown. Recent combat blocks casting, using the same 15-second timer as Sneak.",
-      "Personal Chest is your native 27-slot Ender Chest storage, shared across worlds and preserved through restarts. Access is spell-only; custom item data is preserved.",
-      "Astral Projection leaves your body defenseless. Damage returns you and applies to your real health. Your spirit can build with real inventory within your territory but cannot deal damage. Press Shift+F to return; there is no duration limit.",
+      "Right-click a Magic Rune for spells. Stand still for three seconds to cast Bedbound or Hearthward; they share a five-minute cooldown. Neither works within 15 seconds of combat.",
+      "Personal Chest opens your 27-slot Ender Chest through a spell. Items keep their data and remain across worlds and restarts.",
+      "Astral Projection lets you fly and build with your inventory inside your territory, but you cannot attack. Your body stays vulnerable: damage hurts you and brings you back. Press Shift+F to return anytime; there’s no time limit.",
       "Construction abilities also work in Creative when an administrator enables Creative skills. Level, rune and combat requirements still apply."
     ],
     "commands": ["/skills", "/hearthstone", "/construction return"],

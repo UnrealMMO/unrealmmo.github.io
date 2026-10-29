@@ -6,29 +6,24 @@ export default function About() {
     <div className="parchment page-body">
       <PageIntro
         title="Built with purpose."
-        description="UnrealMMO is an upcoming Minecraft MMORPG, expanding survival multiplayer through meaningful skills and structures."
+        description="UnrealMMO adds skills, spells and settlements to Minecraft survival."
       />
       <article className="wrap prose">
         <h2>A handbook that grows with the game</h2>
         <p>
-          These guides describe the current development build, reviewed on 27
-          October 2026. Progression figures and probabilities use shipped
-          default settings. Server balance may change before launch. Joining
-          details will be added when the server is ready.
+          These guides use the default game settings reviewed on 27 October
+          2026. Balance may change before launch. Joining details will follow
+          when the server is ready.
         </p>
         <p>
-          Seven skills are covered here: Sneak, Farming, Mining, Woodcutting,
-          Fishing, Magic and Construction. The structures catalogue covers eight
-          ore trees and the four Hearthstone stages, from a pedestal to a
-          protection tower. Additional features will be documented as they
-          become available.
+          Explore seven skills, eight ore trees and four Hearthstone stages.
+          We’ll add guides as new features arrive.
         </p>
         <h2>Artwork & identity</h2>
         <p>
-          UnrealMMO’s emblem, structure illustrations and interface were created
-          for this project. The valley illustration is original AI-assisted
-          concept artwork, not an in-game screenshot or a promise of a specific
-          map. Structure diagrams are generated from the game’s block patterns.
+          Our branding and illustrations were made for UnrealMMO. The valley is
+          AI-assisted concept art, not an in-game screenshot. Structure diagrams
+          use the game’s actual block patterns.
         </p>
         <p>
           The diamond, fire-charge, flame, smoke and explosion textures are
@@ -50,9 +45,8 @@ export default function About() {
         </p>
         <h2>Privacy</h2>
         <p>
-          Skill filters, material checklists and 3D controls run in your
-          browser. Checklists reset when the page reloads. We do not show
-          third-party advertising to players. Our{" "}
+          Skill previews, checklists and 3D controls run in your browser.
+          Checklists reset on reload. We don’t show third-party ads. Our{" "}
           <Link href="/privacy-policy/">Privacy policy</Link> explains website
           purchases, payment providers, cookies, server data and your choices.
         </p>

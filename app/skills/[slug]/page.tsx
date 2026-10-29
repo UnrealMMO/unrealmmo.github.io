@@ -63,10 +63,10 @@ export default async function SkillPage({
             <h3>Make it yours</h3>
             <p>
               {s.id === "sneak"
-                ? "Sneak abilities activate automatically when their conditions are met. Open your journal to check your progress."
+                ? "Sneak abilities activate automatically when their conditions are met. Check your progress in the journal."
                 : s.id === "magic" || s.id === "construction"
-                  ? "Right-click a Magic Rune to open your unlocked spells. Your Skill Journal shows progression; the Hearthstone menu manages titles and colors."
-                  : "Unlockable controls are available in your Skill Journal. Optional collection and mastery controls default off."}
+                  ? "Right-click a Magic Rune for spells. Check progress in your journal and choose titles and colors in Hearthstone."
+                  : "Turn on collection and mastery abilities in your Skill Journal. They start switched off."}
             </p>
             {s.commands.map((c) => (
               <code key={c}>{c}</code>
@@ -100,10 +100,7 @@ export default async function SkillPage({
               <li key={r}>{r}</li>
             ))}
           </ul>
-          <p className="small-note">
-            Development handbook · reviewed 27 October 2026 · Default balance
-            values. Gameplay may change before launch.
-          </p>
+          <p className="small-note">Balance may change before launch.</p>
         </section>
       </div>
     </div>

@@ -11,7 +11,7 @@ export default function Rewards() {
     <div className="parchment page-body">
       <PageIntro
         title="Make your name your own."
-        description="Choose your title and name color from the Hearthstone menu. Earned rewards are permanent; selecting one never spends it."
+        description="Choose your title and name color in Hearthstone. Unlocks are permanent, so switch freely."
       />
       <div className="wrap">
         <section className="trait-section">
@@ -34,18 +34,16 @@ export default function Rewards() {
         <section className="rules-panel">
           <h2>Build your reputation</h2>
           <p>
-            Complete an Inn in your settlement to unlock Innkeeper. Complete a
-            Stable to unlock Stablemaster. Complete both in the same settlement
-            to unlock Gold. These rewards belong to the settlement owner;
-            existing valid structures can qualify when rechecked.
+            An Inn earns its owner Innkeeper; a Stable earns Stablemaster. Build
+            both in the same settlement to unlock Gold. Existing buildings can
+            qualify when rechecked.
           </p>
         </section>
         <section className="trait-section">
           <h2>Colors with a story</h2>
           <p>
-            Your selected color applies to both your title and name. Red and
-            purple require a current staff role and cannot be earned through
-            gameplay.
+            Your color applies to your title and name. Red and purple are
+            reserved for current staff.
           </p>
           <div className="trait-grid">
             {rewards.colors.map((c) => (
@@ -66,10 +64,7 @@ export default function Rewards() {
               </article>
             ))}
           </div>
-          <p>
-            Boss colors go to the credited killer. Earlier boss kills are not
-            retroactively reconstructed.
-          </p>
+          <p>Boss colors go to the credited killer. Past kills do not count.</p>
         </section>
       </div>
     </div>

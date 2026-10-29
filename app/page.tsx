@@ -53,7 +53,7 @@ export default function Home() {
       <div className="feature-ribbon">
         <div className="wrap">
           <span>
-            <Sparkles size={18} /> Five skills. Countless possibilities.
+            <Sparkles size={18} /> Seven skills to master.
           </span>
           <span>
             <Layers size={18} /> Progression that changes how you play.
@@ -74,14 +74,12 @@ export default function Home() {
           </div>
           <div className="intro-copy">
             <p>
-              UnrealMMO is an upcoming Minecraft MMORPG that grows from
-              everything you love about SMP: shared adventures, ambitious builds
-              and the satisfaction of making something your own.
+              UnrealMMO brings skills, spells and protected settlements to
+              Minecraft survival.
             </p>
             <p>
-              Now, the way you play shapes what you can become. Train real
-              skills. Unlock abilities that open new possibilities. Turn a quiet
-              patch of land into something extraordinary.
+              Train as you explore, unlock new abilities and build a home with
+              friends.
             </p>
             <Link className="text-link" href="/skills/">
               Meet the skills <ArrowUpRight size={18} />
@@ -100,8 +98,8 @@ export default function Home() {
               </h2>
             </div>
             <p>
-              Five paths to mastery. Train by doing, and discover what the next
-              level makes possible.
+              Train seven skills by playing. Each level brings new bonuses and
+              abilities.
             </p>
           </Reveal>
           <div className="skill-grid">
@@ -139,14 +137,12 @@ export default function Home() {
               grew <em>diamonds?</em>
             </h2>
             <p>
-              Beyond the wheat fields lies a different kind of orchard. Build
-              ore trees from precious materials, unlock new varieties and tend a
-              living source of resources.
+              Build ore trees that produce resources as your Farming skill
+              grows.
             </p>
             <p>
-              From your first Coal Tree to a Diamond Tree at level 99, each one
-              is something to work toward—and something you build with your own
-              hands.
+              Start with Coal Trees and work toward Diamond Trees at Farming
+              level 99.
             </p>
             <ButtonLink href="/structures/">Discover ore trees</ButtonLink>
           </Reveal>
@@ -178,9 +174,8 @@ export default function Home() {
               angle. Sense a threat before it finds you.
             </p>
             <p>
-              Sneak turns patience into possibility. As you level, your
-              concealment distance closes from 25 blocks to just 10—making the
-              shadows a place you can learn to master.
+              Level up Sneak to stay hidden at closer range: from 25 blocks down
+              to 10.
             </p>
             <ButtonLink href="/skills/sneak/">Walk the hidden path</ButtonLink>
           </Reveal>
@@ -204,9 +199,8 @@ export default function Home() {
               <em>Come home.</em>
             </h2>
             <p>
-              Build a Hearthstone pedestal, claim your first protected home and
-              choose who can open its doors, share its stores or build beside
-              you.
+              Build a Hearthstone to protect your home. Choose who can use
+              doors, access storage or build with you.
             </p>
             <Link className="text-link" href="/structures/hearthstone/">
               Build your Hearthstone <ArrowUpRight size={18} />

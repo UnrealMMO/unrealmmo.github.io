@@ -13,7 +13,7 @@ export default function Structures() {
     <div className="parchment page-body">
       <PageIntro
         title="Extraordinary things. Built block by block."
-        description="Every great creation starts with a few well-placed blocks. Explore the recipes, turn them around in 3D and bring them to life in your world."
+        description="Explore the builds in 3D, gather the materials and follow the layer guides."
       />
       <div className="wrap">
         <div className="catalogue-heading">
@@ -70,10 +70,7 @@ export default function Structures() {
           ))}
         <div className="handbook-note">
           <h3>Turn your territory into a settlement</h3>
-          <p>
-            Build and register an Inn inside your claim, arrange its beds and
-            supplies, and earn Coins while it operates.
-          </p>
+          <p>Build an Inn inside your claim to earn Coins.</p>
           <Link className="text-link" href="/settlements/">
             Read the Settlements &amp; Inns guide <ArrowUpRight size={17} />
           </Link>

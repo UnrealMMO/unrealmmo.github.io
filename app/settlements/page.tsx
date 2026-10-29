@@ -13,7 +13,7 @@ export default function Settlements() {
     <div className="parchment page-body">
       <PageIntro
         title="Settlements"
-        description="Turn your protected territory into a settlement with structures you design. Meet each building’s requirements, register it with a sign, and bring your settlement to life."
+        description="Build Inns and Stables in your territory to earn Coins. Follow the requirements, then register each building with a sign."
       />
       <div className="wrap settlement-layout">
         <nav className="settlement-nav" aria-label="Settlement structures">
@@ -24,10 +24,7 @@ export default function Settlements() {
           <section id="inn" aria-labelledby="inn-title">
             <header className="settlement-structure-heading">
               <h2 id="inn-title">Inn</h2>
-              <p>
-                A place to rest, a warm hearth, and a steady income for your
-                territory.
-              </p>
+              <p>Build a welcoming Inn that earns Coins for your territory.</p>
             </header>
             <div className="inn-inspiration-views settlement-examples">
               <figure>
@@ -61,15 +58,15 @@ export default function Settlements() {
                   <li>
                     <strong>Build within your existing territory.</strong>
                     <p>
-                      You must own the territory or be one of its stewards to
-                      register or deregister structures.
+                      Only the territory owner or a steward can register or
+                      deregister buildings.
                     </p>
                   </li>
                   <li>
                     <strong>Stay within 20 × 20 × 20 blocks.</strong>
                     <p>
-                      The whole Inn’s registered cube must fit your territory
-                      and stay separate from other settlement structures.
+                      The full cube must fit inside your territory without
+                      overlapping another settlement building.
                     </p>
                   </li>
                   <li>
@@ -83,16 +80,15 @@ export default function Settlements() {
                   <li>
                     <strong>Get creative!</strong>
                     <p>
-                      Choose your walls, floors, roof, and decorations. No fixed
-                      blueprint or separate bedrooms required.
+                      Design it your way. No fixed blueprint or separate
+                      bedrooms needed.
                     </p>
                   </li>
                   <li>
                     <strong>Place this sign at the entrance last.</strong>
                     <p>
-                      Write [UnrealInn] with your Inn’s unique name underneath.
-                      Save it to register your new structure, or right-click to
-                      manage your inn.
+                      Write [UnrealInn] and a unique name on the next line. Save
+                      to register; right-click the sign to manage your Inn.
                     </p>
                     <div
                       className="inn-entry-sign"
@@ -239,17 +235,16 @@ export default function Settlements() {
                   <li>
                     <strong>Get creative!</strong>
                     <p>
-                      Build an open paddock or a grand livery. No separate
-                      stalls, walls, roof, or route checks required. Hay and
-                      water are not consumed.
+                      An open paddock works. No stalls, walls, roof or clear
+                      routes needed. Hay and water are not consumed.
                     </p>
                   </li>
                   <li>
                     <strong>Place this sign at the entrance last.</strong>
                     <p>
-                      Write [UnrealStable] with your Stable’s unique name
-                      underneath. Save it to register, or right-click to manage
-                      your Stable.
+                      Write [UnrealStable] and a unique name on the next line.
+                      Save to register; right-click the sign to manage your
+                      Stable.
                     </p>
                     <div
                       className="inn-entry-sign"
@@ -317,9 +312,9 @@ export default function Settlements() {
                 </span>
               </div>
               <p className="inn-art-note">
-                Removing a saddle or lead, taking a horse outside the cube, or
-                losing a horse removes its contribution. Return and tether
-                eligible horses to restore income.
+                A horse stops earning if it loses its saddle or lead, leaves the
+                cube or dies. Bring back and tether eligible horses to restore
+                income.
               </p>
             </section>
             <div className="inn-commands">
