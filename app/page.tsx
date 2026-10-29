@@ -60,7 +60,7 @@ export default function Home() {
           </span>
         </div>
       </div>
-      <SceneWindow className="discover-scene" id="discover">
+      <SceneWindow className="discover-scene" id="discover" panDistance={100}>
         <div className="discover-art-window">
           <img
             className="discover-scene-art"

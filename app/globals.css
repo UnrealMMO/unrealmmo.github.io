@@ -4412,7 +4412,7 @@ tbody tr:nth-child(even) {
 .discover-scene {
   position: relative;
   isolation: isolate;
-  min-height: clamp(680px, 60vw, 960px);
+  min-height: clamp(560px, 48vw, 780px);
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -4548,7 +4548,7 @@ tbody tr:nth-child(even) {
 @media (max-width: 760px) {
   .discover-art-window {
     position: relative;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 16 / 9;
     z-index: 0;
   }
   .scene-window .discover-scene-art {
@@ -4577,4 +4577,9 @@ tbody tr:nth-child(even) {
   .harvest-hero-copy h1 {
     font-size: clamp(1.65rem, 7.2vw, 3.2rem);
   }
+}
+
+.scene-window .discover-scene-art {
+  top: -112px;
+  height: calc(100% + 224px);
 }
