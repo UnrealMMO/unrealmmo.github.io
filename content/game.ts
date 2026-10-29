@@ -84,7 +84,7 @@ export function traitsFor(skill: Skill): Trait[] {
       ? trees.map((t) => ({
           level: t.level,
           name: t.name,
-          description: `Build a ${t.name.toLowerCase()} to produce ${title(t.output).toLowerCase()} while its chunks are loaded, even while you are offline. Base cycle: ${t.seconds} active seconds.`,
+          description: `Produces ${title(t.output).toLowerCase()} every ${t.seconds} active seconds before growth bonuses. Works in loaded chunks, even while you’re offline.`,
           structure: t.id,
         }))
       : [];
