@@ -17,7 +17,7 @@ export function WikiNavigation() {
     <div className="wiki-bar">
       <div className="wrap wiki-bar-inner">
         <Link className="wiki-wordmark" href="/wiki/">
-          UnrealMMO Wiki
+          Wiki
         </Link>
         <nav aria-label="Wiki categories">
           {links.map(([href, label]) => (

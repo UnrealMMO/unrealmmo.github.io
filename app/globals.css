@@ -4773,7 +4773,7 @@ tbody tr:nth-child(even) {
   display: flex;
   gap: 20px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 .wiki-result h3 {
   font-size: 1.1rem;
@@ -5413,4 +5413,12 @@ tbody tr:nth-child(even) {
   .wiki-supply-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.wiki-result > div {
+  min-width: 0;
+  flex: 1;
+}
+.wiki-result-image[src="/art/inn-exterior-interior-v1.png"] {
+  object-position: left center;
 }
