@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { wikiItems } from "@/content/wiki-items";
 import { WikiItemIcon } from "@/components/wiki-item-icon";
-import { RewardTurntable } from "@/components/reward-turntable";
 export function generateStaticParams() {
   return wikiItems.map((i) => ({ slug: i.id }));
 }
@@ -43,15 +42,9 @@ export default async function ItemPage({
               </Link>
             )}
           </div>
-          {item.model ? (
-            <div className="wiki-model">
-              <RewardTurntable id={item.model} label={item.name} />
-            </div>
-          ) : (
-            <div className={`wiki-heading-icon wiki-tone-${item.icon}`}>
-              <WikiItemIcon icon={item.icon} />
-            </div>
-          )}
+          <div className="wiki-heading-icon">
+            <WikiItemIcon icon={item.icon} />
+          </div>
         </header>
         {item.recipe && (
           <section className="wiki-recipe-section">

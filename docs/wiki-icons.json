@@ -1,0 +1,81 @@
+{
+  "water_bucket": {
+    "source": "Minecraft Java 26.2: assets/minecraft/textures/item/water_bucket.png",
+    "sha256": "7da2d23c69392bda3c9dd617b7942035bbd03ea348a0ff05ad461a51854f68af",
+    "method": "original texture, unchanged"
+  },
+  "lava_bucket": {
+    "source": "Minecraft Java 26.2: assets/minecraft/textures/item/lava_bucket.png",
+    "sha256": "bd3528401d4bba44e196480194a1becb47a33974df2202d464922cd412183b1a",
+    "method": "original texture, unchanged"
+  },
+  "amethyst_shard": {
+    "source": "Minecraft Java 26.2: assets/minecraft/textures/item/amethyst_shard.png",
+    "sha256": "dc64feb12d553ec59b819534ae57b46e99ac95a3ab61cb71de317a5d7b857584",
+    "method": "original texture, unchanged"
+  },
+  "blaze_rod": {
+    "source": "Minecraft Java 26.2: assets/minecraft/textures/item/blaze_rod.png",
+    "sha256": "c00637afed86e5ea5273e7591abe285ef493949860915b645f52123e7c935f52",
+    "method": "original texture, unchanged"
+  },
+  "flint": {
+    "source": "Minecraft Java 26.2: assets/minecraft/textures/item/flint.png",
+    "sha256": "6a37210c4ec517b2274f3a3bbdd6862fc0fa7b08c5c1d001e835b110408ff414",
+    "method": "original texture, unchanged"
+  },
+  "lapis_lazuli": {
+    "source": "Minecraft Java 26.2: assets/minecraft/textures/item/lapis_lazuli.png",
+    "sha256": "3ce971e3c35c395011cc13f6f7e9664d35ab75e4c68c2d48b79629a047d9cf2e",
+    "method": "original texture, unchanged"
+  },
+  "stick": {
+    "source": "Minecraft Java 26.2: assets/minecraft/textures/item/stick.png",
+    "sha256": "da5ede0e54715247de78567df5212a114d0b8a1af183e286fa69cc6af5993711",
+    "method": "original texture, unchanged"
+  },
+  "paper": {
+    "source": "Minecraft Java 26.2: assets/minecraft/textures/item/paper.png",
+    "sha256": "046228bbea6334f90e915ea62c6b4050016a6b1aa575734d630a10688d9b11e7",
+    "method": "original texture, unchanged"
+  },
+  "book": {
+    "source": "Minecraft Java 26.2: assets/minecraft/textures/item/book.png",
+    "sha256": "8b851a52e2a5d81fa925774f0df30040bc86411c8c86d3d69495486adcd2a046",
+    "method": "original texture, unchanged"
+  },
+  "gold_nugget": {
+    "source": "Minecraft Java 26.2: assets/minecraft/textures/item/gold_nugget.png",
+    "sha256": "73c9c64b35e15a47366802fa899b115fce6380d1f19bda38dd7ef196182029ca",
+    "method": "original texture, unchanged"
+  },
+  "enchanted_book": {
+    "source": "Minecraft Java 26.2: assets/minecraft/textures/item/enchanted_book.png",
+    "sha256": "f96da147fcf6f373df00ab5181043ea0c76af4ba7025f43f377f678ac466fb43",
+    "method": "original texture, unchanged"
+  },
+  "chest": {
+    "source": "Minecraft Java 26.2: assets/minecraft/textures/entity/chest/normal.png",
+    "sha256": "ab478534503430192b224ea4d5e1e87b6820198925bb7a7b4bd32f2a8a55c801",
+    "geometry": "ChestModel.createSingleBodyLayer; closed single chest",
+    "method": "rendered native geometry and texture"
+  },
+  "water_staff": {
+    "source": "UnrealMMO resource pack: models/item/water_staff.json",
+    "modelSha256": "7431bca1a19b603080041fa510766743355023d73b0c28f9889cd71ce569daf2",
+    "textureSha256": "3953f8d7ba14ad269dad6ee2573b67d84710b66b5fed8732259da508f6993d80",
+    "method": "rendered native geometry, GUI pose and textures"
+  },
+  "fire_staff": {
+    "source": "UnrealMMO resource pack: models/item/fire_staff.json",
+    "modelSha256": "e99ed840d045ac728989608e836623087836d99bb729b50c1c91889f4ee8ab90",
+    "textureSha256": "f4a2630f5a146c1f0383db7f0bda85c02cc000b57294af4f074096950c8c6f8d",
+    "method": "rendered native geometry, GUI pose and textures"
+  },
+  "magic_rune": {
+    "source": "UnrealMMO resource pack: models/item/magic_rune.json",
+    "modelSha256": "5d872d9cbebeeb4975180a1459c07e250a8b46abb32cabe729cd1786b5016ad0",
+    "textureSha256": "298515f7b9821af1a4a31a53a3ac43edb53e3d624996ba6838292e689815646f",
+    "method": "rendered native geometry, GUI pose and textures"
+  }
+}

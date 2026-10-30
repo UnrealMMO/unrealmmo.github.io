@@ -17,7 +17,7 @@ export const wikiCategories = [
     id: "items",
     name: "Items & Crafting",
     description: "Recipes, useful items and how to get them.",
-    image: "/season/rewards/grand_scroll-large.webp",
+    image: "/wiki/items/enchanted_book.png",
   },
 ] as const;
 export type WikiCategory = (typeof wikiCategories)[number]["id"];

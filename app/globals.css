@@ -5144,3 +5144,47 @@ tbody tr:nth-child(even) {
     padding-bottom: 12px;
   }
 }
+
+/* Inventory artwork stays sharp at every recipe/card size. */
+.wiki-game-icon {
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+.wiki-recipe-cell .wiki-game-icon {
+  width: 40px;
+  height: 40px;
+}
+.wiki-item-art .wiki-game-icon {
+  width: 80px;
+  height: 80px;
+}
+.wiki-heading-icon .wiki-game-icon {
+  width: 144px;
+  height: 144px;
+}
+.wiki-category-items > img {
+  image-rendering: pixelated;
+  padding: 36px;
+}
+@media (max-width: 640px) {
+  .wiki-item-art .wiki-game-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .wiki-recipe-cell .wiki-game-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .wiki-heading-icon {
+    display: grid;
+    width: 100px;
+    height: 100px;
+  }
+  .wiki-heading-icon .wiki-game-icon {
+    width: 80px;
+    height: 80px;
+  }
+  .wiki-category-items > img {
+    padding: 18px;
+  }
+}

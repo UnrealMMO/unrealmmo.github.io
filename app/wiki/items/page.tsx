@@ -33,17 +33,7 @@ export default function ItemsPage() {
                     className="wiki-item-card"
                   >
                     <div className={`wiki-item-art wiki-tone-${i.icon}`}>
-                      {i.model ? (
-                        <img
-                          src={`/season/rewards/${i.model}-0.webp`}
-                          alt=""
-                          width={240}
-                          height={240}
-                          loading="lazy"
-                        />
-                      ) : (
-                        <WikiItemIcon icon={i.icon} />
-                      )}
+                      <WikiItemIcon icon={i.icon} />
                     </div>
                     <div>
                       <h3>{i.name}</h3>

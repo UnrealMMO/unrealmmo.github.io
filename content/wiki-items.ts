@@ -1,10 +1,14 @@
-export type Ingredient = { name: string; icon: string; href?: string };
+import type { WikiItemIconName } from "./wiki-icons";
+export type Ingredient = {
+  name: string;
+  icon: WikiItemIconName;
+  href?: string;
+};
 export type WikiItem = {
   id: string;
   name: string;
   description: string;
-  icon: string;
-  model?: string;
+  icon: WikiItemIconName;
   requirement?: string;
   recipe?: {
     shapeless?: boolean;
@@ -19,16 +23,22 @@ export type WikiItem = {
 };
 const rune: Ingredient = {
   name: "Magic Rune",
-  icon: "rune",
+  icon: "magic_rune",
   href: "/wiki/items/magic-rune/",
 };
 const stick: Ingredient = { name: "Stick", icon: "stick" };
 const magic = { href: "/skills/magic/", label: "Magic spells & unlocks" };
 function staffRecipe(bucket: string, core: string): (Ingredient | null)[] {
   return [
-    { name: bucket, icon: "bucket" },
-    { name: core, icon: core === "Blaze Rod" ? "flame" : "gem" },
-    { name: bucket, icon: "bucket" },
+    {
+      name: bucket,
+      icon: bucket === "Water Bucket" ? "water_bucket" : "lava_bucket",
+    },
+    { name: core, icon: core === "Blaze Rod" ? "blaze_rod" : "amethyst_shard" },
+    {
+      name: bucket,
+      icon: bucket === "Water Bucket" ? "water_bucket" : "lava_bucket",
+    },
     rune,
     stick,
     rune,
@@ -41,7 +51,7 @@ export const wikiItems: WikiItem[] = [
   {
     id: "water-staff",
     name: "Water Staff",
-    icon: "water",
+    icon: "water_staff",
     description: "Cast water spells, from Water Bolt to Healing Spring.",
     requirement: "Magic level 1",
     recipe: {
@@ -64,7 +74,7 @@ export const wikiItems: WikiItem[] = [
   {
     id: "fire-staff",
     name: "Fire Staff",
-    icon: "flame",
+    icon: "fire_staff",
     description: "Wield Ember Bolt, then unlock stronger fire spells.",
     requirement: "Magic level 25 · Ember Bolt",
     recipe: {
@@ -87,13 +97,13 @@ export const wikiItems: WikiItem[] = [
   {
     id: "magic-rune",
     name: "Magic Rune",
-    icon: "rune",
+    icon: "magic_rune",
     description: "Fuel for staff spells and magical abilities.",
     recipe: {
       shapeless: true,
       cells: [
-        { name: "Flint", icon: "gem" },
-        { name: "Lapis Lazuli", icon: "gem" },
+        { name: "Flint", icon: "flint" },
+        { name: "Lapis Lazuli", icon: "lapis_lazuli" },
         null,
         null,
         null,
@@ -147,8 +157,7 @@ export const wikiItems: WikiItem[] = [
   {
     id: "coin-pouches",
     name: "Coin Pouches",
-    icon: "coins",
-    model: "small_pouch",
+    icon: "gold_nugget",
     description:
       "A little extra spending money. Right-click to collect the Coins.",
     obtain:
@@ -168,8 +177,7 @@ export const wikiItems: WikiItem[] = [
   {
     id: "exp-scrolls",
     name: "EXP Scrolls",
-    icon: "scroll",
-    model: "lesser_scroll",
+    icon: "enchanted_book",
     description: "Choose a skill and give it a boost.",
     obtain:
       "Earn scrolls through the regular Season Pass or find them in Gift Boxes.",
@@ -202,8 +210,7 @@ export const wikiItems: WikiItem[] = [
   {
     id: "repair-notes",
     name: "Repair Notes",
-    icon: "repair",
-    model: "full_repair",
+    icon: "paper",
     description: "Restore a damaged tool, weapon or piece of armor.",
     obtain:
       "Find repair notes in Gift Boxes. Full Repair Notes are also available on the regular Season Pass.",
@@ -226,7 +233,7 @@ export const wikiItems: WikiItem[] = [
   {
     id: "gift-box",
     name: "Gift Box",
-    icon: "gift",
+    icon: "chest",
     description: "Open a surprise reward, with rare collectibles to discover.",
     obtain:
       "Gift Boxes are awarded for accepted votes from connected server lists.",
