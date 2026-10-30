@@ -1,4 +1,5 @@
 "use client";
+import { SeasonJourney } from "@/components/season-journey";
 import { cosmeticTypes } from "@/content/wiki-season";
 import { useState, useRef } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
@@ -125,20 +126,7 @@ export function SeasonRoad() {
   }
   return (
     <>
-      <section
-        id="reward-road"
-        className="road-lineup road-woodland"
-        aria-label="Season rewards, tiers 1 to 40"
-      >
-        <div className="road-scenery" aria-hidden="true">
-          <img
-            src={previews.little_lantern.large}
-            alt=""
-            loading="lazy"
-            width={800}
-            height={800}
-          />
-        </div>
+      <SeasonJourney>
         <div className="road-path wrap">
           <svg
             className="road-line"
@@ -165,7 +153,7 @@ export function SeasonRoad() {
             </div>
           ))}
         </div>
-      </section>
+      </SeasonJourney>
       <Dialog.Root
         open={selected !== null}
         onOpenChange={(v) => {
