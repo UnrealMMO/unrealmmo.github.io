@@ -62,6 +62,7 @@ export function StructureViewer({ structure: s }: { structure: Structure }) {
     }
   }, [max]);
   function changeLayer(n: number) {
+    setEnabled(true);
     setLayer(n);
     setSelected(null);
     const url = new URL(window.location.href);
