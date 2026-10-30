@@ -81,11 +81,7 @@ export function StructureViewer({ structure: s }: { structure: Structure }) {
   const selectedBlock = selected !== null ? s.blocks[selected] : null;
   return (
     <>
-      <div
-        ref={viewerRef}
-        className="viewer-shell"
-        style={{ scrollMarginTop: "100px" }}
-      >
+      <div className="viewer-shell">
         <div className="viewer-topbar">
           <span>
             <Box size={17} /> {s.name} · Build explorer
@@ -94,7 +90,7 @@ export function StructureViewer({ structure: s }: { structure: Structure }) {
             <Share2 size={15} /> Share build
           </button>
         </div>
-        <div className="viewer-canvas">
+        <div ref={viewerRef} className="viewer-canvas">
           {enabled ? (
             <ViewerBoundary>
               <Scene
@@ -310,13 +306,22 @@ export function StructureViewer({ structure: s }: { structure: Structure }) {
                 className={`diagram ${y === layer ? "active" : ""}`}
                 onClick={() => {
                   changeLayer(y);
-                  viewerRef.current?.scrollIntoView({
+                  const viewer = viewerRef.current;
+                  if (!viewer) return;
+                  const headerBottom =
+                    document.querySelector("header")?.getBoundingClientRect()
+                      .bottom ?? 0;
+                  window.scrollTo({
+                    top:
+                      window.scrollY +
+                      viewer.getBoundingClientRect().top -
+                      Math.max(0, headerBottom) -
+                      12,
                     behavior: window.matchMedia(
                       "(prefers-reduced-motion: reduce)",
                     ).matches
                       ? "instant"
                       : "smooth",
-                    block: "start",
                   });
                 }}
                 aria-label={`Show layer ${y + 1}`}

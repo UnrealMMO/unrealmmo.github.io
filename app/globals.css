@@ -1502,6 +1502,7 @@ tbody tr:nth-child(even) {
 }
 .viewer-canvas {
   height: 460px;
+  max-height: calc(100svh - 120px);
   position: relative;
   background: radial-gradient(#2e4e3d, #122c27);
 }
