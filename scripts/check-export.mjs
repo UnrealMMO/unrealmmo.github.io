@@ -86,3 +86,13 @@ for (const entry of wikiEntries) {
 console.log(
   `Verified ${wikiEntries.length} wiki destinations and legacy guide compatibility.`,
 );
+const { seasonRewardGuides } = await import("../content/wiki-season.ts");
+for (const href of Object.values(seasonRewardGuides)) {
+  const [route, anchor] = href.split("#");
+  const html = fs.readFileSync(path.join("out", route, "index.html"), "utf8");
+  if (anchor)
+    assert.ok(html.includes(`id="${anchor}"`), `Missing reward anchor ${href}`);
+}
+console.log(
+  `Verified all ${Object.keys(seasonRewardGuides).length} Season Zero reward destinations.`,
+);

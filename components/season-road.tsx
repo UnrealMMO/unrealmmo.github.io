@@ -1,4 +1,5 @@
 "use client";
+import { cosmeticTypes } from "@/content/wiki-season";
 import { useState, useRef } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { X, Crown } from "lucide-react";
@@ -24,29 +25,7 @@ type Preview = {
 };
 const rewards: Record<string, Reward> = season.rewards;
 const previews: Record<string, Preview> = images;
-const cosmeticTypes: Record<string, string> = {
-  harvest_warden_mask: "Headwear Style",
-  candlekeeper_pickaxe: "Pickaxe Style",
-  little_lantern: "Pet",
-  harvest_warden_sword: "Sword Style",
-  harvest_warden_hat: "Headwear Style",
-  harvest_warden_shield: "Shield Style",
-  hollow_pilgrim_hood: "Headwear Style",
-  hollow_regent_mask: "Headwear Style",
-  graveglass_pickaxe: "Pickaxe Style",
-  nevermore: "Pet",
-  graveglass_axe: "Axe Style",
-  hollow_regent_sword: "Sword Style",
-  graveglass_shovel: "Shovel Style",
-  hollow_regent_mantle: "Back Style",
-  graveglass_hoe: "Hoe Style",
-  hollow_regent_bow: "Bow Style",
-  hollow_regent_shield: "Shield Style",
-  hollow_regent_crown: "Headwear Style",
-  nevermore_ghost: "Pet",
-  harvest_warden_regalia: "Armor Style",
-  hollow_regent_regalia: "Armor & Helmet Styles",
-};
+
 function Details({ reward: r, id }: { reward: Reward; id: string }) {
   return (
     <>

@@ -13,6 +13,7 @@ export const wikiItemIconNames = [
   "gold_nugget",
   "enchanted_book",
   "chest",
+  "name_tag",
   "water_staff",
   "fire_staff",
   "magic_rune",

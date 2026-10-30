@@ -1,0 +1,134 @@
+{
+  "harvest_warden_mask": {
+    "image": "/wiki/cosmetics/harvest_warden_mask.webp",
+    "angle": 12,
+    "source": "public/season/models/harvest_warden_mask.json",
+    "sha256": "b0037622534fd2d46fdf1a36cbb61fdf13cf3863bf0a58f4a4366aeba57412b9"
+  },
+  "candlekeeper_pickaxe": {
+    "image": "/wiki/cosmetics/candlekeeper_pickaxe.webp",
+    "angle": 12,
+    "source": "public/season/models/candlekeeper_pickaxe.json",
+    "sha256": "29002672588b7879786b47a229b0a258c9f5420e6e34cc486f3f5af7079d3ff4"
+  },
+  "little_lantern": {
+    "image": "/wiki/cosmetics/little_lantern.webp",
+    "angle": 12,
+    "source": "public/season/models/little_lantern.json",
+    "sha256": "91ade9e1ade661ce316bad39d6fde75a351d8d1ce1bb501a047d7af387463fb3"
+  },
+  "harvest_warden_sword": {
+    "image": "/wiki/cosmetics/harvest_warden_sword.webp",
+    "angle": 12,
+    "source": "public/season/models/harvest_warden_sword.json",
+    "sha256": "cbe3aa4b93b73936d28e74759124e1252f05fa9b3fe0564fc96603f0c0bf381b"
+  },
+  "harvest_warden_hat": {
+    "image": "/wiki/cosmetics/harvest_warden_hat.webp",
+    "angle": 12,
+    "source": "public/season/models/harvest_warden_hat.json",
+    "sha256": "3764675fbbb52c68a83e2bb546c3e84c3e3ddf99f5350791879c3a9765ebb5c4"
+  },
+  "harvest_warden_shield": {
+    "image": "/wiki/cosmetics/harvest_warden_shield.webp",
+    "angle": 12,
+    "source": "public/season/models/harvest_warden_shield.json",
+    "sha256": "241d13532f8762ae07d4a7f177b34713f22d01d1df653c6ade7f8baeeb200a8a"
+  },
+  "hollow_pilgrim_hood": {
+    "image": "/wiki/cosmetics/hollow_pilgrim_hood.webp",
+    "angle": 12,
+    "source": "public/season/models/hollow_pilgrim_hood.json",
+    "sha256": "6dce0108a96323d73f0537fbac474a578fc2b5a13fd45349adf018abbe51210a"
+  },
+  "hollow_regent_mask": {
+    "image": "/wiki/cosmetics/hollow_regent_mask.webp",
+    "angle": 12,
+    "source": "public/season/models/hollow_regent_mask.json",
+    "sha256": "83e4f13c823ada3f987856d038918e12b84aa3711d23068290bd8e17ea45bbc6"
+  },
+  "graveglass_pickaxe": {
+    "image": "/wiki/cosmetics/graveglass_pickaxe.webp",
+    "angle": 12,
+    "source": "public/season/models/graveglass_pickaxe.json",
+    "sha256": "02737bb840cbc07613b949b906cd3ca82702fb59dd49372d0032c525980efd5f"
+  },
+  "nevermore": {
+    "image": "/wiki/cosmetics/nevermore.webp",
+    "angle": 165,
+    "source": "public/season/models/nevermore.json",
+    "sha256": "1a863cfcfbd492c91d538f709add95924a25873814a8524cadfc730ce0afa704"
+  },
+  "graveglass_axe": {
+    "image": "/wiki/cosmetics/graveglass_axe.webp",
+    "angle": 12,
+    "source": "public/season/models/graveglass_axe.json",
+    "sha256": "884ccf03a2a505609ce16d1ba238e2cc0020b030f748e822ed8d60995124d291"
+  },
+  "hollow_regent_sword": {
+    "image": "/wiki/cosmetics/hollow_regent_sword.webp",
+    "angle": 12,
+    "source": "public/season/models/hollow_regent_sword.json",
+    "sha256": "d39ecfcbe0d51a120ea3d023abe74e5c9db234d409d77a7c9111cef30f47aa23"
+  },
+  "graveglass_shovel": {
+    "image": "/wiki/cosmetics/graveglass_shovel.webp",
+    "angle": 12,
+    "source": "public/season/models/graveglass_shovel.json",
+    "sha256": "a768ec569e102772231440f50ecf61a9197c8229525f2f6b5f2a289a0d322ef1"
+  },
+  "hollow_regent_mantle": {
+    "image": "/wiki/cosmetics/hollow_regent_mantle.webp",
+    "angle": 12,
+    "source": "public/season/models/hollow_regent_mantle.json",
+    "sha256": "dcade67b42de6a7c11fe640789809fe288b0c0bff21d52cb5fd38c493bd70c03"
+  },
+  "graveglass_hoe": {
+    "image": "/wiki/cosmetics/graveglass_hoe.webp",
+    "angle": 12,
+    "source": "public/season/models/graveglass_hoe.json",
+    "sha256": "08d86910e8967a9a27df0818149e5f4122e35927e8ed1f823dd95603ee2d6b20"
+  },
+  "hollow_regent_bow": {
+    "image": "/wiki/cosmetics/hollow_regent_bow.webp",
+    "angle": 12,
+    "source": "public/season/models/hollow_regent_bow.json",
+    "sha256": "050172019c9e3400bde68e4d338d036d4a08f01cba793dd4cfd78421ddd8ea74"
+  },
+  "hollow_regent_shield": {
+    "image": "/wiki/cosmetics/hollow_regent_shield.webp",
+    "angle": 12,
+    "source": "public/season/models/hollow_regent_shield.json",
+    "sha256": "61ae4e5675ef5e53f241bc901b8443b1f8b564765a083ca36f14ffbe392e0979"
+  },
+  "hollow_regent_crown": {
+    "image": "/wiki/cosmetics/hollow_regent_crown.webp",
+    "angle": 12,
+    "source": "public/season/models/hollow_regent_crown.json",
+    "sha256": "62b72d7fb5410cb377bddf83b9d3c250d7dbfdc1e1840328d6cad8e90ea3b83c"
+  },
+  "nevermore_ghost": {
+    "image": "/wiki/cosmetics/nevermore_ghost.webp",
+    "angle": 165,
+    "source": "public/season/models/nevermore_ghost.json",
+    "sha256": "5bb3e1aa92f8be4fc3e428e2d78567925a88de5f8673368f9cd16822116afec3"
+  },
+  "harvest_warden_regalia": {
+    "image": "/wiki/cosmetics/harvest_warden_regalia.webp",
+    "angle": 0,
+    "source": "public/season/models/harvest_warden_regalia.json",
+    "sha256": "e5ea97639c678b0cfc24ad4d61803fa97961ae59e82c09904ba829cafe0e72fa"
+  },
+  "hollow_regent_regalia": {
+    "image": "/wiki/cosmetics/hollow_regent_regalia.webp",
+    "angle": 0,
+    "source": "public/season/models/hollow_regent_regalia.json",
+    "sha256": "db2be89bfb70fdcecc0dd4aa0e12ad5c28e7d902e6722df43005d23ba1a1bb7d"
+  },
+  "dread_lantern": {
+    "image": "/wiki/cosmetics/dread_lantern.webp",
+    "angle": 12,
+    "source": "public/resource-packs/unrealmmo-season0-4548c2a316a9.zip:assets/unrealcosmetics/models/item/jack_o_lantern.json",
+    "sha256": "5524716ebb7924687ce7f8a5a7e9715089dcb3db7816762559a359b40f4bfe4f"
+  }
+}

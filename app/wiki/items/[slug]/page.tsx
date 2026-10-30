@@ -1,3 +1,4 @@
+import { seasonSupplies } from "@/content/wiki-season";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { wikiItems } from "@/content/wiki-items";
@@ -136,6 +137,32 @@ export default async function ItemPage({
             <p key={p}>{p}</p>
           ))}
         </section>
+        {item.id === "supply-packs" && (
+          <div className="wiki-supply-grid">
+            {seasonSupplies.map((pack) => (
+              <section className="wiki-supply" id={pack.id} key={pack.id}>
+                <h2>{pack.name}</h2>
+                <p>
+                  Regular ·{" "}
+                  {pack.unlocks
+                    .map(
+                      (u) =>
+                        `Tier ${u.tier}${u.count > 1 ? ` × ${u.count}` : ""}`,
+                    )
+                    .join(" · ")}
+                </p>
+                <ul>
+                  {Object.entries(pack.items).map(([name, count]) => (
+                    <li key={name}>
+                      {count}{" "}
+                      {name.replace("minecraft:", "").replaceAll("_", " ")}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
+        )}
         <nav className="wiki-related" aria-label="Related guides">
           <h2>Related guides</h2>
           {item.related.map((r) => (

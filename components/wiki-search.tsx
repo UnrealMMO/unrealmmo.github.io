@@ -45,7 +45,15 @@ export function WikiSearch({ children }: { children: React.ReactNode }) {
       <div className="wiki-results">
         {results.map((e) => (
           <Link href={e.href} className="wiki-result" key={e.href}>
-            <div>
+            <img
+              className="wiki-result-image"
+              src={e.image}
+              alt=""
+              width={112}
+              height={112}
+              loading="lazy"
+            />
+            <div className="wiki-result-copy">
               <h3>{e.name}</h3>
               <p>{e.description}</p>
             </div>

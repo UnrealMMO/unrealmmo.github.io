@@ -49,6 +49,18 @@ function staffRecipe(bucket: string, core: string): (Ingredient | null)[] {
 }
 export const wikiItems: WikiItem[] = [
   {
+    id: "supply-packs",
+    name: "Supply Packs",
+    icon: "chest",
+    description:
+      "Food, building materials and crafting supplies from the regular pass.",
+    obtain: "Earn these packs as you progress through Season Zero.",
+    use: ["Each award contains the materials listed below."],
+    related: [
+      { href: "/wiki/cosmetics/season-zero/", label: "Season Zero collection" },
+    ],
+  },
+  {
     id: "water-staff",
     name: "Water Staff",
     icon: "water_staff",

@@ -1,3 +1,4 @@
+import React from "react";
 import { palette, type Structure } from "@/content/game";
 export function StructurePreview({
   structure,

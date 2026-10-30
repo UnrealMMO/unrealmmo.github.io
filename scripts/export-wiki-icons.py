@@ -13,7 +13,7 @@ r = runpy.run_path('scripts/render-season-assets.py', run_name='wiki_renderer')
 out = Path('public/wiki/items'); out.mkdir(parents=True, exist_ok=True)
 provenance = {}
 with zipfile.ZipFile(jar) as archive:
-    for name in ['water_bucket','lava_bucket','amethyst_shard','blaze_rod','flint','lapis_lazuli','stick','paper','book','gold_nugget','enchanted_book']:
+    for name in ['water_bucket','lava_bucket','amethyst_shard','blaze_rod','flint','lapis_lazuli','stick','paper','book','gold_nugget','enchanted_book','name_tag']:
         source = f'assets/minecraft/textures/item/{name}.png'
         data = archive.read(source)
         (out / f'{name}.png').write_bytes(data)

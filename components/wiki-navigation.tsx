@@ -6,6 +6,7 @@ const links = [
   ["/wiki/structures/", "Structures"],
   ["/wiki/settlements/", "Settlements"],
   ["/wiki/items/", "Items & Crafting"],
+  ["/wiki/cosmetics/", "Cosmetics"],
 ];
 export function WikiNavigation() {
   const path = usePathname().replace(

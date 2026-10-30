@@ -1,5 +1,6 @@
 import { structures } from "./game";
 import { wikiItems } from "./wiki-items";
+import { wikiCosmetics, cosmeticHref } from "./wiki-season";
 export const wikiCategories = [
   {
     id: "structures",
@@ -19,6 +20,12 @@ export const wikiCategories = [
     description: "Recipes, useful items and how to get them.",
     image: "/wiki/items/enchanted_book.png",
   },
+  {
+    id: "cosmetics",
+    name: "Cosmetics",
+    description: "Season Zero outfits, pets and collectibles.",
+    image: "/wiki/cosmetics/hollow_regent_regalia.webp",
+  },
 ] as const;
 export type WikiCategory = (typeof wikiCategories)[number]["id"];
 export type WikiEntry = {
@@ -27,10 +34,12 @@ export type WikiEntry = {
   href: string;
   categories: WikiCategory[];
   keywords: string;
+  image: string;
 };
 export const wikiEntries: WikiEntry[] = [
   ...structures.map((s) => ({
     name: s.name,
+    image: `/wiki/structures/${s.id}.svg`,
     description: s.description,
     href: `/wiki/structures/${s.id}/`,
     categories: (s.kind === "hearthstone"
@@ -43,6 +52,7 @@ export const wikiEntries: WikiEntry[] = [
   })),
   {
     name: "Starting a settlement",
+    image: `/wiki/structures/${structures.find((s) => s.kind === "hearthstone")!.id}.svg`,
     description: "Claim territory and register your first building.",
     href: "/wiki/settlements/#getting-started",
     categories: ["settlements"],
@@ -50,6 +60,7 @@ export const wikiEntries: WikiEntry[] = [
   },
   {
     name: "Inn",
+    image: "/art/inn-exterior-interior-v1.png",
     description: "Build and register an Inn that earns Coins.",
     href: "/wiki/settlements/#inn",
     categories: ["structures", "settlements"],
@@ -57,6 +68,7 @@ export const wikiEntries: WikiEntry[] = [
   },
   {
     name: "Stable",
+    image: "/art/stable-exterior-v1.png",
     description: "Board horses and earn income for your territory.",
     href: "/wiki/settlements/#stable",
     categories: ["structures", "settlements"],
@@ -65,6 +77,7 @@ export const wikiEntries: WikiEntry[] = [
   },
   ...wikiItems.map((i) => ({
     name: i.name,
+    image: `/wiki/items/${i.icon}.png`,
     description: i.description,
     href: `/wiki/items/${i.id}/`,
     categories: ["items"] as WikiCategory[],
@@ -77,6 +90,14 @@ export const wikiEntries: WikiEntry[] = [
         (v) => `${v.name} ${v.benefit} ${v.requirement ?? ""}`,
       ) ?? []),
     ].join(" "),
+  })),
+  ...wikiCosmetics.map((c) => ({
+    name: c.name,
+    description: c.type,
+    image: c.image,
+    href: cosmeticHref(c.id),
+    categories: ["cosmetics"] as WikiCategory[],
+    keywords: `Season Zero Season 0 Hollow Harvest ${c.description} ${c.group}`,
   })),
 ];
 export function searchWiki(query: string, category: string = "all") {

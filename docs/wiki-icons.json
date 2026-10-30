@@ -54,6 +54,11 @@
     "sha256": "f96da147fcf6f373df00ab5181043ea0c76af4ba7025f43f377f678ac466fb43",
     "method": "original texture, unchanged"
   },
+  "name_tag": {
+    "source": "Minecraft Java 26.2: assets/minecraft/textures/item/name_tag.png",
+    "sha256": "27d4af791458a11eb1777e2f77273659769fc3c26c200790f437e0424afee2b7",
+    "method": "original texture, unchanged"
+  },
   "chest": {
     "source": "Minecraft Java 26.2: assets/minecraft/textures/entity/chest/normal.png",
     "sha256": "ab478534503430192b224ea4d5e1e87b6820198925bb7a7b4bd32f2a8a55c801",

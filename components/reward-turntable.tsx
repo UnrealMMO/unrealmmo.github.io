@@ -6,7 +6,19 @@ type Model = {
   angle: number;
   meshes: { texture: string; positions: number[]; uvs: number[] }[];
 };
-export function RewardTurntable({ id, label }: { id: string; label: string }) {
+export function RewardTurntable({
+  id,
+  label,
+  modelUrl,
+  previewUrl,
+  initialAngle,
+}: {
+  id: string;
+  label: string;
+  modelUrl?: string;
+  previewUrl?: string;
+  initialAngle?: number;
+}) {
   const host = useRef<HTMLDivElement>(null);
   const control = useRef<((running: boolean) => void) | null>(null);
   const pausedRef = useRef(false);
@@ -34,7 +46,9 @@ export function RewardTurntable({ id, label }: { id: string; label: string }) {
       try {
         const [T, response] = await Promise.all([
           import("three"),
-          fetch(`/season/models/${id}.json`, { signal: abort.signal }),
+          fetch(modelUrl ?? `/season/models/${id}.json`, {
+            signal: abort.signal,
+          }),
         ]);
         if (!response.ok) throw new Error("Model unavailable");
         const model: Model = await response.json();
@@ -92,7 +106,7 @@ export function RewardTurntable({ id, label }: { id: string; label: string }) {
           center = bounds.getCenter(new T.Vector3());
         const radius = bounds.getSize(new T.Vector3()).length() / 2;
         group.children.forEach((child) => child.position.sub(center));
-        group.rotation.y = T.MathUtils.degToRad(model.angle);
+        group.rotation.y = T.MathUtils.degToRad(initialAngle ?? model.angle);
         scene.add(group, new T.HemisphereLight(0xffffff, 0x67756b, 2));
         const light = new T.DirectionalLight(0xffffff, 2);
         light.position.set(-5, 10, -8);
@@ -166,13 +180,13 @@ export function RewardTurntable({ id, label }: { id: string; label: string }) {
       reduced.removeEventListener("change", preference);
       dispose();
     };
-  }, [id, label]);
+  }, [id, label, modelUrl, initialAngle]);
   return (
     <>
       <div className="reward-live-model" ref={host}>
         {!ready && (
           <img
-            src={`/season/rewards/${id}-0.webp`}
+            src={previewUrl ?? `/season/rewards/${id}-0.webp`}
             width={360}
             height={360}
             alt={label}
