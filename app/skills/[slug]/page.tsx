@@ -63,10 +63,10 @@ export default async function SkillPage({
             <h3>Make it yours</h3>
             <p>
               {s.id === "sneak"
-                ? "Sneak abilities activate automatically when their conditions are met. Check your progress in the journal."
+                ? "Sneak abilities activate automatically when their conditions are met. Check your progress with /skills."
                 : s.id === "magic" || s.id === "construction"
-                  ? "Right-click a Magic Rune for spells. Check progress in your journal and choose titles and colors in Hearthstone."
-                  : "Turn on collection and mastery abilities in your Skill Journal. They start switched off."}
+                  ? "Right-click a Magic Rune for spells. Check progress with /skills and choose titles and colors in Hearthstone."
+                  : "Turn on collection and mastery abilities in /skills or the Hearthstone Skills menu. They start switched off."}
             </p>
             {s.commands.map((c) => (
               <code key={c}>{c}</code>

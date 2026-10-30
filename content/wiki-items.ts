@@ -140,33 +140,6 @@ export const wikiItems: WikiItem[] = [
     ],
   },
   {
-    id: "skill-journal",
-    name: "Skill Journal",
-    icon: "book",
-    description: "Check your levels, unlocks and skill settings.",
-    recipe: {
-      shapeless: true,
-      cells: [
-        { name: "Paper", icon: "paper" },
-        stick,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-      ],
-      output: "1 Skill Journal",
-      notes: ["Combine 1 paper and 1 stick in any arrangement."],
-    },
-    use: [
-      "Right-click to browse your skills and unlocked abilities.",
-      "Your progress belongs to your character. Losing the journal does not reset your skills.",
-    ],
-    related: [{ href: "/skills/", label: "Explore the skills" }],
-  },
-  {
     id: "coin-pouches",
     name: "Coin Pouches",
     icon: "gold_nugget",

@@ -42,11 +42,11 @@ export default function Skills() {
         ))}
       </div>
       <div className="wrap handbook-note">
-        <h3>Your Skill Journal</h3>
+        <h3>Your skills</h3>
         <p>
-          Craft it with one paper and one stick, or open <code>/skills</code>.
-          Check your progress and turn unlocked abilities on or off. Balance may
-          change before launch.
+          Use <code>/skills</code> or the Skills button in the second row of
+          your Hearthstone menu. Check your progress and turn unlocked abilities
+          on or off. Balance may change before launch.
         </p>
       </div>
     </div>

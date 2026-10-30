@@ -74,7 +74,7 @@ export default async function StructurePage({
                     normal collection or hoppers.
                   </li>
                   <li>
-                    Use <code>/farming trees</code> or your Skill Journal to
+                    Use <code>/farming trees</code> or <code>/skills</code> to
                     inspect ownership, recipes and status.
                   </li>
                 </ol>

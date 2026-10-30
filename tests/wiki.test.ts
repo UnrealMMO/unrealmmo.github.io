@@ -51,10 +51,6 @@ test("recipe grids preserve the agreed staff ingredients and unlock", () => {
     wikiItems.find((i) => i.id === "magic-rune")!.recipe!.output,
     "8 Magic Runes",
   );
-  assert.equal(
-    wikiItems.find((i) => i.id === "skill-journal")!.recipe!.shapeless,
-    true,
-  );
 });
 
 test("every Season Zero reward has a Wiki destination and every guide has a preview", async () => {
