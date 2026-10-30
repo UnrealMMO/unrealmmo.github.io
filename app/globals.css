@@ -5446,7 +5446,7 @@ tbody tr:nth-child(even) {
   left: 0;
   width: 100%;
   max-width: none;
-  height: 150%;
+  height: max(300svh, 266.667vw);
   object-fit: cover;
   object-position: 50% 0%;
   transform-origin: 50% 85%;

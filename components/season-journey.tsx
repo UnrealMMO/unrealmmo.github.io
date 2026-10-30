@@ -1,11 +1,14 @@
 "use client";
-import { useRef, type ReactNode } from "react";
+import { useRef, useEffect, type ReactNode } from "react";
 import {
   motion,
   useReducedMotion,
   useScroll,
   useTransform,
+  useMotionValue,
 } from "framer-motion";
+
+import { scenePan } from "./scene-pan";
 
 export function SeasonJourney({ children }: { children: ReactNode }) {
   const section = useRef<HTMLElement>(null);
@@ -14,12 +17,24 @@ export function SeasonJourney({ children }: { children: ReactNode }) {
     target: section,
     offset: ["start start", "end end"],
   });
-  // Repeat the long vertical reveal so motion stays visible throughout all 40 tiers.
-  const y = useTransform(
-    scrollYProgress,
-    [0, 0.25, 0.5, 0.75, 1],
-    ["0%", "-33%", "0%", "-33%", "0%"],
-  );
+  const windowRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+  const travel = useMotionValue(0);
+  useEffect(() => {
+    const measure = () =>
+      travel.set(
+        Math.max(
+          0,
+          imageRef.current!.clientHeight - windowRef.current!.clientHeight,
+        ),
+      );
+    const observer = new ResizeObserver(measure);
+    observer.observe(windowRef.current!);
+    observer.observe(imageRef.current!);
+    measure();
+    return () => observer.disconnect();
+  }, [travel]);
+  const y = useTransform(() => scenePan(scrollYProgress.get(), travel.get()));
   return (
     <section
       ref={section}
@@ -28,14 +43,15 @@ export function SeasonJourney({ children }: { children: ReactNode }) {
       aria-label="Season rewards, tiers 1 to 40"
     >
       <div className="journey-scenery" aria-hidden="true">
-        <div className="journey-window">
+        <div className="journey-window" ref={windowRef}>
           <motion.img
             className="journey-landscape"
-            src="/season/woodland.webp"
+            ref={imageRef}
+            src="/season/woodland-tall.webp"
             alt=""
-            width={1536}
-            height={1024}
-            style={{ y: reduced ? "-16%" : y }}
+            width={768}
+            height={2048}
+            style={{ y: reduced ? 0 : y }}
           />
           <div className="journey-shade" />
         </div>
