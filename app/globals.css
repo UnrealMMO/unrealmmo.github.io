@@ -5443,41 +5443,14 @@ tbody tr:nth-child(even) {
 .journey-landscape {
   position: absolute;
   top: 0;
-  left: -12%;
-  width: 124%;
+  left: 0;
+  width: 100%;
   max-width: none;
-  height: 155%;
+  height: 150%;
   object-fit: cover;
   object-position: 50% 0%;
   transform-origin: 50% 85%;
   will-change: transform;
-}
-.journey-relics {
-  position: absolute;
-  inset: 0;
-  transform-origin: center bottom;
-  will-change: transform, opacity;
-}
-.journey-relics img {
-  position: absolute;
-  object-fit: contain;
-  filter: drop-shadow(0 18px 12px #0009);
-}
-.journey-armor {
-  width: clamp(260px, 34vw, 520px);
-  height: 75%;
-  left: -6%;
-  bottom: -8%;
-}
-.journey-raven {
-  width: clamp(150px, 22vw, 340px);
-  right: -2%;
-  top: 12%;
-}
-.journey-helmet {
-  width: clamp(140px, 20vw, 300px);
-  right: 0;
-  bottom: 0;
 }
 .journey-shade {
   position: absolute;
@@ -5490,28 +5463,8 @@ tbody tr:nth-child(even) {
 .road-journey::after {
   z-index: 2;
 }
-@media (max-width: 760px) {
-  .journey-landscape {
-    left: -35%;
-    width: 170%;
-    height: 150%;
-  }
-  .journey-armor {
-    left: -120px;
-    width: 290px;
-  }
-  .journey-raven {
-    right: -60px;
-    width: 190px;
-  }
-  .journey-helmet {
-    right: -55px;
-    width: 170px;
-  }
-}
 @media (prefers-reduced-motion: reduce) {
-  .journey-landscape,
-  .journey-relics {
+  .journey-landscape {
     will-change: auto;
   }
 }

@@ -14,14 +14,12 @@ export function SeasonJourney({ children }: { children: ReactNode }) {
     target: section,
     offset: ["start start", "end end"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-24%"]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.18]);
-  const foreground = useTransform(
+  // Repeat the long vertical reveal so motion stays visible throughout all 40 tiers.
+  const y = useTransform(
     scrollYProgress,
-    [0, 0.5, 0.85, 1],
-    [0, 0, 0.8, 1],
+    [0, 0.25, 0.5, 0.75, 1],
+    ["0%", "-33%", "0%", "-33%", "0%"],
   );
-  const approach = useTransform(scrollYProgress, [0, 0.5, 1], [0.65, 0.65, 1]);
   return (
     <section
       ref={section}
@@ -33,44 +31,12 @@ export function SeasonJourney({ children }: { children: ReactNode }) {
         <div className="journey-window">
           <motion.img
             className="journey-landscape"
-            src="/season/harvest-approach.webp"
+            src="/season/woodland.webp"
             alt=""
-            width={1672}
-            height={941}
-            style={{ y: reduced ? "-12%" : y, scale: reduced ? 1 : scale }}
+            width={1536}
+            height={1024}
+            style={{ y: reduced ? "-16%" : y }}
           />
-          <motion.div
-            className="journey-relics"
-            style={{
-              opacity: reduced ? 1 : foreground,
-              scale: reduced ? 1 : approach,
-            }}
-          >
-            <img
-              className="journey-armor"
-              src="/season/rewards/regent-hero.webp"
-              alt=""
-              width={1000}
-              height={1000}
-              loading="lazy"
-            />
-            <img
-              className="journey-raven"
-              src="/wiki/cosmetics/nevermore_ghost.webp"
-              alt=""
-              width={360}
-              height={360}
-              loading="lazy"
-            />
-            <img
-              className="journey-helmet"
-              src="/wiki/cosmetics/dread_lantern.webp"
-              alt=""
-              width={360}
-              height={360}
-              loading="lazy"
-            />
-          </motion.div>
           <div className="journey-shade" />
         </div>
       </div>

@@ -1,3 +1,5 @@
+> Superseded: the original woodland backdrop is restored at the user’s request. The new generated image is no longer displayed. The road uses a strong vertical window pan, with no zoom or foreground reward overlays. Desktop/mobile scroll checks and full verification passed.
+
 # Hollow Harvest approach backdrop
 
 Generated with the built-in image-generation tool on 29 October 2026. Saved as `public/season/harvest-approach.webp`. Native output is 1672×941; no artificial upscaling. WebP quality 94. The browser renders an oversized image within a sticky viewport, pans vertically and scales from 1 to 1.18 across the reward track. Actual published game-model renders enter at the sides in the latter half. Cards and their text do not transform. Reduced-motion mode uses a still composition.
