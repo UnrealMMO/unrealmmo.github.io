@@ -1,6 +1,6 @@
 "use client";
 import dynamic from "next/dynamic";
-import { Component, useState, useEffect, type ReactNode } from "react";
+import { Component, useState, useEffect, useRef, type ReactNode } from "react";
 import {
   Box,
   RotateCcw,
@@ -38,6 +38,7 @@ class ViewerBoundary extends Component<
   }
 }
 export function StructureViewer({ structure: s }: { structure: Structure }) {
+  const viewerRef = useRef<HTMLDivElement>(null);
   const max = Math.max(...s.blocks.map((b) => b.y));
   const width =
     2 *
@@ -80,7 +81,11 @@ export function StructureViewer({ structure: s }: { structure: Structure }) {
   const selectedBlock = selected !== null ? s.blocks[selected] : null;
   return (
     <>
-      <div className="viewer-shell">
+      <div
+        ref={viewerRef}
+        className="viewer-shell"
+        style={{ scrollMarginTop: "100px" }}
+      >
         <div className="viewer-topbar">
           <span>
             <Box size={17} /> {s.name} · Build explorer
@@ -303,7 +308,17 @@ export function StructureViewer({ structure: s }: { structure: Structure }) {
               <button
                 key={y}
                 className={`diagram ${y === layer ? "active" : ""}`}
-                onClick={() => changeLayer(y)}
+                onClick={() => {
+                  changeLayer(y);
+                  viewerRef.current?.scrollIntoView({
+                    behavior: window.matchMedia(
+                      "(prefers-reduced-motion: reduce)",
+                    ).matches
+                      ? "instant"
+                      : "smooth",
+                    block: "start",
+                  });
+                }}
                 aria-label={`Show layer ${y + 1}`}
               >
                 <span>Layer {y + 1}</span>
