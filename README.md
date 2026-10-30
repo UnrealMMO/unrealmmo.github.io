@@ -38,6 +38,8 @@ Next.js 15 App Router, React 19, TypeScript, Tailwind CSS 4, Framer Motion, Radi
 - `content/game.ts`: progression calculations and shared structure geometry.
 - `content/trees.json`: eight ore-tree variants and shipped cycle defaults.
 - `content/provenance.json`: source revision and review date.
+- `content/wiki.ts`: the shared guide directory and search keywords.
+- `content/wiki-items.ts`: custom recipes, item benefits, requirements and related guides.
 - `tests/fixtures/plugin-rules.json`: numeric reference produced by executing the private plugin's pure Java rules for all 693 skill levels. No Java source is included here.
 
 An authorized maintainer with the plugin checkout can refresh that fixture:
@@ -56,3 +58,11 @@ To add a structure, add a definition in `content/game.ts` (or a tree variant in 
 Skill pages are readable in initial static HTML. Search, unlock-only filtering and a level preview are progressively added in the browser. Structure pages initially show a lightweight isometric drawing; WebGL loads on request. Orbit, camera presets, exploded layers, air-port highlighting, per-block selection, materials checklists and shareable `?layer=` links are supported. Text instructions and top-down diagrams remain available if WebGL fails. Checklist state is session-only. No analytics, accounts or third-party tracking are installed.
 
 See [verification](docs/VERIFICATION.md) and [asset provenance](docs/ASSETS.md).
+
+## Wiki
+
+The Wiki lives at `/wiki/`, with Structures, Settlements, and Items & Crafting. Skills remain a separate handbook linked from the relevant guides. Legacy `/structures/` and `/settlements/` URLs render the shared guides with canonical Wiki URLs, preserving bookmarks and section anchors without relying on JavaScript redirects. The sitemap lists the canonical routes.
+
+Recipe content was checked against UnrealSkills `skills-magic` (MagicPlugin, MagicRunes and Spell) and `skills-plugin/Journal` on 29 October 2026. Item denominations and eligibility were checked against `gifts-plugin/GiftPool`, `GiftsPlugin` and its default reward pool; vote Gift Boxes against `server-config/voting/VoteSites.yml`. Fire Staff requires Magic 25/Ember Bolt. Existing structure geometry and settlement guide content are reused, not re-authored.
+
+When adding a recipe, update the typed item catalogue, cross-link ingredients and confirm the recipe against the server implementation. Search entries are derived from that catalogue. `npm run verify` checks recipe contracts, search/category behavior, exported destinations and legacy canonicals.

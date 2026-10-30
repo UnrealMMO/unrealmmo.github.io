@@ -48,3 +48,41 @@ assert.ok(fs.existsSync("out/404.html"));
 console.log(
   `Verified ${files.length} exported HTML files, ${links} local asset/link references, ${images} image alt attributes, and ${unlockCount} pre-rendered unlock rows.`,
 );
+
+// Legacy bookmarks keep their guides and anchors; crawlers use the Wiki URLs.
+const legacySettlements = fs.readFileSync("out/settlements/index.html", "utf8");
+assert.ok(
+  legacySettlements.includes('id="inn"') &&
+    legacySettlements.includes('id="stable"'),
+);
+assert.ok(
+  legacySettlements.includes('href="https://unrealmmo.com/wiki/settlements/"'),
+);
+for (const entry of fs
+  .readdirSync("out/structures", { withFileTypes: true })
+  .filter((e) => e.isDirectory())) {
+  const legacy = fs.readFileSync(
+    `out/structures/${entry.name}/index.html`,
+    "utf8",
+  );
+  assert.ok(
+    legacy.includes(
+      `href="https://unrealmmo.com/wiki/structures/${entry.name}/"`,
+    ),
+  );
+  assert.ok(fs.existsSync(`out/wiki/structures/${entry.name}/index.html`));
+}
+const { wikiEntries } = await import("../content/wiki.ts");
+for (const entry of wikiEntries) {
+  const [route, anchor] = entry.href.split("#");
+  const file = path.join("out", route, "index.html");
+  assert.ok(fs.existsSync(file), `Missing wiki destination ${entry.href}`);
+  if (anchor)
+    assert.ok(
+      fs.readFileSync(file, "utf8").includes(`id="${anchor}"`),
+      `Missing anchor ${entry.href}`,
+    );
+}
+console.log(
+  `Verified ${wikiEntries.length} wiki destinations and legacy guide compatibility.`,
+);

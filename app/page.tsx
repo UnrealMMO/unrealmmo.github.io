@@ -153,14 +153,14 @@ export default function Home() {
               Start with Coal Trees and work toward Diamond Trees at Farming
               level 99.
             </p>
-            <ButtonLink href="/structures/">Discover ore trees</ButtonLink>
+            <ButtonLink href="/wiki/structures/">Discover ore trees</ButtonLink>
           </Reveal>
           <Reveal className="tree-showcase">
             <DiamondTreeScene />
             <span className="specimen-tag">
               <span>VIII</span> DIAMOND TREE <small>FARMING 99</small>
             </span>
-            <Link href="/structures/diamond-tree/" className="text-link">
+            <Link href="/wiki/structures/diamond-tree/" className="text-link">
               Inspect the build in 3D <ArrowUpRight size={17} />
             </Link>
           </Reveal>
@@ -211,7 +211,7 @@ export default function Home() {
               Build a Hearthstone to protect your home. Choose who can use
               doors, access storage or build with you.
             </p>
-            <Link className="text-link" href="/structures/hearthstone/">
+            <Link className="text-link" href="/wiki/structures/hearthstone/">
               Build your Hearthstone <ArrowUpRight size={18} />
             </Link>
           </div>

@@ -98,7 +98,7 @@ export function SkillExplorer({ skill }: { skill: Skill }) {
                     <div className="table-trait" key={t.name}>
                       <strong>
                         {t.structure ? (
-                          <Link href={`/structures/${t.structure}/`}>
+                          <Link href={`/wiki/structures/${t.structure}/`}>
                             {t.name} ↗
                           </Link>
                         ) : (

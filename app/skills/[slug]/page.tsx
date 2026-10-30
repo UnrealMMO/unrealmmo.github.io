@@ -84,7 +84,7 @@ export default async function SkillPage({
                   <h3>{t.name}</h3>
                   <p>{t.description}</p>
                   {t.structure && (
-                    <Link href={`/structures/${t.structure}/`}>
+                    <Link href={`/wiki/structures/${t.structure}/`}>
                       View the build guide ↗
                     </Link>
                   )}

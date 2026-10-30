@@ -70,8 +70,7 @@ export default function RootLayout({
             <p>Find your craft. Make your mark.</p>
             <nav aria-label="Footer navigation">
               <Link href="/skills/">Skills</Link>
-              <Link href="/structures/">Structures</Link>
-              <Link href="/settlements/">Settlements</Link>
+              <Link href="/wiki/">Wiki</Link>
               <Link href="/about/">About & credits</Link>
               <Link href="/privacy-policy/">Privacy policy</Link>
             </nav>

@@ -8,12 +8,14 @@ import { ServerSign } from "@/components/server-sign";
 const links = [
   ["/", "Home"],
   ["/skills/", "Skills"],
-  ["/structures/", "Structures"],
-  ["/settlements/", "Settlements"],
+  ["/wiki/", "Wiki"],
   ["/season-pass/", "Season Pass"],
 ];
 export function Navigation() {
-  const path = usePathname();
+  const path = usePathname().replace(
+    /^\/(structures|settlements)(?=\/|$)/,
+    "/wiki/$1",
+  );
   const [open, setOpen] = useState(false);
   return (
     <>
