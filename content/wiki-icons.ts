@@ -1,6 +1,11 @@
 // Actual Minecraft 26.2 textures and rendered resource-pack items.
 // Source hashes and rendering provenance: docs/wiki-icons.json.
 export const wikiItemIconNames = [
+  "gathering_stone",
+  "stone_bricks",
+  "iron_ingot",
+  "hopper",
+  "redstone",
   "water_bucket",
   "lava_bucket",
   "amethyst_shard",

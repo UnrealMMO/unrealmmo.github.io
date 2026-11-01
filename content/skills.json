@@ -544,6 +544,11 @@
         "description": "Spend 3 runes and stand still for three seconds to return atop your Hearthstone’s gold heart."
       },
       {
+        "level": 25,
+        "name": "Gathering Stone",
+        "description": "Unlock its crafting recipe. Gradually collect same-layer drops within an 8-block radius, then eject them above or below the stone."
+      },
+      {
         "level": 30,
         "name": "Builder’s Reach",
         "description": "+1 block of placement reach while holding building materials."

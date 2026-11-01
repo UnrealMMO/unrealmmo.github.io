@@ -1,0 +1,13 @@
+{
+  "method": "Native Minecraft textures and actual Gathering Stone resource-pack cuboids, rendered with existing website renderer",
+  "sources": {
+    "assets/minecraft/textures/item/iron_ingot.png": "ca67b14f685bfe1972addf6b44692dab601fe8d27464a30aa8e65f16f716cab2",
+    "assets/minecraft/textures/item/redstone.png": "6d0e6a1fd54142cd3de649e1100c428733512b322a0b0a530f62eae9f86881ec",
+    "assets/minecraft/textures/item/hopper.png": "6a4c36e7a9e8b4f59ff3d7de17d9708045715ab85cdc4b60534d3f643a4c5791",
+    "assets/minecraft/textures/block/stone_bricks.png": "24415444c9e4815aad4a3a349ecbfc0e027b96be25ac5b7c273c06f16c4fdd2f",
+    "UnrealMMO:models/item/gathering_stone.json": "a4db0b82a266e663d415c8489836868573cec95c0d9f9fbb367d95ccc188ad20",
+    "assets/minecraft/textures/block/lodestone_side.png": "62c423642a31cb509e8104e48b483564917dd8c15f0b9cb01f088c311a022cb4",
+    "assets/minecraft/textures/block/gold_block.png": "75d99ac8de448cfbf35a5688b773dac2c517ca696fe87459b63115af3794937b",
+    "assets/minecraft/textures/block/amethyst_block.png": "03c7a9fbacf1cb89fe1265e2ef79cf39df6089c416a626b144bca448b2cd276e"
+  }
+}

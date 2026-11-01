@@ -68,6 +68,13 @@ export default async function SkillPage({
                   ? "Right-click a Magic Rune for spells. Check progress with /skills and choose titles and colors in Hearthstone."
                   : "Turn on collection and mastery abilities in /skills or the Hearthstone Skills menu. They start switched off."}
             </p>
+            {s.id === "construction" && (
+              <p>
+                <Link href="/wiki/items/gathering-stone/">
+                  Gathering Stone recipe & collection guide →
+                </Link>
+              </p>
+            )}
             {s.commands.map((c) => (
               <code key={c}>{c}</code>
             ))}

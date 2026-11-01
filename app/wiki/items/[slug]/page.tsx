@@ -38,7 +38,10 @@ export default async function ItemPage({
             <h1>{item.name}</h1>
             <p>{item.description}</p>
             {item.requirement && (
-              <Link href="/skills/magic/" className="wiki-requirement">
+              <Link
+                href={item.requirementHref ?? "/skills/magic/"}
+                className="wiki-requirement"
+              >
                 {item.requirement}
               </Link>
             )}

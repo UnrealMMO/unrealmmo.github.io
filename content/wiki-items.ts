@@ -10,6 +10,7 @@ export type WikiItem = {
   description: string;
   icon: WikiItemIconName;
   requirement?: string;
+  requirementHref?: string;
   recipe?: {
     shapeless?: boolean;
     cells: (Ingredient | null)[];
@@ -48,6 +49,46 @@ function staffRecipe(bucket: string, core: string): (Ingredient | null)[] {
   ];
 }
 export const wikiItems: WikiItem[] = [
+  {
+    id: "gathering-stone",
+    name: "Gathering Stone",
+    icon: "gathering_stone",
+    description:
+      "Pull nearby dropped items into a small buffer, then send them above or below the stone.",
+    requirement: "Construction level 25 to craft",
+    requirementHref: "/skills/construction/",
+    recipe: {
+      cells: [
+        { name: "Stone Bricks", icon: "stone_bricks" },
+        { name: "Amethyst Shard", icon: "amethyst_shard" },
+        { name: "Stone Bricks", icon: "stone_bricks" },
+        { name: "Iron Ingot", icon: "iron_ingot" },
+        { name: "Hopper", icon: "hopper" },
+        { name: "Iron Ingot", icon: "iron_ingot" },
+        { name: "Stone Bricks", icon: "stone_bricks" },
+        { name: "Redstone Dust", icon: "redstone" },
+        { name: "Stone Bricks", icon: "stone_bricks" },
+      ],
+      output: "1 Gathering Stone",
+      notes: [
+        "Use 4 stone bricks, 2 iron ingots, 1 amethyst shard, 1 hopper and 1 redstone dust.",
+        "Reach Construction level 25 to unlock the recipe in /skills and your recipe book. Craft it at a crafting table; automated Crafters cannot bypass the unlock.",
+        "The level requirement applies to crafting. You do not need level 25 to place or use a stone you already have.",
+      ],
+    },
+    use: [
+      "Place the stone on the same floor as the drops you want to gather. It collects within an 8-block horizontal radius, measured from its center: a circle, not a square. Items on floors above or below are outside its collection layer.",
+      "Loose items move gradually toward the stone instead of teleporting from the edge of its range. Solid walls block their path. Item counts, names, enchantments and other item data are preserved.",
+      "Right-click the stone to open its menu. The middle row shows a read-only, nine-slot buffer. Click the up arrow to eject above the stone or the down arrow to eject below it. Below is selected by default.",
+      "Leave the selected output block open and free of liquid. For downward output, leave an open block directly beneath the stone. Items are briefly held before ejection; a blocked output keeps them buffered. When all nine slots are full, new items remain outside until space is available.",
+      "Collection respects territory permissions and does not pull items across claim boundaries. The stone owner needs build and storage access; storage guests can view its menu, while changing output also requires build access. In wilderness, only the placer can use the menu.",
+      "Bound Hearthstone Cores and drops with ownership or pickup restrictions are not collected. The stone works in loaded chunks. Your selected output direction and buffered items survive normal server restarts.",
+    ],
+    related: [
+      { href: "/skills/construction/", label: "Construction unlocks" },
+      { href: "/wiki/settlements/", label: "Territory and settlement guide" },
+    ],
+  },
   {
     id: "supply-packs",
     name: "Supply Packs",
