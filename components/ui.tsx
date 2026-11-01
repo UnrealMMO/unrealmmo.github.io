@@ -11,7 +11,13 @@ export function ButtonLink({
   secondary?: boolean;
 }) {
   return (
-    <Link className={`button ${secondary ? "secondary" : ""}`} href={href}>
+    <Link
+      className={`button ${secondary ? "secondary" : ""}`}
+      href={href}
+      data-analytics-event={
+        href === "/season-pass/" ? "season_pass_opened" : undefined
+      }
+    >
       {children}
       <ArrowUpRight size={17} />
     </Link>

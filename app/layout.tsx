@@ -8,6 +8,10 @@ import "@fontsource/figtree/400.css";
 import "@fontsource/figtree/500.css";
 import "@fontsource/figtree/600.css";
 import { Navigation } from "@/components/navigation";
+import {
+  CookieConsent,
+  CookieSettingsButton,
+} from "@/components/cookie-consent";
 import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -73,6 +77,7 @@ export default function RootLayout({
               <Link href="/wiki/">Wiki</Link>
               <Link href="/about/">About & credits</Link>
               <Link href="/privacy-policy/">Privacy policy</Link>
+              <CookieSettingsButton />
             </nav>
           </div>
           <div className="wrap footer-bottom">
@@ -83,6 +88,7 @@ export default function RootLayout({
             </span>
           </div>
         </footer>
+        <CookieConsent />
       </body>
     </html>
   );

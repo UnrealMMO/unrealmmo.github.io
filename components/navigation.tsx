@@ -38,6 +38,9 @@ export function Navigation() {
               <Link
                 key={href}
                 href={href}
+                data-analytics-event={
+                  href === "/season-pass/" ? "season_pass_opened" : undefined
+                }
                 aria-current={
                   (href === "/" ? path === "/" : path.startsWith(href))
                     ? "page"

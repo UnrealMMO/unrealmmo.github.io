@@ -12,7 +12,7 @@ export default function PrivacyPolicy() {
         description="Your information on the UnrealMMO website and Minecraft server."
       />
       <article className="wrap prose">
-        <p>Last updated: 26 October 2026</p>
+        <p>Last updated: 1 November 2026</p>
         <p>
           This policy describes how the UnrealMMO server team (“we”, “us”)
           handles information when you browse our guides, play on our Minecraft
@@ -55,16 +55,25 @@ export default function PrivacyPolicy() {
             Please avoid including passwords or unnecessary personal details.
           </li>
         </ul>
-        <h2>Website analytics and activity monitoring</h2>
+        <h2 id="website-analytics">
+          Website analytics and activity monitoring
+        </h2>
         <p>
-          We may use analytics and activity-monitoring tools to understand how
-          visitors use the website, measure performance and campaigns, identify
-          errors, and improve content, navigation and features. These tools may
-          include traffic reports, interaction tracking, heatmaps, and session
-          replay that reconstructs a visitor’s on-site browsing and
-          interactions. The information collected depends on the tools enabled
-          and their configuration, subject to applicable consent requirements
-          and your privacy choices.
+          With your permission, we use Sentinel by Smartify to understand which
+          pages visitors read and whether they use key features, such as the
+          server-address copy button and Season Pass links. Optional analytics
+          is off until you choose “Accept all”. “Accept necessary” keeps it off
+          and lets you continue browsing the whole website.
+        </p>
+        <p>
+          This integration sends the page address without query parameters or
+          fragments, the referring website’s origin without its path or query, a
+          broad mobile or desktop category, event time, and random visit
+          identifiers. Sentinel also receives connection information, including
+          your IP address, when browser requests reach its service. We do not
+          send names, email addresses, form contents, search text, Minecraft
+          identities, or payment details through this analytics integration.
+          Session replay, heatmaps, and automatic form capture are not enabled.
         </p>
         <h2>Website purchases and payments</h2>
         <p>
@@ -140,21 +149,37 @@ export default function PrivacyPolicy() {
         </p>
         <h2>Cookies and consent</h2>
         <p>
-          We and our service providers may use cookies, local storage, pixels
-          and similar technologies for website functionality, checkout sessions,
-          payment security, fraud prevention, authentication, preferences,
-          analytics, activity monitoring and campaign measurement. These
-          technologies may remember choices, recognize returning browsers, and
-          help us understand how visitors find and use the website.
+          Our cookie banner offers two equally prominent choices: “Accept
+          necessary” and “Accept all”. There is currently one optional category:
+          Sentinel website analytics. Browsing, scrolling, and following a link
+          do not count as consent. No optional analytics request is sent before
+          you accept it, and we do not queue earlier browsing activity to send
+          later.
         </p>
+        <ul>
+          <li>
+            <strong>Necessary preference cookie:</strong>{" "}
+            <code>unrealmmo_consent</code> stores your choice, policy version
+            and decision time for up to 180 days. It is a first-party cookie and
+            does not contain an analytics identifier.
+          </li>
+          <li>
+            <strong>Optional visit storage:</strong>{" "}
+            <code>unrealmmo_analytics_session</code> in your browser’s session
+            storage holds random visit identifiers only after acceptance. They
+            expire after 30 minutes of inactivity or when that browser tab’s
+            session ends. They are cleared when you withdraw consent.
+          </li>
+        </ul>
         <p>
-          Where applicable law requires consent, we obtain it before enabling
-          the relevant cookies or tracking technologies. Where privacy or cookie
-          controls are provided, you can use them to change or withdraw consent
-          or exercise available opt-outs. You can also block or delete cookies
-          in your browser, although this may affect checkout or other features.
-          Browser cookie settings may not control every form of activity
-          monitoring.
+          Use “Cookie settings” in the footer of any page to review your choice
+          or switch to “Accept necessary”. Withdrawal stops new analytics and
+          cancels pending requests; it does not undo events already received by
+          Sentinel. Open tabs receive the updated choice where browser support
+          permits, and the saved choice is checked before every new event. We
+          ask again after the preference expires or its version changes. If your
+          browser cannot save the preference, optional tracking stays off. You
+          can also clear this website’s cookies and storage in your browser.
         </p>
         <p>
           Buying something or playing on the server does not itself constitute

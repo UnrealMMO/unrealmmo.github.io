@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-01",
+  "verification": "npm run verify passed",
+  "tests": 33,
+  "exportedHtmlFiles": 81,
+  "browserChecks": [
+    "necessary persists after reload",
+    "accept all persists across client navigation",
+    "settings focus and withdrawal",
+    "cross-tab acceptance and withdrawal synchronization",
+    "concise desktop and 390x844 layouts"
+  ],
+  "sentinelConnection": {
+    "method": "real-browser CORS POST, labelled integration_check event",
+    "status": 200,
+    "response": {
+      "ok": true
+    }
+  },
+  "limitations": [
+    "Local preview transport disabled; production network capture not yet performed",
+    "Sentinel dashboard event counts and server retention not independently verified"
+  ],
+  "sha256": {
+    "components/cookie-consent.tsx": "bc7d7d5bac4322a309f3bbf8e252d6b0a42668f3d1a4c09f53d609b82b95b895",
+    "lib/consent.ts": "8aee8ce2098a415dcdb1ee853ecfa4c1a7cc8fdfb2c424590773626dcde83666",
+    "lib/sentinel.ts": "2d0bf5020e7ee877646ec8479f6aa21e4eba0410d9ed42bd7b9683dd384e03f3",
+    "tests/consent.test.ts": "28d0d0e1c0738a843146f70c27339ba09f55af8a63946bd543746c2a561f31d5",
+    "app/privacy-policy/page.tsx": "58bc5d70cf0cf8f9777dcab3501ef2fd4714b7c9380cb11c3efbffe8549fa85d",
+    "app/globals.css": "1aef6e7bdac20213b874852389e8cc2c21de401168f359c7a7880d56dd549ea5",
+    "docs/sentinel/banner-desktop.png": "51a4a0553a24ee5bbc961d1ca7f69b73fa8076d618d51007b99f5e0dabef504e",
+    "docs/sentinel/banner-mobile.png": "a8c8e262ed9966c0ea3ae566cbe93c55072077266a323d309112af6856b550be",
+    "docs/sentinel/connection-check.png": "fc7be91df85ec12f7d3a4de4394ac22fab2af166de6add6b20c2e9153eecb414"
+  }
+}

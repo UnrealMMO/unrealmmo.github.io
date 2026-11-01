@@ -39,6 +39,7 @@ export function ServerSign({ compact = false }: { compact?: boolean }) {
         <button
           type="button"
           onClick={copyAddress}
+          data-analytics-event="copy_server_address_clicked"
           aria-label={`Copy server address ${address}`}
           title={feedback || "Copy server address"}
         >
@@ -60,6 +61,7 @@ export function ServerSign({ compact = false }: { compact?: boolean }) {
         className="server-sign-button"
         type="button"
         onClick={copyAddress}
+        data-analytics-event="copy_server_address_clicked"
         aria-label={`Copy server address ${address}`}
         title="Copy server address"
         data-copied={feedback === "Address copied"}

@@ -21,7 +21,11 @@ export default function SeasonPass() {
             <p className="season-kicker">October 28 – December 23, 2026</p>
             <p>Spooky companions. New outfits. Plenty to earn.</p>
             <span>Play your way through 40 reward tiers.</span>
-            <a className="season-button" href="#reward-road">
+            <a
+              className="season-button"
+              href="#reward-road"
+              data-analytics-event="reward_road_opened"
+            >
               Explore the rewards <ArrowDown size={18} />
             </a>
           </div>

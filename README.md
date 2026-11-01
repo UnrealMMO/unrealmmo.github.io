@@ -55,7 +55,7 @@ To add a structure, add a definition in `content/game.ts` (or a tree variant in 
 
 ## Browser behavior
 
-Skill pages are readable in initial static HTML. Search, unlock-only filtering and a level preview are progressively added in the browser. Structure pages initially show a lightweight isometric drawing; WebGL loads on request. Orbit, camera presets, exploded layers, air-port highlighting, per-block selection, materials checklists and shareable `?layer=` links are supported. Text instructions and top-down diagrams remain available if WebGL fails. Checklist state is session-only. No analytics, accounts or third-party tracking are installed.
+Skill pages are readable in initial static HTML. Search, unlock-only filtering and a level preview are progressively added in the browser. Structure pages initially show a lightweight isometric drawing; WebGL loads on request. Orbit, camera presets, exploded layers, air-port highlighting, per-block selection, materials checklists and shareable `?layer=` links are supported. Text instructions and top-down diagrams remain available if WebGL fails. Checklist state is session-only. Sentinel analytics is enabled only after optional consent; see [the consent integration plan and verification](docs/sentinel/README.md). No website accounts are installed.
 
 See [verification](docs/VERIFICATION.md) and [asset provenance](docs/ASSETS.md).
 

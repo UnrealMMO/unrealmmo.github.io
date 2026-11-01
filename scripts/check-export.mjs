@@ -26,7 +26,18 @@ for (const f of files) {
   }
   assert.ok(html.includes("<title>"), `${f}: missing title`);
   assert.ok(html.includes('id="main"'), `${f}: missing main landmark`);
-  assert.ok(!html.includes("sentinel.smartify.ai"), `${f}: unrelated tracking`);
+  assert.ok(
+    !/<script[^>]+src=["'][^"']*sentinel/i.test(html),
+    `${f}: tracker must not load before consent`,
+  );
+  assert.ok(
+    !/<link[^>]+(?:preconnect|dns-prefetch)[^>]+sentinel/i.test(html),
+    `${f}: tracking connection before consent`,
+  );
+  assert.ok(
+    html.includes("Cookie settings"),
+    `${f}: missing consent withdrawal control`,
+  );
 }
 let unlockCount = 0;
 for (const skill of skills) {
