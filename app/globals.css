@@ -273,6 +273,27 @@ p + p {
   font-size: 0.72rem;
   letter-spacing: 0.06em;
 }
+.nav-community {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.discord-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #d1c08866;
+  color: #efe9d5;
+  border-radius: 4px;
+}
+.discord-link:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+  background: #d1c08814;
+}
 .mobile-toggle {
   display: none;
   background: none;
@@ -1853,6 +1874,10 @@ tbody tr:nth-child(even) {
   }
   .nav-inner {
     width: calc(100% - 36px);
+    gap: 10px;
+  }
+  .nav-community {
+    margin-left: auto;
   }
   .brand {
     font-size: 1rem;
