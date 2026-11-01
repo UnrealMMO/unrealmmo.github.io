@@ -534,7 +534,7 @@
         "description": "+0.5 blocks of placement reach while holding building materials."
       },
       {
-        "level": 10,
+        "level": 5,
         "name": "Bedbound",
         "description": "Spend 2 runes and stand still for three seconds to return beside your active bed."
       },
