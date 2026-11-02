@@ -4532,9 +4532,9 @@ tbody tr:nth-child(even) {
   z-index: -1;
   background: linear-gradient(
     to bottom,
-    transparent 55%,
-    #efe9d5cc 76%,
-    #efe9d5 100%
+    transparent 20%,
+    #efe9d5e6 48%,
+    #efe9d5 90%
   );
 }
 .discover-scene .intro-split {
