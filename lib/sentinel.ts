@@ -31,9 +31,10 @@ export function originOnly(value: string) {
   }
 }
 
-/** No third-party script, replay, form capture, event backlog, retries, or unload beacons. */
+/** Curated analytics; the consent-owned recorder supplies the real Sentinel session ID. */
 export function createAnalytics(options: Options) {
   let session: Session | null = null;
+  let replaySessionId: string | null = null;
   let lastPath: string | null = null;
   let lastActionAt = -Infinity;
   const pending = new Set<AbortController>();
@@ -41,6 +42,7 @@ export function createAnalytics(options: Options) {
     for (const request of pending) request.abort();
     pending.clear();
     session = null;
+    replaySessionId = null;
     lastPath = null;
     try {
       options.clearSession();
@@ -64,7 +66,7 @@ export function createAnalytics(options: Options) {
         /* Create an in-memory session if storage is blocked or malformed. */
       }
     }
-    if (!session || session.expiresAt <= options.now()) {
+    if (!session || (!replaySessionId && session.expiresAt <= options.now())) {
       session = {
         visitorId: `vis_${options.id()}`,
         sessionId: `sess_${options.id()}`,
@@ -98,7 +100,7 @@ export function createAnalytics(options: Options) {
       apiKey: SENTINEL_PRODUCT_KEY,
       type,
       visitorId,
-      sessionId,
+      sessionId: replaySessionId || sessionId,
       url: options.origin + url.pathname,
       referrer: originOnly(options.referrer),
       device: options.device,
@@ -117,6 +119,13 @@ export function createAnalytics(options: Options) {
   }
   return {
     stop,
+    visitorId() {
+      return options.allowed() ? getSession().visitorId : "";
+    },
+    attachReplay(id: string) {
+      replaySessionId = id;
+      lastPath = null;
+    },
     pageview(path: string) {
       if (!options.allowed()) {
         stop();

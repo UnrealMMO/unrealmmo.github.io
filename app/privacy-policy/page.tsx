@@ -61,9 +61,11 @@ export default function PrivacyPolicy() {
         <p>
           With your permission, we use Sentinel by Smartify to understand which
           pages visitors read and whether they use key features, such as the
-          server-address copy button and Season Pass links. Optional analytics
-          is off until you choose “Accept all”. “Accept necessary” keeps it off
-          and lets you continue browsing the whole website.
+          server-address copy button and Season Pass links. We also use session
+          replay to review a visual reconstruction of pages and interactions,
+          including clicks, scrolling, and pointer movement. Optional analytics
+          and recording is off until you choose “Accept all”. “Accept necessary”
+          keeps it off and lets you continue browsing the whole website.
         </p>
         <p>
           This integration sends the page address without query parameters or
@@ -73,7 +75,14 @@ export default function PrivacyPolicy() {
           your IP address, when browser requests reach its service. We do not
           send names, email addresses, form contents, search text, Minecraft
           identities, or payment details through this analytics integration.
-          Session replay, heatmaps, and automatic form capture are not enabled.
+          Session replay records the rendered public page and changes to it, not
+          a video of your screen. Input fields, editable areas, and embedded
+          frames are excluded; input values are also masked by the recorder.
+          Canvas and WebGL content is not recorded. We do not enable automatic
+          contact identification or form capture. Recordings are sent to
+          Sentinel by Smartify, a tool operated by the same owner as UnrealMMO,
+          and stored in its hosted storage for review by authorized
+          administrators. They are not published to other visitors.
         </p>
         <h2>Embedded videos</h2>
         <p>
@@ -162,10 +171,10 @@ export default function PrivacyPolicy() {
         <p>
           Our cookie banner offers two equally prominent choices: “Accept
           necessary” and “Accept all”. There is currently one optional category:
-          Sentinel website analytics. Browsing, scrolling, and following a link
-          do not count as consent. No optional analytics request is sent before
-          you accept it, and we do not queue earlier browsing activity to send
-          later.
+          Sentinel website analytics and session replay. Browsing, scrolling,
+          and following a link do not count as consent. No optional analytics
+          request is sent before you accept it, and we do not queue earlier
+          browsing activity to send later.
         </p>
         <ul>
           <li>
@@ -177,18 +186,22 @@ export default function PrivacyPolicy() {
           <li>
             <strong>Optional visit storage:</strong>{" "}
             <code>unrealmmo_analytics_session</code> in your browser’s session
-            storage holds random visit identifiers only after acceptance. They
-            expire after 30 minutes of inactivity or when that browser tab’s
-            session ends. They are cleared when you withdraw consent.
+            storage holds random visit identifiers only after acceptance. Unused
+            visit identifiers expire after 30 minutes. An active replay uses its
+            own server-assigned session identifier until the page is closed,
+            reloaded, or consent is withdrawn. They are cleared when you
+            withdraw consent.
           </li>
         </ul>
         <p>
           Use “Cookie settings” in the footer of any page to review your choice
           or switch to “Accept necessary”. Withdrawal stops new analytics and
-          cancels pending requests; it does not undo events already received by
-          Sentinel. Open tabs receive the updated choice where browser support
-          permits, and the saved choice is checked before every new event. We
-          ask again after the preference expires or its version changes. If your
+          recording, discards unsent replay data, and cancels pending requests;
+          it does not undo events or recordings already received by Sentinel.
+          Open tabs receive the updated choice where browser support permits,
+          and the saved choice is checked before every new event. We ask again
+          after the preference expires or its version changes, including when
+          session replay is added to an earlier analytics-only choice. If your
           browser cannot save the preference, optional tracking stays off. You
           can also clear this website’s cookies and storage in your browser.
         </p>

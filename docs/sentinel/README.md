@@ -1,5 +1,30 @@
 # Sentinel integration and consent
 
+## Session replay update — 1 November 2026
+
+The user requested session replay after **Accept all**. This section supersedes the analytics-only decisions below; the original verification remains as historical evidence.
+
+- Consent version 2 requires a fresh choice, including for earlier analytics-only acceptances. The concise banner and privacy policy explicitly name replay. Necessary-only/default refusal makes no Sentinel requests.
+- Lazy-load pinned rrweb 2.2.0 after consent on the production host. Create a session with the documented Track API (`sessionReplay: true`), then attach its returned ID to curated pageviews/clicks and replay uploads. SPA navigation keeps one recording; full reload creates a new recording.
+- Send recordings to `https://api.backend.sentinel.smartify.ai/upload-replay`, the endpoint returned by Sentinel's public `/api/replay-config` on verification. No management key, remote tracker script, automatic form identification, or persistent returning-visitor identifier is added.
+- Mask all inputs and block input/select/textarea, contenteditable, embedded frames, and `[data-sentinel-block]`. `[data-sentinel-mask]` masks rendered text. Canvas/WebGL capture is off. Strip query/fragment from replay page metadata; snapshots still include public rendered page content and links.
+- Upload at five-second intervals and when hidden. One upload at a time; pending snapshots are preserved while a previous chunk uploads. Bound the waiting buffer to 2,000 events / approximately 4 MiB of serialized text. Stop recording on overflow or transport failure rather than retrying incomplete replay streams. Requests time out after 15 seconds.
+- Withdrawal stops recorder/listeners/timer, discards queued replay, and aborts pending requests. Existing BroadcastChannel/focus/visibility consent synchronization also stops replay in other tabs. Async imports/session creation cannot revive a withdrawn recorder.
+
+### Verification
+
+Production build and `npm run verify` passed with 37 tests, 81 exported HTML pages, 3,517 local references, and 412 image alternatives. An additional concurrent-upload regression test was then added; the complete test suite passes with 38 tests.
+
+A loopback-only diagnostic server served the production export with exactly two diagnostic changes: adding 127.0.0.1 to the host allowlist in served JavaScript and logging request status/input-leak checks. Neither change is in the shipped source/export. The diagnostic visited Wiki, tested necessary-only, opted in, typed a distinctive search probe, cleared it, navigated to Skills, and withdrew consent. Session creation, pageviews, and replay uploads returned HTTP 200. No request contained the probe text. No further requests appeared after withdrawal and further navigation. Desktop and 390×844 consent layouts were inspected.
+
+The final candidate's session appeared in the authenticated Unreal MMO Sessions dashboard at **8:50:12 PM America/New_York, 1 November 2026**, with **2 pages and 6 seconds**, and its visual replay loaded successfully. An earlier diagnostic at 8:47:43 PM exposed an old rrweb alpha DOM mutation error; that version was replaced with stable 2.2.0. Repeating input changes and navigation produced no new recorder errors. Test sessions are retained in Sentinel; these are synthetic verification activity, not organic visitors. Dashboard screenshots remain local rather than publishing administrator/IP details in this repository.
+
+### Limits
+
+Only consented visitors are recorded. Blockers/network failures can prevent capture. Unsent trailing activity can be lost on abrupt close; there is no durable retry queue or unload beacon. Dashboard active/duration summaries follow received pageview activity and may lag recording/withdrawal; the player timeline is the recording evidence. Embedded video and 3D canvas contents are excluded. Server-side retention/deletion policies and all browser/device combinations were not audited. The production-host deployment check is recorded after publication.
+
+## Original analytics-only implementation (historical)
+
 Implemented 1 November 2026 for unrealmmo.com. The banner contains one sentence, a privacy link and two equally prominent buttons: **Accept necessary** and **Accept all**. No heading, extra explanation, preference summary or additional button. The footer permanently exposes Cookie settings. The site remains usable without choosing.
 
 ## Plan and integration decisions

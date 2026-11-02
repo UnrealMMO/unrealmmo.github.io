@@ -17,7 +17,7 @@ test("consent is explicit, versioned and expires for either choice", () => {
   }
   assert.equal(
     readConsent(
-      `unrealmmo_consent=${encodeURIComponent(JSON.stringify({ version: 2, analytics: true, updatedAt: now }))}`,
+      `unrealmmo_consent=${encodeURIComponent(JSON.stringify({ version: 3, analytics: true, updatedAt: now }))}`,
       now,
     ),
     null,
@@ -133,4 +133,13 @@ test("only web origins are retained for referrers", () => {
   );
   assert.equal(originOnly("javascript:alert(1)"), "");
   assert.equal(originOnly(""), "");
+});
+
+// Replay expands the optional collection; basic-analytics consent is not enough.
+test("previous analytics-only consent requires a fresh choice for replay", () => {
+  const now = 1800000000000;
+  for (const analytics of [false, true]) {
+    const previous = `unrealmmo_consent=${encodeURIComponent(JSON.stringify({ version: 1, analytics, updatedAt: now }))}`;
+    assert.equal(readConsent(previous, now), null);
+  }
 });

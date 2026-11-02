@@ -15,6 +15,8 @@ import {
   SENTINEL_ENDPOINT,
 } from "@/lib/sentinel";
 
+import { createSessionReplay } from "@/lib/session-replay";
+
 const SETTINGS_EVENT = "unrealmmo:cookie-settings";
 
 export function CookieSettingsButton() {
@@ -35,6 +37,7 @@ export function CookieConsent() {
   const [open, setOpen] = useState(false);
   const [saveFailed, setSaveFailed] = useState(false);
   const tracker = useRef<ReturnType<typeof createAnalytics> | null>(null);
+  const replay = useRef<ReturnType<typeof createSessionReplay> | null>(null);
   const channel = useRef<BroadcastChannel | null>(null);
   const description = useRef<HTMLParagraphElement>(null);
   const paused = useRef(false);
@@ -43,7 +46,10 @@ export function CookieConsent() {
   const refresh = useCallback(() => {
     const saved = readConsent(document.cookie);
     setChoice(saved);
-    if (!saved?.analytics) tracker.current?.stop();
+    if (!saved?.analytics) {
+      replay.current?.stop();
+      tracker.current?.stop();
+    }
     if (!saved) setOpen(true);
   }, []);
 
@@ -73,6 +79,30 @@ export function CookieConsent() {
       referrer: document.referrer,
       device: matchMedia("(max-width: 767px)").matches ? "mobile" : "desktop",
     });
+    replay.current = createSessionReplay({
+      allowed: () =>
+        !paused.current &&
+        readConsent(document.cookie)?.analytics === true &&
+        ["unrealmmo.com", "www.unrealmmo.com"].includes(location.hostname),
+      visitorId: () => tracker.current?.visitorId() || "",
+      device: matchMedia("(max-width: 767px)").matches ? "mobile" : "desktop",
+      userAgent: navigator.userAgent,
+      loadRecorder: async () => (await import("rrweb")).record,
+      request: (url, body, signal) =>
+        fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body,
+          signal,
+          credentials: "omit",
+          referrerPolicy: "no-referrer",
+        }),
+      onSession: (id) => tracker.current?.attachReplay(id),
+    });
+    const flushReplay = () => {
+      if (document.visibilityState === "hidden") void replay.current?.flush();
+    };
+    document.addEventListener("visibilitychange", flushReplay);
     refresh();
     const show = () => {
       returnFocus.current =
@@ -112,6 +142,9 @@ export function CookieConsent() {
     document.addEventListener("click", click);
     return () => {
       // Abort outstanding requests and clear the optional session on teardown.
+      replay.current?.stop();
+      replay.current = null;
+      document.removeEventListener("visibilitychange", flushReplay);
       tracker.current?.stop();
       tracker.current = null;
       channel.current?.close();
@@ -128,7 +161,15 @@ export function CookieConsent() {
       refresh();
       return;
     }
-    if (choice?.analytics) tracker.current?.pageview(pathname);
+    let current = true;
+    if (choice?.analytics) {
+      void replay.current?.ensure().then(() => {
+        if (current) tracker.current?.pageview(pathname);
+      });
+    }
+    return () => {
+      current = false;
+    };
   }, [choice, pathname, refresh]);
 
   function choose(analytics: boolean) {
@@ -141,12 +182,16 @@ export function CookieConsent() {
     const saved = readConsent(document.cookie);
     if (!saved || saved.analytics !== analytics) {
       paused.current = true;
+      replay.current?.stop();
       tracker.current?.stop();
       setSaveFailed(true);
       return;
     }
     paused.current = false;
-    if (!analytics) tracker.current?.stop();
+    if (!analytics) {
+      replay.current?.stop();
+      tracker.current?.stop();
+    }
     setChoice(saved);
     setOpen(false);
     setSaveFailed(false);
@@ -164,7 +209,7 @@ export function CookieConsent() {
     >
       <div className="cookie-copy">
         <p id="cookie-description" ref={description} tabIndex={-1}>
-          We use necessary cookies and optional analytics.{" "}
+          We use necessary cookies and optional analytics with session replay.{" "}
           <Link href="/privacy-policy/#website-analytics">Privacy policy</Link>
         </p>
         {saveFailed && (

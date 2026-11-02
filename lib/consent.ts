@@ -1,7 +1,7 @@
 export const CONSENT_COOKIE = "unrealmmo_consent";
 export const CONSENT_DAYS = 180;
 export const CONSENT_MAX_AGE = CONSENT_DAYS * 24 * 60 * 60;
-export type Consent = { version: 1; analytics: boolean; updatedAt: number };
+export type Consent = { version: 2; analytics: boolean; updatedAt: number };
 
 export function readConsent(cookies: string, now = Date.now()): Consent | null {
   try {
@@ -14,7 +14,7 @@ export function readConsent(cookies: string, now = Date.now()): Consent | null {
       decodeURIComponent(value.slice(CONSENT_COOKIE.length + 1)),
     );
     if (
-      record.version !== 1 ||
+      record.version !== 2 ||
       typeof record.analytics !== "boolean" ||
       !Number.isFinite(record.updatedAt) ||
       record.updatedAt > now ||
@@ -32,6 +32,6 @@ export function consentCookie(
   now = Date.now(),
   secure = true,
 ) {
-  const record: Consent = { version: 1, analytics, updatedAt: now };
+  const record: Consent = { version: 2, analytics, updatedAt: now };
   return `${CONSENT_COOKIE}=${encodeURIComponent(JSON.stringify(record))}; Path=/; Max-Age=${CONSENT_MAX_AGE}; SameSite=Lax${secure ? "; Secure" : ""}`;
 }
