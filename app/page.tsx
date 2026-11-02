@@ -8,6 +8,7 @@ import { FirestormScene } from "@/components/firestorm-scene";
 import { DiamondTreeScene } from "@/components/diamond-tree-scene";
 import { SceneWindow } from "@/components/scene-window";
 import { HeroWindow } from "@/components/hero-window";
+import { LaunchTrailer } from "@/components/launch-trailer";
 import { skills } from "@/content/game";
 export default function Home() {
   return (
@@ -81,19 +82,7 @@ export default function Home() {
               starts with <em>you.</em>
             </h2>
           </div>
-          <div className="intro-copy">
-            <p>
-              UnrealMMO brings skills, spells and protected settlements to
-              Minecraft survival.
-            </p>
-            <p>
-              Train as you explore, unlock new abilities and build a home with
-              friends.
-            </p>
-            <Link className="text-link" href="/skills/">
-              Meet the skills <ArrowUpRight size={18} />
-            </Link>
-          </div>
+          <LaunchTrailer />
         </div>
       </SceneWindow>
       <section className="section forest">

@@ -75,6 +75,17 @@ export default function PrivacyPolicy() {
           identities, or payment details through this analytics integration.
           Session replay, heatmaps, and automatic form capture are not enabled.
         </p>
+        <h2>Embedded videos</h2>
+        <p>
+          Our launch trailer uses a locally hosted preview image. YouTube’s
+          privacy-enhanced player loads only when you press play. Playing the
+          video connects your browser to YouTube and its service providers,
+          which receive connection and playback information and may use storage
+          needed for the player. Their{" "}
+          <a href="https://policies.google.com/privacy">privacy policy</a>{" "}
+          applies. Playing a video does not enable our optional Sentinel
+          analytics.
+        </p>
         <h2>Website purchases and payments</h2>
         <p>
           We offer real-money purchases through our website. To process and
