@@ -6,7 +6,7 @@ import { wikiItems } from "@/content/wiki-items";
 export const metadata = {
   title: "Items & Crafting — Wiki",
   description:
-    "Custom recipes, Coin Pouches, EXP Scrolls and other useful UnrealMMO items.",
+    "Custom recipes, Coin Pouches, XP Scrolls and other useful UnrealMMO items.",
   alternates: { canonical: "/wiki/items/" },
 };
 export default function ItemsPage() {

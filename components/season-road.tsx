@@ -14,7 +14,6 @@ type Reward = {
   amount?: number;
   unit?: string;
   rarity?: string;
-  minimumSkillLevel?: number;
   items?: Record<string, number>;
 };
 type Preview = {
@@ -36,11 +35,8 @@ function Details({ reward: r, id }: { reward: Reward; id: string }) {
           {r.rarity ? ` · ${r.rarity}` : ""}
         </p>
       ) : null}
-      {r.minimumSkillLevel ? (
-        <p>
-          For a skill at level {r.minimumSkillLevel}+. Requires room for the
-          full EXP.
-        </p>
+      {["lesser_scroll", "greater_scroll", "grand_scroll"].includes(id) ? (
+        <p>No minimum skill level. Choose a skill with room for the full XP.</p>
       ) : null}
       {r.kind === "supplies" ? (
         <ul>

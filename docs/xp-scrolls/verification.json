@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "websiteTests": 38,
+  "exportedPages": 81,
+  "verifiedAssetAndLinkReferences": 3517,
+  "browserChecks": {
+    "desktop": [
+      1280,
+      900
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "guideLabelsAndAmounts": true,
+    "guideNoHorizontalOverflow": true,
+    "seasonDialogTiers": [
+      "XP Scroll I",
+      "XP Scroll II",
+      "XP Scroll III"
+    ],
+    "levelRequirementsRemoved": true,
+    "starterKitMentioned": true
+  },
+  "screenshots": [
+    "guide-desktop.png",
+    "pass-desktop.png",
+    "pass-mobile.png"
+  ]
+}

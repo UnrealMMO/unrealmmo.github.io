@@ -113,7 +113,7 @@ export default function SeasonPass() {
               Premium · Coming soon
             </a>
             <p className="reward-preview-note">
-              The regular pass is free, with Coins, EXP Scrolls, Repair Notes,
+              The regular pass is free, with Coins, XP Scrolls, Repair Notes,
               supplies and cosmetics.
             </p>
           </div>

@@ -413,27 +413,24 @@
       "unit": "Coins"
     },
     "lesser_scroll": {
-      "label": "Lesser EXP Scroll",
+      "label": "XP Scroll I",
       "kind": "gift",
       "amount": 5000,
       "rarity": "uncommon",
-      "minimumSkillLevel": 40,
       "unit": "skill EXP"
     },
     "greater_scroll": {
-      "label": "Greater EXP Scroll",
+      "label": "XP Scroll II",
       "kind": "gift",
       "amount": 15000,
       "rarity": "rare",
-      "minimumSkillLevel": 60,
       "unit": "skill EXP"
     },
     "grand_scroll": {
-      "label": "Grand EXP Scroll",
+      "label": "XP Scroll III",
       "kind": "gift",
       "amount": 30000,
       "rarity": "epic",
-      "minimumSkillLevel": 75,
       "unit": "skill EXP"
     },
     "full_repair": {

@@ -203,31 +203,28 @@ export const wikiItems: WikiItem[] = [
   },
   {
     id: "exp-scrolls",
-    name: "EXP Scrolls",
+    name: "XP Scrolls",
     icon: "enchanted_book",
     description: "Choose a skill and give it a boost.",
     obtain:
-      "Earn scrolls through the regular Season Pass or find them in Gift Boxes.",
+      "Earn scrolls through the regular Season Pass or find them in Gift Boxes. New players also receive XP Scroll I in their starter kit.",
     variants: [
       {
-        name: "Lesser EXP Scroll",
-        benefit: "5,000 skill EXP",
-        requirement: "Skill level 40",
+        name: "XP Scroll I",
+        benefit: "5,000 skill XP",
       },
       {
-        name: "Greater EXP Scroll",
-        benefit: "15,000 skill EXP",
-        requirement: "Skill level 60",
+        name: "XP Scroll II",
+        benefit: "15,000 skill XP",
       },
       {
-        name: "Grand EXP Scroll",
-        benefit: "30,000 skill EXP",
-        requirement: "Skill level 75",
+        name: "XP Scroll III",
+        benefit: "30,000 skill XP",
       },
     ],
     use: [
       "Right-click, then choose an eligible UnrealMMO skill.",
-      "The chosen skill must meet the scroll’s level requirement and have room for all its EXP before level 99. Scroll EXP is a fixed amount; boosts do not multiply it.",
+      "No minimum skill level is required. The chosen skill must have room for all the XP before level 99. Scroll XP is a fixed amount; boosts do not multiply it.",
     ],
     related: [
       { href: "/skills/", label: "Skill unlocks" },
@@ -266,11 +263,11 @@ export const wikiItems: WikiItem[] = [
       "Gift Boxes are awarded for accepted votes from connected server lists.",
     use: [
       "Right-click to open a box and receive one reward.",
-      "Possible rewards include Coin Pouches, EXP Scrolls, Repair Notes, and rare title or name-color tokens.",
+      "Possible rewards include Coin Pouches, XP Scrolls, Repair Notes, and rare title or name-color tokens.",
     ],
     related: [
       { href: "/wiki/items/coin-pouches/", label: "Coin Pouches" },
-      { href: "/wiki/items/exp-scrolls/", label: "EXP Scrolls" },
+      { href: "/wiki/items/exp-scrolls/", label: "XP Scrolls" },
       { href: "/wiki/items/repair-notes/", label: "Repair Notes" },
     ],
   },
